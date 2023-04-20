@@ -1,0 +1,7 @@
+base     tailwind
+author   magnetde
+email    magnetde@googlemail.com
+date     2023-04-20
+name     Tailwind Template
+desc     Tailwind Template build with TailwindCSS and Flowbite.
+url      http://gitlab.fr/fabian/dokuwiki-tailwind
