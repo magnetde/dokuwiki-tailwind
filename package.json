@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-dokuwiki-template",
+  "version": "1.0.0",
+  "description": "A template for DokuWiki - built with TailwindCSS and Flowbite.",
+  "scripts": {
+    "dev": "npx tailwindcss --postcss postcss.config.js -i ./style/main.css -o ./assets/css/main.css --watch",
+    "build": "npx tailwindcss --postcss postcss.config.js -i ./style/main.css -o ./assets/css/main.css --minify"
+  },
+  "author": "magnetde",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-import": "^15.1.0",
+    "tailwindcss": "^3.3.1"
+  }
+}
