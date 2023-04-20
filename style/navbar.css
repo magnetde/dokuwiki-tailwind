@@ -1,0 +1,13 @@
+@import "flowbite";
+
+.navbar {
+    @apply sticky top-0 z-50 flex-none w-full mx-auto backdrop-blur transition-colors duration-500 bg-white/95 border-b border-slate-900/10 dark:bg-transparent dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/60;
+
+    & > div { // first element
+        @apply flex items-center justify-between w-full px-4 py-4 mx-auto max-w-8xl lg:px-4;
+    }
+}
+
+.btn-open-menu {
+    @apply inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+}
