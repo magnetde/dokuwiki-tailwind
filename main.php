@@ -272,7 +272,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<div class="h-full flex flex-col flex-wrap justify-between mt-16">
 
 								<!--- Main content --->
-								<article id="dw-content" class="format w-full max-w-none">
+								<article id="dw-content" class="prose w-full max-w-none">
 									<?php echo $buffer ?>
 								</article>
 

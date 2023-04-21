@@ -9,9 +9,9 @@
   "author": "magnetde",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "flowbite": "^1.6.5",
-    "flowbite-typography": "^1.0.3",
     "postcss": "^8.4.23",
     "postcss-comment": "^2.0.0",
     "postcss-import": "^15.1.0",
