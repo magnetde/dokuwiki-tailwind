@@ -25,11 +25,11 @@
 
 .page-tool-btn {
 	svg {
-		@apply w-4 h-4 fill-gray-700;
+		@apply w-4 h-4 fill-gray-700 dark:fill-gray-400;
 	}
 
 	&:hover svg {
-		@apply fill-blue-700;
+		@apply fill-blue-700 dark:fill-white;
 	}
 }
 

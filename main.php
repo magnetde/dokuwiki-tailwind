@@ -157,7 +157,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							</button>
 
 							<!-- Dropdown menu of the avatar -->
-							<div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+							<div class="z-60 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
 								<?php
 								if(!empty($_SERVER['REMOTE_USER'])) {
 									echo '<div class="px-4 py-3">'
@@ -195,7 +195,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		?>
 
 		<!--- Main container --->
-		<div class="w-full px-4 mx-auto max-w-10xl">
+		<div class="w-full z-10 px-4 mx-auto max-w-10xl">
 			<div class="lg:flex">
 				<!--- Left sidebar --->
 				<aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
@@ -210,7 +210,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						<div class="flex-auto max-w-6xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
 
 							<!--- Breadcrumbs and page tool buttons --->
-							<div class="flex flex-wrap items-center justify-between">
+							<div class="flex flex-nowrap items-center justify-between">
 								<!--- Navigation and breadcrumbs --->
 								<?php
 								if($conf['breadcrumbs'] || $conf['youarehere']) {
@@ -218,12 +218,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 									$youarehere = !empty($conf['youarehere']);
 
-									echo '<nav class="" aria-label="breadcrumb" role="navigation">'
-										.'<div class="breadcrumb-list';
+									echo '<nav aria-label="breadcrumb" role="navigation" class="breadcrumb-list';
 									if(!$youarehere) echo ' fade'; // only fade, when showing last opened pages
 									echo '">';
 									echo _tpl_breadcrumbs($youarehere);
-									echo '</div></nav>';
+									echo '</nav>';
 								}
 								?>
 
@@ -272,7 +271,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<div class="h-full flex flex-col flex-wrap justify-between mt-16">
 
 								<!--- Main content --->
-								<article id="dw-content" class="prose w-full max-w-none">
+								<article id="dw-content" class="prose dark:prose-invert w-full max-w-none">
 									<?php echo $buffer ?>
 								</article>
 
