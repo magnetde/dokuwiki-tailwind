@@ -12,6 +12,7 @@ if(!defined('DOKU_INC')) {
 
 /* must be run from within DokuWiki */
 @require_once dirname(__FILE__) . '/inc/tpl_functions.php'; /* include hook for template functions */
+@require_once dirname(__FILE__) . '/inc/clsx.php'; /* Include helper function for joining classes */
 
 $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && !empty($_SERVER['REMOTE_USER']));
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
@@ -46,8 +47,16 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 	<body class="dark:bg-gray-900 antialiased">
 
 		<!--- Navbar --->
-		<header class="navbar">
-			<div>
+		<header class="<?php echo clsx("
+			sticky top-0 z-50 flex-none w-full mx-auto
+			backdrop-blur transition-colors duration-500
+			bg-white/95, border-b border-slate-900/10 dark:bg-transparent
+			dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/60
+		") ?>">
+			<div class="<?php echo clsx("
+				flex items-center justify-between w-full
+				px-4 py-4 mx-auto max-w-8xl lg:px-4
+			") ?>">
 				<!--- Logo and title --->
 				<?php
 				$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
@@ -76,7 +85,10 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 				<!--- User avatar --->
 				<div class="hidden items-center md:order-2 md:flex">
-					<button type="button" class="avatar-button focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+					<button type="button" class="<?php echo clsx("
+						flex mr-3 first-line:text-sm rounded-full md:mr-0
+						bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600
+					") ?>" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
 						<span class="sr-only">
 							<?php tpl_getLang('open_menu') ?>
 						</span>
@@ -110,7 +122,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<?php
 							$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
 							foreach($menu_items as $item) {
-								echo '<li><a href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
+								echo '<li><a class="'
+									.clsx("
+										block px-4 py-2
+										text-sm text-gray-700 hover:bg-gray-100
+										dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white
+									")
+									.'" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
 							}
 							?>
 						</ul>
@@ -124,5 +142,32 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		</header>
 
 		<!--- Main container --->
+		<div>
+			<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+
+				<!--- Left sidebar --->
+				<div class="hidden lg:block fixed z-20 left-[max(0px,calc(50%-45rem))] right-auto w-[19.5rem] py-10 px-8 overflow-y-auto">
+					<!--- TODO --->
+					left
+				</div>
+
+				<!--- Middle content and left sidebar --->
+				<div class="lg:pl-[19.5rem]">
+					<div class="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
+						<!--- Main content --->
+						<!--- TODO --->
+						mid
+
+						<!--- Left sidebar --->
+						<div class="fixed z-20 top-[4.5rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
+							<div class="px-8">
+								<!--- TODO --->
+								right
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
