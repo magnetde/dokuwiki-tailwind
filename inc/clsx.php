@@ -3,6 +3,9 @@
 /**
  * The clsx function is used to join different classes.
  * This works similar to the npm package 'clsx' (see https://www.npmjs.com/package/clsx).
+ * If this function is called with multiline strings, that contain tabs or newline characters, these characters are removed.
+ * Warning: using this function increases the readability of the php code but
+ * may remove the Tailwind CSS Intellisense support of these classes.
  */
 function clsx() {
 	$args = func_get_args();
@@ -19,6 +22,10 @@ function clsx() {
 	return $str;
 }
 
+/**
+ * Converts a single value into a class string.
+ * This function also removes unnecessary whitespaces.
+ */
 function to_val($mix) {
 	$str = '';
 	$type = gettype($mix);
@@ -35,6 +42,9 @@ function to_val($mix) {
 			}
 		}
 	}
+
+	// Remove whitespace
+	$str = trim(preg_replace('/\s+/', ' ', $str));
 
 	return $str;
 }
