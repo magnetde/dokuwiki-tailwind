@@ -1,0 +1,32 @@
+
+
+.breadcrumbs-menu {
+	@apply justify-between;
+
+	.breadcrumbs {
+		@apply flex items-center space-x-1 md:space-x-3;
+
+		.bchead {
+			@apply ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400;
+		}
+
+		// hide first separator
+		.bchead + .bcsep {
+			display: none;
+		}
+
+		a {
+			@apply inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white;
+		}
+	}
+}
+
+.page-tool-btn {
+	svg {
+		@apply w-4 h-4 fill-gray-700;
+	}
+
+	&:hover svg {
+		@apply fill-blue-700;
+	}
+}

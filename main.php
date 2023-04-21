@@ -201,6 +201,76 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				<div class="lg:pl-[19.5rem]">
 					<div class="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
 						<!--- Main content --->
+
+						<!--- Breadcrumbs and page tool buttons --->
+						<div class="flex flex-wrap items-center justify-between">
+							<!--- Navigation and breadcrumbs --->
+							<div class="flex items-center">
+								<nav class="" aria-label="breadcrumb" role="navigation">
+									<div class="breadcrumbs-menu">
+										<?php
+										$sep = '<svg aria-hidden="true" class="inline w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
+											.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
+											.'</path></svg>';
+
+										if($conf['youarehere']) {
+											echo '<div class="breadcrumbs">';
+											tpl_youarehere($sep = $sep);
+											echo '</div>';
+										}
+
+										if($conf['breadcrumbs']) {
+											echo '<div class="breadcrumbs">';
+											tpl_breadcrumbs($sep = $sep);
+											echo '</div>';
+										}
+										?>
+									</div>
+								</nav>
+							</div>
+
+							<!--- Buttons --->
+							<div class="flex items-center justify-end space-x-2">
+								<?php
+								$index = 0;
+								$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
+								foreach($menu_items as $item) {
+									if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
+
+									// Button
+									echo '<button data-tooltip-target="pagetool-button-' . $index . '" class="'
+										.clsx("
+											page-tool-btn
+											flex items-center p-2 text-xs font-medium text-gray-700
+											bg-white border border-gray-200 rounded-lg
+											hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300
+											dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400
+											dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+										")
+										.'" data-tooltip-placement="bottom">'
+										.inlineSVG($item->getSvg())
+										.'</button>';
+
+									// Tooltip
+									echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="'
+										.clsx("
+											absolute z-10 inline-block px-3 py-2
+											text-sm font-medium text-white
+											transition-opacity duration-300
+											bg-gray-900 rounded-lg shadow-sm tooltip
+											dark:bg-gray-700 opacity-0 invisible
+										")
+										.'">'
+										.$item->getLabel()
+										.'<div class="tooltip-arrow" data-popper-arrow="">'
+										.'</div></div>';
+
+									$index++;
+								}
+								?>
+							</div>
+						</div>
+
 						<!--- TODO --->
 						mid
 
