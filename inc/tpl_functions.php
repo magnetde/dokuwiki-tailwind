@@ -39,8 +39,7 @@ function _tpl_searchform() {
 	// Capture the original search form
 	ob_start();
 	tpl_searchform($autocomplete = false);
-	$content = ob_get_contents();
-	ob_end_clean();
+	$content = ob_get_clean();
 
 	// Parse the html
 	$html = new simple_html_dom;
@@ -92,8 +91,7 @@ function _tpl_breadcrumbs($youarehere = false) {
 		tpl_youarehere($sep = $sep);
 	}
 
-	$content = ob_get_contents();
-	ob_end_clean();
+	$content = ob_get_clean();
 
 	return _modify_breadcrumbs($content, $youarehere);
 }

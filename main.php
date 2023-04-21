@@ -187,6 +187,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 			</div>
 		</header>
 
+		<?php
+		// Render the content initially
+		ob_start();
+		tpl_content(false);
+		$buffer = ob_get_clean();
+		?>
+
 		<!--- Main container --->
 		<div class="w-full px-4 mx-auto max-w-10xl">
 			<div class="lg:flex">
@@ -205,22 +212,20 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<!--- Breadcrumbs and page tool buttons --->
 							<div class="flex flex-wrap items-center justify-between">
 								<!--- Navigation and breadcrumbs --->
-								<div class="flex items-center">
-									<?php
-									if($conf['breadcrumbs'] || $conf['youarehere']) {
-										// only display one of both, else it gets ugly and I want a clean UI
+								<?php
+								if($conf['breadcrumbs'] || $conf['youarehere']) {
+									// only display one of both, else it gets ugly and I want a clean UI
 
-										$youarehere = !empty($conf['youarehere']);
+									$youarehere = !empty($conf['youarehere']);
 
-										echo '<nav class="" aria-label="breadcrumb" role="navigation">'
-											.'<div class="breadcrumb-list';
-										if(!$youarehere) echo ' fade'; // only fade, when showing last opened pages
-										echo '">';
-										echo _tpl_breadcrumbs($youarehere);
-										echo '</div></nav>';
-									}
-									?>
-								</div>
+									echo '<nav class="" aria-label="breadcrumb" role="navigation">'
+										.'<div class="breadcrumb-list';
+									if(!$youarehere) echo ' fade'; // only fade, when showing last opened pages
+									echo '">';
+									echo _tpl_breadcrumbs($youarehere);
+									echo '</div></nav>';
+								}
+								?>
 
 								<!--- Buttons --->
 								<div class="flex items-center justify-end space-x-2">
@@ -264,8 +269,19 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 
-							<!--- TODO --->
-							mid
+							<div class="h-full flex flex-col flex-wrap justify-between mt-16">
+
+								<!--- Main content --->
+								<article id="dw-content" class="format w-full max-w-none">
+									<?php echo $buffer ?>
+								</article>
+
+								<!--- Footer --->
+								<div class="">
+									Footer
+								</div>
+
+							</div>
 						</div>
 
 						<!--- Right sidebar --->
