@@ -1,0 +1,102 @@
+@import "flowbite";
+
+.navbar {
+	@apply
+		sticky
+		top-0
+		z-50
+		flex-none
+		w-full
+		mx-auto
+		backdrop-blur
+		transition-colors
+		duration-500
+		bg-white/95
+		border-b
+		border-slate-900/10
+		dark:bg-transparent
+		dark:border-slate-50/[0.06]
+		supports-backdrop-blur:bg-white/60
+	;
+
+	& > div { // first element
+		@apply
+			flex
+			items-center
+			justify-between
+			w-full
+			px-4
+			py-4
+			mx-auto
+			max-w-8xl
+			lg:px-4
+		;
+	}
+
+	.avatar-button {
+		@apply
+			flex
+			mr-3
+			text-sm
+			bg-gray-800
+			rounded-full
+			md:mr-0
+			focus:ring-4
+			focus:ring-gray-300
+			dark:focus:ring-gray-600
+		;
+	}
+
+	#user-dropdown a { // the links at the dropdown
+		@apply
+			block
+			px-4
+			py-2
+			text-sm
+			text-gray-700 hover:bg-gray-100
+			dark:hover:bg-gray-600
+			dark:text-gray-200
+			dark:hover:text-white
+		;
+	}
+
+	// DokuWiki search
+	#dw__search {
+		@apply relative;
+
+		// Input field
+		input#qsearch__in {
+			@apply
+				block
+				w-full
+				p-2
+				pl-10
+				text-sm
+				text-gray-900
+				border
+				border-gray-300
+				rounded-lg
+				bg-gray-50
+				focus:ring-blue-500
+				focus:border-blue-500
+				dark:bg-gray-700
+				dark:border-gray-600
+				dark:placeholder-gray-400
+				dark:text-white
+				dark:focus:ring-blue-500
+				dark:focus:border-blue-500
+			;
+
+			@apply
+				lg:w-96
+				md:w-80
+				sm:w-64
+			;
+		}
+
+		// Hide the button (usually gets removed by the backend)
+		button {
+			display: none;
+		}
+	}
+}
