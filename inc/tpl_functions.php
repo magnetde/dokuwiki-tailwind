@@ -74,3 +74,58 @@ function _tpl_search_input() {
 		.'</path></svg>'
       	.'</div>';
 }
+
+/**
+ * Function to create breadcrumbs or the "you are here" list.
+ */
+function _tpl_breadcrumbs($youarehere = false) {
+	$sep = '<svg aria-hidden="true" class="inline w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
+		.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
+		.'</path></svg>';
+
+	// Capture the output
+	ob_start();
+
+	if(!$youarehere) {
+		tpl_breadcrumbs($sep = $sep);
+	} else {
+		tpl_youarehere($sep = $sep);
+	}
+
+	$content = ob_get_contents();
+	ob_end_clean();
+
+	return _modify_breadcrumbs($content, $youarehere);
+}
+
+function _modify_breadcrumbs($content, $youarehere = false) {
+	// Import HTML string
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	// Return original content if Simple HTML DOM fail or exceeded page size (default MAX_FILE_SIZE => 600KB)
+	if(!$html) {
+		return $content;
+	}
+
+	// Get title and remove the node
+	$elm = $html->find('.bchead', 0);
+	$title = $elm->outertext;
+	$elm->remove();
+
+	// Remove first separator
+	$sep = $html->find('.bcsep', 0);
+	if($sep)
+		$sep->remove();
+
+	$body = '';
+	if(!$youarehere) {
+		foreach($html->childNodes() as $elm) {
+			$body = $elm->outertext . $body;
+		}
+	} else {
+		$body = $html->save();
+	}
+
+	return $title . $body;
+}

@@ -206,28 +206,20 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<div class="flex flex-wrap items-center justify-between">
 								<!--- Navigation and breadcrumbs --->
 								<div class="flex items-center">
-									<nav class="" aria-label="breadcrumb" role="navigation">
-										<div class="breadcrumbs-menu">
-											<?php
-											// ugly
-											$sep = '<svg aria-hidden="true" class="inline w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-												.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
-												.'</path></svg>';
+									<?php
+									if($conf['breadcrumbs'] || $conf['youarehere']) {
+										// only display one of both, else it gets ugly and I want a clean UI
 
-											if($conf['youarehere']) {
-												echo '<div class="breadcrumb-list">';
-												tpl_youarehere($sep = $sep);
-												echo '</div>';
-											}
+										$youarehere = !empty($conf['youarehere']);
 
-											if($conf['breadcrumbs']) {
-												echo '<div class="breadcrumb-list">';
-												echo _tpl_breadcrumbs();
-												echo '</div>';
-											}
-											?>
-										</div>
-									</nav>
+										echo '<nav class="" aria-label="breadcrumb" role="navigation">'
+											.'<div class="breadcrumb-list';
+										if(!$youarehere) echo ' fade'; // only fade, when showing last opened pages
+										echo '">';
+										echo _tpl_breadcrumbs($youarehere);
+										echo '</div></nav>';
+									}
+									?>
 								</div>
 
 								<!--- Buttons --->
@@ -239,7 +231,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 										if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
 
 										// Button
-										echo '<button data-tooltip-target="pagetool-button-' . $index . '" class="'
+										echo '<a href="' . $item->getLink()  . '" data-tooltip-target="pagetool-button-' . $index . '" class="'
 											.clsx("
 												page-tool-btn
 												flex items-center p-2 text-xs font-medium text-gray-700
@@ -250,7 +242,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 											")
 											.'" data-tooltip-placement="bottom">'
 											.inlineSVG($item->getSvg())
-											.'</button>';
+											.'</a>';
 
 										// Tooltip
 										echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="'
