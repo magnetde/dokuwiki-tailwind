@@ -60,11 +60,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 					echo '<img class="h-8 mr-3" src="' . $logo_url . '" alt="' . $title . '"/>';
 				}
 
-				echo '<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">' . $title . '</span>';
+				echo '<span class="self-center text-2xl font-semibold whitespace-nowrap overflow-ellipsis dark:text-white">' . $title . '</span>';
 				echo '</a>';
 				?>
 
-				<button class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button" data-collapse-toggle="navbar-default" aria-controls="navbar-default" aria-expanded="false">
+				<!--- Mobile menu --->
+				<button class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden order-3 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button" data-collapse-toggle="navbar-default" aria-controls="navbar-default" aria-expanded="false">
 					<span class="sr-only">
 						<?php tpl_getLang('open_menu') ?>
 					</span>
@@ -74,7 +75,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				</button>
 
 				<!--- User avatar --->
-				<div class="flex items-center md:order-2">
+				<div class="hidden items-center md:order-2 md:flex">
 					<button type="button" class="avatar-button focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
 						<span class="sr-only">
 							<?php tpl_getLang('open_menu') ?>
@@ -114,10 +115,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							?>
 						</ul>
 					</div>
-					<button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-						<span class="sr-only">Open main menu</span>
-						<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-					</button>
 				</div>
 
 				<div class="flex items-center md:order-1">
