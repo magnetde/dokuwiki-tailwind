@@ -1,0 +1,34 @@
+.breadcrumb-list {
+	@apply whitespace-nowrap overflow-hidden overflow-ellipsis;
+
+	&.fade {
+		mask-image: linear-gradient(to right, black 75%, transparent 90%);
+	}
+
+	.bchead {
+		@apply inline text-sm mr-2 font-medium text-gray-500 dark:text-gray-400;
+	}
+
+	// hide first separator; usually gets removed by the backend
+	.bchead + .bcsep {
+		display: none;
+	}
+
+	.bcsep {
+		@apply text-gray-400;
+	}
+
+	a {
+		@apply inline text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white;
+	}
+}
+
+.page-tool-btn {
+	svg {
+		@apply w-4 h-4 fill-gray-700;
+	}
+
+	&:hover svg {
+		@apply fill-blue-700;
+	}
+}
