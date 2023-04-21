@@ -204,7 +204,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						<!--- TODO --->
 						mid
 
-						<!--- Left sidebar --->
+						<!--- Right sidebar --->
 						<div class="fixed z-20 top-[4.5rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
 							<div class="px-8">
 								<!--- TODO --->
