@@ -124,5 +124,32 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		</header>
 
 		<!--- Main container --->
+		<div>
+			<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+
+				<!--- Left sidebar --->
+				<div class="hidden lg:block fixed z-20 left-[max(0px,calc(50%-45rem))] right-auto w-[19.5rem] py-10 px-8 overflow-y-auto">
+					<!--- TODO --->
+					left
+				</div>
+
+				<!--- Middle content and left sidebar --->
+				<div class="lg:pl-[19.5rem]">
+					<div class="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
+						<!--- Main content --->
+						<!--- TODO --->
+						mid
+
+						<!--- Left sidebar --->
+						<div class="fixed z-20 top-[4.5rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
+							<div class="px-8">
+								<!--- TODO --->
+								right
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
