@@ -6,7 +6,12 @@ module.exports = {
     ],
     darkMode: 'media',
     theme: {
-        extend: {},
+        extend: {
+            // add a new default width to increase the content width
+            maxWidth: {
+                '10xl': '104rem',
+            },
+        },
     },
     plugins: [
         require('flowbite/plugin'),

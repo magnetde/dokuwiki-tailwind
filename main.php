@@ -55,7 +55,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		") ?>">
 			<div class="<?php echo clsx("
 				flex items-center justify-between w-full
-				px-4 py-4 mx-auto max-w-8xl lg:px-4
+				px-4 py-4 mx-auto max-w-10xl lg:px-4
 			") ?>">
 				<!--- Logo and title --->
 				<?php
@@ -92,7 +92,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				</button>
 
 				<!--- Tools dropdown and user avatar --->
-				<div class="hidden items-center md:order-2 md:flex">
+				<div class="hidden items-center md:order-2 md:flex" id="navbar-default">
 					<ul class="<?php echo clsx("
 						flex flex-col font-medium p-4 md:p-0 mt-4 items-center
 						border border-gray-100 rounded-lg bg-gray-50
@@ -188,101 +188,101 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		</header>
 
 		<!--- Main container --->
-		<div>
-			<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
-
+		<div class="w-full px-4 mx-auto max-w-10xl">
+			<div class="lg:flex">
 				<!--- Left sidebar --->
-				<div class="hidden lg:block fixed z-20 left-[max(0px,calc(50%-45rem))] right-auto w-[19.5rem] py-10 px-8 overflow-y-auto">
+				<aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
 					<!--- TODO --->
-					left
-				</div>
+					left (mt-4 needed for first item)
+				</aside>
 
 				<!--- Middle content and left sidebar --->
-				<div class="lg:pl-[19.5rem]">
-					<div class="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
+				<main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+					<div class="flex w-full">
 						<!--- Main content --->
+						<div class="flex-auto max-w-6xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
 
-						<!--- Breadcrumbs and page tool buttons --->
-						<div class="flex flex-wrap items-center justify-between">
-							<!--- Navigation and breadcrumbs --->
-							<div class="flex items-center">
-								<nav class="" aria-label="breadcrumb" role="navigation">
-									<div class="breadcrumbs-menu">
-										<?php
-										$sep = '<svg aria-hidden="true" class="inline w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-											.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
-											.'</path></svg>';
+							<!--- Breadcrumbs and page tool buttons --->
+							<div class="flex flex-wrap items-center justify-between">
+								<!--- Navigation and breadcrumbs --->
+								<div class="flex items-center">
+									<nav class="" aria-label="breadcrumb" role="navigation">
+										<div class="breadcrumbs-menu">
+											<?php
+											// ugly
+											$sep = '<svg aria-hidden="true" class="inline w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
+												.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
+												.'</path></svg>';
 
-										if($conf['youarehere']) {
-											echo '<div class="breadcrumbs">';
-											tpl_youarehere($sep = $sep);
-											echo '</div>';
-										}
+											if($conf['youarehere']) {
+												echo '<div class="breadcrumb-list">';
+												tpl_youarehere($sep = $sep);
+												echo '</div>';
+											}
 
-										if($conf['breadcrumbs']) {
-											echo '<div class="breadcrumbs">';
-											tpl_breadcrumbs($sep = $sep);
-											echo '</div>';
-										}
-										?>
-									</div>
-								</nav>
+											if($conf['breadcrumbs']) {
+												echo '<div class="breadcrumb-list">';
+												echo _tpl_breadcrumbs();
+												echo '</div>';
+											}
+											?>
+										</div>
+									</nav>
+								</div>
+
+								<!--- Buttons --->
+								<div class="flex items-center justify-end space-x-2">
+									<?php
+									$index = 0;
+									$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
+									foreach($menu_items as $item) {
+										if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
+
+										// Button
+										echo '<button data-tooltip-target="pagetool-button-' . $index . '" class="'
+											.clsx("
+												page-tool-btn
+												flex items-center p-2 text-xs font-medium text-gray-700
+												bg-white border border-gray-200 rounded-lg
+												hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300
+												dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400
+												dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+											")
+											.'" data-tooltip-placement="bottom">'
+											.inlineSVG($item->getSvg())
+											.'</button>';
+
+										// Tooltip
+										echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="'
+											.clsx("
+												absolute z-10 inline-block px-3 py-2
+												text-sm font-medium text-white
+												transition-opacity duration-300
+												bg-gray-900 rounded-lg shadow-sm tooltip
+												dark:bg-gray-700 opacity-0 invisible
+											")
+											.'">'
+											.$item->getLabel()
+											.'<div class="tooltip-arrow" data-popper-arrow="">'
+											.'</div></div>';
+
+										$index++;
+									}
+									?>
+								</div>
 							</div>
 
-							<!--- Buttons --->
-							<div class="flex items-center justify-end space-x-2">
-								<?php
-								$index = 0;
-								$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
-								foreach($menu_items as $item) {
-									if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
-
-									// Button
-									echo '<button data-tooltip-target="pagetool-button-' . $index . '" class="'
-										.clsx("
-											page-tool-btn
-											flex items-center p-2 text-xs font-medium text-gray-700
-											bg-white border border-gray-200 rounded-lg
-											hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300
-											dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400
-											dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
-										")
-										.'" data-tooltip-placement="bottom">'
-										.inlineSVG($item->getSvg())
-										.'</button>';
-
-									// Tooltip
-									echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="'
-										.clsx("
-											absolute z-10 inline-block px-3 py-2
-											text-sm font-medium text-white
-											transition-opacity duration-300
-											bg-gray-900 rounded-lg shadow-sm tooltip
-											dark:bg-gray-700 opacity-0 invisible
-										")
-										.'">'
-										.$item->getLabel()
-										.'<div class="tooltip-arrow" data-popper-arrow="">'
-										.'</div></div>';
-
-									$index++;
-								}
-								?>
-							</div>
+							<!--- TODO --->
+							mid
 						</div>
-
-						<!--- TODO --->
-						mid
 
 						<!--- Right sidebar --->
-						<div class="fixed z-20 top-[4.5rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
-							<div class="px-8">
-								<!--- TODO --->
-								right
-							</div>
+						<div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
+							<!--- TODO --->
+							right
 						</div>
 					</div>
-				</div>
+				</main>
 			</div>
 		</div>
 	</body>
