@@ -50,8 +50,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<header class="<?php echo clsx("
 			sticky top-0 z-50 flex-none w-full mx-auto
 			backdrop-blur transition-colors duration-500
-			bg-white/95, border-b border-slate-900/10 dark:bg-transparent
-			dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/60
+			bg-white/95, border-b border-gray-900/10 dark:bg-transparent
+			dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
 		") ?>">
 			<div class="<?php echo clsx("
 				flex items-center justify-between w-full
@@ -272,7 +272,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 								<!--- Main content --->
 								<article id="dw-content" class="prose dark:prose-invert w-full max-w-none">
-									<?php echo $buffer ?>
+									<?php echo _tpl_modify_content($buffer) ?>
 								</article>
 
 								<!--- Footer --->

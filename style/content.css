@@ -1,5 +1,5 @@
 .breadcrumb-list {
-	@apply whitespace-nowrap overflow-hidden overflow-ellipsis;
+	@apply whitespace-nowrap overflow-hidden;
 
 	&.fade {
 		mask-image: linear-gradient(to right, black 75%, transparent 90%);

@@ -13,6 +13,7 @@ if(!defined('DOKU_INC'))
 	die();
 
 @require_once dirname(__FILE__) . '/simple_html_dom.php';
+@require_once dirname(__FILE__) . '/clsx.php';
 use simple_html_dom\simple_html_dom;
 
 /**
@@ -126,4 +127,46 @@ function _modify_breadcrumbs($content, $youarehere = false) {
 	}
 
 	return $title . $body;
+}
+
+/**
+ * This function modifies some elements of the main content.
+ */
+function _tpl_modify_content($content) {
+	// FIX :-\ smile
+	$content = str_replace(['alt=":-\"', "alt=':-\'"], 'alt=":-&#92;"', $content);
+
+	// Return original content if Simple HTML DOM fail or exceeded page size (default MAX_FILE_SIZE => 600KB)
+	if(strlen($content) > MAX_FILE_SIZE) {
+		return $content;
+	}
+
+	// Import HTML string
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	// Return original content if Simple HTML DOM fail or exceeded page size (default MAX_FILE_SIZE => 600KB)
+	if(!$html) {
+		return $content;
+	}
+
+	$headers = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
+
+	foreach($headers as $header) {
+		foreach($html->find($header) as $elm) {
+			$elm->addClass('group');
+
+			$class = clsx("
+				ml-3 no-underline opacity-0 transition-opacity group-hover:opacity-100
+				text-gray-400 hover:text-gray-600
+				dark:text-gray-400 dark:hover:text-gray-200
+			");
+
+			$elm->innertext .= '<a class="' . $class . '" href="#' . $elm->id . '">#</a>';
+		}
+	}
+
+	$content = $html->save();
+
+	return $content;
 }
