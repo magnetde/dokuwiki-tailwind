@@ -162,8 +162,8 @@ function _tpl_modify_content($content) {
 
 			$class = clsx("
 				ml-3 no-underline opacity-0 transition-opacity group-hover:opacity-100
-				text-gray-400 hover:text-gray-600
-				dark:text-gray-400 dark:hover:text-gray-200
+				text-gray-300 hover:text-gray-400
+				dark:text-gray-500 dark:hover:text-gray-400
 			");
 
 			$elm->innertext .= '<a class="' . $class . '" href="#' . $elm->id . '">#</a>';

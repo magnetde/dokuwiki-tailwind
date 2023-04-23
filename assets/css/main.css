@@ -2126,6 +2126,11 @@ input:checked + .toggle-bg {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -10614,8 +10619,22 @@ input:checked+.toggle-bg{
 
 /* Main content */
 
+/* Underline text */
+
+#dw-content em.u {
+  font-style: normal;
+  text-decoration-line:underline;
+}
+
+/* Section edit button */
+
 #dw-content .secedit {
   text-align:right;
+  opacity:0;
+}
+
+#dw-content .secedit:hover {
+  opacity: 1;
 }
 
 #dw-content .secedit .btn_secedit {
@@ -10626,7 +10645,22 @@ input:checked+.toggle-bg{
   --tw-translate-x:-100%;
 }
 
+/* add a hovable whitespace at the top of the button */
+
+#dw-content .secedit .btn_secedit::before {
+  content: "";
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+  position:absolute;
+  bottom:0;
+  right:0;
+  height:4rem;
+  width:5rem;
+}
+
 #dw-content .secedit .btn_secedit button {
+  margin-top: -0.75rem;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -10725,7 +10759,15 @@ input:checked+.toggle-bg{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
   }
+}
 
+/* hover on the previous sections displays the button */
+
+#dw-content *:hover + .secedit {
+  opacity:1;
+}
+
+@media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
     --tw-prose-headings: var(--tw-prose-invert-headings);
@@ -10779,6 +10821,11 @@ input:checked+.toggle-bg{
 .hover\:text-blue-700:hover {
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-600:hover {
@@ -10922,6 +10969,11 @@ input:checked+.toggle-bg{
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
+  .dark\:text-gray-500 {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
+
   .dark\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -10952,14 +11004,14 @@ input:checked+.toggle-bg{
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 
-  .dark\:hover\:text-gray-200:hover {
-    --tw-text-opacity: 1;
-    color: rgb(229 231 235 / var(--tw-text-opacity));
-  }
-
   .dark\:hover\:text-gray-300:hover {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
+
+  .dark\:hover\:text-gray-400:hover {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
   .dark\:hover\:text-white:hover {

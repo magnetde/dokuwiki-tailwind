@@ -35,6 +35,12 @@
 
 // Main content
 #dw-content {
+	// Underline text
+	em.u {
+		@apply not-italic underline;
+	}
+
+	// Section edit button
 	.secedit {
 		@apply opacity-0 hover:opacity-100 text-right;
 
@@ -47,12 +53,12 @@
 			// add a hovable whitespace at the top of the button
 			&::before {
 				content: "";
-				@apply absolute h-2 -top-6 w-20 -left-12;
+				@apply absolute h-16 w-20 bottom-0 right-0 -z-[1];
 			}
 
 			button {
 				@apply 
-					flex items-center p-2 text-xs font-medium ml-auto -mt-4
+					flex items-center p-2 text-xs font-medium ml-auto -mt-3
 					text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700
 					focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none
 					dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
@@ -61,6 +67,7 @@
 		}
 	}
 
+	// hover on the previous sections displays the button
 	*:hover + .secedit {
 		@apply opacity-100;
 	}
