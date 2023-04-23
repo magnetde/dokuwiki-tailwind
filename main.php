@@ -271,7 +271,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 								<!--- Main content --->
 								<article id="dw-content" class="prose dark:prose-invert w-full max-w-none prose-headings:scroll-mt-24">
-									<?php echo _tpl_modify_content($buffer) ?>
+									<?php echo $buffer ?>
 								</article>
 
 								<!--- Footer --->

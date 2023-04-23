@@ -80,6 +80,8 @@ function _tpl_search_input() {
  * Function to create breadcrumbs or the "you are here" list.
  *
  * The breadcrumbs cannot be modified by using events.
+ *
+ * Rather create the breadcrumb list without "tpl_breadcrumbs" / "tpl_youarehere" and modifying the DOM.
  */
 function _tpl_breadcrumbs($youarehere = false) {
 	$sep = '<svg aria-hidden="true" class="inline w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
