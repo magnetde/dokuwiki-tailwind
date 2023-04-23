@@ -12,8 +12,7 @@
 if(!defined('DOKU_INC'))
 	die();
 
-@require_once dirname(__FILE__) . '/simple_html_dom.php';
-@require_once dirname(__FILE__) . '/clsx.php';
+@require_once dirname(__FILE__) . '/global.php';
 use simple_html_dom\simple_html_dom;
 
 /**

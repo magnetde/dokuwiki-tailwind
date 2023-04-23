@@ -10,9 +10,8 @@ if(!defined('DOKU_INC')) {
 	die();
 }
 
-/* must be run from within DokuWiki */
-@require_once dirname(__FILE__) . '/inc/tpl_functions.php'; /* include hook for template functions */
-@require_once dirname(__FILE__) . '/inc/clsx.php'; /* Include helper function for joining classes */
+// must be run from within DokuWiki
+@require_once dirname(__FILE__) . '/inc/global.php';
 
 $showTools = !tpl_getConf('hideTools') || (tpl_getConf('hideTools') && !empty($_SERVER['REMOTE_USER']));
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
