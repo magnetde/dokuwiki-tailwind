@@ -259,8 +259,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 											")
 											.'">'
 											.$item->getLabel()
-											.'<div class="tooltip-arrow" data-popper-arrow="">'
-											.'</div></div>';
+											.'<div class="tooltip-arrow" data-popper-arrow=""></div>'
+											.'</div>';
 
 										$index++;
 									}

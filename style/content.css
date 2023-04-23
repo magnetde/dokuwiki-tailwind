@@ -36,7 +36,7 @@
 // Main content
 #dw-content {
 	.secedit {
-		@apply text-right;
+		@apply opacity-0 hover:opacity-100 text-right;
 
 		.btn_secedit {
 			@apply
@@ -44,14 +44,24 @@
 				-translate-x-full // move by its own width to the left
 			;
 
+			// add a hovable whitespace at the top of the button
+			&::before {
+				content: "";
+				@apply absolute h-2 -top-6 w-20 -left-12;
+			}
+
 			button {
 				@apply 
-					flex items-center p-2 text-xs font-medium ml-auto
+					flex items-center p-2 text-xs font-medium ml-auto -mt-4
 					text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700
 					focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none
 					dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
 				;
 			}
 		}
+	}
+
+	*:hover + .secedit {
+		@apply opacity-100;
 	}
 }
