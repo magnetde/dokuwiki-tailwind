@@ -50,8 +50,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<header class="<?php echo clsx("
 			sticky top-0 z-50 flex-none w-full mx-auto
 			backdrop-blur transition-colors duration-500
-			bg-white/95, border-b border-slate-900/10 dark:bg-transparent
-			dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/60
+			bg-white/95, border-b border-gray-900/10 dark:bg-transparent
+			dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
 		") ?>">
 			<div class="<?php echo clsx("
 				flex items-center justify-between w-full
@@ -157,7 +157,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							</button>
 
 							<!-- Dropdown menu of the avatar -->
-							<div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+							<div class="z-60 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
 								<?php
 								if(!empty($_SERVER['REMOTE_USER'])) {
 									echo '<div class="px-4 py-3">'
@@ -187,8 +187,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 			</div>
 		</header>
 
+		<?php
+		// Render the content initially
+		ob_start();
+		tpl_content(false);
+		$buffer = ob_get_clean();
+		?>
+
 		<!--- Main container --->
-		<div class="w-full px-4 mx-auto max-w-10xl">
+		<div class="w-full z-10 px-4 mx-auto max-w-10xl">
 			<div class="lg:flex">
 				<!--- Left sidebar --->
 				<aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
@@ -203,24 +210,21 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						<div class="flex-auto max-w-6xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
 
 							<!--- Breadcrumbs and page tool buttons --->
-							<div class="flex flex-wrap items-center justify-between">
+							<div class="flex flex-nowrap items-center justify-between">
 								<!--- Navigation and breadcrumbs --->
-								<div class="flex items-center">
-									<?php
-									if($conf['breadcrumbs'] || $conf['youarehere']) {
-										// only display one of both, else it gets ugly and I want a clean UI
+								<?php
+								if($conf['breadcrumbs'] || $conf['youarehere']) {
+									// only display one of both, else it gets ugly and I want a clean UI
 
-										$youarehere = !empty($conf['youarehere']);
+									$youarehere = !empty($conf['youarehere']);
 
-										echo '<nav class="" aria-label="breadcrumb" role="navigation">'
-											.'<div class="breadcrumb-list';
-										if(!$youarehere) echo ' fade'; // only fade, when showing last opened pages
-										echo '">';
-										echo _tpl_breadcrumbs($youarehere);
-										echo '</div></nav>';
-									}
-									?>
-								</div>
+									echo '<nav aria-label="breadcrumb" role="navigation" class="breadcrumb-list';
+									if(!$youarehere) echo ' fade'; // only fade, when showing last opened pages
+									echo '">';
+									echo _tpl_breadcrumbs($youarehere);
+									echo '</nav>';
+								}
+								?>
 
 								<!--- Buttons --->
 								<div class="flex items-center justify-end space-x-2">
@@ -255,8 +259,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 											")
 											.'">'
 											.$item->getLabel()
-											.'<div class="tooltip-arrow" data-popper-arrow="">'
-											.'</div></div>';
+											.'<div class="tooltip-arrow" data-popper-arrow=""></div>'
+											.'</div>';
 
 										$index++;
 									}
@@ -264,8 +268,19 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 
-							<!--- TODO --->
-							mid
+							<div class="h-full flex flex-col flex-wrap justify-between mt-16">
+
+								<!--- Main content --->
+								<article id="dw-content" class="prose dark:prose-invert w-full max-w-none prose-headings:scroll-mt-24">
+									<?php echo _tpl_modify_content($buffer) ?>
+								</article>
+
+								<!--- Footer --->
+								<div class="">
+									Footer
+								</div>
+
+							</div>
 						</div>
 
 						<!--- Right sidebar --->
