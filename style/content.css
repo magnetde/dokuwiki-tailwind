@@ -40,6 +40,27 @@
 		@apply not-italic underline;
 	}
 
+	// dead links
+	.wikilink2 {
+		@apply decoration-red-500;
+	}
+
+	a.urlextern, a.windows, a.mail, a.mediafile, a.interwiki {
+		@apply bg-no-repeat bg-left py-0 pr-0 pl-6;
+	}
+
+	a.urlextern {
+		@apply bg-[url('/lib/tpl/tailwind/icon.php?icon=earth-arrow-right&color=%23374151')];
+	}
+
+	a.interwiki {
+		@apply bg-[size:1.2rem] bg-transparent bg-no-repeat bg-left bg-[url(/lib/images/interwiki.svg)];
+	}
+
+	a.iw_doku {
+		@apply bg-[url('/lib/images/interwiki/doku.svg')];
+	}
+
 	// Section edit button
 	.secedit {
 		@apply opacity-0 hover:opacity-100 text-right;

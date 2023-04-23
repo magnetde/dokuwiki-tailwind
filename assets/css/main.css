@@ -10626,6 +10626,40 @@ input:checked+.toggle-bg{
   text-decoration-line:underline;
 }
 
+/* dead links */
+
+#dw-content .wikilink2 {
+  text-decoration-color: #F05252;
+  text-decoration-color:#f05252;
+}
+
+#dw-content a.urlextern, #dw-content a.windows, #dw-content a.mail, #dw-content a.mediafile, #dw-content a.interwiki {
+  background-position: left;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 1.5rem;
+  background-repeat:no-repeat;
+  padding-bottom:0;
+  padding-top:0;
+}
+
+#dw-content a.urlextern {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=earth-arrow-right&color=%23374151');
+}
+
+#dw-content a.interwiki {
+  background-image: url(/lib/images/interwiki.svg);
+  background-size: 1.2rem;
+  background-position: left;
+  background-color:transparent;
+  background-repeat:no-repeat;
+}
+
+#dw-content a.iw_doku {
+  background-image: url('/lib/images/interwiki/doku.svg');
+}
+
 /* Section edit button */
 
 #dw-content .secedit {
