@@ -1,4 +1,5 @@
 @import "mediafile.css";
+@import "codestyle.css";
 
 .breadcrumb-list {
 	@apply w-full whitespace-nowrap overflow-hidden;
