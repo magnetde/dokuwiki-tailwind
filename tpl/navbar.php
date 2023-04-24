@@ -1,14 +1,14 @@
 
 
 <header class="<?php echo clsx("
-	sticky top-0 z-50 flex-none w-full mx-auto
+	sticky h-16 top-0 z-50 flex-none w-full mx-auto
 	backdrop-blur transition-colors duration-500
 	bg-white/95, border-b border-gray-900/10 dark:bg-transparent
 	dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
 ") ?>">
 	<div class="<?php echo clsx("
-		flex items-center justify-between w-full
-		px-4 py-4 mx-auto max-w-10xl lg:px-4
+		flex items-center justify-between w-full h-full
+		px-4 mx-auto max-w-10xl lg:px-4
 	") ?>">
 		<!--- Logo and title --->
 		<?php

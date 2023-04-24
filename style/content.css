@@ -249,3 +249,8 @@
 		@apply opacity-100;
 	}
 }
+
+// Footer
+footer .license a {
+	@apply underline;
+}

@@ -61,29 +61,31 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		?>
 
 		<!--- Main container --->
-		<div class="w-full z-10 px-4 mx-auto max-w-10xl">
-			<div class="lg:flex">
-				<!--- Left sidebar --->
-				<aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
+		<div class="w-full z-10 px-4 mx-auto max-w-10xl lg:flex">
+
+			<!--- Left sidebar --->
+			<aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
+				<!--- TODO --->
+				left (mt-4 needed for first item)
+			</aside>
+
+			<!--- Middle content and left sidebar --->
+			<main class="flex w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+
+				<!--- Main content --->
+				<?php require_once('tpl/content.php'); ?>
+
+				<!--- Right sidebar --->
+				<div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
 					<!--- TODO --->
-					left (mt-4 needed for first item)
-				</aside>
+					right
+				</div>
 
-				<!--- Middle content and left sidebar --->
-				<main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
-					<div class="flex w-full">
+			</main>
+		</div>
 
-						<!--- Main content --->
-						<?php require_once('tpl/content.php'); ?>
-
-						<!--- Right sidebar --->
-						<div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
-							<!--- TODO --->
-							right
-						</div>
-					</div>
-				</main>
-			</div>
+		<div class="no">
+			<?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
 		</div>
 	</body>
 </html>
