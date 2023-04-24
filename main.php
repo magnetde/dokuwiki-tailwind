@@ -25,7 +25,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<link rel="apple-touch-icon" sizes="64x64" href="<?php echo tpl_basedir(); ?>images/apple-touch-icon.png">
 		<link rel="icon" type="image/x-icon" href="<?php echo tpl_basedir(); ?>images/favicon.ico">
 		<title>
-			<?php tpl_pagetitle()?> - <?php echo strip_tags($conf['title']) ?>
+			<?php tpl_pagetitle() ?> - <?php echo strip_tags($conf['title']) ?>
 		</title>
 		<?php
 		tpl_metaheaders();
@@ -35,13 +35,19 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		))
 		?>
 
-		<?php tpl_includeFile('meta.html')?>
+		<?php tpl_includeFile('meta.html') ?>
 
-		<!-- CSS Files -->
+		<!-- CSS file -->
+		<!-- It is not possible to provide with "style.ini", because the CSS syntax is not compatible with the CSS parser used by DokuWiki. -->
+		<!-- See: https://github.com/tailwindlabs/tailwindcss/issues/7121 -->
 		<link href="<?php echo tpl_basedir(); ?>assets/css/main.css" rel="stylesheet" />
+
 		<!-- JS -->
+		<!-- Do not provide it with "script.js". -->
 		<script src="<?php echo tpl_basedir(); ?>assets/js/flowbite.min.js" type="text/javascript"></script>
 	</head>
+
+	<?php tpl_flush() ?>
 
 	<body class="dark:bg-gray-900 antialiased">
 

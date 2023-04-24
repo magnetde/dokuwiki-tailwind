@@ -130,7 +130,7 @@ class EventHandlers {
 
 	// Add anchors to headings
 	private function modifyHeaders($html) {
-		$headers = array('h1', 'h2', 'h3', 'h4', 'h5');
+		$headers = array('h1', 'h2', 'h3', 'h4'); // no anchor for h5
 
 		foreach($headers as $header) {
 			foreach($html->find($header) as $elm) {

@@ -1,3 +1,5 @@
+@import "mediafile.css";
+
 .breadcrumb-list {
 	@apply w-full whitespace-nowrap overflow-hidden;
 
@@ -38,6 +40,11 @@
 
 // Main content
 #dw-content {
+	// increase the font weight of h5 headers
+	h5 {
+		@apply font-semibold;
+	}
+
 	// Underline text
 	em.u {
 		@apply not-italic underline;
@@ -53,6 +60,7 @@
 		@apply decoration-red-500;
 	}
 
+	// Special links with icons
 	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
 		@apply bg-no-repeat bg-left bg-[size:1.2rem] py-0 pr-0 pl-[1.35rem] ml-0.5;
 	}
@@ -77,9 +85,7 @@
 			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%239ca3af')]
 		;
 	}
-	a.mediafile {
-		// TODO
-	}
+	// for "a.mediafile" see the import statement at the top of this file
 
 	a.interwiki {
 		&.iw_amazon, &.iw_amazon_de, &.iw_amazon_uk {
@@ -174,6 +180,25 @@
 				@apply m-0 rounded-t-none rounded-b-lg;
 			}
 		}
+	}
+
+	// Images
+	img.media, img.mediaright, img.medialeft, img.mediacenter {
+		@apply inline m-0 h-[revert-layer];
+	}
+	img.mediaright {
+		@apply float-right;
+	}
+	img.medialeft {
+		@apply float-left;
+	}
+	img.mediacenter {
+		@apply block mx-auto;
+	}
+
+	// Footnotes
+	a.fn_top {
+		@apply no-underline;
 	}
 
 	// Section edit button

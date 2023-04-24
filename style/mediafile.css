@@ -1,0 +1,421 @@
+#dw-content a.mediafile {
+	&.mf_7z {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=7z&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=7z&color=%239ca3af')]
+		;
+	}
+
+	&.mf_asm {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=asm&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=asm&color=%239ca3af')]
+		;
+	}
+
+	&.mf_bash {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=bash&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=bash&color=%239ca3af')]
+		;
+	}
+
+	&.mf_bz2 {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=bz2&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=bz2&color=%239ca3af')]
+		;
+	}
+
+	&.mf_c {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=c&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=c&color=%239ca3af')]
+		;
+	}
+
+	&.mf_conf {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=conf&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=conf&color=%239ca3af')]
+		;
+	}
+
+	&.mf_cpp {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=cpp&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=cpp&color=%239ca3af')]
+		;
+	}
+
+	&.mf_cs {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=cs&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=cs&color=%239ca3af')]
+		;
+	}
+
+	&.mf_csh {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=csh&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=csh&color=%239ca3af')]
+		;
+	}
+
+	&.mf_css {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=css&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=css&color=%239ca3af')]
+		;
+	}
+
+	&.mf_csv {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=csv&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=csv&color=%239ca3af')]
+		;
+	}
+
+	&.mf_deb {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=deb&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=deb&color=%239ca3af')]
+		;
+	}
+
+	&.mf_doc {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=doc&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=doc&color=%239ca3af')]
+		;
+	}
+
+	&.mf_docx {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=docx&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=docx&color=%239ca3af')]
+		;
+	}
+
+	&.mf_file {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=file&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=file&color=%239ca3af')]
+		;
+	}
+
+	&.mf_gif {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=gif&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=gif&color=%239ca3af')]
+		;
+	}
+
+	&.mf_gz {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=gz&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=gz&color=%239ca3af')]
+		;
+	}
+
+	&.mf_h {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=h&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=h&color=%239ca3af')]
+		;
+	}
+
+	&.mf_htm {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=htm&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=htm&color=%239ca3af')]
+		;
+	}
+
+	&.mf_html {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=html&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=html&color=%239ca3af')]
+		;
+	}
+
+	&.mf_ico {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=ico&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=ico&color=%239ca3af')]
+		;
+	}
+
+	&.mf_index.php {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=index.php&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=index.php&color=%239ca3af')]
+		;
+	}
+
+	&.mf_java {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=java&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=java&color=%239ca3af')]
+		;
+	}
+
+	&.mf_jpeg {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=jpeg&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=jpeg&color=%239ca3af')]
+		;
+	}
+
+	&.mf_jpg {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=jpg&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=jpg&color=%239ca3af')]
+		;
+	}
+
+	&.mf_js {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=js&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=js&color=%239ca3af')]
+		;
+	}
+
+	&.mf_json {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=json&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=json&color=%239ca3af')]
+		;
+	}
+
+	&.mf_lua {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=lua&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=lua&color=%239ca3af')]
+		;
+	}
+
+	&.mf_mp3 {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=mp3&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=mp3&color=%239ca3af')]
+		;
+	}
+
+	&.mf_mp4 {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=mp4&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=mp4&color=%239ca3af')]
+		;
+	}
+
+	&.mf_ods {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=ods&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=ods&color=%239ca3af')]
+		;
+	}
+
+	&.mf_odt {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=odt&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=odt&color=%239ca3af')]
+		;
+	}
+
+	&.mf_ogg {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=ogg&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=ogg&color=%239ca3af')]
+		;
+	}
+
+	&.mf_ogv {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=ogv&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=ogv&color=%239ca3af')]
+		;
+	}
+
+	&.mf_pdf {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=pdf&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=pdf&color=%239ca3af')]
+		;
+	}
+
+	&.mf_php {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=php&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=php&color=%239ca3af')]
+		;
+	}
+
+	&.mf_pl {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=pl&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=pl&color=%239ca3af')]
+		;
+	}
+
+	&.mf_png {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=png&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=png&color=%239ca3af')]
+		;
+	}
+
+	&.mf_ppt {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=ppt&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=ppt&color=%239ca3af')]
+		;
+	}
+
+	&.mf_pptx {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=pptx&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=pptx&color=%239ca3af')]
+		;
+	}
+
+	&.mf_ps {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=ps&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=ps&color=%239ca3af')]
+		;
+	}
+
+	&.mf_py {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=py&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=py&color=%239ca3af')]
+		;
+	}
+
+	&.mf_rar {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=rar&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rar&color=%239ca3af')]
+		;
+	}
+
+	&.mf_rb {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=rb&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rb&color=%239ca3af')]
+		;
+	}
+
+	&.mf_README {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=README&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=README&color=%239ca3af')]
+		;
+	}
+
+	&.mf_rpm {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=rpm&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rpm&color=%239ca3af')]
+		;
+	}
+
+	&.mf_rtf {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=rtf&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rtf&color=%239ca3af')]
+		;
+	}
+
+	&.mf_sh {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=sh&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=sh&color=%239ca3af')]
+		;
+	}
+
+	&.mf_sql {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=sql&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=sql&color=%239ca3af')]
+		;
+	}
+
+	&.mf_svg {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=svg&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=svg&color=%239ca3af')]
+		;
+	}
+
+	&.mf_swf {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=swf&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=swf&color=%239ca3af')]
+		;
+	}
+
+	&.mf_tar {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=tar&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=tar&color=%239ca3af')]
+		;
+	}
+
+	&.mf_tgz {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=tgz&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=tgz&color=%239ca3af')]
+		;
+	}
+
+	&.mf_txt {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=txt&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=txt&color=%239ca3af')]
+		;
+	}
+
+	&.mf_wav {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=wav&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=wav&color=%239ca3af')]
+		;
+	}
+
+	&.mf_webm {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=webm&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=webm&color=%239ca3af')]
+		;
+	}
+
+	&.mf_xls {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=xls&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=xls&color=%239ca3af')]
+		;
+	}
+
+	&.mf_xlsx {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=xlsx&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=xlsx&color=%239ca3af')]
+		;
+	}
+
+	&.mf_xml {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=xml&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=xml&color=%239ca3af')]
+		;
+	}
+
+	&.mf_zip {
+		@apply
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=zip&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=zip&color=%239ca3af')]
+		;
+	}
+}
