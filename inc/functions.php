@@ -58,6 +58,8 @@ function _tpl_searchform() {
 	}
 
 	$content = $html->save();
+	$html->clear();
+	unset($html);
 
 	return $content;
 }
@@ -126,6 +128,9 @@ function _tpl_breadcrumbs($youarehere = false) {
 	} else {
 		$body = $html->save();
 	}
+
+	$html->clear();
+	unset($html);
 
 	return $title . $body;
 }

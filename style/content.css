@@ -19,7 +19,10 @@
 	}
 
 	a {
-		@apply inline text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white;
+		@apply
+			inline text-sm font-medium
+			text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white
+		;
 	}
 }
 
@@ -51,7 +54,7 @@
 	}
 
 	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply bg-no-repeat bg-left bg-[size:1.25rem] py-0 pr-0 pl-[1.35rem] ml-0.5;
+		@apply bg-no-repeat bg-left bg-[size:1.2rem] py-0 pr-0 pl-[1.35rem] ml-0.5;
 	}
 
 	// Link icons have the forground #6b7280 (same as gray-500) or #9ca3af (same as gray-400) at dark mode.
@@ -70,15 +73,12 @@
 	}
 	a.windows {
 		@apply
-			bg-[url('/lib/tpl/tailwind/icon.php?icon=microsoft-windows&color=%236b7280')]
-			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=microsoft-windows&color=%239ca3af')]
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%236b7280')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%239ca3af')]
 		;
 	}
 	a.mediafile {
-		@apply
-			bg-[url('/lib/tpl/tailwind/icon.php?icon=mediafile&color=%236b7280')]
-			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=mediafile&color=%239ca3af')]
-		;
+		// TODO
 	}
 
 	a.interwiki {
@@ -95,7 +95,7 @@
 			;
 		}
 		&.iw_doku {
-			@apply bg-[size:1.1rem] bg-[url('/lib/images/interwiki/doku.svg')];
+			@apply bg-contain bg-[url('/lib/images/interwiki/doku.svg')];
 		}
 		&.iw_go, &.iw_google {
 			@apply
@@ -146,10 +146,33 @@
 			;
 		}
 		&.iw_wp, &.iw_wpde, &.iw_wpes, &.iw_wpfr, &.iw_wpjp, &.iw_wpmeta, &.iw_wppl {
-			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%239ca3af')]
+			@apply // icons are gray-900 / gray-100 because the Wikipedia logo is too thin
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23111827')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23f3f4f6')]
 			;
+		}
+	}
+
+	// Fix the margin in downloadable code blocks
+	dl.code, dl.file {
+		@apply mt-6;
+
+		dt {
+			@apply
+				flex flex-nowrap items-center justify-between space-x-4 w-full pl-4 pr-3 py-3 border
+				border-gray-200 bg-gray-50 rounded-t-lg dark:border-gray-600 dark:bg-gray-700
+			;
+		}
+
+		dd {
+			@apply
+				p-0 bg-white bg-gradient-to-r border-x border-b rounded-b-lg
+				border-gray-200  dark:bg-gray-900 dark:border-gray-600
+			;
+
+			pre.code {
+				@apply m-0 rounded-t-none rounded-b-lg;
+			}
 		}
 	}
 
