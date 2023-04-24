@@ -29,7 +29,7 @@ if(empty($icon) || !array_key_exists($icon, $ICONS)) {
 
 $width  = '1em';
 $height = '1em';
-$fill   = '';
+$fill   = 'currentColor';
 
 if($_GET['width']) {
 	$param = hsc($_GET['width']);
@@ -44,18 +44,12 @@ if($_GET['height']) {
 }
 
 if($_GET['color']) {
-	$param = hsc($_GET['color']);
-	$fill = $param;
+	$fill = hsc($_GET['color']);
 }
 
-$body = $ICONS[$icon];
-
-if($fill) {
-	$body = str_replace('currentColor', $fill, $body);
-}
-
+$path    = sprintf('<path fill="%s" d="%s"/>', $fill, $ICONS[$icon]);
 $svg     = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="%s" height="%s" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">%s</svg>';
-$content = sprintf($svg, $width, $height, $body);
+$content = sprintf($svg, $width, $height, $path);
 
 $content_type = 'image/svg+xml; charset=utf-8';
 header("Content-Type: $content_type");
