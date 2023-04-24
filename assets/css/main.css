@@ -1882,6 +1882,10 @@ input:checked + .toggle-bg {
   text-overflow: ellipsis;
 }
 
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -2930,7 +2934,7 @@ input:checked+.toggle-bg{
   --tw-backdrop-invert: ;
   --tw-backdrop-opacity: ;
   --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia:
+  --tw-backdrop-sepia: 
 }
 
 ::backdrop{
@@ -2977,7 +2981,7 @@ input:checked+.toggle-bg{
   --tw-backdrop-invert: ;
   --tw-backdrop-opacity: ;
   --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia:
+  --tw-backdrop-sepia: 
 }
 
 .container{
@@ -5619,87 +5623,87 @@ input:checked+.toggle-bg{
 
 .to-blue-500{
   --tw-gradient-to:#3f83f8 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-blue-600{
   --tw-gradient-to:#1c64f2 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-blue-700{
   --tw-gradient-to:#1a56db var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-cyan-600{
   --tw-gradient-to:#0891b2 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-emerald-600{
   --tw-gradient-to:#059669 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-green-600{
   --tw-gradient-to:#057a55 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-lime-200{
   --tw-gradient-to:#d9f99d var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-lime-300{
   --tw-gradient-to:#bef264 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-lime-500{
   --tw-gradient-to:#84cc16 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-orange-400{
   --tw-gradient-to:#ff8a4c var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-pink-500{
   --tw-gradient-to:#e74694 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-pink-600{
   --tw-gradient-to:#d61f69 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-purple-700{
   --tw-gradient-to:#6c2bd9 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-red-600{
   --tw-gradient-to:#e02424 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-teal-600{
   --tw-gradient-to:#047481 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-transparent{
   --tw-gradient-to:transparent var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .to-yellow-200{
   --tw-gradient-to:#fce96a var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .bg-cover{
@@ -7302,7 +7306,7 @@ input:checked+.toggle-bg{
 
 .hover\:to-lime-200:hover{
   --tw-gradient-to:#d9f99d var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .hover\:text-blue-600:hover{
@@ -7789,32 +7793,32 @@ input:checked+.toggle-bg{
 
 .group:hover .group-hover\:to-blue-500{
   --tw-gradient-to:#3f83f8 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .group:hover .group-hover\:to-blue-600{
   --tw-gradient-to:#1c64f2 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .group:hover .group-hover\:to-lime-300{
   --tw-gradient-to:#bef264 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .group:hover .group-hover\:to-orange-400{
   --tw-gradient-to:#ff8a4c var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .group:hover .group-hover\:to-pink-500{
   --tw-gradient-to:#e74694 var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .group:hover .group-hover\:to-yellow-200{
   --tw-gradient-to:#fce96a var(--tw-gradient-to-position);
-  --tw-gradient-to-position:
+  --tw-gradient-to-position: 
 }
 
 .group:hover .group-hover\:text-blue-600{
@@ -10388,19 +10392,19 @@ input:checked+.toggle-bg{
   }
 }
 
-/* DokuWiki search form */
+/* DokuWiki search form*/
 
 #dw__search {
   position:relative;
 }
 
-/* Hide the button (usually gets removed by the backend) */
+/* Hide the button (usually gets removed by the backend)*/
 
 #dw__search button {
   display: none;
 }
 
-/* Input field of the search */
+/* Input field of the search*/
 
 #qsearch__in {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -10508,7 +10512,721 @@ input:checked+.toggle-bg{
   }
 }
 
+#dw-content a.mediafile {
+  /* TODO: default icon*/
+}
+
+#dw-content a.mediafile.mf_7z {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=7z&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_7z {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=7z&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_asm {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=asm&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_asm {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=asm&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_bash {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=bash&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_bash {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=bash&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_bz2 {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=bz2&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_bz2 {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=bz2&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_c {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=c&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_c {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=c&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_conf {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=conf&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_conf {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=conf&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_cpp {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=cpp&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_cpp {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=cpp&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_cs {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=cs&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_cs {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=cs&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_csh {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=csh&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_csh {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=csh&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_css {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=css&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_css {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=css&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_csv {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=csv&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_csv {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=csv&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_deb {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=deb&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_deb {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=deb&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_doc {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=doc&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_doc {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=doc&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_docx {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=docx&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_docx {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=docx&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_file {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=file&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_file {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=file&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_gif {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=gif&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_gif {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=gif&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_gz {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=gz&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_gz {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=gz&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_h {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=h&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_h {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=h&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_htm {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=htm&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_htm {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=htm&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_html {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=html&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_html {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=html&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_ico {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=ico&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_ico {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=ico&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_index.php {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=index.php&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_index.php {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=index.php&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_java {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=java&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_java {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=java&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_jpeg {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=jpeg&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_jpeg {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=jpeg&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_jpg {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=jpg&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_jpg {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=jpg&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_js {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=js&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_js {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=js&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_json {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=json&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_json {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=json&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_lua {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=lua&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_lua {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=lua&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_mp3 {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=mp3&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_mp3 {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=mp3&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_mp4 {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=mp4&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_mp4 {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=mp4&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_ods {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=ods&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_ods {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=ods&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_odt {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=odt&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_odt {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=odt&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_ogg {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=ogg&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_ogg {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=ogg&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_ogv {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=ogv&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_ogv {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=ogv&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_pdf {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=pdf&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_pdf {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=pdf&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_php {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=php&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_php {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=php&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_pl {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=pl&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_pl {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=pl&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_png {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=png&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_png {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=png&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_ppt {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=ppt&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_ppt {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=ppt&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_pptx {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=pptx&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_pptx {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=pptx&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_ps {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=ps&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_ps {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=ps&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_py {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=py&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_py {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=py&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_rar {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=rar&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_rar {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=rar&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_rb {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=rb&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_rb {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=rb&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_README {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=README&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_README {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=README&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_rpm {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=rpm&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_rpm {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=rpm&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_rtf {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=rtf&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_rtf {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=rtf&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_sh {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=sh&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_sh {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=sh&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_sql {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=sql&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_sql {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=sql&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_svg {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=svg&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_svg {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=svg&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_swf {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=swf&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_swf {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=swf&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_tar {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=tar&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_tar {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=tar&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_tgz {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=tgz&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_tgz {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=tgz&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_txt {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=txt&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_txt {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=txt&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_wav {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=wav&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_wav {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=wav&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_webm {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=webm&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_webm {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=webm&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_xls {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=xls&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_xls {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=xls&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_xlsx {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=xlsx&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_xlsx {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=xlsx&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_xml {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=xml&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_xml {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=xml&color=%239ca3af');
+  }
+}
+
+#dw-content a.mediafile.mf_zip {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=zip&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mediafile.mf_zip {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=zip&color=%239ca3af');
+  }
+}
+
+/* Links*/
+
+pre.code a {
+  text-decoration-line:none;
+}
+
+/* Keywords*/
+
+pre.code .kw1, pre.code .kw2, pre.code .kw4, pre.code .kw5, pre.code .kw6, pre.code .kw7, pre.code .kw8, pre.code .kw9, pre.code .kw10, pre.code .kw11, pre.code .kw12, pre.code .kw13, pre.code .kw14, pre.code .kw15, pre.code .kw16 {
+  color: rgb(241 126 184 / var(--tw-text-opacity));
+  font-weight:600;
+  --tw-text-opacity:1;
+  color:rgb(241 126 184/var(--tw-text-opacity));
+}
+
+pre.code .kw3 {
+  /* attributes in html*/
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
+/* Comments*/
+
+pre.code .co0, pre.code .co1, pre.code .co2, pre.code .co3, pre.code .co4, pre.code .coMULTI {
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+  font-style:italic;
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity));
+}
+
+/* Bracket*/
+
+pre.code .br0 {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+/* Escape chars*/
+
+pre.code .es0, pre.code .es1, pre.code .es2, pre.code .es3, pre.code .es4, pre.code .es5, pre.code .es6, pre.code .esHARD {
+  --tw-text-opacity: 1;
+  color: rgb(251 113 133 / var(--tw-text-opacity));
+}
+
+/* Strings*/
+
+pre.code .st0, pre.code .st_h {
+  --tw-text-opacity: 1;
+  color: rgb(251 113 133 / var(--tw-text-opacity));
+}
+
+/* Numbers*/
+
+pre.code .nu0 {
+  color: rgb(118 169 250 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(118 169 250/var(--tw-text-opacity));
+}
+
+/* Methods*/
+
+pre.code .me0, pre.code .me1, pre.code .me2 {
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
+}
+
+/* Symbols*/
+
+pre.code .sy0, pre.code .sy1, pre.code .sy2, pre.code .sy3, pre.code .sy4 {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+/* Specials elements*/
+
+pre.code .re0, pre.code .re1, pre.code .re2, pre.code .re3, pre.code .re4, pre.code .re5, pre.code .re6 {
+  /* unset*/
+}
+
+/* Diff*/
+
+pre.code .re7 {
+  color: rgb(249 128 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(249 128 128/var(--tw-text-opacity));
+}
+
+pre.code .re8 {
+  color: rgb(49 196 141 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(49 196 141/var(--tw-text-opacity));
+}
+
+/* Scripts*/
+
+pre.code .sc-1 {
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(209 213 219/var(--tw-text-opacity));
+}
+
+pre.code .sc-2 {
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity));
+}
+
 .breadcrumb-list {
+  width:100%;
   overflow:hidden;
   white-space:nowrap;
 }
@@ -10541,7 +11259,7 @@ input:checked+.toggle-bg{
   }
 }
 
-/* hide first separator; usually gets removed by the backend */
+/* hide first separator; usually gets removed by the backend*/
 
 .breadcrumb-list .bchead + .bcsep {
   display: none;
@@ -10617,50 +11335,359 @@ input:checked+.toggle-bg{
   }
 }
 
-/* Main content */
+/* Main content*/
 
-/* Underline text */
+/* increase the font weight of h5 headers*/
+
+#dw-content h5 {
+  font-weight:600;
+}
+
+/* Underline text*/
 
 #dw-content em.u {
   font-style: normal;
   text-decoration-line:underline;
 }
 
-/* dead links */
+/* current link*/
+
+#dw-content .curid, #dw-content .curid a {
+  font-weight:600;
+}
+
+/* dead links*/
 
 #dw-content .wikilink2 {
   text-decoration-color: #F05252;
   text-decoration-color:#f05252;
 }
 
-#dw-content a.urlextern, #dw-content a.windows, #dw-content a.mail, #dw-content a.mediafile, #dw-content a.interwiki {
+/* Special links with icons*/
+
+#dw-content a.urlextern, #dw-content a.mail, #dw-content a.windows, #dw-content a.mediafile, #dw-content a.interwiki {
+  margin-left: 0.125rem;
+  background-size: 1.2rem;
   background-position: left;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-right: 0px;
-  padding-left: 1.5rem;
+  padding-left: 1.35rem;
   background-repeat:no-repeat;
   padding-bottom:0;
   padding-top:0;
 }
 
+/* Link icons have the forground #6b7280 (same as gray-500) or #9ca3af (same as gray-400) at dark mode.*/
+
 #dw-content a.urlextern {
-  background-image: url('/lib/tpl/tailwind/icon.php?icon=earth-arrow-right&color=%23374151');
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=link-external&color=%236b7280');
 }
 
-#dw-content a.interwiki {
-  background-image: url(/lib/images/interwiki.svg);
-  background-size: 1.2rem;
-  background-position: left;
-  background-color:transparent;
-  background-repeat:no-repeat;
+@media (prefers-color-scheme: dark) {
+  #dw-content a.urlextern {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=link-external&color=%239ca3af');
+  }
 }
 
-#dw-content a.iw_doku {
+#dw-content a.mail {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=email&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.mail {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=email&color=%239ca3af');
+  }
+}
+
+#dw-content a.windows {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.windows {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%239ca3af');
+  }
+}
+
+/* for "a.mediafile" see the import statement at the top of this file*/
+
+#dw-content a.interwiki.iw_amazon, #dw-content a.interwiki.iw_amazon_de, #dw-content a.interwiki.iw_amazon_uk {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=amazon&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_amazon, #dw-content a.interwiki.iw_amazon_de, #dw-content a.interwiki.iw_amazon_uk {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=amazon&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_callto, #dw-content a.interwiki.iw_tel {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=callto&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_callto, #dw-content a.interwiki.iw_tel {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=callto&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_doku {
   background-image: url('/lib/images/interwiki/doku.svg');
+  background-size: contain;
 }
 
-/* Section edit button */
+#dw-content a.interwiki.iw_go, #dw-content a.interwiki.iw_google {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=google&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_go, #dw-content a.interwiki.iw_google {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=google&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_paypal {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=paypal&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_paypal {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=paypal&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_phpfn {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=php&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_phpfn {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=php&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_rfc {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=rfc&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_rfc {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=rfc&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_skype {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=skype&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_skype {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=skype&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_this {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=rss&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_this {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=rss&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_user {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=user&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_user {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=user&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_man {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=cmd&color=%236b7280');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_man {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=cmd&color=%239ca3af');
+  }
+}
+
+#dw-content a.interwiki.iw_wp, #dw-content a.interwiki.iw_wpde, #dw-content a.interwiki.iw_wpes, #dw-content a.interwiki.iw_wpfr, #dw-content a.interwiki.iw_wpjp, #dw-content a.interwiki.iw_wpmeta, #dw-content a.interwiki.iw_wppl {
+  background-image: url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23111827');
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content a.interwiki.iw_wp, #dw-content a.interwiki.iw_wpde, #dw-content a.interwiki.iw_wpes, #dw-content a.interwiki.iw_wpfr, #dw-content a.interwiki.iw_wpjp, #dw-content a.interwiki.iw_wpmeta, #dw-content a.interwiki.iw_wppl {
+    background-image: url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23f3f4f6');
+  }
+}
+
+/* Fix the margin in downloadable code blocks*/
+
+#dw-content dl.code, #dw-content dl.file {
+  margin-top:1.5rem;
+}
+
+#dw-content dl.code dt, #dw-content dl.file dt {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#dw-content dl.code dt > :not([hidden]) ~ :not([hidden]), #dw-content dl.file dt > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+#dw-content dl.code dt, #dw-content dl.file dt {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 0.75rem;
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:space-between;
+}
+
+#dw-content dl.code dt>:not([hidden])~:not([hidden]), #dw-content dl.file dt>:not([hidden])~:not([hidden]){
+  --tw-space-x-reverse:0;
+  margin-left:calc(1rem*(1 - var(--tw-space-x-reverse)));
+  margin-right:calc(1rem*var(--tw-space-x-reverse))
+}
+
+#dw-content dl.code dt, #dw-content dl.file dt{
+  border-top-left-radius:.5rem;
+  border-top-right-radius:.5rem;
+  border-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(249 250 251/var(--tw-bg-opacity));
+  padding-bottom:.75rem;
+  padding-top:.75rem;
+  padding-left:1rem;
+  padding-right:.75rem
+}
+
+:is(.dark #dw-content dl.code dt),:is(.dark  #dw-content dl.file dt){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content dl.code dt, #dw-content dl.file dt {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+}
+
+#dw-content dl.code dd, #dw-content dl.file dd {
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  padding: 0px;
+  border-bottom-left-radius:.5rem;
+  border-bottom-right-radius:.5rem;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-bottom-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  background-image:linear-gradient(to right,var(--tw-gradient-stops));
+  padding:0;
+}
+
+:is(.dark #dw-content dl.code dd),:is(.dark  #dw-content dl.file dd){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(17 24 39/var(--tw-bg-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw-content dl.code dd, #dw-content dl.file dd {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  }
+}
+
+#dw-content dl.code dd pre.code, #dw-content dl.file dd pre.code {
+  margin: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius:.5rem;
+  border-bottom-right-radius:.5rem;
+}
+
+/* Images*/
+
+#dw-content img.media, #dw-content img.mediaright, #dw-content img.medialeft, #dw-content img.mediacenter {
+  margin: 0px;
+  height: revert-layer;
+  display:inline;
+}
+
+#dw-content img.mediaright {
+  float: right;
+}
+
+#dw-content img.medialeft {
+  float: left;
+}
+
+#dw-content img.mediacenter {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+#dw-content img.icon.smiley {
+  margin: 0px;
+  height: 1.2rem;
+  display:inline;
+}
+
+/* Footnotes (in text)*/
+
+#dw-content a.fn_top {
+  text-decoration-line:none;
+}
+
+/* Footnotes (at the bottom)*/
+
+#dw-content .footnotes a {
+  text-decoration-line:none;
+}
+
+#dw-content .footnotes .content {
+  display:inline;
+}
+
+/* Section edit button*/
 
 #dw-content .secedit {
   text-align:right;
@@ -10679,7 +11706,7 @@ input:checked+.toggle-bg{
   --tw-translate-x:-100%;
 }
 
-/* add a hovable whitespace at the top of the button */
+/* add a hovable whitespace at the top of the button*/
 
 #dw-content .secedit .btn_secedit::before {
   content: "";
@@ -10795,7 +11822,7 @@ input:checked+.toggle-bg{
   }
 }
 
-/* hover on the previous sections displays the button */
+/* hover on the previous sections displays the button*/
 
 #dw-content *:hover + .secedit {
   opacity:1;
@@ -10916,6 +11943,20 @@ input:checked+.toggle-bg{
   scroll-margin-top: 6rem;
 }
 
+.prose-pre\:rounded-lg :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.5rem;
+}
+
+.prose-ul\:my-2 :is(:where(ul):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-li\:my-1 :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 @supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))) or (-webkit-backdrop-filter: blur(0)) {
   .supports-backdrop-blur\:bg-white\/60 {
     background-color: rgb(255 255 255 / 0.6);
@@ -10996,6 +12037,11 @@ input:checked+.toggle-bg{
   .dark\:text-gray-200 {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-gray-300 {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 
   .dark\:text-gray-400 {

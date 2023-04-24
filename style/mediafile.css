@@ -1,4 +1,8 @@
 #dw-content a.mediafile {
+	& {
+		// TODO: default icon
+	}
+
 	&.mf_7z {
 		@apply
 			bg-[url('/lib/tpl/tailwind/icon.php?icon=7z&color=%236b7280')]

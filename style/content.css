@@ -197,9 +197,24 @@
 		@apply block mx-auto;
 	}
 
-	// Footnotes
+	img.icon.smiley {
+		@apply inline h-[1.2rem] m-0;
+	}
+
+	// Footnotes (in text)
 	a.fn_top {
 		@apply no-underline;
+	}
+
+	// Footnotes (at the bottom)
+	.footnotes {
+		a {
+			@apply no-underline;
+		}
+
+		.content {
+			@apply inline;
+		}
 	}
 
 	// Section edit button

@@ -151,7 +151,7 @@ class EventHandlers {
 	 * Modifies downloadable code blocks, by adding a bar at the top with an download button.
 	 */
 	private function modifyDownloadBlocks($html) {
-		foreach($html->find('dl.code dt a') as $elm) {
+		foreach($html->find('dl.code dt a, dl.file dt a') as $elm) {
 			$path = $elm->innertext;
 			$href = $elm->href;
 			$title = $elm->title;

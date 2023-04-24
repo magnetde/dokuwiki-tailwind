@@ -280,6 +280,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 									prose dark:prose-invert w-full max-w-none
 									prose-headings:scroll-mt-24
 									prose-pre:rounded-lg
+									prose-ul:my-2 prose-li:my-1
 								") ?>">
 									<?php echo $buffer ?>
 								</article>
