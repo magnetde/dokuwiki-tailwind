@@ -7,8 +7,9 @@
 	dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
 ") ?>">
 	<div class="<?php echo clsx("
-		flex items-center justify-between w-full h-full
-		px-4 mx-auto max-w-10xl lg:px-4
+		flex items-center justify-between
+		md:grid md:grid-cols-3
+		w-full h-full px-4 mx-auto max-w-10xl lg:px-4
 	") ?>">
 		<!--- Logo and title --->
 		<?php
@@ -26,7 +27,7 @@
 		echo '</a>';
 		?>
 
-		<div class="flex items-center md:order-1">
+		<div class="flex items-center md:order-1 md:justify-center">
 			<?php echo _tpl_searchform() ?>
 		</div>
 
@@ -45,7 +46,7 @@
 		</button>
 
 		<!--- Tools dropdown and user avatar --->
-		<div class="hidden items-center md:order-2 md:flex" id="navbar-default">
+		<div class="hidden items-center md:order-2 md:flex md:justify-end" id="navbar-default">
 			<ul class="<?php echo clsx("
 				flex flex-col font-medium p-4 md:p-0 mt-4 items-center
 				border border-gray-100 rounded-lg bg-gray-50

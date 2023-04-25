@@ -76,9 +76,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				<?php require_once('tpl/content.php'); ?>
 
 				<!--- Right sidebar --->
-				<div class="flex-none hidden w-72 pl-8 mr-8 xl:text-sm xl:block">
+				<div class="flex-none hidden w-72 pl-8 pr-8 xl:text-sm xl:block">
 					<!--- TODO --->
-					right
+					<div class="flex overflow-y-auto sticky top-16 flex-col justify-between pt-10 pb-6 h-[calc(100vh-4rem-2px)]">
+						<?php tpl_toc() ?>
+					</div>
 				</div>
 
 			</main>
