@@ -76,7 +76,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				<?php require_once('tpl/content.php'); ?>
 
 				<!--- Right sidebar --->
-				<div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
+				<div class="flex-none hidden w-72 pl-8 mr-8 xl:text-sm xl:block">
 					<!--- TODO --->
 					right
 				</div>
