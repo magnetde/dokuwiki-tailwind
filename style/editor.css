@@ -1,0 +1,58 @@
+.dw-content .editBox {
+	@apply
+		w-full mt-8;
+	;
+
+	div.toolbar {
+		@apply
+			border p-4 flex flex-nowrap items-center justify-between border-b rounded-t-lg
+			border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
+		;
+	}
+
+	.tool__bar {
+		@apply flex flex-nowrap items-center space-x-2;
+
+		button {
+			@apply p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+		}
+
+		img {
+			@apply my-0 w-6 h-6 fill-gray-400 dark:fill-gray-500;
+		}
+	}
+
+	#draft__status {
+		@apply hidden; // hide the old draft status
+	}
+
+	.doku_form {
+		textarea.edit {
+			@apply
+				block w-full p-4 font-mono text-sm border-x border-y-0
+				text-gray-800 bg-white border-gray-200 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 focus:ring-0
+			;
+		}
+
+		.editBar {
+			img {
+				@apply my-0;
+			}
+
+			#size__ctl {
+				@apply
+					border mb-6 p-4 flex flex-nowrap items-center justify-end space-x-2 border-b rounded-b-lg
+					border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
+				;
+			}
+		}
+	}
+
+	.license {
+		@apply p-4 mt-8 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
+
+		a {
+			@apply inline-block text-inherit;
+		}
+	}
+}

@@ -33,7 +33,7 @@ function initializeToolbar() {
 	};
 
 	function iconURL(name) {
-		return `../../tpl/tailwind/icon.php?icon=${name}&color=${encodeURIComponent(toolbarIconColor())}`;
+		return `${DOKU_BASE}lib/tpl/tailwind/icon.php?icon=${name}&color=${encodeURIComponent(toolbarIconColor())}`;
 	};
 
 	for(var i in window.toolbar) {
@@ -79,6 +79,7 @@ function updateToolbarIcons() {
 		window.toolbar[i].icon = updateColor(window.toolbar[i].icon);
 	}
 
+	// initToolbar is defined in 'toolbar.js' in the DokuWiki repo.
 	initToolbar('tool__bar', 'wiki__text', window.toolbar);
 };
 
