@@ -63,6 +63,7 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx("
+			dw-content
 			w-full max-w-none
 			prose dark:prose-invert
 			prose-headings:scroll-mt-20

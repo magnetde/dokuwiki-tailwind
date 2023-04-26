@@ -65,9 +65,18 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<div class="w-full z-10 px-4 mx-auto max-w-10xl lg:flex">
 
 			<!--- Left sidebar --->
-			<aside class="fixed inset-0 z-20 flex-none hidden h-full lg:w-56 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:block xl:w-72 ">
-				<!--- TODO --->
-				left (mt-4 needed for first item)
+			<aside class="fixed inset-0 z-20 flex-none hidden h-full lg:w-56 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:block xl:w-72">
+				<div class="overflow-y-auto sticky top-16 flex-col pt-10 pb-6 pr-6 h-[calc(100vh-4rem-2px)]">
+					<?php
+					if($showSidebar) {
+						echo '<div class="dw-sidebar prose prose-sm dark:prose-invert">';
+						tpl_includeFile('sidebarheader.html');
+						tpl_include_page($conf['sidebar'], true, true);
+						tpl_includeFile('sidebarfooter.html');
+						echo '</div>';
+					}
+					?>
+				</div>
 			</aside>
 
 			<!--- Middle content and left sidebar --->

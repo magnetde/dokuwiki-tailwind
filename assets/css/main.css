@@ -1450,6 +1450,220 @@ input:checked + .toggle-bg {
   margin-bottom: 0;
 }
 
+.prose-sm {
+  font-size: 0.875rem;
+  line-height: 1.7142857;
+}
+
+.prose-sm :where(p):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.1428571em;
+  margin-bottom: 1.1428571em;
+}
+
+.prose-sm :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
+  font-size: 1.2857143em;
+  line-height: 1.5555556;
+  margin-top: 0.8888889em;
+  margin-bottom: 0.8888889em;
+}
+
+.prose-sm :where(blockquote):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+  padding-left: 1.1111111em;
+}
+
+.prose-sm :where(h1):not(:where([class~="not-prose"] *)) {
+  font-size: 2.1428571em;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  line-height: 1.2;
+}
+
+.prose-sm :where(h2):not(:where([class~="not-prose"] *)) {
+  font-size: 1.4285714em;
+  margin-top: 1.6em;
+  margin-bottom: 0.8em;
+  line-height: 1.4;
+}
+
+.prose-sm :where(h3):not(:where([class~="not-prose"] *)) {
+  font-size: 1.2857143em;
+  margin-top: 1.5555556em;
+  margin-bottom: 0.4444444em;
+  line-height: 1.5555556;
+}
+
+.prose-sm :where(h4):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.4285714em;
+  margin-bottom: 0.5714286em;
+  line-height: 1.4285714;
+}
+
+.prose-sm :where(img):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+}
+
+.prose-sm :where(video):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+}
+
+.prose-sm :where(figure):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+}
+
+.prose-sm :where(figure > *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose-sm :where(figcaption):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8571429em;
+  line-height: 1.3333333;
+  margin-top: 0.6666667em;
+}
+
+.prose-sm :where(code):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8571429em;
+}
+
+.prose-sm :where(h2 code):not(:where([class~="not-prose"] *)) {
+  font-size: 0.9em;
+}
+
+.prose-sm :where(h3 code):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+}
+
+.prose-sm :where(pre):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8571429em;
+  line-height: 1.6666667;
+  margin-top: 1.6666667em;
+  margin-bottom: 1.6666667em;
+  border-radius: 0.25rem;
+  padding-top: 0.6666667em;
+  padding-right: 1em;
+  padding-bottom: 0.6666667em;
+  padding-left: 1em;
+}
+
+.prose-sm :where(ol):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.1428571em;
+  margin-bottom: 1.1428571em;
+  padding-left: 1.5714286em;
+}
+
+.prose-sm :where(ul):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.1428571em;
+  margin-bottom: 1.1428571em;
+  padding-left: 1.5714286em;
+}
+
+.prose-sm :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.2857143em;
+  margin-bottom: 0.2857143em;
+}
+
+.prose-sm :where(ol > li):not(:where([class~="not-prose"] *)) {
+  padding-left: 0.4285714em;
+}
+
+.prose-sm :where(ul > li):not(:where([class~="not-prose"] *)) {
+  padding-left: 0.4285714em;
+}
+
+.prose-sm :where(.prose-sm > ul > li p):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5714286em;
+  margin-bottom: 0.5714286em;
+}
+
+.prose-sm :where(.prose-sm > ul > li > *:first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.1428571em;
+}
+
+.prose-sm :where(.prose-sm > ul > li > *:last-child):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 1.1428571em;
+}
+
+.prose-sm :where(.prose-sm > ol > li > *:first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.1428571em;
+}
+
+.prose-sm :where(.prose-sm > ol > li > *:last-child):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 1.1428571em;
+}
+
+.prose-sm :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5714286em;
+  margin-bottom: 0.5714286em;
+}
+
+.prose-sm :where(hr):not(:where([class~="not-prose"] *)) {
+  margin-top: 2.8571429em;
+  margin-bottom: 2.8571429em;
+}
+
+.prose-sm :where(hr + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-sm :where(h2 + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-sm :where(h3 + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-sm :where(h4 + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-sm :where(table):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8571429em;
+  line-height: 1.5;
+}
+
+.prose-sm :where(thead th):not(:where([class~="not-prose"] *)) {
+  padding-right: 1em;
+  padding-bottom: 0.6666667em;
+  padding-left: 1em;
+}
+
+.prose-sm :where(thead th:first-child):not(:where([class~="not-prose"] *)) {
+  padding-left: 0;
+}
+
+.prose-sm :where(thead th:last-child):not(:where([class~="not-prose"] *)) {
+  padding-right: 0;
+}
+
+.prose-sm :where(tbody td, tfoot td):not(:where([class~="not-prose"] *)) {
+  padding-top: 0.6666667em;
+  padding-right: 1em;
+  padding-bottom: 0.6666667em;
+  padding-left: 1em;
+}
+
+.prose-sm :where(tbody td:first-child, tfoot td:first-child):not(:where([class~="not-prose"] *)) {
+  padding-left: 0;
+}
+
+.prose-sm :where(tbody td:last-child, tfoot td:last-child):not(:where([class~="not-prose"] *)) {
+  padding-right: 0;
+}
+
+.prose-sm :where(.prose-sm > :first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-sm :where(.prose-sm > :last-child):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 0;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2098,6 +2312,10 @@ input:checked + .toggle-bg {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
 }
 
 .pt-10 {
@@ -11269,6 +11487,9 @@ pre.code .sc-2 {
   width:100%;
   overflow:hidden;
   white-space:nowrap;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
 }
 
 .breadcrumb-list.fade {
@@ -11280,9 +11501,6 @@ pre.code .sc-2 {
   color: rgb(107 114 128 / var(--tw-text-opacity));
   margin-right:.5rem;
   display:inline;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -11311,12 +11529,21 @@ pre.code .sc-2 {
   color:rgb(156 163 175/var(--tw-text-opacity));
 }
 
+:is(.dark .breadcrumb-list .bcsep){
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .breadcrumb-list .bcsep {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
+}
+
 .breadcrumb-list a {
   color: rgb(55 65 81 / var(--tw-text-opacity));
   display:inline;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(55 65 81/var(--tw-text-opacity));
 }
@@ -11328,7 +11555,7 @@ pre.code .sc-2 {
 
 :is(.dark .breadcrumb-list a){
   --tw-text-opacity:1;
-  color:rgb(156 163 175/var(--tw-text-opacity))
+  color:rgb(209 213 219/var(--tw-text-opacity))
 }
 
 :is(.dark .breadcrumb-list a:hover){
@@ -11344,7 +11571,7 @@ pre.code .sc-2 {
 @media (prefers-color-scheme: dark) {
   .breadcrumb-list a {
     --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
+    color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 
   .breadcrumb-list a:hover {
@@ -11375,39 +11602,39 @@ pre.code .sc-2 {
   }
 }
 
-/* Main content*/
+/* Main content and left sidebar*/
 
 /* increase the font weight of h5 headers*/
 
-#dw-content h5 {
+.dw-content h5, .dw-sidebar h5 {
   font-weight:600;
 }
 
 /* Underline text*/
 
-#dw-content em.u {
+.dw-content em.u, .dw-sidebar em.u {
   font-style: normal;
   text-decoration-line:underline;
 }
 
 /* current link*/
 
-#dw-content .curid, #dw-content .curid a {
+.dw-content .curid, .dw-content .curid a, .dw-sidebar .curid, .dw-sidebar .curid a {
   font-weight:600;
 }
 
 /* dead links*/
 
-#dw-content .wikilink2 {
+.dw-content .wikilink2, .dw-sidebar .wikilink2 {
   text-decoration-color: #F05252;
   text-decoration-color:#f05252;
 }
 
 /* Special links with icons*/
 
-#dw-content a.urlextern, #dw-content a.mail, #dw-content a.windows, #dw-content a.mediafile, #dw-content a.interwiki {
+.dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
   margin-left: 0.125rem;
-  background-size: 1.2rem;
+  background-size: contain;
   background-position: left;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -11420,161 +11647,160 @@ pre.code .sc-2 {
 
 /* Link icons have the forground #6b7280 (same as gray-500) or #9ca3af (same as gray-400) at dark mode.*/
 
-#dw-content a.urlextern {
+.dw-content a.urlextern, .dw-sidebar a.urlextern {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=link-external&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.urlextern {
+  .dw-content a.urlextern, .dw-sidebar a.urlextern {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=link-external&color=%239ca3af');
   }
 }
 
-#dw-content a.mail {
+.dw-content a.mail, .dw-sidebar a.mail {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=email&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.mail {
+  .dw-content a.mail, .dw-sidebar a.mail {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=email&color=%239ca3af');
   }
 }
 
-#dw-content a.windows {
+.dw-content a.windows, .dw-sidebar a.windows {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.windows {
+  .dw-content a.windows, .dw-sidebar a.windows {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%239ca3af');
   }
 }
 
 /* for "a.mediafile" see the import statement at the top of this file*/
 
-#dw-content a.interwiki.iw_amazon, #dw-content a.interwiki.iw_amazon_de, #dw-content a.interwiki.iw_amazon_uk {
+.dw-content a.interwiki.iw_amazon, .dw-content a.interwiki.iw_amazon_de, .dw-content a.interwiki.iw_amazon_uk, .dw-sidebar a.interwiki.iw_amazon, .dw-sidebar a.interwiki.iw_amazon_de, .dw-sidebar a.interwiki.iw_amazon_uk {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=amazon&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_amazon, #dw-content a.interwiki.iw_amazon_de, #dw-content a.interwiki.iw_amazon_uk {
+  .dw-content a.interwiki.iw_amazon, .dw-content a.interwiki.iw_amazon_de, .dw-content a.interwiki.iw_amazon_uk, .dw-sidebar a.interwiki.iw_amazon, .dw-sidebar a.interwiki.iw_amazon_de, .dw-sidebar a.interwiki.iw_amazon_uk {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=amazon&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_callto, #dw-content a.interwiki.iw_tel {
+.dw-content a.interwiki.iw_callto, .dw-content a.interwiki.iw_tel, .dw-sidebar a.interwiki.iw_callto, .dw-sidebar a.interwiki.iw_tel {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=callto&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_callto, #dw-content a.interwiki.iw_tel {
+  .dw-content a.interwiki.iw_callto, .dw-content a.interwiki.iw_tel, .dw-sidebar a.interwiki.iw_callto, .dw-sidebar a.interwiki.iw_tel {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=callto&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_doku {
+.dw-content a.interwiki.iw_doku, .dw-sidebar a.interwiki.iw_doku {
   background-image: url('/lib/images/interwiki/doku.svg');
-  background-size: contain;
 }
 
-#dw-content a.interwiki.iw_go, #dw-content a.interwiki.iw_google {
+.dw-content a.interwiki.iw_go, .dw-content a.interwiki.iw_google, .dw-sidebar a.interwiki.iw_go, .dw-sidebar a.interwiki.iw_google {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=google&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_go, #dw-content a.interwiki.iw_google {
+  .dw-content a.interwiki.iw_go, .dw-content a.interwiki.iw_google, .dw-sidebar a.interwiki.iw_go, .dw-sidebar a.interwiki.iw_google {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=google&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_paypal {
+.dw-content a.interwiki.iw_paypal, .dw-sidebar a.interwiki.iw_paypal {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=paypal&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_paypal {
+  .dw-content a.interwiki.iw_paypal, .dw-sidebar a.interwiki.iw_paypal {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=paypal&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_phpfn {
+.dw-content a.interwiki.iw_phpfn, .dw-sidebar a.interwiki.iw_phpfn {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=php&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_phpfn {
+  .dw-content a.interwiki.iw_phpfn, .dw-sidebar a.interwiki.iw_phpfn {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=php&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_rfc {
+.dw-content a.interwiki.iw_rfc, .dw-sidebar a.interwiki.iw_rfc {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=rfc&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_rfc {
+  .dw-content a.interwiki.iw_rfc, .dw-sidebar a.interwiki.iw_rfc {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=rfc&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_skype {
+.dw-content a.interwiki.iw_skype, .dw-sidebar a.interwiki.iw_skype {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=skype&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_skype {
+  .dw-content a.interwiki.iw_skype, .dw-sidebar a.interwiki.iw_skype {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=skype&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_this {
+.dw-content a.interwiki.iw_this, .dw-sidebar a.interwiki.iw_this {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=rss&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_this {
+  .dw-content a.interwiki.iw_this, .dw-sidebar a.interwiki.iw_this {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=rss&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_user {
+.dw-content a.interwiki.iw_user, .dw-sidebar a.interwiki.iw_user {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=user&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_user {
+  .dw-content a.interwiki.iw_user, .dw-sidebar a.interwiki.iw_user {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=user&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_man {
+.dw-content a.interwiki.iw_man, .dw-sidebar a.interwiki.iw_man {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=cmd&color=%236b7280');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_man {
+  .dw-content a.interwiki.iw_man, .dw-sidebar a.interwiki.iw_man {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=cmd&color=%239ca3af');
   }
 }
 
-#dw-content a.interwiki.iw_wp, #dw-content a.interwiki.iw_wpde, #dw-content a.interwiki.iw_wpes, #dw-content a.interwiki.iw_wpfr, #dw-content a.interwiki.iw_wpjp, #dw-content a.interwiki.iw_wpmeta, #dw-content a.interwiki.iw_wppl {
+.dw-content a.interwiki.iw_wp, .dw-content a.interwiki.iw_wpde, .dw-content a.interwiki.iw_wpes, .dw-content a.interwiki.iw_wpfr, .dw-content a.interwiki.iw_wpjp, .dw-content a.interwiki.iw_wpmeta, .dw-content a.interwiki.iw_wppl, .dw-sidebar a.interwiki.iw_wp, .dw-sidebar a.interwiki.iw_wpde, .dw-sidebar a.interwiki.iw_wpes, .dw-sidebar a.interwiki.iw_wpfr, .dw-sidebar a.interwiki.iw_wpjp, .dw-sidebar a.interwiki.iw_wpmeta, .dw-sidebar a.interwiki.iw_wppl {
   background-image: url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23111827');
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content a.interwiki.iw_wp, #dw-content a.interwiki.iw_wpde, #dw-content a.interwiki.iw_wpes, #dw-content a.interwiki.iw_wpfr, #dw-content a.interwiki.iw_wpjp, #dw-content a.interwiki.iw_wpmeta, #dw-content a.interwiki.iw_wppl {
+  .dw-content a.interwiki.iw_wp, .dw-content a.interwiki.iw_wpde, .dw-content a.interwiki.iw_wpes, .dw-content a.interwiki.iw_wpfr, .dw-content a.interwiki.iw_wpjp, .dw-content a.interwiki.iw_wpmeta, .dw-content a.interwiki.iw_wppl, .dw-sidebar a.interwiki.iw_wp, .dw-sidebar a.interwiki.iw_wpde, .dw-sidebar a.interwiki.iw_wpes, .dw-sidebar a.interwiki.iw_wpfr, .dw-sidebar a.interwiki.iw_wpjp, .dw-sidebar a.interwiki.iw_wpmeta, .dw-sidebar a.interwiki.iw_wppl {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23f3f4f6');
   }
 }
 
 /* Fix the margin in downloadable code blocks*/
 
-#dw-content dl.code, #dw-content dl.file {
+.dw-content dl.code, .dw-content dl.file, .dw-sidebar dl.code, .dw-sidebar dl.file {
   margin-bottom:1.75rem;
   margin-top:1.5rem;
 }
 
-#dw-content dl.code dt, #dw-content dl.file dt {
+.dw-content dl.code dt, .dw-content dl.file dt, .dw-sidebar dl.code dt, .dw-sidebar dl.file dt {
   display: flex;
   width: 100%;
   flex-wrap: nowrap;
@@ -11582,13 +11808,13 @@ pre.code .sc-2 {
   justify-content: space-between;
 }
 
-#dw-content dl.code dt > :not([hidden]) ~ :not([hidden]), #dw-content dl.file dt > :not([hidden]) ~ :not([hidden]) {
+.dw-content dl.code dt > :not([hidden]) ~ :not([hidden]), .dw-content dl.file dt > :not([hidden]) ~ :not([hidden]), .dw-sidebar dl.code dt > :not([hidden]) ~ :not([hidden]), .dw-sidebar dl.file dt > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-#dw-content dl.code dt, #dw-content dl.file dt {
+.dw-content dl.code dt, .dw-content dl.file dt, .dw-sidebar dl.code dt, .dw-sidebar dl.file dt {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border-width: 1px;
@@ -11606,13 +11832,13 @@ pre.code .sc-2 {
   justify-content:space-between;
 }
 
-#dw-content dl.code dt>:not([hidden])~:not([hidden]), #dw-content dl.file dt>:not([hidden])~:not([hidden]){
+.dw-content dl.code dt>:not([hidden])~:not([hidden]), .dw-content dl.file dt>:not([hidden])~:not([hidden]), .dw-sidebar dl.code dt>:not([hidden])~:not([hidden]), .dw-sidebar dl.file dt>:not([hidden])~:not([hidden]){
   --tw-space-x-reverse:0;
   margin-left:calc(1rem*(1 - var(--tw-space-x-reverse)));
   margin-right:calc(1rem*var(--tw-space-x-reverse))
 }
 
-#dw-content dl.code dt, #dw-content dl.file dt{
+.dw-content dl.code dt, .dw-content dl.file dt, .dw-sidebar dl.code dt, .dw-sidebar dl.file dt{
   border-top-left-radius:.5rem;
   border-top-right-radius:.5rem;
   border-width:1px;
@@ -11626,7 +11852,7 @@ pre.code .sc-2 {
   padding-right:.75rem
 }
 
-:is(.dark #dw-content dl.code dt),:is(.dark  #dw-content dl.file dt){
+:is(.dark .dw-content dl.code dt),:is(.dark  .dw-content dl.file dt),:is(.dark  .dw-sidebar dl.code dt),:is(.dark  .dw-sidebar dl.file dt){
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
@@ -11634,7 +11860,7 @@ pre.code .sc-2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content dl.code dt, #dw-content dl.file dt {
+  .dw-content dl.code dt, .dw-content dl.file dt, .dw-sidebar dl.code dt, .dw-sidebar dl.file dt {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -11642,7 +11868,7 @@ pre.code .sc-2 {
   }
 }
 
-#dw-content dl.code dd, #dw-content dl.file dd {
+.dw-content dl.code dd, .dw-content dl.file dd, .dw-sidebar dl.code dd, .dw-sidebar dl.file dd {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -11660,7 +11886,7 @@ pre.code .sc-2 {
   padding:0;
 }
 
-:is(.dark #dw-content dl.code dd),:is(.dark  #dw-content dl.file dd){
+:is(.dark .dw-content dl.code dd),:is(.dark  .dw-content dl.file dd),:is(.dark  .dw-sidebar dl.code dd),:is(.dark  .dw-sidebar dl.file dd){
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
@@ -11668,7 +11894,7 @@ pre.code .sc-2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content dl.code dd, #dw-content dl.file dd {
+  .dw-content dl.code dd, .dw-content dl.file dd, .dw-sidebar dl.code dd, .dw-sidebar dl.file dd {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -11676,7 +11902,7 @@ pre.code .sc-2 {
   }
 }
 
-#dw-content dl.code dd pre.code, #dw-content dl.file dd pre.code {
+.dw-content dl.code dd pre.code, .dw-content dl.file dd pre.code, .dw-sidebar dl.code dd pre.code, .dw-sidebar dl.file dd pre.code {
   margin: 0px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -11686,27 +11912,27 @@ pre.code .sc-2 {
 
 /* Images*/
 
-#dw-content img.media, #dw-content img.mediaright, #dw-content img.medialeft, #dw-content img.mediacenter {
+.dw-content img.media, .dw-content img.mediaright, .dw-content img.medialeft, .dw-content img.mediacenter, .dw-sidebar img.media, .dw-sidebar img.mediaright, .dw-sidebar img.medialeft, .dw-sidebar img.mediacenter {
   margin: 0px;
   height: revert-layer;
   display:inline;
 }
 
-#dw-content img.mediaright {
+.dw-content img.mediaright, .dw-sidebar img.mediaright {
   float: right;
 }
 
-#dw-content img.medialeft {
+.dw-content img.medialeft, .dw-sidebar img.medialeft {
   float: left;
 }
 
-#dw-content img.mediacenter {
+.dw-content img.mediacenter, .dw-sidebar img.mediacenter {
   margin-left:auto;
   margin-right:auto;
   display:block;
 }
 
-#dw-content img.icon.smiley {
+.dw-content img.icon.smiley, .dw-sidebar img.icon.smiley {
   margin: 0px;
   height: 1.2rem;
   display:inline;
@@ -11714,32 +11940,24 @@ pre.code .sc-2 {
 
 /* Footnotes (in text)*/
 
-#dw-content a.fn_top {
+.dw-content a.fn_top, .dw-sidebar a.fn_top {
   text-decoration-line:none;
 }
 
-/* Footnotes (at the bottom)*/
-
-#dw-content .footnotes a {
-  text-decoration-line:none;
-}
-
-#dw-content .footnotes .content {
-  display:inline;
-}
+/* Other styles of the main content not included in the sidebar*/
 
 /* Section edit button*/
 
-#dw-content .secedit {
+.dw-content .secedit {
   text-align:right;
   opacity:0;
 }
 
-#dw-content .secedit:hover {
+.dw-content .secedit:hover {
   opacity: 1;
 }
 
-#dw-content .secedit .btn_secedit {
+.dw-content .secedit .btn_secedit {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   position:absolute;
   display:inline-block;
@@ -11749,7 +11967,7 @@ pre.code .sc-2 {
 
 /* add a hovable whitespace at the top of the button*/
 
-#dw-content .secedit .btn_secedit::before {
+.dw-content .secedit .btn_secedit::before {
   content: "";
   bottom: 0px;
   right: 0px;
@@ -11761,7 +11979,7 @@ pre.code .sc-2 {
   width:5rem;
 }
 
-#dw-content .secedit .btn_secedit button {
+.dw-content .secedit .btn_secedit button {
   margin-top: -0.75rem;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -11783,14 +12001,14 @@ pre.code .sc-2 {
   color:rgb(55 65 81/var(--tw-text-opacity));
 }
 
-#dw-content .secedit .btn_secedit button:hover{
+.dw-content .secedit .btn_secedit button:hover{
   --tw-bg-opacity:1;
   background-color:rgb(243 244 246/var(--tw-bg-opacity));
   --tw-text-opacity:1;
   color:rgb(26 86 219/var(--tw-text-opacity))
 }
 
-#dw-content .secedit .btn_secedit button:focus{
+.dw-content .secedit .btn_secedit button:focus{
   z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
@@ -11801,7 +12019,7 @@ pre.code .sc-2 {
   --tw-ring-color:rgb(209 213 219/var(--tw-ring-opacity))
 }
 
-:is(.dark #dw-content .secedit .btn_secedit button){
+:is(.dark .dw-content .secedit .btn_secedit button){
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
@@ -11810,26 +12028,26 @@ pre.code .sc-2 {
   color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
-:is(.dark #dw-content .secedit .btn_secedit button:hover){
+:is(.dark .dw-content .secedit .btn_secedit button:hover){
   --tw-bg-opacity:1;
   background-color:rgb(55 65 81/var(--tw-bg-opacity));
   --tw-text-opacity:1;
   color:rgb(255 255 255/var(--tw-text-opacity))
 }
 
-:is(.dark #dw-content .secedit .btn_secedit button:focus){
+:is(.dark .dw-content .secedit .btn_secedit button:focus){
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(107 114 128/var(--tw-ring-opacity))
 }
 
-#dw-content .secedit .btn_secedit button:hover {
+.dw-content .secedit .btn_secedit button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
-#dw-content .secedit .btn_secedit button:focus {
+.dw-content .secedit .btn_secedit button:focus {
   z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -11841,7 +12059,7 @@ pre.code .sc-2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content .secedit .btn_secedit button {
+  .dw-content .secedit .btn_secedit button {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -11850,14 +12068,14 @@ pre.code .sc-2 {
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #dw-content .secedit .btn_secedit button:hover {
+  .dw-content .secedit .btn_secedit button:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  #dw-content .secedit .btn_secedit button:focus {
+  .dw-content .secedit .btn_secedit button:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
   }
@@ -11865,8 +12083,18 @@ pre.code .sc-2 {
 
 /* hover on the previous sections displays the button*/
 
-#dw-content *:hover + .secedit {
+.dw-content *:hover + .secedit {
   opacity:1;
+}
+
+/* Footnotes (at the bottom)*/
+
+.dw-content .footnotes a {
+  text-decoration-line:none;
+}
+
+.dw-content .footnotes .content {
+  display:inline;
 }
 
 /* Footer*/
