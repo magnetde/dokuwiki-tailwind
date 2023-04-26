@@ -134,3 +134,47 @@ function _tpl_breadcrumbs($youarehere = false) {
 
 	return $title . $body;
 }
+
+/**
+ * Prints a table of content, that wotks with Bootstrap scrollspy.
+ */
+function _tpl_getTOC() {
+	ob_start();
+	tpl_toc();
+	$content = ob_get_clean();
+
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	$header = $html->find('h3', 0);
+	if($header) { // remove() does not work or else the other find() operations do not work anymore
+		$header->outertext = '';
+	}
+
+	// Add the nav class to each ul element
+	foreach($html->find('ul') as $elm) {
+		$elm->addClass('nav');
+	}
+
+	// Unwrap div.li element
+	foreach($html->find('div.li') as $elm) {
+		$link = $elm->find('a', 0);
+		if($link) {
+			$link->addClass('nav-link');
+		}
+
+		$elm->outertext = str_replace(['<div class="li">', '</div>'], '', $elm->save());
+	}
+
+	$root = $html->find('ul.toc', 0); // first element
+	if($root) {
+		$content = '<nav id="dw__toc" class="dw__toc" role="navigation">';
+		$content .= $root->save();
+		$content .= '</nav>';
+	}
+
+	$html->clear();
+	unset($html);
+
+	return $content;
+}

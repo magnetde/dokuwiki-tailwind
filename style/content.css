@@ -162,7 +162,7 @@
 
 	// Fix the margin in downloadable code blocks
 	dl.code, dl.file {
-		@apply mt-6;
+		@apply mt-6 mb-7;
 
 		dt {
 			@apply
@@ -252,5 +252,5 @@
 
 // Footer
 footer .license a {
-	@apply underline;
+	@apply inline-block underline;
 }

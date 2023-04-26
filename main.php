@@ -44,11 +44,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<!-- JS -->
 		<!-- Do not provide it with "script.js". -->
 		<script src="<?php echo tpl_basedir(); ?>assets/js/flowbite.min.js" type="text/javascript"></script>
+		<script src="<?php echo tpl_basedir(); ?>assets/js/bootstrap-scrollspy.min.js" type="text/javascript"></script>
 	</head>
 
 	<?php tpl_flush() ?>
 
-	<body class="dark:bg-gray-900 antialiased">
+	<body class="dark:bg-gray-900 antialiased" data-bs-spy="scroll" data-bs-target="#dw__toc" data-bs-offset="120">
 
 		<!--- Navbar --->
 		<?php require_once('tpl/navbar.php'); ?>
@@ -64,7 +65,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 		<div class="w-full z-10 px-4 mx-auto max-w-10xl lg:flex">
 
 			<!--- Left sidebar --->
-			<aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
+			<aside class="fixed inset-0 z-20 flex-none hidden h-full lg:w-56 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:block xl:w-72 ">
 				<!--- TODO --->
 				left (mt-4 needed for first item)
 			</aside>
@@ -76,9 +77,18 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				<?php require_once('tpl/content.php'); ?>
 
 				<!--- Right sidebar --->
-				<div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
-					<!--- TODO --->
-					right
+				<div class="flex-none hidden w-72 pl-8 xl:text-sm xl:block">
+					<div class="flex overflow-y-auto sticky top-16 flex-col pt-10 pb-6 h-[calc(100vh-4rem-2px)]">
+						<?php
+						$toc = _tpl_getTOC();
+						if($toc) {
+							echo '<h4 class="mb-4 pl-4 font-semibold text-gray-900 dark:text-white">'
+								.$lang['toc']
+								.'</h4>';
+							echo $toc;
+						}
+						?>
+					</div>
 				</div>
 
 			</main>

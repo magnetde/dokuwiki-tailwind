@@ -12,8 +12,8 @@ class EventHandlers {
 
 		# Event => [ ADVISE, METHOD ]
 		$events_dispatcher = [
-			'HTML_SECEDIT_BUTTON'           => ['AFTER',  ['htmlSecEditButton']],
-			'TPL_CONTENT_DISPLAY'           => ['BEFORE', ['tplContent']],
+			'HTML_SECEDIT_BUTTON' => ['AFTER',  ['htmlSecEditButton']],
+			'TPL_CONTENT_DISPLAY' => ['BEFORE', ['tplContent']],
 		];
 
 		foreach($events_dispatcher as $event => $data) {

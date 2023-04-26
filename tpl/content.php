@@ -1,5 +1,4 @@
-<!--- Main content --->
-<div class="flex-auto h-[calc(100vh-4rem-2px)] max-w-6xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
+<div class="flex-auto max-w-6xl min-w-0 pt-6 lg:px-8 lg:pt-8">
 
 	<!--- Breadcrumbs and page tool buttons --->
 	<div class="flex flex-nowrap items-center justify-between">
@@ -60,13 +59,13 @@
 		</div>
 	</div>
 
-	<div class="h-full flex flex-col justify-between mt-16">
+	<div class="flex flex-col justify-between mt-16 min-h-[calc(100%-6rem-2px)]">
 
-		<!--- Middle content --->
+		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx("
 			w-full max-w-none
 			prose dark:prose-invert
-			prose-headings:scroll-mt-24
+			prose-headings:scroll-mt-20
 			prose-pre:rounded-lg
 			prose-ul:my-2 prose-li:my-1
 		") ?>">
@@ -76,7 +75,7 @@
 		</article>
 
 		<!--- Footer --->
-		<footer class="mt-8 text-sm">
+		<footer class="mt-10 text-sm">
 			<hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700">
 
 			<div class="my-6 text-center text-gray-500 dark:border-gray-200/5">

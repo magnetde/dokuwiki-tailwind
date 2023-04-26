@@ -1,0 +1,65 @@
+.dw__toc {
+	li, a {
+		@apply block;
+	}
+
+	a {
+		@apply
+			py-1
+			font-medium text-gray-500 dark:text-gray-400
+			hover:text-gray-800 hover:dark:text-gray-200
+			hover:border-l hover:border-gray-300 hover:dark:border-gray-300
+		;
+	}
+
+	a.active {
+		@apply border-l border-blue-700 text-blue-700 dark:border-blue-500 dark:text-blue-500;
+	}
+
+	// h1
+	.nav {
+		a { @apply pl-[1rem] }
+		a:hover, a.active { @apply pl-[calc(1rem-1px)] }
+	}
+
+	// h2
+	.nav .nav {
+		a { @apply pl-[2rem] }
+		a:hover, a.active { @apply pl-[calc(2rem-1px)] }
+	}
+
+	// h3
+	.nav .nav .nav {
+		// hide non-active headers at this level by default
+		@apply hidden pb-2;
+
+		// connect the line of the first element with the last one
+		li:first-child a { // connect the first
+			@apply pt-2;
+		}
+
+		a { @apply pl-[3rem] }
+		a:hover, a.active { @apply pl-[calc(3rem-1px)] }
+	}
+
+	// h4
+	.nav .nav .nav .nav {
+		a { @apply pl-[4rem] }
+		a:hover, a.active { @apply pl-[calc(4rem-1px)] }
+	}
+
+	// show active headers
+	.nav {
+		@supports selector(:has(*)) {
+			.nav:has(a.active) {
+				display: block !important;
+			}
+		}
+
+		@supports not selector(:has(*)) {
+			a.active + .nav {
+				display: block !important;
+			}
+		}
+	}
+}
