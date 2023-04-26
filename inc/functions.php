@@ -166,13 +166,15 @@ function _tpl_getTOC() {
 		$elm->outertext = str_replace(['<div class="li">', '</div>'], '', $elm->save());
 	}
 
-	$content = '<nav id="dw__toc" role="navigation">';
 	$root = $html->find('ul.toc', 0); // first element
-	if($root) $content .= $root->save();
-	$content .= '</nav>';
+	if($root) {
+		$content = '<nav id="dw__toc" class="dw__toc" role="navigation">';
+		$content .= $root->save();
+		$content .= '</nav>';
+	}
 
 	$html->clear();
 	unset($html);
 
-	echo $content;
+	return $content;
 }

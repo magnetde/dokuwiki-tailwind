@@ -78,8 +78,16 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 				<!--- Right sidebar --->
 				<div class="flex-none hidden w-72 pl-8 xl:text-sm xl:block">
-					<div class="flex overflow-y-auto sticky top-16 flex-col justify-between pt-10 pb-6 h-[calc(100vh-4rem-2px)]">
-						<?php _tpl_getTOC() ?>
+					<div class="flex overflow-y-auto sticky top-16 flex-col pt-10 pb-6 h-[calc(100vh-4rem-2px)]">
+						<?php
+						$toc = _tpl_getTOC();
+						if($toc) {
+							echo '<h4 class="mb-4 pl-4 font-semibold text-gray-900 dark:text-white">'
+								.$lang['toc']
+								.'</h4>';
+							echo $toc;
+						}
+						?>
 					</div>
 				</div>
 
