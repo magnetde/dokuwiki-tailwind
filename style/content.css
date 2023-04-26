@@ -2,14 +2,14 @@
 @import "codestyle.css";
 
 .breadcrumb-list {
-	@apply w-full whitespace-nowrap overflow-hidden;
+	@apply w-full text-sm font-medium whitespace-nowrap overflow-hidden;
 
 	&.fade {
 		mask-image: linear-gradient(to right, black 75%, transparent 90%);
 	}
 
 	.bchead {
-		@apply inline text-sm mr-2 font-medium text-gray-500 dark:text-gray-400;
+		@apply inline mr-2 text-gray-500 dark:text-gray-400;
 	}
 
 	// hide first separator; usually gets removed by the backend
@@ -18,13 +18,12 @@
 	}
 
 	.bcsep {
-		@apply text-gray-400;
+		@apply text-gray-400 dark:text-gray-500;
 	}
 
 	a {
 		@apply
-			inline text-sm font-medium
-			text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white
+			inline text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-white
 		;
 	}
 }
@@ -39,8 +38,8 @@
 	}
 }
 
-// Main content
-#dw-content {
+// Main content and left sidebar
+.dw-content, .dw-sidebar {
 	// increase the font weight of h5 headers
 	h5 {
 		@apply font-semibold;
@@ -63,7 +62,7 @@
 
 	// Special links with icons
 	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply bg-no-repeat bg-left bg-[size:1.2rem] py-0 pr-0 pl-[1.35rem] ml-0.5;
+		@apply bg-no-repeat bg-left bg-contain py-0 pr-0 pl-[1.35rem] ml-0.5;
 	}
 
 	// Link icons have the forground #6b7280 (same as gray-500) or #9ca3af (same as gray-400) at dark mode.
@@ -102,7 +101,7 @@
 			;
 		}
 		&.iw_doku {
-			@apply bg-contain bg-[url('/lib/images/interwiki/doku.svg')];
+			@apply bg-[url('/lib/images/interwiki/doku.svg')];
 		}
 		&.iw_go, &.iw_google {
 			@apply
@@ -205,18 +204,10 @@
 	a.fn_top {
 		@apply no-underline;
 	}
+}
 
-	// Footnotes (at the bottom)
-	.footnotes {
-		a {
-			@apply no-underline;
-		}
-
-		.content {
-			@apply inline;
-		}
-	}
-
+// Other styles of the main content not included in the sidebar
+.dw-content {
 	// Section edit button
 	.secedit {
 		@apply opacity-0 hover:opacity-100 text-right;
@@ -247,6 +238,17 @@
 	// hover on the previous sections displays the button
 	*:hover + .secedit {
 		@apply opacity-100;
+	}
+
+	// Footnotes (at the bottom)
+	.footnotes {
+		a {
+			@apply no-underline;
+		}
+
+		.content {
+			@apply inline;
+		}
 	}
 }
 
