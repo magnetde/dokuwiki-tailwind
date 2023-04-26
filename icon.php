@@ -8,7 +8,7 @@
 
 @require_once dirname(__FILE__) . '/inc/icons.php'; // Include the icon map
 
-global $ICONS;
+global $ICONS, $UNKNOWN_ICON;
 
 /**
  * Wrapper around htmlspecialchars(), copied from the DokuWiki source code.
@@ -21,10 +21,9 @@ function hsc($string) {
 $icon = hsc($_GET['icon']);
 
 if(empty($icon) || !array_key_exists($icon, $ICONS)) {
-	header('Content-Type: text/plain; charset=utf-8', true);
-	http_response_code(404);
-	print "Not Found";
-	exit;
+	$icon = $UNKNOWN_ICON;
+} else {
+	$icon = $ICONS[$icon];
 }
 
 $width  = '1em';
@@ -47,7 +46,7 @@ if($_GET['color']) {
 	$fill = hsc($_GET['color']);
 }
 
-$path    = sprintf('<path fill="%s" d="%s"/>', $fill, $ICONS[$icon]);
+$path    = sprintf('<path fill="%s" d="%s"/>', $fill, $icon);
 $svg     = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="%s" height="%s" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">%s</svg>';
 $content = sprintf($svg, $width, $height, $path);
 
