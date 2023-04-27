@@ -1,3 +1,5 @@
+@import "flowbite";
+
 .dw-content .editBox {
 	@apply
 		w-full mt-8;
@@ -30,26 +32,101 @@
 		textarea.edit {
 			@apply
 				block w-full p-4 font-mono text-sm border-x border-y-0
-				text-gray-800 bg-white border-gray-200 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 focus:ring-0
+				text-gray-800 bg-white border-gray-200 dark:text-white dark:bg-gray-800 dark:border-gray-600
+				dark:placeholder-gray-400 focus:ring-0
 			;
 		}
 
 		.editBar {
+			@apply grid;
+
 			img {
 				@apply my-0;
 			}
 
 			#size__ctl {
 				@apply
-					border mb-6 p-4 flex flex-nowrap items-center justify-end space-x-2 border-b rounded-b-lg
+					order-1 border p-4 flex flex-nowrap items-center justify-end space-x-2 border-b rounded-b-lg
 					border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
 				;
+			}
+
+			.editButtons {
+				@apply order-3;
+			}
+
+			.summary {
+				@apply order-2 my-8 block;
+
+				label span {
+					@apply font-medium text-gray-900 dark:text-white;
+				}
+
+				label[for="edit__summary"] {
+					span {
+						@apply block mb-2;
+					}
+
+					input {
+						@apply
+							rounded-lg block w-full mb-4 p-2.5
+							bg-gray-50 border border-gray-300 text-gray-900
+							focus:ring-blue-500 focus:border-blue-500
+							dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+							dark:focus:ring-blue-500 dark:focus:border-blue-500
+						;
+					}
+				}
+
+				label[for="edit__minoredit"] {
+					@apply flex items-center space-x-2;
+
+					input {
+						@apply
+							w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-2 focus:ring-blue-300
+							dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600
+							dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800
+						;
+					}
+				}
+			}
+
+			.editButtons {
+				@apply flex items-center justify-end;
+
+				button {
+					@apply
+						py-2.5 px-5 mr-2 mb-2 text-sm font-medium
+						text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200
+						hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200
+						dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
+						dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+					;
+				}
+
+				button[name="do[cancel]"] {
+					@apply order-1;
+				}
+
+				button[name="do[preview]"] {
+					@apply order-2;
+				}
+
+				button[name="do[save]"] {
+					@apply
+						order-3 mr-0
+						font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center
+						text-white bg-blue-700 hover:bg-blue-800
+						focus:ring-4 focus:outline-none focus:ring-blue-300
+						dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
+					;
+				}
 			}
 		}
 	}
 
 	.license {
-		@apply p-4 mt-8 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
+		@apply p-4 mt-10 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
 
 		a {
 			@apply inline-block text-inherit;
