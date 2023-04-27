@@ -91,9 +91,10 @@
 			.editButtons {
 				@apply flex items-center justify-end;
 
-				button {
+				button[name="do[cancel]"] {
 					@apply
-						py-2.5 px-5 mr-2 mb-2 text-sm font-medium
+						order-1
+						py-2.5 px-5 mr-2 text-sm font-medium
 						text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200
 						hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200
 						dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
@@ -101,12 +102,15 @@
 					;
 				}
 
-				button[name="do[cancel]"] {
-					@apply order-1;
-				}
-
 				button[name="do[preview]"] {
-					@apply order-2;
+					@apply
+						order-2
+						py-2.5 px-5 mr-2 text-sm font-medium
+						text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200
+						hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200
+						dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
+						dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+					;
 				}
 
 				button[name="do[save]"] {
@@ -123,10 +127,35 @@
 	}
 
 	.license {
-		@apply p-4 mt-10 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
+		@apply p-4 mt-12 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
 
 		a {
 			@apply inline-block text-inherit;
 		}
+	}
+}
+
+// Picker menus
+div.picker {
+	@apply z-50 p-2 max-w-md bg-white rounded-lg shadow dark:bg-gray-700;
+
+	.pk_hl img {
+		@apply w-5 h-5;
+	}
+
+	&:not(.pk_hl) {
+		@apply grid grid-cols-[repeat(16,minmax(0,1fr))];
+
+		button[title="FIXME"], button[title="DELETEME"] {
+			@apply col-span-3;
+		}
+	}
+
+	.toolbutton, .pickerbutton {
+		@apply p-1 inline-flex items-center justify-center rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+	}
+
+	&.a11y {
+		@apply hidden;
 	}
 }
