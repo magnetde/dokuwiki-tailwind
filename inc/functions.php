@@ -178,3 +178,11 @@ function _tpl_getTOC() {
 
 	return $content;
 }
+
+function _tpl_remove_prefix($str, $prefix) {
+	if(substr($str, 0, strlen($prefix)) == $prefix) {
+		$str = substr($str, strlen($prefix));
+	}
+
+	return $str;
+}

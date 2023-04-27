@@ -13113,7 +13113,529 @@ div.picker.a11y {
   display:none;
 }
 
+.changes.doku_form ul {
+  position: relative;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.changes.doku_form ul > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+  --tw-divide-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
+}
+
+.changes.doku_form ul {
+  border-left-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  position:relative;
+  margin-left:1rem;
+  margin-top:2rem;
+}
+
+.changes.doku_form ul>:not([hidden])~:not([hidden]){
+  --tw-divide-y-reverse:0;
+  border-bottom-width:calc(1px*var(--tw-divide-y-reverse));
+  border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)));
+  --tw-divide-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-divide-opacity))
+}
+
+.changes.doku_form ul{
+  border-left-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity))
+}
+
+:is(.dark .changes.doku_form ul)>:not([hidden])~:not([hidden]){
+  --tw-divide-opacity:1;
+  border-color:rgb(55 65 81/var(--tw-divide-opacity))
+}
+
+:is(.dark .changes.doku_form ul){
+  --tw-border-opacity:1;
+  border-color:rgb(55 65 81/var(--tw-border-opacity))
+}
+
 @media (prefers-color-scheme: dark) {
+  .changes.doku_form ul > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-divide-opacity));
+  }
+
+  .changes.doku_form ul {
+    --tw-border-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-border-opacity));
+  }
+}
+
+.changes.doku_form li {
+  list-style-type:none;
+}
+
+/* Checkbox*/
+
+.changes.doku_form div.li input {
+  margin-top: 0.875rem;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+  position:absolute;
+  left:-.75rem;
+  height:1.5rem;
+  width:1.5rem;
+  border-radius:9999px;
+  border-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(209 213 219/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(8px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(255 255 255/var(--tw-ring-opacity));
+}
+
+:is(.dark .changes.doku_form div.li input){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(17 24 39/var(--tw-ring-opacity));
+  --tw-ring-offset-color:#1f2937
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form div.li input {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(17 24 39 / var(--tw-ring-opacity));
+    --tw-ring-offset-color: #1F2937;
+  }
+}
+
+/* Revision info*/
+
+.changes.doku_form .revision-info {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.75rem;
+}
+
+/* Revision header*/
+
+.changes.doku_form .revision-info .summary {
+  margin-bottom:.5rem;
+  display:flex;
+  align-items:baseline;
+}
+
+.changes.doku_form .revision-info .summary .sum {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  font-size:1.125rem;
+  line-height:1.75rem;
+  font-weight:600;
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form .revision-info .summary .sum){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .summary .sum {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.changes.doku_form .revision-info .summary .sum.empty {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  font-style:italic;
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form .revision-info .summary .sum.empty){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .summary .sum.empty {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+.changes.doku_form .revision-info .summary .sizechange {
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+  margin-left:.5rem;
+  border-radius:9999px;
+  --tw-bg-opacity:1;
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
+  padding-left:.625rem;
+  padding-right:.625rem;
+  padding-bottom:.125rem;
+  padding-top:.125rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(31 41 55/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form .revision-info .summary .sizechange){
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(209 213 219/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .summary .sizechange {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
+}
+
+.changes.doku_form .revision-info .summary .sizechange.positive {
+  background-color: rgb(222 247 236 / var(--tw-bg-opacity));
+  color: rgb(3 84 63 / var(--tw-text-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(222 247 236/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(3 84 63/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form .revision-info .summary .sizechange.positive){
+  --tw-bg-opacity:1;
+  background-color:rgb(1 71 55/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(132 225 188/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .summary .sizechange.positive {
+    --tw-bg-opacity: 1;
+    background-color: rgb(1 71 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(132 225 188 / var(--tw-text-opacity));
+  }
+}
+
+.changes.doku_form .revision-info .summary .sizechange.negative {
+  background-color: rgb(253 232 232 / var(--tw-bg-opacity));
+  color: rgb(155 28 28 / var(--tw-text-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(253 232 232/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(155 28 28/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form .revision-info .summary .sizechange.negative){
+  --tw-bg-opacity:1;
+  background-color:rgb(119 29 29/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(248 180 180/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .summary .sizechange.negative {
+    --tw-bg-opacity: 1;
+    background-color: rgb(119 29 29 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(248 180 180 / var(--tw-text-opacity));
+  }
+}
+
+/* Date and user info*/
+
+.changes.doku_form .revision-info .date-user {
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form .revision-info .date-user){
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .date-user {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
+}
+
+.changes.doku_form .revision-info .revision-buttons {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  display:inline-flex;
+  border-radius:.375rem;
+  box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  --tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);
+  --tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);
+}
+
+/* Diff link button and revision preview button*/
+
+.changes.doku_form .revision-info .revision-buttons a {
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+  display:flex;
+  align-items:center;
+  border-top-width:1px;
+  border-bottom-width:1px;
+  border-left-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom:.5rem;
+  padding-top:.5rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(55 65 81/var(--tw-text-opacity));
+  text-decoration-line:none;
+}
+
+.changes.doku_form .revision-info .revision-buttons a:hover{
+  --tw-bg-opacity:1;
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity))
+}
+
+.changes.doku_form .revision-info .revision-buttons a:focus{
+  z-index:10;
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity));
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(26 86 219/var(--tw-ring-opacity))
+}
+
+:is(.dark .changes.doku_form .revision-info .revision-buttons a){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+:is(.dark .changes.doku_form .revision-info .revision-buttons a:hover){
+  --tw-bg-opacity:1;
+  background-color:rgb(75 85 99/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+:is(.dark .changes.doku_form .revision-info .revision-buttons a:focus){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity));
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(63 131 248/var(--tw-ring-opacity))
+}
+
+.changes.doku_form .revision-info .revision-buttons a:first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.changes.doku_form .revision-info .revision-buttons a:last-child {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-right-width: 1px;
+}
+
+.changes.doku_form .revision-info .revision-buttons a:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+.changes.doku_form .revision-info .revision-buttons a:focus {
+  z-index: 10;
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(26 86 219 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form .revision-info .revision-buttons a {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .changes.doku_form .revision-info .revision-buttons a:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .changes.doku_form .revision-info .revision-buttons a:focus {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+  }
+}
+
+.changes.doku_form .revision-info .revision-buttons a svg {
+  height:1.25rem;
+  width:1.25rem;
+  fill:currentColor;
+}
+
+.changes.doku_form button[name="do[diff]"] {
+  margin-top:2rem;
+}
+
+.changes.doku_form button[name="do[diff]"]:not([disabled]) {
+  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  border-radius:.5rem;
+  --tw-bg-opacity:1;
+  background-color:rgb(26 86 219/var(--tw-bg-opacity));
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  padding-bottom:.625rem;
+  padding-top:.625rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.changes.doku_form button[name="do[diff]"]:not([disabled]):hover{
+  --tw-bg-opacity:1;
+  background-color:rgb(30 66 159/var(--tw-bg-opacity))
+}
+
+.changes.doku_form button[name="do[diff]"]:not([disabled]):focus{
+  outline:2px solid transparent;
+  outline-offset:2px;
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
+}
+
+:is(.dark .changes.doku_form button[name="do[diff]"]:not([disabled])){
+  --tw-bg-opacity:1;
+  background-color:rgb(28 100 242/var(--tw-bg-opacity))
+}
+
+:is(.dark .changes.doku_form button[name="do[diff]"]:not([disabled]):hover){
+  --tw-bg-opacity:1;
+  background-color:rgb(26 86 219/var(--tw-bg-opacity))
+}
+
+:is(.dark .changes.doku_form button[name="do[diff]"]:not([disabled]):focus){
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(30 66 159/var(--tw-ring-opacity))
+}
+
+.changes.doku_form button[name="do[diff]"]:not([disabled]):hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+}
+
+.changes.doku_form button[name="do[diff]"]:not([disabled]):focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form button[name="do[diff]"]:not([disabled]) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(28 100 242 / var(--tw-bg-opacity));
+  }
+
+  .changes.doku_form button[name="do[diff]"]:not([disabled]):hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+  }
+
+  .changes.doku_form button[name="do[diff]"]:not([disabled]):focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
+  }
+}
+
+.changes.doku_form button[name="do[diff]"][disabled] {
+  background-color: rgb(118 169 250 / var(--tw-bg-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  cursor:not-allowed;
+  border-radius:.5rem;
+  --tw-bg-opacity:1;
+  background-color:rgb(118 169 250/var(--tw-bg-opacity));
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  padding-bottom:.625rem;
+  padding-top:.625rem;
+  text-align:center;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form button[name="do[diff]"][disabled]){
+  --tw-bg-opacity:1;
+  background-color:rgb(63 131 248/var(--tw-bg-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form button[name="do[diff]"][disabled] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(63 131 248 / var(--tw-bg-opacity));
+  }
+
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
     --tw-prose-headings: var(--tw-prose-invert-headings);
