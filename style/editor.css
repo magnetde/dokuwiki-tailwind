@@ -1,8 +1,6 @@
-@import "flowbite";
-
 .dw-content .editBox {
 	@apply
-		w-full mt-8;
+		w-full mt-10;
 	;
 
 	div.toolbar {
@@ -79,13 +77,12 @@
 				}
 
 				label[for="edit__minoredit"] {
-					@apply flex items-center space-x-2;
+					@apply flex items-center space-x-3;
 
 					input {
 						@apply
-							w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-2 focus:ring-blue-300
-							dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600
-							dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800
+							h-4 w-4 rounded border border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500
+							dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600
 						;
 					}
 				}

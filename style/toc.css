@@ -49,17 +49,7 @@
 	}
 
 	// show active headers
-	.nav {
-		@supports selector(:has(*)) {
-			.nav:has(a.active) {
-				display: block !important;
-			}
-		}
-
-		@supports not selector(:has(*)) {
-			a.active + .nav {
-				display: block !important;
-			}
-		}
+	.nav a.active + .nav {
+		display: block;
 	}
 }
