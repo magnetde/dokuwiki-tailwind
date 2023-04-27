@@ -4,4 +4,5 @@
  *
  */
 
-$lang['open_menu'] = 'Hauptmenü öffnen';
+$lang['open_menu']      = 'Hauptmenü öffnen';
+$lang['no_description'] = 'Keine Beschreibung angegeben';
