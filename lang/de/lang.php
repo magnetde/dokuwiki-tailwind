@@ -5,4 +5,4 @@
  */
 
 $lang['open_menu']      = 'Hauptmenü öffnen';
-$lang['no_description'] = 'Keine Beschreibung angegeben';
+$lang['no_description'] = 'Keine Beschreibung';
