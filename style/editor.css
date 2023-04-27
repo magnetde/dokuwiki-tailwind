@@ -1,0 +1,161 @@
+.dw-content .editBox {
+	@apply
+		w-full mt-10;
+	;
+
+	div.toolbar {
+		@apply
+			border p-4 flex flex-nowrap items-center justify-between border-b rounded-t-lg
+			border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
+		;
+	}
+
+	.tool__bar {
+		@apply flex flex-nowrap items-center space-x-2;
+
+		button {
+			@apply p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+		}
+
+		img {
+			@apply my-0 w-6 h-6 fill-gray-400 dark:fill-gray-500;
+		}
+	}
+
+	#draft__status {
+		@apply hidden; // hide the old draft status
+	}
+
+	.doku_form {
+		textarea.edit {
+			@apply
+				block w-full p-4 font-mono text-sm border-x border-y-0
+				text-gray-800 bg-white border-gray-200 dark:text-white dark:bg-gray-800 dark:border-gray-600
+				dark:placeholder-gray-400 focus:ring-0
+			;
+		}
+
+		.editBar {
+			@apply grid;
+
+			img {
+				@apply my-0;
+			}
+
+			#size__ctl {
+				@apply
+					order-1 border p-4 flex flex-nowrap items-center justify-end space-x-2 border-b rounded-b-lg
+					border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
+				;
+			}
+
+			.editButtons {
+				@apply order-3;
+			}
+
+			.summary {
+				@apply order-2 my-8 block;
+
+				label span {
+					@apply font-medium text-gray-900 dark:text-white;
+				}
+
+				label[for="edit__summary"] {
+					span {
+						@apply block mb-2;
+					}
+
+					input {
+						@apply
+							rounded-lg block w-full mb-4 p-2.5
+							bg-gray-50 border border-gray-300 text-gray-900
+							focus:ring-blue-500 focus:border-blue-500
+							dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+							dark:focus:ring-blue-500 dark:focus:border-blue-500
+						;
+					}
+				}
+
+				label[for="edit__minoredit"] {
+					@apply flex items-center space-x-3;
+
+					input {
+						@apply
+							h-4 w-4 rounded border border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500
+							dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600
+						;
+					}
+				}
+			}
+
+			.editButtons {
+				@apply flex items-center justify-end;
+
+				button[name="do[cancel]"] {
+					@apply
+						order-1
+						py-2.5 px-5 mr-2 text-sm font-medium
+						text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200
+						hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200
+						dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
+						dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+					;
+				}
+
+				button[name="do[preview]"] {
+					@apply
+						order-2
+						py-2.5 px-5 mr-2 text-sm font-medium
+						text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200
+						hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200
+						dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
+						dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+					;
+				}
+
+				button[name="do[save]"] {
+					@apply
+						order-3 mr-0
+						font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center
+						text-white bg-blue-700 hover:bg-blue-800
+						focus:ring-4 focus:outline-none focus:ring-blue-300
+						dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
+					;
+				}
+			}
+		}
+	}
+
+	.license {
+		@apply p-4 mt-12 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
+
+		a {
+			@apply inline-block text-inherit;
+		}
+	}
+}
+
+// Picker menus
+div.picker {
+	@apply z-50 p-2 max-w-md bg-white rounded-lg shadow dark:bg-gray-700;
+
+	.pk_hl img {
+		@apply w-5 h-5;
+	}
+
+	&:not(.pk_hl) {
+		@apply grid grid-cols-[repeat(16,minmax(0,1fr))];
+
+		button[title="FIXME"], button[title="DELETEME"] {
+			@apply col-span-3;
+		}
+	}
+
+	.toolbutton, .pickerbutton {
+		@apply p-1 inline-flex items-center justify-center rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+	}
+
+	&.a11y {
+		@apply hidden;
+	}
+}

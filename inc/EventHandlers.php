@@ -120,6 +120,7 @@ class EventHandlers {
 
 		$this->modifyHeaders($html);
 		$this->modifyDownloadBlocks($html);
+		$this->modifyEditor($html);
 
 		$content = $html->save();
 		$html->clear();
@@ -178,5 +179,26 @@ class EventHandlers {
 				.'</a>'
 				.$this->createTooltip($id, $title);
 		}
+	}
+
+	/**
+	 * Modifies the editor by changing the draft status.
+	 * The old draft status gets hidden with CSS because otherwise the draft service may not work correctly.
+	 */
+	private function modifyEditor($html) {
+		$elm = $html->find('.editBox #tool__bar', 0);
+		if(!$elm)
+			return;
+
+		$tooltip_id = 'draft-status-tooltip';
+		$tooltip_text_id = 'draft-status-text';
+
+		// Simply append a new child to the parent by append to the outertext
+		$elm->outertext .= '<div id="draft-icon" class="draft-icon" data-tooltip-placement="bottom" '
+			.'data-tooltip-target="' . $tooltip_id
+			.'"></div>'
+
+			// span needed, so the tooltip can be dynamically changed
+			.$this->createTooltip($tooltip_id, '<span id="'.$tooltip_text_id.'"></span>');
 	}
 }
