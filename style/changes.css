@@ -1,4 +1,6 @@
 .changes.doku_form {
+	@apply mt-10;
+
 	ul {
 		@apply
 			mt-8 ml-4 relative border-l border-gray-200 dark:border-gray-700

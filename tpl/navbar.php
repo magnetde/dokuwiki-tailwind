@@ -9,7 +9,7 @@
 	<div class="<?php echo clsx("
 		flex items-center justify-between
 		md:grid md:grid-cols-3
-		w-full h-full px-4 mx-auto max-w-10xl lg:px-4
+		w-full h-full px-6 mx-auto max-w-10xl lg:px-4
 	") ?>">
 		<!--- Logo and title --->
 		<?php
