@@ -1,12 +1,12 @@
 form.doku_form.search-results-form {
-	@apply mt-8;
+	@apply mt-10;
 
 	.search-form {
 		@apply relative flex items-center justify-between;
 
 		input {
 			@apply
-				order-1
+				order-2
 				rounded-lg block w-full px-2.5 py-2
 				bg-gray-50 border border-gray-300 text-gray-900
 				focus:ring-blue-500 focus:border-blue-500
@@ -17,23 +17,42 @@ form.doku_form.search-results-form {
 
 		button.toggleAssistant {
 			@apply
-				order-2
-				min-w-fit py-2.5 px-5 mx-2 text-sm font-medium
-				text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200
-				hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200
-				dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
-				dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+				order-1 mr-2
+				flex items-center space-x-2
+				min-w-fit py-2.5 px-5 text-sm font-medium rounded-lg
+				text-gray-900 bg-white border border-gray-300
+				focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200
+				dark:bg-gray-800 dark:text-white dark:border-gray-600
+				dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700
 			;
+
+			&:after {
+				@apply
+					w-4 h-4 ml-1 -mr-1 mb-1
+					content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%23111827')]
+					dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%239ca3af')]
+				;
+			}
+
+			&[aria-expanded="true"]:after {
+				@apply
+					content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=%23111827')]
+					dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=%239ca3af')]
+				;
+			}
 		}
 
 		div.advancedOptions {
 			@apply
-				order-3 z-10 absolute top-14 right-0
-				bg-white rounded-lg shadow dark:bg-gray-700
+				order-3 z-10 absolute top-14 left-0 font-medium text-sm rounded-lg shadow
+				text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-700
 			;
 
 			div.current {
-				@apply flex items-center justify-between w-full px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white;
+				@apply
+					flex items-center justify-between w-full px-4 py-2 cursor-pointer
+					hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white
+				;
 
 				&:after {
 					@apply
@@ -44,18 +63,38 @@ form.doku_form.search-results-form {
 				}
 			}
 
-			div.toggle ul {
-				@apply hidden;
-			}
+			div.toggle {
+				@apply relative w-full;
 
-			div.toggle.open ul {
-				@apply block;
+				ul {
+					@apply
+						order-3 z-10 hidden absolute -top-2 -right-1 translate-x-full
+						p-0 list-none rounded-lg shadow
+						bg-white dark:bg-gray-700
+					;
+				}
+
+				ul[aria-expanded="true"] {
+					@apply block;
+				}
+
+				li {
+					@apply p-0 block px-4 py-2 text-gray-400  dark:text-gray-500;
+				}
+
+				li:not(.active) {
+					@apply hover:bg-gray-100 dark:hover:text-white;
+				}
+
+				li > a {
+					@apply cursor-pointer no-underline text-gray-700 dark:text-gray-400;
+				}
 			}
 		}
 
 		button[type="submit"] {
 			@apply
-				order-4 mr-0
+				order-3 ml-2
 				font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center
 				text-white bg-blue-700 hover:bg-blue-800
 				focus:ring-4 focus:outline-none focus:ring-blue-300
