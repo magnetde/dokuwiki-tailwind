@@ -91,7 +91,7 @@
 			.editButtons {
 				@apply flex items-center justify-end;
 
-				button[name="do[cancel]"] {
+				button[name="do[preview]"] {
 					@apply
 						order-1
 						py-2.5 px-5 mr-2 text-sm font-medium
@@ -102,7 +102,7 @@
 					;
 				}
 
-				button[name="do[preview]"] {
+				button[name="do[cancel]"] {
 					@apply
 						order-2
 						py-2.5 px-5 mr-2 text-sm font-medium
