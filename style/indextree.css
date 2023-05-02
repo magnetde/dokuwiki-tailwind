@@ -1,5 +1,8 @@
 .index__tree {
-	@apply mt-8 pt-6 border-t border-gray-200 dark:border-gray-700;
+	@apply
+		mt-8 px-4 py-2 w-full border rounded-lg min-h-[25vh] max-h-[50vh] overflow-y-scroll overflow-x-hidden
+		border-gray-200 dark:border-gray-600
+	;
 
 	a {
 		@apply
@@ -28,20 +31,18 @@
 		}
 	}
 
-	li.closed > div.li a {
-		&:before {
-			@apply
-				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
-				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
-			;
+	// remove hover effect on folders
+	li.closed, li.open {
+		& > div.li a {
+			@apply hover:text-gray-500 hover:dark:text-gray-400;
 		}
+	}
 
-		&:hover:before {
-			@apply
-				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
-				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
-			;
-		}
+	li.closed > div.li a:before {
+		@apply
+			content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
+			dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
+		;
 	}
 
 	li.open > div.li a:before {
