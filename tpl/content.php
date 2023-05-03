@@ -69,6 +69,13 @@
 			prose-headings:scroll-mt-20
 			prose-pre:rounded-lg
 			prose-ul:my-2 prose-li:my-1
+			prose-table:text-base
+			prose-code:p-0.5
+			prose-code:rounded
+			prose-code:text-blue-800
+			prose-code:bg-blue-50
+			dark:prose-code:text-blue-300
+			dark:prose-code:bg-blue-950
 		") ?>">
 
 			<?php echo $content ?>
