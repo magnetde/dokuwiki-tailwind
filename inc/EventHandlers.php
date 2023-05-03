@@ -361,19 +361,20 @@ class EventHandlers {
 	}
 
 	/**
-	 * Modifies the search page.
+	 * Modifies the search page by adding a tab bar and moving the results into tabbed containers.
 	 */
 	private function modifySearch($html) {
 		$form = $html->find('.search-form', 0);
 		if(!$form) // check, if the current content shows search results
 			return;
 
+		// determine the number of elements per tab and the tab contents
 		list($results1, $count1, $results2, $count2) = $this->getSearchTabs($html);
 
 		$show_tab1 = $count1 > 0 || $count2 == 0;
 		$tabnav = '<div class="search-box">';
 
-		// header
+		// create the tab header
 		$tabnav .= '<div class="search-header">'
 			.'<button type="button" role="tab" id="tab-quickhits" class="search-tab'
 			.($show_tab1 ? ' active' : '') . '">'
@@ -387,7 +388,7 @@ class EventHandlers {
 			.'</button>'
 			.'</div>';
 
-		// results
+		// add the tab content
 		$tabnav .= $results1;
 		$tabnav .= $results2;
 		$tabnav .= '</div>';
@@ -396,20 +397,29 @@ class EventHandlers {
 		$form->outertext .= $tabnav;
 	}
 
+	/**
+	 * Determines the content and the number of results for both tabs.
+	 */
 	private function getSearchTabs($html) {
-		$nothing = !empty($html->find('.nothing', 0));
+		$nothing = $html->find('.nothing', 0);
 
-		if(!$nothing) {
+		if(empty($nothing)) {
+			// determine element and count of tab 1
 			list($elm1, $count1) = $this->getResultsElement($html,
 				'search_quickresult', 'tab-content-quickhits', '.search_quickhits li');
 
+			// determine element and count of tab 2
 			list($elm2, $count2) = $this->getResultsElement($html,
 				'search_fulltextresult', 'tab-content-fulltext', '.search_results .search_fullpage_result');
 
+			// add the active class of the active tab
 			$show_tab1 = $count1 > 0 || $count2 == 0;
 			$results1 = $this->resultSetActive($elm1, true, $show_tab1);
 			$results2 = $this->resultSetActive($elm2, false, !$show_tab1);
 		} else {
+			// remove the nothing element
+			$nothing->outertext = '';
+
 			list($results1, $count1) = array($this->resultsEmpty(true, true), 0);
 			list($results2, $count2) = array($this->resultsEmpty(false, false), 0);
 		}
@@ -417,6 +427,10 @@ class EventHandlers {
 		return array($results1, $count1, $results2, $count2);
 	}
 
+	/**
+	 * Determines the element, that shows the results by adding an id, by removing the header
+	 * and by determining the number of search results.
+	 */
 	private function getResultsElement($html, $class, $id, $resultSelector) {
 		$elm = $html->find('.'.$class, 0);
 		if(!$elm)
@@ -430,6 +444,12 @@ class EventHandlers {
 		return array($elm, $count);
 	}
 
+	/**
+	 * Adds the active class of the result element, if the $active parameter is true.
+	 * If the element $elm is not null, the active class is added to the element if needed,
+	 * the html string is determined and the html text of the element is set to the empty string.
+	 * If the element is null, an empty result page is returned.
+	 */
 	private function resultSetActive($elm, $quickhit, $active) {
 		if($elm) {
 			if($active)
@@ -443,6 +463,9 @@ class EventHandlers {
 		return $results;
 	}
 
+	/**
+	 * Creates a empty result tab.
+	 */
 	private function resultsEmpty($quickhit, $active) {
 		global $lang;
 
