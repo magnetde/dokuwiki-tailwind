@@ -11651,11 +11651,11 @@ pre.code .sc-2 {
   font-weight:600;
 }
 
-/* dead links*/
+/* regular links*/
 
-.dw-content .wikilink2, .dw-sidebar .wikilink2 {
-  text-decoration-color: #F05252;
-  text-decoration-color:#f05252;
+.dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
+  text-decoration-color: #3F83F8;
+  text-decoration-color:#3f83f8;
 }
 
 /* Special links with icons*/
@@ -11819,6 +11819,13 @@ pre.code .sc-2 {
   .dw-content a.interwiki.iw_wp, .dw-content a.interwiki.iw_wpde, .dw-content a.interwiki.iw_wpes, .dw-content a.interwiki.iw_wpfr, .dw-content a.interwiki.iw_wpjp, .dw-content a.interwiki.iw_wpmeta, .dw-content a.interwiki.iw_wppl, .dw-sidebar a.interwiki.iw_wp, .dw-sidebar a.interwiki.iw_wpde, .dw-sidebar a.interwiki.iw_wpes, .dw-sidebar a.interwiki.iw_wpfr, .dw-sidebar a.interwiki.iw_wpjp, .dw-sidebar a.interwiki.iw_wpmeta, .dw-sidebar a.interwiki.iw_wppl {
     background-image: url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23f3f4f6');
   }
+}
+
+/* dead links*/
+
+.dw-content a.wikilink2, .dw-sidebar a.wikilink2 {
+  text-decoration-color: #F05252;
+  text-decoration-color:#f05252;
 }
 
 /* Fix the margin in downloadable code blocks*/
@@ -15314,6 +15321,28 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   scroll-margin-top: 5rem;
 }
 
+.prose-code\:rounded :is(:where(code):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.25rem;
+}
+
+.prose-code\:bg-blue-50 :is(:where(code):not(:where([class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 245 255 / var(--tw-bg-opacity));
+}
+
+.prose-code\:p-0 :is(:where(code):not(:where([class~="not-prose"] *))) {
+  padding: 0px;
+}
+
+.prose-code\:p-0\.5 :is(:where(code):not(:where([class~="not-prose"] *))) {
+  padding: 0.125rem;
+}
+
+.prose-code\:text-blue-800 :is(:where(code):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(30 66 159 / var(--tw-text-opacity));
+}
+
 .prose-pre\:rounded-lg :is(:where(pre):not(:where([class~="not-prose"] *))) {
   border-radius: 0.5rem;
 }
@@ -15326,6 +15355,11 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 .prose-li\:my-1 :is(:where(li):not(:where([class~="not-prose"] *))) {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+.prose-table\:text-base :is(:where(table):not(:where([class~="not-prose"] *))) {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 @supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))) or (-webkit-backdrop-filter: blur(0)) {
@@ -15492,6 +15526,16 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   .dark\:focus\:ring-gray-600:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
+  }
+
+  .dark\:prose-code\:bg-blue-950 :is(:where(code):not(:where([class~="not-prose"] *))) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 37 84 / var(--tw-bg-opacity));
+  }
+
+  .dark\:prose-code\:text-blue-300 :is(:where(code):not(:where([class~="not-prose"] *))) {
+    --tw-text-opacity: 1;
+    color: rgb(164 202 254 / var(--tw-text-opacity));
   }
 }
 

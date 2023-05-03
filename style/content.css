@@ -55,9 +55,9 @@
 		@apply font-semibold;
 	}
 
-	// dead links
-	.wikilink2 {
-		@apply decoration-red-500;
+	// regular links
+	a.wikilink1, a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
+		@apply decoration-blue-500;
 	}
 
 	// Special links with icons
@@ -157,6 +157,11 @@
 				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23f3f4f6')]
 			;
 		}
+	}
+
+	// dead links
+	a.wikilink2 {
+		@apply decoration-red-500;
 	}
 
 	// Fix the margin in downloadable code blocks
