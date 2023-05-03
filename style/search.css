@@ -98,7 +98,67 @@ form.doku_form.search-results-form {
 				font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center
 				text-white bg-blue-700 hover:bg-blue-800
 				focus:ring-4 focus:outline-none focus:ring-blue-300
-				dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800			;
+				dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
+			;
 		}
+	}
+}
+
+.search-box {
+	@apply mt-6 w-full;
+
+	.search-header {
+		@apply
+			px-2.5 pt-2.5 flex align-bottom font-medium border rounded-t-md
+			bg-gray-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600
+		;
+	}
+
+	.search-tab {
+		@apply
+			px-5 py-2 inline-block first:mr-1 -mb-px
+			z-[1] overflow-auto border-x border-t border-transparent
+		;
+
+		&.active {
+			@apply rounded-t-md bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-600;
+		}
+	}
+
+	.search_quickresult, .search_fulltextresult {
+		@apply
+			hidden border-x border-b rounded-b-md max-h-[40vh] overflow-x-hidden overflow-y-auto
+			border-gray-200 dark:border-gray-600
+		;
+
+		&.active {
+			@apply block;
+		}
+	}
+
+	.search_quickresult .search_quickhits {
+		@apply pl-0 text-sm font-medium;
+
+		li {
+			@apply list-none p-0 m-0;
+		}
+
+		a {
+			@apply
+				block w-full px-5 py-2 border-b cursor-pointer no-underline
+				border-gray-200 hover:bg-gray-100 hover:text-blue-700
+				focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700
+				dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white
+				dark:focus:ring-gray-500 dark:focus:text-white
+			;
+		}
+
+		li:last-child a {
+			@apply border-0;
+		}
+	}
+
+	.search_fulltextresult {
+		@apply p-4;
 	}
 }

@@ -280,6 +280,7 @@ class EventHandlers {
 		$this->modifyHeaders($html);
 		$this->modifyDownloadBlocks($html);
 		$this->modifyEditor($html);
+		$this->modifySearch($html);
 
 		$content = $html->save();
 		$html->clear();
@@ -359,5 +360,53 @@ class EventHandlers {
 
 			// span needed, so the tooltip can be dynamically changed
 			.$this->createTooltip($tooltip_id, '<span id="'.$tooltip_text_id.'"></span>');
+	}
+
+	/**
+	 * Modifies the search page.
+	 */
+	private function modifySearch($html) {
+		$form = $html->find('.search-form', 0);
+		if(!$form) // check, if the current content shows search results
+			return;
+
+		$nothing = !empty($html->find('.nothing', 0));
+		if($nothing)
+			return;
+
+		$elm = $html->find('.search_quickresult', 0);
+		$elm->setAttribute('id', 'tab-content-quickhits');
+		$elm->addClass('active');
+		$elm->find('h2', 0)->outertext = '';
+
+		$results1 = $elm->save();
+		$elm->outertext = ''; // remove quickresults
+
+		$elm = $html->find('.search_fulltextresult', 0);
+		$elm->setAttribute('id', 'tab-content-fulltext');
+		$elm->find('h2', 0)->outertext = '';
+
+		$results2 = $elm->save();
+		$elm->outertext = ''; // remove fulltext results
+
+		$tabnav = '<div class="search-box">';
+
+		// header
+		$tabnav .= '<div class="search-header">'
+			.'<div>'
+			.'<button id="tab-quickhits" class="search-tab active">' . tpl_getLang('search_title') . '</button>'
+			.'</div>'
+			.'<div>'
+			.'<button id="tab-fulltext" class="search-tab">' . tpl_getLang('search_content') . '</button>'
+			.'</div>'
+			.'</div>';
+
+		// results
+		$tabnav .= $results1;
+		$tabnav .= $results2;
+		$tabnav .= '</div>';
+
+		// Set the html element
+		$elm->outertext = $tabnav;
 	}
 }
