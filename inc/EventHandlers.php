@@ -264,18 +264,16 @@ class EventHandlers {
 		$content = str_replace(['alt=":-\"', "alt=':-\'"], 'alt=":-&#92;"', $content);
 
 		// Return original content if Simple HTML DOM fail or exceeded page size (default MAX_FILE_SIZE => 600KB)
-		if(strlen($content) > MAX_FILE_SIZE) {
+		if(strlen($content) > MAX_FILE_SIZE)
 			return $content;
-		}
 
 		// Import HTML string
 		$html = new simple_html_dom;
 		$html->load($content, true, false);
 
 		// Return original content if Simple HTML DOM fail or exceeded page size (default MAX_FILE_SIZE => 600KB)
-		if(!$html) {
+		if(!$html)
 			return $content;
-		}
 
 		$this->modifyHeaders($html);
 		$this->modifyDownloadBlocks($html);
@@ -370,35 +368,23 @@ class EventHandlers {
 		if(!$form) // check, if the current content shows search results
 			return;
 
-		$nothing = !empty($html->find('.nothing', 0));
-		if($nothing)
-			return;
+		list($results1, $count1, $results2, $count2) = $this->getSearchTabs($html);
 
-		$elm = $html->find('.search_quickresult', 0);
-		$elm->setAttribute('id', 'tab-content-quickhits');
-		$elm->addClass('active');
-		$elm->find('h2', 0)->outertext = '';
-
-		$results1 = $elm->save();
-		$elm->outertext = ''; // remove quickresults
-
-		$elm = $html->find('.search_fulltextresult', 0);
-		$elm->setAttribute('id', 'tab-content-fulltext');
-		$elm->find('h2', 0)->outertext = '';
-
-		$results2 = $elm->save();
-		$elm->outertext = ''; // remove fulltext results
-
+		$show_tab1 = $count1 > 0 || $count2 == 0;
 		$tabnav = '<div class="search-box">';
 
 		// header
 		$tabnav .= '<div class="search-header">'
-			.'<div>'
-			.'<button id="tab-quickhits" class="search-tab active">' . tpl_getLang('search_title') . '</button>'
-			.'</div>'
-			.'<div>'
-			.'<button id="tab-fulltext" class="search-tab">' . tpl_getLang('search_content') . '</button>'
-			.'</div>'
+			.'<button type="button" role="tab" id="tab-quickhits" class="search-tab'
+			.($show_tab1 ? ' active' : '') . '">'
+			.tpl_getLang('search_title')
+			.'<span class="count">' . $count1 . '</span>'
+			.'</button>'
+			.'<button type="button" role="tab" id="tab-fulltext" class="search-tab'
+			.(!$show_tab1 ? ' active' : '') . '">'
+			.tpl_getLang('search_content')
+			.'<span class="count">' . $count2 . '</span>'
+			.'</button>'
 			.'</div>';
 
 		// results
@@ -407,6 +393,70 @@ class EventHandlers {
 		$tabnav .= '</div>';
 
 		// Set the html element
-		$elm->outertext = $tabnav;
+		$form->outertext .= $tabnav;
+	}
+
+	private function getSearchTabs($html) {
+		$nothing = !empty($html->find('.nothing', 0));
+
+		if(!$nothing) {
+			list($elm1, $count1) = $this->getResultsElement($html,
+				'search_quickresult', 'tab-content-quickhits', '.search_quickhits li');
+
+			list($elm2, $count2) = $this->getResultsElement($html,
+				'search_fulltextresult', 'tab-content-fulltext', '.search_results .search_fullpage_result');
+
+			$show_tab1 = $count1 > 0 || $count2 == 0;
+			$results1 = $this->resultSetActive($elm1, true, $show_tab1);
+			$results2 = $this->resultSetActive($elm2, false, !$show_tab1);
+		} else {
+			list($results1, $count1) = array($this->resultsEmpty(true, true), 0);
+			list($results2, $count2) = array($this->resultsEmpty(false, false), 0);
+		}
+
+		return array($results1, $count1, $results2, $count2);
+	}
+
+	private function getResultsElement($html, $class, $id, $resultSelector) {
+		$elm = $html->find('.'.$class, 0);
+		if(!$elm)
+			return array(null, 0);
+
+		$elm->setAttribute('id', $id);
+		$elm->find('h2', 0)->outertext = '';
+
+		$count = count($elm->find($resultSelector));
+
+		return array($elm, $count);
+	}
+
+	private function resultSetActive($elm, $quickhit, $active) {
+		if($elm) {
+			if($active)
+				$elm->addClass('active');
+
+			$results = $elm->save();
+			$elm->outertext = '';
+		} else
+			$results = $this->resultsEmpty($quickhit, $active);
+		
+		return $results;
+	}
+
+	private function resultsEmpty($quickhit, $active) {
+		global $lang;
+
+		if($quickhit) {
+			$id = 'tab-content-quickhits';
+			$class = 'search_quickresult';
+		} else {
+			$id = 'tab-content-fulltext';
+			$class = 'search_fulltextresult';
+		}
+
+		return '<div id="' . $id . '" class="' . $class
+			.($active ? ' active' : '') . '">'
+			.'<div class="nothing">' . $lang['nothingfound']  . '</div>'
+			.'</div>';
 	}
 }

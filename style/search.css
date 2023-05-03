@@ -117,12 +117,25 @@ form.doku_form.search-results-form {
 
 	.search-tab {
 		@apply
-			px-5 py-2 inline-block first:mr-1 -mb-px
+			px-5 py-2 inline-flex items-center justify-center first:mr-1 -mb-px
 			z-[1] overflow-auto border-x border-t border-transparent
+			text-gray-500 dark:text-gray-400
+			hover:text-gray-600 dark:hover:text-gray-300
 		;
 
 		&.active {
-			@apply rounded-t-md bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-600;
+			@apply rounded-t-md text-gray-700 bg-white border-gray-200 dark:text-gray-200 dark:bg-gray-900 dark:border-gray-600;
+		}
+
+		.count {
+			@apply
+				px-2.5 py-0.5 ml-2 inline-flex items-center justify-center text-xs font-semibold rounded-full
+				text-gray-800 bg-gray-200 dark:text-gray-300 dark:bg-gray-600
+			;
+		}
+
+		&.active .count {
+			@apply dark:bg-gray-700;
 		}
 	}
 
@@ -197,5 +210,9 @@ form.doku_form.search-results-form {
 				}
 			}
 		}
+	}
+
+	.nothing {
+		@apply my-8 text-center font-semibold text-xl;
 	}
 }
