@@ -116,5 +116,6 @@ $ICONS = array(
 
 	// Chevrons for the tree view
 	'chevron-right' => 'M9.4 18L8 16.6l4.6-4.6L8 7.4L9.4 6l6 6l-6 6Z',
+	'chevron-up' => 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41Z',
 	'chevron-down' => 'M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42Z',
 );
