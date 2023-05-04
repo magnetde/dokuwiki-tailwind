@@ -362,16 +362,17 @@ class EventHandlers {
 	}
 
 	/**
-	 * Modifies the diff table by adding / removing some classes.
+	 * Modifies the diff table by adding / removing some classes
+	 * and adding a rounded header and footer to the table.
 	 */
 	private function modifyDiff($html) {
 		$diff = $html->find('table.diff', 0);
 		if(!$diff)
 			return;
 
-		$table = $html->find('div.table', 0);
-		$table->addClass('not-prose');
-		$table->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
+		$div = $html->find('div.table', 0);
+		$div->addClass('not-prose');
+		$div->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
 
 		foreach($diff->find('.diff-lineheader') as $elm) {
 			if($elm->innertext == '+')
@@ -387,6 +388,10 @@ class EventHandlers {
 			if($elm->innertext == '&#160;')
 				$elm->addClass('empty');
 		}
+
+		$diff->innertext = '<div class="diff-header"></div>'
+			.$diff->save()
+			.'<div class="diff-footer"></div>';
 	}
 
 	/**

@@ -33,11 +33,45 @@
 	}
 }
 
+.diff-header, .diff-footer {
+	@apply
+		w-full h-4 block border-x
+		border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
+	;
+}
+
+.diff-header {
+	@apply mt-6 border-t rounded-t-xl ;
+}
+
+.diff-footer {
+	@apply border-y rounded-b-xl ;
+}
+
 table.diff {
-	@apply mt-8 w-full overflow-x-auto;
+	@apply w-full overflow-x-auto;
+
+	tr:first-child td, th {
+		@apply border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700;
+
+		&:first-child {
+			@apply border-l;
+		}
+		&:last-child {
+			@apply border-r;
+		}
+	}
+
+	th {
+		@apply p-4 text-sm font-medium text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800;
+
+		a.wikilink1 {
+			@apply font-medium hover:underline decoration-current text-blue-600 dark:text-blue-500;
+		}
+	}
 
 	.diffnav {
-		@apply text-center;
+		@apply text-center pb-4;
 
 		a {
 			@apply
@@ -98,10 +132,10 @@ table.diff {
 
 		select.quickselect {
 			@apply
-				inline mx-2 py-2 pl-2.5 pr-12 text-sm rounded-lg border max-w-[50%]
-				bg-gray-50 border-gray-300 text-gray-900
+				inline mx-2 py-2 pl-2.5 pr-8 text-sm rounded-lg border max-w-[50%]
+				bg-white border-gray-200 text-gray-900
 				focus:ring-blue-500 focus:border-blue-500
-				dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+				dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
 				dark:focus:ring-blue-500 dark:focus:border-blue-500
 			;
 		}
