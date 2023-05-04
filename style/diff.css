@@ -6,7 +6,7 @@
 
 		.quickselect {
 			span {
-				@apply mr-2 font-medium text-gray-900 dark:text-white;
+				@apply mr-2 text-sm font-medium text-gray-900 dark:text-white;
 			}
 
 			select {
@@ -65,8 +65,12 @@ table.diff {
 	th {
 		@apply p-4 text-sm font-medium text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800;
 
-		a.wikilink1 {
+		.wikilink1 {
 			@apply font-medium hover:underline decoration-current text-blue-600 dark:text-blue-500;
+		}
+
+		.sum {
+			@apply text-gray-900 dark:text-white;
 		}
 	}
 
@@ -159,7 +163,7 @@ table.diff {
 		}
 
 		&.diff-blockheader {
-			@apply px-2 py-1 font-medium text-gray-600 bg-sky-100 dark:text-gray-400 dark:bg-sky-900;
+			@apply px-3 py-1.5 font-medium text-gray-600 bg-sky-100 dark:text-gray-400 dark:bg-sky-900;
 		}
 
 		&.diff-lineheader {
@@ -191,6 +195,31 @@ table.diff {
 			.diff-mark {
 				@apply bg-red-200 dark:bg-red-800;
 			}
+		}
+	}
+}
+
+// Modifications for the inline diff editor
+table.diff_inline {
+	td:not(.diffnav) { // using the same selector to have the same precedence
+		&.diff-lineheader {
+			// @apply w-0 p-0 overflow-hidden;
+		}
+
+		.diff-addedline {
+				@apply bg-green-200 dark:bg-green-800;
+		}
+
+		.diff-deletedline {
+				@apply bg-red-200 dark:bg-red-800;
+		}
+
+		&.diff-addedline {
+			@apply bg-green-100 dark:bg-green-900;
+		}
+
+		&.diff-deletedline {
+			@apply bg-red-100 dark:bg-red-900;
 		}
 	}
 }
