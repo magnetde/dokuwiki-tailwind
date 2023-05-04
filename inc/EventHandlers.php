@@ -278,6 +278,7 @@ class EventHandlers {
 		$this->modifyHeaders($html);
 		$this->modifyDownloadBlocks($html);
 		$this->modifyEditor($html);
+		$this->modifyDiff($html);
 		$this->modifySearch($html);
 
 		$content = $html->save();
@@ -358,6 +359,111 @@ class EventHandlers {
 
 			// span needed, so the tooltip can be dynamically changed
 			.$this->createTooltip($tooltip_id, '<span id="'.$tooltip_text_id.'"></span>');
+	}
+
+	/**
+	 * Modifies the diff table by adding / removing some classes, modifying
+	 * the revision description and adding a rounded header and footer to the table.
+	 */
+	private function modifyDiff($html) {
+		$diff = $html->find('table.diff', 0);
+		if(!$diff)
+			return;
+
+		$div = $html->find('div.table', 0);
+		$div->addClass('not-prose');
+		$div->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
+
+		if($diff->hasClass('diff_sidebyside'))
+			$this->modifyDiffSideBySide($diff);
+		else
+			$this->modifyDiffInline($diff);
+
+		$diff->innertext = '<div class="diff-header"></div>'
+			.$diff->save()
+			.'<div class="diff-footer"></div>';
+	}
+
+	/**
+	 * Modifies the side-by-side diff table by modifying the revision description
+	 * and adding classes to some elements.
+	 */
+	private function modifyDiffSideBySide($diff) {
+		// modify the revision descriptions
+		foreach($diff->find('th') as $th) {
+			// Add a line break after the revision link or before the summary (like it exists in the inline view)
+			$sum = $th->find('.sum', 0);
+			$sum->outertext = '<br />' . str_replace(' – ', '', $sum->outertext);
+
+			if($sum->innertext != ' – ')
+				$sum->outertext .= ', ';
+
+			// Remove the line break at the user description
+			$user = $th->find('.user', 0);
+			$user->outertext = str_replace('<br />', '', $user->outertext);
+		}
+
+		// Add classes to the diff lineheaders to style those different dependend on the + or - symbol
+		foreach($diff->find('.diff-lineheader') as $elm) {
+			if($elm->innertext == '+')
+				$elm->addClass('added');
+			elseif($elm->innertext == '-')
+				$elm->addClass('deleted');
+		}
+
+		// Add the "empty" class to emoty code blocks.
+		foreach($diff->find('td[colspan="2"]') as $elm) {
+			if(strlen(trim($elm->class)) > 0)
+				continue;
+
+			if($elm->innertext == '&#160;')
+				$elm->addClass('empty');
+		}
+	}
+
+	/**
+	 * Modifies the inline diff table by modifying the table header.
+	 */
+	private function modifyDiffInline($diff) {
+		// Modify the table header by removing the lineheaders and moving the navgation to the same row.
+
+		$content_nav = '<tr><td colspan="2" class="diffnav"><div class="flex flex-nowrap items-center">';
+		foreach($diff->find('.diffnav') as $elm)
+			$content_nav .= '<div class="flex-grow">' .  $elm->innertext . '</div>';
+		$content_nav .= '</div></td></tr>';
+
+		$content_subnav = '<tr><th colspan="2"><div class="flex flex-nowrap items-center space-x-2">';
+		foreach($diff->find('th[!class]') as $elm) {
+			$inner = '';
+
+			// determine the innertext by iterating over the nodes and modifying the summary, if necessary
+			foreach($elm->nodes as $n) {
+				if($n->hasClass('sum')) {
+					$n->outertext = str_replace(' – ', '', $n->outertext);
+
+					if($n->innertext != ' – ')
+						$n->outertext .= ', ';
+				}
+
+				$inner .= $n->save();
+			}
+
+			$content_subnav .= '<div class="flex-grow">' .  $inner . '</div>';
+		}
+		$content_subnav .= '</div></th></tr>';
+
+		// Add the new rows by replacing the first old row
+		$diff->find('tr', 0)->outertext = $content_nav . $content_subnav;
+
+		// Remove first 4 rows
+		for($i = 1; $i < 4; $i++)
+			$diff->find('tr', $i)->outertext = '';
+
+		// Remove the help text at the block headers
+		foreach($diff->find('.diff-blockheader') as $elm) {
+			$elm->find('.diff-deletedline', 0)->outertext = '';
+			$elm->find('.diff-addedline', 0)->outertext = '';
+		}
 	}
 
 	/**
@@ -459,7 +565,7 @@ class EventHandlers {
 			$elm->outertext = '';
 		} else
 			$results = $this->resultsEmpty($quickhit, $active);
-		
+
 		return $results;
 	}
 
