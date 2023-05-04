@@ -278,6 +278,7 @@ class EventHandlers {
 		$this->modifyHeaders($html);
 		$this->modifyDownloadBlocks($html);
 		$this->modifyEditor($html);
+		$this->modifyDiff($html);
 		$this->modifySearch($html);
 
 		$content = $html->save();
@@ -358,6 +359,34 @@ class EventHandlers {
 
 			// span needed, so the tooltip can be dynamically changed
 			.$this->createTooltip($tooltip_id, '<span id="'.$tooltip_text_id.'"></span>');
+	}
+
+	/**
+	 * Modifies the diff table by adding / removing some classes.
+	 */
+	private function modifyDiff($html) {
+		$diff = $html->find('table.diff', 0);
+		if(!$diff)
+			return;
+
+		$table = $html->find('div.table', 0);
+		$table->addClass('not-prose');
+		$table->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
+
+		foreach($diff->find('.diff-lineheader') as $elm) {
+			if($elm->innertext == '+')
+				$elm->addClass('added');
+			elseif($elm->innertext == '-')
+				$elm->addClass('deleted');
+		}
+
+		foreach($diff->find('td[colspan="2"]') as $elm) {
+			if(strlen(trim($elm->class)) > 0)
+				continue;
+
+			if($elm->innertext == '&#160;')
+				$elm->addClass('empty');
+		}
 	}
 
 	/**

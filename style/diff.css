@@ -1,0 +1,162 @@
+.diffoptions {
+	@apply flex flex-nowrap items-center;
+
+	.doku_form {
+		@apply flex-grow;
+
+		.quickselect {
+			span {
+				@apply mr-2 font-medium text-gray-900 dark:text-white;
+			}
+
+			select {
+				@apply
+					inline-block py-2.5 pl-2.5 pr-12 text-sm rounded-lg border
+					bg-gray-50 border-gray-300 text-gray-900
+					focus:ring-blue-500 focus:border-blue-500
+					dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+					dark:focus:ring-blue-500 dark:focus:border-blue-500
+				;
+			}
+		}
+	}
+
+	.difflink {
+		@apply
+			py-2.5 px-5 text-sm font-medium rounded-lg border no-underline
+			focus:outline-none focus:z-10 focus:ring-4
+			text-gray-900 bg-white border-gray-200
+			hover:text-blue-700 hover:bg-gray-100 focus:ring-gray-200
+			dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600
+			dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700
+		;
+	}
+}
+
+table.diff {
+	@apply mt-8 w-full overflow-x-auto;
+
+	.diffnav {
+		@apply text-center;
+
+		a {
+			@apply
+				align-middle inline-flex items-center p-2 text-xs font-medium border rounded-lg
+				focus:z-10 focus:ring-2 focus:outline-none
+				text-gray-700 bg-white border-gray-200 hover:bg-gray-100 focus:ring-gray-300
+				dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-gray-500 dark:hover:bg-gray-700
+			;
+
+			&.diffbothprevrev {
+				@apply mr-2;
+			}
+
+			&.diffbothnextrev {
+				@apply ml-2;
+			}
+
+			span {
+				@apply hidden;
+			}
+
+			&:before {
+				@apply w-4 h-4;
+			}
+		}
+
+		a.diffbothprevrev:before {
+			@apply
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-left&color=%236b7280')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-left&color=%239ca3af')]
+			;
+		}
+
+		a.diffprevrev:before {
+			@apply
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-left&color=%236b7280')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-left&color=%239ca3af')]
+			;
+		}
+
+		a.diffbothnextrev:before {
+			@apply
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-right&color=%236b7280')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-right&color=%239ca3af')]
+			;
+		}
+
+		a.diffnextrev:before, a.difflastrev:before {
+			@apply
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
+			;
+		}
+
+		.doku_form {
+			@apply inline;
+		}
+
+		select.quickselect {
+			@apply
+				inline mx-2 py-2 pl-2.5 pr-12 text-sm rounded-lg border max-w-[50%]
+				bg-gray-50 border-gray-300 text-gray-900
+				focus:ring-blue-500 focus:border-blue-500
+				dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+				dark:focus:ring-blue-500 dark:focus:border-blue-500
+			;
+		}
+	}
+
+	// Default formatting of table cells
+	td:not(.diffnav) {
+		@apply p-1 font-mono align-middle text-sm;
+
+		&.empty {
+			@apply bg-gray-100 dark:bg-gray-800;
+		}
+
+		// Borders
+		&:first-child, &.diff-lineheader, &.empty {
+			@apply border-l border-gray-200 dark:border-gray-600;
+		}
+
+		&:last-child {
+			@apply border-r border-gray-200 dark:border-gray-600;
+		}
+
+		&.diff-blockheader {
+			@apply px-2 py-1 font-medium text-gray-600 bg-sky-100 dark:text-gray-400 dark:bg-sky-900;
+		}
+
+		&.diff-lineheader {
+			@apply pl-2 pr-1.5 text-center bg-gray-50 dark:bg-gray-900;
+
+			&.added {
+				@apply bg-green-100 dark:bg-green-900;
+			}
+			&.deleted {
+				@apply bg-red-100 dark:bg-red-900;
+			}
+		}
+
+		&.diff-context {
+			// Keep empty
+		}
+
+		&.diff-addedline {
+			@apply bg-green-50 dark:bg-green-950;
+
+			.diff-mark {
+				@apply bg-green-200 dark:bg-green-800;
+			}
+		}
+
+		&.diff-deletedline {
+			@apply bg-red-50 dark:bg-red-950;
+
+			.diff-mark {
+				@apply bg-red-200 dark:bg-red-800;
+			}
+		}
+	}
+}

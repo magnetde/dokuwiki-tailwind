@@ -127,10 +127,13 @@
 	}
 
 	.license {
-		@apply p-4 mt-12 mb-2 text-sm text-center text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400;
+		@apply
+			p-4 mt-12 mb-2 text-sm text-center
+			text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400
+		;
 
 		a {
-			@apply inline-block text-inherit;
+			@apply inline-block text-inherit decoration-current;
 		}
 	}
 }
