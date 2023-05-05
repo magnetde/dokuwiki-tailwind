@@ -173,7 +173,7 @@ table.diff {
 		}
 
 		&.diff-lineheader {
-			@apply pl-2 pr-1.5 text-center align-top bg-gray-50 dark:bg-gray-900;
+			@apply px-1.5 w-0 text-center align-top bg-gray-50 dark:bg-gray-900;
 
 			&.added {
 				@apply bg-green-100 dark:bg-green-900;
