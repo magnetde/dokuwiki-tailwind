@@ -1,5 +1,5 @@
 .diffoptions {
-	@apply flex flex-nowrap items-center;
+	@apply mt-6 flex flex-nowrap items-center;
 
 	.doku_form {
 		@apply flex-grow;
@@ -19,6 +19,10 @@
 				;
 			}
 		}
+
+		& + p {
+			@apply my-0;
+		}
 	}
 
 	.difflink {
@@ -32,6 +36,8 @@
 		;
 	}
 }
+
+// Diff header and footer for having round edges
 
 .diff-header, .diff-footer {
 	@apply
@@ -63,7 +69,7 @@ table.diff {
 	}
 
 	th {
-		@apply p-4 text-sm font-medium text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800;
+		@apply p-4 w-1/2 text-sm font-medium text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800;
 
 		.wikilink1 {
 			@apply font-medium hover:underline decoration-current text-blue-600 dark:text-blue-500;
@@ -167,7 +173,7 @@ table.diff {
 		}
 
 		&.diff-lineheader {
-			@apply pl-2 pr-1.5 text-center bg-gray-50 dark:bg-gray-900;
+			@apply px-1.5 w-0 text-center align-top bg-gray-50 dark:bg-gray-900;
 
 			&.added {
 				@apply bg-green-100 dark:bg-green-900;
@@ -203,7 +209,7 @@ table.diff {
 table.diff_inline {
 	td:not(.diffnav) { // using the same selector to have the same precedence
 		&.diff-lineheader {
-			// @apply w-0 p-0 overflow-hidden;
+			@apply p-0 w-[0%];
 		}
 
 		.diff-addedline {
@@ -221,5 +227,12 @@ table.diff_inline {
 		&.diff-deletedline {
 			@apply bg-red-100 dark:bg-red-900;
 		}
+	}
+}
+
+// Modifications for the draft page
+table.diff_sidebyside {
+	tr:first-child th {
+		@apply border-t;
 	}
 }
