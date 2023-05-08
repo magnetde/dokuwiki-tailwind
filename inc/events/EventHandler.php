@@ -1,10 +1,12 @@
 <?php
 
+@require_once dirname(__FILE__) . '/util.php'; // Include the utility functions
+
 /**
  * Abstract class used to implement all event handlers, that modifies content,
  * that is not archievable by using plain CSS.
  */
-abstract class Event {
+abstract class EventHandler {
 
 	function __construct() {}
 
@@ -21,7 +23,7 @@ abstract class Event {
 	/**
 	 * The event handler function.
 	 */
-	abstract public function handler(\Doku_Event $event);
+	abstract public function handle(\Doku_Event $event);
 
 	/**
 	 * Registers the event at the DokuWiki event handlers.
@@ -29,6 +31,6 @@ abstract class Event {
 	public function register() {
 		global $EVENT_HANDLER;
 
-		$EVENT_HANDLER->register_hook($this->event(), $this->advise(), $this, 'handler');
+		$EVENT_HANDLER->register_hook($this->event(), $this->advise(), $this, 'handle');
 	}
 }

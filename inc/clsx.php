@@ -53,5 +53,3 @@ function to_val($mix) {
 
 	return $str;
 }
-
-?>

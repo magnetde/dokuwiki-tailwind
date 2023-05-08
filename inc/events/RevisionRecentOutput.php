@@ -6,7 +6,7 @@ use simple_html_dom\simple_html_dom;
  * Abstract handler class used to modify the revision and recent list.
  * This event handler does not apply styles because styles are applied by CSS.
  */
-abstract class RevisionRecentOutput extends Event {
+abstract class RevisionRecentOutput extends EventHandler {
 
 	/**
 	 * Returns as a boolean, whether the current handler is used for the revision or the recent list.
@@ -16,7 +16,7 @@ abstract class RevisionRecentOutput extends Event {
 	/**
 	 * Handler function.
 	 */
-	public function handler(\Doku_Event $event) {
+	public function handle(\Doku_Event $event) {
 		$form = $event->data;
 
 		for($i = 0; $i < $form->elementCount(); $i++) {
