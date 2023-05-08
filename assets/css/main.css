@@ -16505,6 +16505,510 @@ ul.idx li:last-child a {
     --tw-text-opacity: 1;
     color: rgb(28 100 242 / var(--tw-text-opacity));
   }
+}
+
+#dw__login,
+#dw__register,
+#dw__resendpwd,
+#dw__profiledelete {
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:2rem;
+  width:100%;
+  border-radius:.5rem;
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  padding:1.5rem;
+  --tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+  --tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+:is(.dark #dw__login),:is(.dark 
+#dw__register),:is(.dark 
+#dw__resendpwd),:is(.dark 
+#dw__profiledelete){
+  --tw-border-opacity:1;
+  border-color:rgb(55 65 81/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(31 41 55/var(--tw-bg-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login,
+#dw__register,
+#dw__resendpwd,
+#dw__profiledelete {
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  }
+}
+
+@media (min-width: 768px) {
+  #dw__login,
+#dw__register,
+#dw__resendpwd,
+#dw__profiledelete {
+    width: 50%;
+  }
+}
+
+/* The user form*/
+
+/* Header*/
+
+#dw__login fieldset legend, #dw__register fieldset legend, #dw__resendpwd fieldset legend, #dw__profiledelete fieldset legend {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  margin-bottom:2rem;
+  font-size:1.25rem;
+  line-height:1.75rem;
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark #dw__login fieldset legend),:is(.dark  #dw__register fieldset legend),:is(.dark  #dw__resendpwd fieldset legend),:is(.dark  #dw__profiledelete fieldset legend){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset legend, #dw__register fieldset legend, #dw__resendpwd fieldset legend, #dw__profiledelete fieldset legend {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 768px) {
+  #dw__login fieldset legend, #dw__register fieldset legend, #dw__resendpwd fieldset legend, #dw__profiledelete fieldset legend {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+/* Input elements*/
+
+/* Labels of input elements*/
+
+#dw__login fieldset label span, #dw__register fieldset label span, #dw__resendpwd fieldset label span, #dw__profiledelete fieldset label span {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  margin-bottom:.5rem;
+  display:block;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark #dw__login fieldset label span),:is(.dark  #dw__register fieldset label span),:is(.dark  #dw__resendpwd fieldset label span),:is(.dark  #dw__profiledelete fieldset label span){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset label span, #dw__register fieldset label span, #dw__resendpwd fieldset label span, #dw__profiledelete fieldset label span {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+/* text input element*/
+
+#dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  display:block;
+  width:100%;
+  border-radius:.5rem;
+  border-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(209 213 219/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(249 250 251/var(--tw-bg-opacity));
+  padding:.625rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+#dw__login fieldset label input[type="text"]:focus, #dw__login fieldset label input[type="password"]:focus, #dw__login fieldset label input[type="email"]:focus, #dw__register fieldset label input[type="text"]:focus, #dw__register fieldset label input[type="password"]:focus, #dw__register fieldset label input[type="email"]:focus, #dw__resendpwd fieldset label input[type="text"]:focus, #dw__resendpwd fieldset label input[type="password"]:focus, #dw__resendpwd fieldset label input[type="email"]:focus, #dw__profiledelete fieldset label input[type="text"]:focus, #dw__profiledelete fieldset label input[type="password"]:focus, #dw__profiledelete fieldset label input[type="email"]:focus{
+  --tw-border-opacity:1;
+  border-color:rgb(63 131 248/var(--tw-border-opacity));
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(63 131 248/var(--tw-ring-opacity))
+}
+
+:is(.dark #dw__login fieldset label input[type="text"]),:is(.dark  #dw__login fieldset label input[type="password"]),:is(.dark  #dw__login fieldset label input[type="email"]),:is(.dark  #dw__register fieldset label input[type="text"]),:is(.dark  #dw__register fieldset label input[type="password"]),:is(.dark  #dw__register fieldset label input[type="email"]),:is(.dark  #dw__resendpwd fieldset label input[type="text"]),:is(.dark  #dw__resendpwd fieldset label input[type="password"]),:is(.dark  #dw__resendpwd fieldset label input[type="email"]),:is(.dark  #dw__profiledelete fieldset label input[type="text"]),:is(.dark  #dw__profiledelete fieldset label input[type="password"]),:is(.dark  #dw__profiledelete fieldset label input[type="email"]){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+:is(.dark #dw__login fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__login fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__login fieldset label input[type="email"])::-moz-placeholder,:is(.dark  #dw__register fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__register fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__register fieldset label input[type="email"])::-moz-placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="email"])::-moz-placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="email"])::-moz-placeholder{
+  --tw-placeholder-opacity:1;
+  color:rgb(156 163 175/var(--tw-placeholder-opacity))
+}
+
+:is(.dark #dw__login fieldset label input[type="text"])::-moz-placeholder, :is(.dark  #dw__login fieldset label input[type="password"])::-moz-placeholder, :is(.dark  #dw__login fieldset label input[type="email"])::-moz-placeholder, :is(.dark  #dw__register fieldset label input[type="text"])::-moz-placeholder, :is(.dark  #dw__register fieldset label input[type="password"])::-moz-placeholder, :is(.dark  #dw__register fieldset label input[type="email"])::-moz-placeholder, :is(.dark  #dw__resendpwd fieldset label input[type="text"])::-moz-placeholder, :is(.dark  #dw__resendpwd fieldset label input[type="password"])::-moz-placeholder, :is(.dark  #dw__resendpwd fieldset label input[type="email"])::-moz-placeholder, :is(.dark  #dw__profiledelete fieldset label input[type="text"])::-moz-placeholder, :is(.dark  #dw__profiledelete fieldset label input[type="password"])::-moz-placeholder, :is(.dark  #dw__profiledelete fieldset label input[type="email"])::-moz-placeholder{
+  --tw-placeholder-opacity:1;
+  color:rgb(156 163 175/var(--tw-placeholder-opacity))
+}
+
+:is(.dark #dw__login fieldset label input[type="text"])::placeholder,:is(.dark  #dw__login fieldset label input[type="password"])::placeholder,:is(.dark  #dw__login fieldset label input[type="email"])::placeholder,:is(.dark  #dw__register fieldset label input[type="text"])::placeholder,:is(.dark  #dw__register fieldset label input[type="password"])::placeholder,:is(.dark  #dw__register fieldset label input[type="email"])::placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="text"])::placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="password"])::placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="email"])::placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="text"])::placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="password"])::placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="email"])::placeholder{
+  --tw-placeholder-opacity:1;
+  color:rgb(156 163 175/var(--tw-placeholder-opacity))
+}
+
+:is(.dark #dw__login fieldset label input[type="text"]:focus),:is(.dark  #dw__login fieldset label input[type="password"]:focus),:is(.dark  #dw__login fieldset label input[type="email"]:focus),:is(.dark  #dw__register fieldset label input[type="text"]:focus),:is(.dark  #dw__register fieldset label input[type="password"]:focus),:is(.dark  #dw__register fieldset label input[type="email"]:focus),:is(.dark  #dw__resendpwd fieldset label input[type="text"]:focus),:is(.dark  #dw__resendpwd fieldset label input[type="password"]:focus),:is(.dark  #dw__resendpwd fieldset label input[type="email"]:focus),:is(.dark  #dw__profiledelete fieldset label input[type="text"]:focus),:is(.dark  #dw__profiledelete fieldset label input[type="password"]:focus),:is(.dark  #dw__profiledelete fieldset label input[type="email"]:focus){
+  --tw-border-opacity:1;
+  border-color:rgb(63 131 248/var(--tw-border-opacity));
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(63 131 248/var(--tw-ring-opacity))
+}
+
+#dw__login fieldset label input[type="text"]:focus, #dw__login fieldset label input[type="password"]:focus, #dw__login fieldset label input[type="email"]:focus, #dw__register fieldset label input[type="text"]:focus, #dw__register fieldset label input[type="password"]:focus, #dw__register fieldset label input[type="email"]:focus, #dw__resendpwd fieldset label input[type="text"]:focus, #dw__resendpwd fieldset label input[type="password"]:focus, #dw__resendpwd fieldset label input[type="email"]:focus, #dw__profiledelete fieldset label input[type="text"]:focus, #dw__profiledelete fieldset label input[type="password"]:focus, #dw__profiledelete fieldset label input[type="email"]:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  #dw__login fieldset label input[type="text"]::-moz-placeholder, #dw__login fieldset label input[type="password"]::-moz-placeholder, #dw__login fieldset label input[type="email"]::-moz-placeholder, #dw__register fieldset label input[type="text"]::-moz-placeholder, #dw__register fieldset label input[type="password"]::-moz-placeholder, #dw__register fieldset label input[type="email"]::-moz-placeholder, #dw__resendpwd fieldset label input[type="text"]::-moz-placeholder, #dw__resendpwd fieldset label input[type="password"]::-moz-placeholder, #dw__resendpwd fieldset label input[type="email"]::-moz-placeholder, #dw__profiledelete fieldset label input[type="text"]::-moz-placeholder, #dw__profiledelete fieldset label input[type="password"]::-moz-placeholder, #dw__profiledelete fieldset label input[type="email"]::-moz-placeholder {
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  #dw__login fieldset label input[type="text"]::placeholder, #dw__login fieldset label input[type="password"]::placeholder, #dw__login fieldset label input[type="email"]::placeholder, #dw__register fieldset label input[type="text"]::placeholder, #dw__register fieldset label input[type="password"]::placeholder, #dw__register fieldset label input[type="email"]::placeholder, #dw__resendpwd fieldset label input[type="text"]::placeholder, #dw__resendpwd fieldset label input[type="password"]::placeholder, #dw__resendpwd fieldset label input[type="email"]::placeholder, #dw__profiledelete fieldset label input[type="text"]::placeholder, #dw__profiledelete fieldset label input[type="password"]::placeholder, #dw__profiledelete fieldset label input[type="email"]::placeholder {
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  #dw__login fieldset label input[type="text"]:focus, #dw__login fieldset label input[type="password"]:focus, #dw__login fieldset label input[type="email"]:focus, #dw__register fieldset label input[type="text"]:focus, #dw__register fieldset label input[type="password"]:focus, #dw__register fieldset label input[type="email"]:focus, #dw__resendpwd fieldset label input[type="text"]:focus, #dw__resendpwd fieldset label input[type="password"]:focus, #dw__resendpwd fieldset label input[type="email"]:focus, #dw__profiledelete fieldset label input[type="text"]:focus, #dw__profiledelete fieldset label input[type="password"]:focus, #dw__profiledelete fieldset label input[type="email"]:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(63 131 248 / var(--tw-border-opacity));
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+  }
+}
+
+/* Checkbox*/
+
+#dw__login fieldset label input[type="checkbox"], #dw__register fieldset label input[type="checkbox"], #dw__resendpwd fieldset label input[type="checkbox"], #dw__profiledelete fieldset label input[type="checkbox"] {
+  margin-top: 0.18rem;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  vertical-align: top;
+  display:inline-block;
+  height:1rem;
+  width:1rem;
+  border-radius:.25rem;
+  border-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(209 213 219/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(249 250 251/var(--tw-bg-opacity));
+}
+
+#dw__login fieldset label input[type="checkbox"]:focus, #dw__register fieldset label input[type="checkbox"]:focus, #dw__resendpwd fieldset label input[type="checkbox"]:focus, #dw__profiledelete fieldset label input[type="checkbox"]:focus{
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
+}
+
+:is(.dark #dw__login fieldset label input[type="checkbox"]),:is(.dark  #dw__register fieldset label input[type="checkbox"]),:is(.dark  #dw__resendpwd fieldset label input[type="checkbox"]),:is(.dark  #dw__profiledelete fieldset label input[type="checkbox"]){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-ring-offset-color:#1f2937
+}
+
+:is(.dark #dw__login fieldset label input[type="checkbox"]:focus),:is(.dark  #dw__register fieldset label input[type="checkbox"]:focus),:is(.dark  #dw__resendpwd fieldset label input[type="checkbox"]:focus),:is(.dark  #dw__profiledelete fieldset label input[type="checkbox"]:focus){
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(28 100 242/var(--tw-ring-opacity));
+  --tw-ring-offset-color:#1f2937
+}
+
+#dw__login fieldset label input[type="checkbox"]:focus, #dw__register fieldset label input[type="checkbox"]:focus, #dw__resendpwd fieldset label input[type="checkbox"]:focus, #dw__profiledelete fieldset label input[type="checkbox"]:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset label input[type="checkbox"], #dw__register fieldset label input[type="checkbox"], #dw__resendpwd fieldset label input[type="checkbox"], #dw__profiledelete fieldset label input[type="checkbox"] {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-ring-offset-color: #1F2937;
+  }
+
+  #dw__login fieldset label input[type="checkbox"]:focus, #dw__register fieldset label input[type="checkbox"]:focus, #dw__resendpwd fieldset label input[type="checkbox"]:focus, #dw__profiledelete fieldset label input[type="checkbox"]:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
+    --tw-ring-offset-color: #1F2937;
+  }
+}
+
+/* Checkbox label*/
+
+#dw__login fieldset label input[type="checkbox"] + span, #dw__register fieldset label input[type="checkbox"] + span, #dw__resendpwd fieldset label input[type="checkbox"] + span, #dw__profiledelete fieldset label input[type="checkbox"] + span {
+  vertical-align: top;
+  margin-bottom:1rem;
+  margin-left:.5rem;
+  display:inline-block;
+}
+
+/* Submit button*/
+
+#dw__login fieldset button[type="submit"], #dw__register fieldset button[type="submit"], #dw__resendpwd fieldset button[type="submit"], #dw__profiledelete fieldset button[type="submit"] {
+  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  margin-bottom:1.5rem;
+  margin-top:1.5rem;
+  display:block;
+  width:100%;
+  border-radius:.5rem;
+  --tw-bg-opacity:1;
+  background-color:rgb(26 86 219/var(--tw-bg-opacity));
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  padding-bottom:.625rem;
+  padding-top:.625rem;
+  text-align:center;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity));
+}
+
+#dw__login fieldset button[type="submit"]:hover, #dw__register fieldset button[type="submit"]:hover, #dw__resendpwd fieldset button[type="submit"]:hover, #dw__profiledelete fieldset button[type="submit"]:hover{
+  --tw-bg-opacity:1;
+  background-color:rgb(30 66 159/var(--tw-bg-opacity))
+}
+
+#dw__login fieldset button[type="submit"]:focus, #dw__register fieldset button[type="submit"]:focus, #dw__resendpwd fieldset button[type="submit"]:focus, #dw__profiledelete fieldset button[type="submit"]:focus{
+  outline:2px solid transparent;
+  outline-offset:2px;
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
+}
+
+:is(.dark #dw__login fieldset button[type="submit"]),:is(.dark  #dw__register fieldset button[type="submit"]),:is(.dark  #dw__resendpwd fieldset button[type="submit"]),:is(.dark  #dw__profiledelete fieldset button[type="submit"]){
+  --tw-bg-opacity:1;
+  background-color:rgb(28 100 242/var(--tw-bg-opacity))
+}
+
+:is(.dark #dw__login fieldset button[type="submit"]:hover),:is(.dark  #dw__register fieldset button[type="submit"]:hover),:is(.dark  #dw__resendpwd fieldset button[type="submit"]:hover),:is(.dark  #dw__profiledelete fieldset button[type="submit"]:hover){
+  --tw-bg-opacity:1;
+  background-color:rgb(26 86 219/var(--tw-bg-opacity))
+}
+
+:is(.dark #dw__login fieldset button[type="submit"]:focus),:is(.dark  #dw__register fieldset button[type="submit"]:focus),:is(.dark  #dw__resendpwd fieldset button[type="submit"]:focus),:is(.dark  #dw__profiledelete fieldset button[type="submit"]:focus){
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(30 66 159/var(--tw-ring-opacity))
+}
+
+#dw__login fieldset button[type="submit"]:hover, #dw__register fieldset button[type="submit"]:hover, #dw__resendpwd fieldset button[type="submit"]:hover, #dw__profiledelete fieldset button[type="submit"]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+}
+
+#dw__login fieldset button[type="submit"]:focus, #dw__register fieldset button[type="submit"]:focus, #dw__resendpwd fieldset button[type="submit"]:focus, #dw__profiledelete fieldset button[type="submit"]:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset button[type="submit"], #dw__register fieldset button[type="submit"], #dw__resendpwd fieldset button[type="submit"], #dw__profiledelete fieldset button[type="submit"] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(28 100 242 / var(--tw-bg-opacity));
+  }
+
+  #dw__login fieldset button[type="submit"]:hover, #dw__register fieldset button[type="submit"]:hover, #dw__resendpwd fieldset button[type="submit"]:hover, #dw__profiledelete fieldset button[type="submit"]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+  }
+
+  #dw__login fieldset button[type="submit"]:focus, #dw__register fieldset button[type="submit"]:focus, #dw__resendpwd fieldset button[type="submit"]:focus, #dw__profiledelete fieldset button[type="submit"]:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
+  }
+}
+
+/* Reset button*/
+
+#dw__login fieldset button[type="reset"], #dw__register fieldset button[type="reset"], #dw__resendpwd fieldset button[type="reset"], #dw__profiledelete fieldset button[type="reset"] {
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+  border-radius:.5rem;
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(55 65 81/var(--tw-text-opacity));
+}
+
+#dw__login fieldset button[type="reset"]:hover, #dw__register fieldset button[type="reset"]:hover, #dw__resendpwd fieldset button[type="reset"]:hover, #dw__profiledelete fieldset button[type="reset"]:hover{
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity))
+}
+
+#dw__login fieldset button[type="reset"]:focus, #dw__register fieldset button[type="reset"]:focus, #dw__resendpwd fieldset button[type="reset"]:focus, #dw__profiledelete fieldset button[type="reset"]:focus{
+  outline:2px solid transparent;
+  outline-offset:2px;
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
+}
+
+:is(.dark #dw__login fieldset button[type="reset"]),:is(.dark  #dw__register fieldset button[type="reset"]),:is(.dark  #dw__resendpwd fieldset button[type="reset"]),:is(.dark  #dw__profiledelete fieldset button[type="reset"]){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(31 41 55/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+:is(.dark #dw__login fieldset button[type="reset"]:hover),:is(.dark  #dw__register fieldset button[type="reset"]:hover),:is(.dark  #dw__resendpwd fieldset button[type="reset"]:hover),:is(.dark  #dw__profiledelete fieldset button[type="reset"]:hover){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+:is(.dark #dw__login fieldset button[type="reset"]:focus),:is(.dark  #dw__register fieldset button[type="reset"]:focus),:is(.dark  #dw__resendpwd fieldset button[type="reset"]:focus),:is(.dark  #dw__profiledelete fieldset button[type="reset"]:focus){
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(55 65 81/var(--tw-ring-opacity))
+}
+
+#dw__login fieldset button[type="reset"]:hover, #dw__register fieldset button[type="reset"]:hover, #dw__resendpwd fieldset button[type="reset"]:hover, #dw__profiledelete fieldset button[type="reset"]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+#dw__login fieldset button[type="reset"]:focus, #dw__register fieldset button[type="reset"]:focus, #dw__resendpwd fieldset button[type="reset"]:focus, #dw__profiledelete fieldset button[type="reset"]:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset button[type="reset"], #dw__register fieldset button[type="reset"], #dw__resendpwd fieldset button[type="reset"], #dw__profiledelete fieldset button[type="reset"] {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
+  #dw__login fieldset button[type="reset"]:hover, #dw__register fieldset button[type="reset"]:hover, #dw__resendpwd fieldset button[type="reset"]:hover, #dw__profiledelete fieldset button[type="reset"]:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  #dw__login fieldset button[type="reset"]:focus, #dw__register fieldset button[type="reset"]:focus, #dw__resendpwd fieldset button[type="reset"]:focus, #dw__profiledelete fieldset button[type="reset"]:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
+  }
+}
+
+/* All text elements in an user form*/
+
+#dw__login > p, #dw__register > p, #dw__resendpwd > p, #dw__profiledelete > p {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:400;
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+:is(.dark #dw__login > p),:is(.dark  #dw__register > p),:is(.dark  #dw__resendpwd > p),:is(.dark  #dw__profiledelete > p){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login > p, #dw__register > p, #dw__resendpwd > p, #dw__profiledelete > p {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+#dw__login > p a, #dw__register > p a, #dw__resendpwd > p a, #dw__profiledelete > p a {
+  color: rgb(28 100 242 / var(--tw-text-opacity));
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(28 100 242/var(--tw-text-opacity));
+  text-decoration-line:none;
+}
+
+#dw__login > p a:hover, #dw__register > p a:hover, #dw__resendpwd > p a:hover, #dw__profiledelete > p a:hover{
+  text-decoration-line:underline
+}
+
+:is(.dark #dw__login > p a),:is(.dark  #dw__register > p a),:is(.dark  #dw__resendpwd > p a),:is(.dark  #dw__profiledelete > p a){
+  --tw-text-opacity:1;
+  color:rgb(63 131 248/var(--tw-text-opacity))
+}
+
+#dw__login > p a:hover, #dw__register > p a:hover, #dw__resendpwd > p a:hover, #dw__profiledelete > p a:hover {
+  text-decoration-line: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login > p a, #dw__register > p a, #dw__resendpwd > p a, #dw__profiledelete > p a {
+    --tw-text-opacity: 1;
+    color: rgb(63 131 248 / var(--tw-text-opacity));
+  }
 
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
