@@ -8,11 +8,11 @@ use simple_html_dom\simple_html_dom;
 class TPLContentDisplay extends EventHandler {
 
 	protected function event() {
-		return 'HTML_SECEDIT_BUTTON';
+		return 'TPL_CONTENT_DISPLAY';
 	}
 
 	protected function advise() {
-		return 'AFTER';
+		return 'BEFORE';
 	}
 
 	public function handle(\Doku_Event $event) {
