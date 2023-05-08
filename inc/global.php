@@ -12,7 +12,7 @@ require "$template_dir/inc/clsx.php";
 require "$template_dir/inc/icons.php";
 
 // Add the event handlers
-require "$template_dir/inc/EventHandlers.php";
+require "$template_dir/inc/events/EventHandlers.php";
 EventHandlers::initialize();
 
 // Load PHP Simple HTML DOM class
