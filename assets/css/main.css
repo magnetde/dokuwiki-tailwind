@@ -17009,6 +17009,209 @@ ul.idx li:last-child a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
+}
+
+.admin_tasks,
+.admin_plugins {
+  margin-top: 1.5rem !important;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 0px;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  border-radius:.5rem;
+  border-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  padding:0;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .admin_tasks),:is(.dark 
+.admin_plugins){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin_tasks,
+.admin_plugins {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.admin_tasks li, .admin_plugins li {
+  margin: 0px;
+  padding: 0px;
+  list-style-type:none;
+  padding:0;
+}
+
+.admin_tasks div.li a, .admin_plugins div.li a {
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  display:flex;
+  width:100%;
+  cursor:pointer;
+  align-items:center;
+  border-bottom-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom:.5rem;
+  padding-top:.5rem;
+  text-decoration-line:none;
+}
+
+.admin_tasks div.li a:hover, .admin_plugins div.li a:hover{
+  --tw-bg-opacity:1;
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity))
+}
+
+.admin_tasks div.li a:focus, .admin_plugins div.li a:focus{
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity));
+  outline:2px solid transparent;
+  outline-offset:2px;
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(26 86 219/var(--tw-ring-opacity))
+}
+
+:is(.dark .admin_tasks div.li a),:is(.dark  .admin_plugins div.li a){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity))
+}
+
+:is(.dark .admin_tasks div.li a:hover),:is(.dark  .admin_plugins div.li a:hover){
+  --tw-bg-opacity:1;
+  background-color:rgb(75 85 99/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+:is(.dark .admin_tasks div.li a:focus),:is(.dark  .admin_plugins div.li a:focus){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity));
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(107 114 128/var(--tw-ring-opacity))
+}
+
+.admin_tasks div.li a:hover, .admin_plugins div.li a:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+.admin_tasks div.li a:focus, .admin_plugins div.li a:focus {
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(26 86 219 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin_tasks div.li a, .admin_plugins div.li a {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+
+  .admin_tasks div.li a:hover, .admin_plugins div.li a:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .admin_tasks div.li a:focus, .admin_plugins div.li a:focus {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
+  }
+}
+
+.admin_tasks div.li a .icon, .admin_plugins div.li a .icon {
+  margin-right:.5rem;
+}
+
+.admin_tasks div.li a svg, .admin_plugins div.li a svg {
+  fill: #4B5563;
+  display:inline-block;
+  height:1.25rem;
+  width:1.25rem;
+  fill:#4b5563;
+}
+
+:is(.dark .admin_tasks div.li a svg),:is(.dark  .admin_plugins div.li a svg){
+  fill:#d1d5db
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin_tasks div.li a svg, .admin_plugins div.li a svg {
+    fill: #D1D5DB;
+  }
+}
+
+.admin_tasks div.li a:hover svg, .admin_tasks div.li a:focus svg, .admin_plugins div.li a:hover svg, .admin_plugins div.li a:focus svg {
+  fill: #1A56DB;
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin_tasks div.li a:hover svg, .admin_tasks div.li a:focus svg, .admin_plugins div.li a:hover svg, .admin_plugins div.li a:focus svg {
+    fill: #ffffff;
+  }
+}
+
+.admin_tasks li:last-child div.li a, .admin_plugins li:last-child div.li a {
+  border-bottom-width: 0px;
+  border-bottom-width:0;
+}
+
+#admin__version {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  margin-top:1.5rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+:is(.dark #admin__version){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #admin__version {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
 
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);

@@ -1,0 +1,44 @@
+.admin_tasks,
+.admin_plugins {
+	@apply
+		p-0 !mt-6 text-sm font-medium rounded-lg border
+		text-gray-900 bg-white border-gray-200
+		dark:bg-gray-700 dark:border-gray-600 dark:text-white
+	;
+
+	li {
+		@apply p-0 m-0 list-none;
+	}
+
+	div.li a {
+		@apply
+			w-full flex items-center px-4 py-2 no-underline border-b cursor-pointer focus:outline-none focus:ring-2
+			border-gray-200 hover:bg-gray-100
+			hover:text-blue-700 focus:ring-blue-700 focus:text-blue-700
+			dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white
+			dark:focus:ring-gray-500 dark:focus:text-white
+		;
+
+		.icon {
+			@apply mr-2;
+		}
+
+		svg {
+			@apply w-5 h-5 inline-block fill-gray-600 dark:fill-gray-300;
+		}
+
+		&:hover, &:focus {
+			svg {
+				@apply fill-blue-700 dark:fill-white;
+			}
+		}
+	}
+
+	li:last-child div.li a {
+		@apply border-b-0;
+	}
+}
+
+#admin__version {
+	@apply mt-6 text-sm font-medium text-gray-500 dark:text-gray-400;
+}
