@@ -1,4 +1,4 @@
-<div class="flex-auto max-w-6xl min-h-content pt-6 lg:px-8 lg:pt-8">
+<div class="flex-auto max-w-6xl min-w-0 min-h-[calc(100%-theme(height.navbar)-2px)] pt-6 lg:px-8 lg:pt-8">
 
 	<!--- Breadcrumbs and page tool buttons --->
 	<div class="flex flex-nowrap items-center justify-between">

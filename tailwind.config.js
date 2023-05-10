@@ -9,11 +9,7 @@ module.exports = {
         extend: {
             // make the navbar height constant
             height: {
-                navbar: navbarHeight(),
-                content: contentHeight(),
-            },
-            minHeight: {
-                content: contentHeight(),
+                navbar: '4.5rem',
             },
             // add a new default width to increase the content width
             maxWidth: {
@@ -30,14 +26,6 @@ module.exports = {
         require('@tailwindcss/typography'),
         backdropBlur,
     ],
-}
-
-function navbarHeight() {
-    return '4.5rem'
-}
-
-function contentHeight() {
-    return `calc(100vh - ${navbarHeight()} - 2px)`
 }
 
 function backdropBlur({ addVariant }) {

@@ -66,7 +66,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 			<!--- Left sidebar --->
 			<aside class="fixed inset-0 z-20 flex-none hidden h-full lg:w-56 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:block xl:w-72">
-				<div class="overflow-y-auto sticky top-16 flex-col pt-10 pb-6 pr-6 h-content">
+				<div class="overflow-y-auto sticky top-[theme(height.navbar)] h-[100vh-theme(height.navbar)-2px] flex-col pt-10 pb-6 pr-6">
 					<?php
 					if($showSidebar) {
 						echo '<div class="dw-sidebar prose prose-sm dark:prose-invert">';
@@ -87,7 +87,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 
 				<!--- Right sidebar --->
 				<div class="flex-none hidden w-72 pl-8 xl:text-sm xl:block">
-					<div class="flex overflow-y-auto sticky top-16 flex-col pt-10 pb-6 h-content">
+					<div class="flex overflow-y-auto sticky top-[theme(height.navbar)] h-[100vh-theme(height.navbar)-2px] flex-col pt-10 pb-6">
 						<?php
 						$toc = _tpl_getTOC();
 						if($toc) {
