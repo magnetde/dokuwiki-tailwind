@@ -1,5 +1,5 @@
 <header class="<?php echo clsx("
-	sticky h-[4.5rem] top-0 z-50 flex-none w-full mx-auto
+	sticky h-navbar top-0 z-50 flex-none w-full mx-auto
 	backdrop-blur transition-colors duration-500
 	bg-white/95, border-b border-gray-900/10 dark:bg-transparent
 	dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
@@ -14,8 +14,7 @@
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<div class="w-full">'
-			.'<a class="flex items-center" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<a class="flex items-center w-fit" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
@@ -23,7 +22,7 @@
 		}
 
 		echo '<span class="self-center text-2xl font-semibold whitespace-nowrap overflow-ellipsis dark:text-white">' . $title . '</span>';
-		echo '</a></div>';
+		echo '</a>';
 		?>
 
 		<div class="flex items-center md:order-1 md:justify-center">

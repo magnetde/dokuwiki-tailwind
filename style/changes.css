@@ -9,7 +9,7 @@
 	}
 
 	li {
-		@apply list-none;
+		@apply my-0 list-none;
 	}
 
 	// Checkbox

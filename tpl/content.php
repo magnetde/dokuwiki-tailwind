@@ -1,4 +1,4 @@
-<div class="flex-auto max-w-6xl min-w-0 pt-6 lg:px-8 lg:pt-8">
+<div class="flex-auto max-w-6xl min-w-0 min-h-[calc(100%-theme(height.navbar)-2px)] pt-6 lg:px-8 lg:pt-8">
 
 	<!--- Breadcrumbs and page tool buttons --->
 	<div class="flex flex-nowrap items-center justify-between">
@@ -59,7 +59,7 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col justify-between mt-16 min-h-[calc(100%-6rem-2px)]">
+	<div class="flex flex-col justify-between mt-16">
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx("
