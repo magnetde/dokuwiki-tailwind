@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #E5E7EB;
+  border-color: transparent;
   /* 2 */
 }
 
@@ -1749,8 +1749,8 @@ input:checked + .toggle-bg {
   top: 0px;
 }
 
-.top-16 {
-  top: 4rem;
+.top-\[theme\(height\.navbar\)\] {
+  top: 4.5rem;
 }
 
 .z-10 {
@@ -1904,24 +1904,24 @@ input:checked + .toggle-bg {
   height: 2rem;
 }
 
-.h-\[4\.5rem\] {
-  height: 4.5rem;
-}
-
-.h-\[calc\(100vh-4rem-2px\)\] {
-  height: calc(100vh - 4rem - 2px);
+.h-\[calc\(100vh-theme\(height\.navbar\)-2px\)\] {
+  height: calc(100vh - 4.5rem - 2px);
 }
 
 .h-full {
   height: 100%;
 }
 
+.h-navbar {
+  height: 4.5rem;
+}
+
 .h-px {
   height: 1px;
 }
 
-.min-h-\[calc\(100\%-6rem-2px\)\] {
-  min-height: calc(100% - 6rem - 2px);
+.min-h-\[calc\(100\%-theme\(height\.navbar\)-2px\)\] {
+  min-height: calc(100% - 4.5rem - 2px);
 }
 
 .w-1\/2 {
@@ -1966,6 +1966,11 @@ input:checked + .toggle-bg {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full {
@@ -12138,6 +12143,36 @@ footer .license a {
   text-decoration-line:underline;
 }
 
+.error {
+  background-color: rgb(253 242 242 / var(--tw-bg-opacity));
+  color: rgb(155 28 28 / var(--tw-text-opacity));
+  margin-bottom:1rem;
+  border-radius:.5rem;
+  --tw-bg-opacity:1;
+  background-color:rgb(253 242 242/var(--tw-bg-opacity));
+  padding:1rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  --tw-text-opacity:1;
+  color:rgb(155 28 28/var(--tw-text-opacity));
+}
+
+:is(.dark .error){
+  --tw-bg-opacity:1;
+  background-color:rgb(31 41 55/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(249 128 128/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .error {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(249 128 128 / var(--tw-text-opacity));
+  }
+}
+
 .dw__toc li, .dw__toc a {
   display:block;
 }
@@ -14283,6 +14318,8 @@ div.picker.a11y {
 }
 
 .changes.doku_form li {
+  margin-top: 0px;
+  margin-bottom: 0px;
   list-style-type:none;
 }
 
