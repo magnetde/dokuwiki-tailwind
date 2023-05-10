@@ -1,7 +1,5 @@
-
-
 <header class="<?php echo clsx("
-	sticky h-16 top-0 z-50 flex-none w-full mx-auto
+	sticky h-[4.5rem] top-0 z-50 flex-none w-full mx-auto
 	backdrop-blur transition-colors duration-500
 	bg-white/95, border-b border-gray-900/10 dark:bg-transparent
 	dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
@@ -9,14 +7,15 @@
 	<div class="<?php echo clsx("
 		flex items-center justify-between
 		md:grid md:grid-cols-3
-		w-full h-full px-6 mx-auto max-w-10xl lg:px-4
+		w-full h-full px-2 lg:px-4
 	") ?>">
 		<!--- Logo and title --->
 		<?php
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<a class="flex items-center" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<div class="w-full">'
+			.'<a class="flex items-center" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
@@ -24,7 +23,7 @@
 		}
 
 		echo '<span class="self-center text-2xl font-semibold whitespace-nowrap overflow-ellipsis dark:text-white">' . $title . '</span>';
-		echo '</a>';
+		echo '</a></div>';
 		?>
 
 		<div class="flex items-center md:order-1 md:justify-center">
