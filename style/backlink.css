@@ -1,4 +1,4 @@
-ul.idx {
+ul.idx:not(.index__tree *) { // exclude the index tree
 	@apply
 		w-full p-0 text-sm font-medium rounded-lg border list-none
 		text-gray-900 bg-white border-gray-200
