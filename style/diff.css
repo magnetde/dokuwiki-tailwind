@@ -51,7 +51,7 @@
 }
 
 .diff-footer {
-	@apply border-y rounded-b-xl ;
+	@apply border-b rounded-b-xl ;
 }
 
 table.diff {
@@ -65,6 +65,12 @@ table.diff {
 		}
 		&:last-child {
 			@apply border-r;
+		}
+	}
+
+	tr:last-child {
+		th, td {
+			@apply border-b border-gray-200 dark:border-gray-600;
 		}
 	}
 

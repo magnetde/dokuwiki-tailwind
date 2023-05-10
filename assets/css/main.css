@@ -12146,7 +12146,7 @@ footer .license a {
 .error {
   background-color: rgb(253 242 242 / var(--tw-bg-opacity));
   color: rgb(155 28 28 / var(--tw-text-opacity));
-  margin-bottom:1rem;
+  margin-bottom:2rem;
   border-radius:.5rem;
   --tw-bg-opacity:1;
   background-color:rgb(253 242 242/var(--tw-bg-opacity));
@@ -15202,7 +15202,6 @@ div.picker.a11y {
 .diff-footer {
   border-bottom-right-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
-  border-top-width:1px;
   border-bottom-width:1px;
 }
 
@@ -15243,6 +15242,25 @@ table.diff tr:first-child td:first-child, table.diff th:first-child {
 
 table.diff tr:first-child td:last-child, table.diff th:last-child {
   border-right-width:1px;
+}
+
+table.diff tr:last-child th, table.diff tr:last-child td {
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  border-bottom-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+}
+
+:is(.dark table.diff tr:last-child th),:is(.dark  table.diff tr:last-child td){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  table.diff tr:last-child th, table.diff tr:last-child td {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
 }
 
 table.diff th {
