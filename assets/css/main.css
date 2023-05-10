@@ -1920,10 +1920,6 @@ input:checked + .toggle-bg {
   height: 1px;
 }
 
-.min-h-\[calc\(100\%-theme\(height\.navbar\)-2px\)\] {
-  min-height: calc(100% - 4.5rem - 2px);
-}
-
 .w-1\/2 {
   width: 50%;
 }
@@ -1995,10 +1991,6 @@ input:checked + .toggle-bg {
 
 .flex-1 {
   flex: 1 1 0%;
-}
-
-.flex-auto {
-  flex: 1 1 auto;
 }
 
 .flex-none {
