@@ -1,5 +1,5 @@
 <header class="<?php echo clsx("
-	sticky h-navbar top-0 z-50 flex-none w-full mx-auto
+	sticky h-navbar top-0 z-50 flex-none w-full
 	backdrop-blur transition-colors duration-500
 	bg-white/95, border-b border-gray-900/10 dark:bg-transparent
 	dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
@@ -47,10 +47,11 @@
 		<!--- Tools dropdown and user avatar --->
 		<div class="hidden items-center md:order-2 md:flex md:justify-end" id="navbar-default">
 			<ul class="<?php echo clsx("
-				flex flex-col font-medium p-4 md:p-0 mt-4 items-center
-				border border-gray-100 rounded-lg bg-gray-50
-				md:flex-row md:space-x-8 md:mt-0 md:border-0
-				md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+				flex flex-col font-medium p-4 mt-4 items-center border rounded-lg
+				md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0
+				border-gray-100 bg-gray-50
+				dark:bg-gray-800 dark:border-gray-700
+				md:bg-transparent
 			") ?>">
 				<li>
 					<!--- Tools button --->
@@ -88,8 +89,8 @@
 				<li>
 					<!--- Avatar button --->
 					<button type="button" class="<?php echo clsx("
-						flex mr-3 first-line:text-sm rounded-full md:mr-0
-						bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600
+						flex mr-3 first-line:text-sm rounded-full md:mr-0 focus:ring-4
+						bg-gray-800 focus:ring-gray-300 dark:focus:ring-gray-600
 					") ?>" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
 						<span class="sr-only">
 							<?php tpl_getLang('open_menu') ?>

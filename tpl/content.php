@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-between max-w-6xl min-w-0 min-h-[calc(100vh-theme(height.navbar)-2px] pt-6 lg:px-8 lg:pt-8">
+<div class="flex flex-col justify-between w-full min-h-[calc(100vh-theme(height.navbar)-1px] px-4 md:px-6 lg:px-8 pt-6 lg:pt-8">
 
 	<div class="flex flex-col">
 
