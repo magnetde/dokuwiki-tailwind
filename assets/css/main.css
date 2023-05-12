@@ -16649,6 +16649,10 @@ ul.idx:not(.index__tree *) li:last-child a {
   height: 1px;
 }
 
+.min-h-\[calc\(100vh-theme\(height\.navbar\)-1px\)\] {
+  min-height: calc(100vh - 4.5rem - 1px);
+}
+
 .w-0 {
   width: 0px;
 }
