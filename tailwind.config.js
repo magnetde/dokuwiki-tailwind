@@ -14,7 +14,7 @@ module.exports = {
             // make the sidebar width a constant
             width: {
                 'sidebar-lg':  '16rem',
-                'sidebar-2xl': '20rem',
+                'sidebar-2xl': '18rem',
                 'content-lg':  '56rem',
                 'content-xl':  '50rem', // smaller because the table of content appears
                 'content-2xl': '66rem',

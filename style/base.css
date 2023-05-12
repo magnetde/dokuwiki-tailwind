@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html {
 	font-size: calc(1em * 0.875);
 	height: 100%;
