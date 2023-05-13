@@ -2,7 +2,7 @@
 
 // Import the events.
 spl_autoload_register(function($class_name) {
-    include tpl_incdir() . 'inc/events/' . $class_name . '.php';
+	include tpl_incdir() . 'inc/events/' . $class_name . '.php';
 });
 
 /**

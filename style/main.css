@@ -1,5 +1,7 @@
+@import "tailwindcss/base";
 @import "base.css";
 
+@import "tailwindcss/components";
 @import "navbar.css";
 @import "content.css";
 @import "toc.css";
@@ -12,3 +14,6 @@
 @import "indextree.css";
 @import "userform.css";
 @import "admin.css";
+
+@import "tailwindcss/utilities";
+@import "utilities.css";

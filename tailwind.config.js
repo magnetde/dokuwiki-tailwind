@@ -11,9 +11,13 @@ module.exports = {
             height: {
                 navbar: '4.5rem',
             },
-            // add a new default width to increase the content width
-            maxWidth: {
-                '10xl': '104rem',
+            // make the sidebar width a constant
+            width: {
+                'sidebar-lg':  '16rem',
+                'sidebar-2xl': '18rem',
+                'content-lg':  '54rem',
+                'content-xl':  '56rem', // only slightly larger because the toc appears
+                'content-2xl': '66rem',
             },
             // fix some border UI bugs on Safari
             borderColor: {
