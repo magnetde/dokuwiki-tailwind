@@ -1673,7 +1673,9 @@ body {
   margin-bottom: 0;
 }
 
-/* Components, that style specific DokuWiki page elements*/
+/* Common UI elements*/
+
+/* Components for specific DokuWiki pages*/
 
 /*! tailwindcss v3.3.0 | MIT License | https://tailwindcss.com*/
 

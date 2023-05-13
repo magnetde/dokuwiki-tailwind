@@ -1,13 +1,5 @@
-// Components, that style specific DokuWiki page elements
-@import "navbar.css";
-@import "content.css";
-@import "toc.css";
-@import "search.css";
-@import "editor.css";
-@import "changes.css";
-@import "diff.css";
-@import "backlink.css";
-@import "draft.css";
-@import "indextree.css";
-@import "userform.css";
-@import "admin.css";
+// Common UI elements
+@import "common/all.css";
+
+// Components for specific DokuWiki pages
+@import "ui/all.css";
