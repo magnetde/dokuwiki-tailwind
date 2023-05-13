@@ -15,8 +15,8 @@ module.exports = {
             width: {
                 'sidebar-lg':  '16rem',
                 'sidebar-2xl': '18rem',
-                'content-lg':  '56rem',
-                'content-xl':  '50rem', // smaller because the table of content appears
+                'content-lg':  '54rem',
+                'content-xl':  '56rem', // only slightly larger because the toc appears
                 'content-2xl': '66rem',
             },
             // fix some border UI bugs on Safari
