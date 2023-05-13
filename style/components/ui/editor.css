@@ -83,15 +83,15 @@
 				@apply flex items-center justify-end;
 
 				button[name="do[preview]"] {
-					@apply order-1 btn-secondary;
+					@apply btn-secondary order-1 mr-2;
 				}
 
 				button[name="do[cancel]"] {
-					@apply order-2 btn-secondary;
+					@apply btn-secondary order-2 mr-2;
 				}
 
 				button[name="do[save]"] {
-					@apply order-3 mr-0 btn-primary;
+					@apply btn-primary order-3 mr-0;
 				}
 			}
 		}
