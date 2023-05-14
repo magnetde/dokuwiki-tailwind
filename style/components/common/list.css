@@ -1,9 +1,10 @@
 @layer components {
 	.list-container {
 		@apply
+			text-primary
 			w-full p-0 text-sm font-medium rounded-lg border list-none
-			text-gray-900 bg-white border-gray-200
-			dark:bg-gray-700 dark:border-gray-600 dark:text-white
+			bg-white border-gray-200
+			dark:bg-gray-700 dark:border-gray-600
 		;
 	}
 

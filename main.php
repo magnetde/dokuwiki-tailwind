@@ -104,7 +104,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							<?php
 							$toc = _tpl_getTOC();
 							if($toc) {
-								echo '<h4 class="mb-4 pl-4 font-semibold text-gray-900 dark:text-white">'
+								echo '<h4 class="text-primary mb-4 pl-4 font-semibold">'
 									.$lang['toc']
 									.'</h4>';
 								echo $toc;

@@ -1,14 +1,15 @@
 @layer components {
 	.input-label {
-		@apply block text-sm font-medium text-gray-900 dark:text-white;
+		@apply text-primary block text-sm font-medium;
 	}
 
 	.input-text {
 		@apply
+			text-primary
 			px-3 py-2 rounded-lg border
-			text-gray-900 bg-gray-50 border-gray-300
+			bg-gray-50 border-gray-300
 			focus:ring-blue-500 focus:border-blue-500
-			dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+			dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
 			dark:focus:ring-blue-500 dark:focus:border-blue-500
 		;
 	}
@@ -22,10 +23,11 @@
 
 	.input-select {
 		@apply
-			py-2.5 pl-2.5 pr-8 text-sm rounded-lg truncate
-			bg-gray-50 border border-gray-300 text-gray-900
+			text-primary
+			py-2.5 pl-2.5 pr-8 text-sm rounded-lg truncate border
+			bg-gray-50 border-gray-300
 			focus:ring-blue-500 focus:border-blue-500
-			dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+			dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
 			dark:focus:ring-blue-500 dark:focus:border-blue-500
 		;
 	}

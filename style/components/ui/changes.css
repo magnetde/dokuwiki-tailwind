@@ -34,13 +34,10 @@
 			@apply flex items-baseline mb-2;
 
 			.sum {
-				@apply
-					text-lg font-semibold truncate
-					text-gray-900 dark:text-white
-				;
+				@apply text-primary text-lg font-semibold truncate;
 
 				&.empty {
-					@apply italic text-gray-500 dark:text-gray-400;
+					@apply text-secondary italic;
 				}
 			}
 

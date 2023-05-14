@@ -109,7 +109,7 @@
 						<?php
 						if(!empty($_SERVER['REMOTE_USER'])) {
 							echo '<div class="px-4 py-3">'
-								.'<span class="block text-sm text-gray-900 dark:text-white">' . hsc($INFO['userinfo']['name']) . '</span>'
+								.'<span class="text-primary block text-sm">' . hsc($INFO['userinfo']['name']) . '</span>'
 								.'<span class="block text-sm  text-gray-500 truncate dark:text-gray-400">' . $INFO['userinfo']['mail'] . '</span>'
 								.'</div>';
 						}
