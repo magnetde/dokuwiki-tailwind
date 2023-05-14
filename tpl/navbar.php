@@ -65,19 +65,13 @@
 					</button>
 
 					<!-- Dropdown menu of the tools -->
-					<div id="dropdown-tools" class="z-10 hidden font-medium bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+					<div id="dropdown-tools" class="dropdown-container w-44">
 						<ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
 							foreach($menu_items as $item) {
 								echo '<li>'
-									.'<a class="'
-									.clsx("
-										block px-4 py-2 text-sm
-										text-gray-700 hover:bg-gray-100
-										dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white
-									")
-									.'" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+									.'<a class="dropdown-element" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
 									.$item->getLabel()
 									.'</a></li>';
 							}
@@ -111,7 +105,7 @@
 					</button>
 
 					<!-- Dropdown menu of the avatar -->
-					<div id="user-dropdown" class="z-10 hidden my-4 font-medium text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+					<div id="user-dropdown" class="dropdown-container my-4">
 						<?php
 						if(!empty($_SERVER['REMOTE_USER'])) {
 							echo '<div class="px-4 py-3">'
@@ -124,13 +118,7 @@
 							<?php
 							$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
 							foreach($menu_items as $item) {
-								echo '<li><a class="'
-									.clsx("
-										block px-4 py-2
-										text-sm text-gray-700 hover:bg-gray-100
-										dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white
-									")
-									.'" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
+								echo '<li><a class="dropdown-element" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
 							}
 							?>
 						</ul>

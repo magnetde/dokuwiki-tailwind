@@ -34,15 +34,7 @@
 						.'</a>';
 
 					// Tooltip
-					echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="'
-						.clsx("
-							absolute z-10 inline-block px-3 py-2
-							text-sm font-medium text-white
-							transition-opacity duration-300
-							bg-gray-900 rounded-lg shadow-sm tooltip
-							dark:bg-gray-700 opacity-0 invisible
-						")
-						.'">'
+					echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="tooltip-container">'
 						.$item->getLabel()
 						.'<div class="tooltip-arrow" data-popper-arrow=""></div>'
 						.'</div>';
