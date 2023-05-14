@@ -22,7 +22,7 @@
 
 	.input-select {
 		@apply
-			block py-2.5 pl-2.5 pr-8 text-sm rounded-lg
+			py-2.5 pl-2.5 pr-8 text-sm rounded-lg overflow-hidden text-ellipsis
 			bg-gray-50 border border-gray-300 text-gray-900
 			focus:ring-blue-500 focus:border-blue-500
 			dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white

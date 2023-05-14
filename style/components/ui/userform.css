@@ -52,7 +52,7 @@
 		@apply text-sm font-normal text-gray-500 dark:text-gray-400;
 
 		a {
-			@apply font-medium no-underline hover:underline text-blue-600 dark:text-blue-500;
+			@apply link-primary;
 		}
 	}
 }

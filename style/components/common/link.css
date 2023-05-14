@@ -1,0 +1,6 @@
+@layer components {
+	.link-primary {
+		// adding "no-underline" and "decoration-current" to overwrite the prose style
+		@apply font-medium no-underline decoration-current hover:underline text-blue-600 dark:text-blue-500;
+	}
+}

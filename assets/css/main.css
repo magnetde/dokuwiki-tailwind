@@ -14481,11 +14481,12 @@ div.picker.a11y {
 }
 
 .changes.doku_form label.quickselect select.quickselect {
+  text-overflow: ellipsis;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
+  overflow:hidden;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -14569,6 +14570,10 @@ div.picker.a11y {
   }
 }
 
+.changes.doku_form label.quickselect select.quickselect {
+  display:block;
+}
+
 .diffoptions {
   flex-wrap: nowrap;
   margin-top:1.5rem;
@@ -14608,11 +14613,12 @@ div.picker.a11y {
 }
 
 .diffoptions .doku_form .quickselect select {
+  text-overflow: ellipsis;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
+  overflow:hidden;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -14945,11 +14951,13 @@ table.diff th {
 }
 
 table.diff th .wikilink1 {
+  /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
   color: rgb(28 100 242 / var(--tw-text-opacity));
   text-decoration-color: currentColor;
   font-weight:500;
   --tw-text-opacity:1;
   color:rgb(28 100 242/var(--tw-text-opacity));
+  text-decoration-line:none;
 }
 
 table.diff th .wikilink1:hover{
@@ -15172,11 +15180,12 @@ table.diff .diffnav .doku_form {
 }
 
 table.diff .diffnav select.quickselect {
+  text-overflow: ellipsis;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
+  overflow:hidden;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -15261,6 +15270,7 @@ table.diff .diffnav select.quickselect:focus {
 }
 
 table.diff .diffnav select.quickselect {
+  max-width: 50%;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   margin-left:.5rem;
   margin-right:.5rem;
@@ -15274,10 +15284,6 @@ table.diff .diffnav select.quickselect {
 :is(.dark table.diff .diffnav select.quickselect){
   --tw-bg-opacity:1;
   background-color:rgb(31 41 55/var(--tw-bg-opacity))
-}
-
-table.diff .diffnav select.quickselect::file-selector-button {
-  max-width: 50%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16744,7 +16750,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 }
 
 #dw__login > p a, #dw__register > p a, #dw__resendpwd > p a, #dw__profiledelete > p a {
+  /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
   color: rgb(28 100 242 / var(--tw-text-opacity));
+  text-decoration-color: currentColor;
   font-weight:500;
   --tw-text-opacity:1;
   color:rgb(28 100 242/var(--tw-text-opacity));

@@ -65,7 +65,7 @@ table.diff {
 		@apply p-4 w-1/2 text-sm font-medium text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800;
 
 		.wikilink1 {
-			@apply font-medium hover:underline decoration-current text-blue-600 dark:text-blue-500;
+			@apply link-primary;
 		}
 
 		.sum {
@@ -129,7 +129,7 @@ table.diff {
 		}
 
 		select.quickselect {
-			@apply input-select inline mx-2 py-2 file:max-w-[50%] bg-white dark:bg-gray-800;
+			@apply input-select inline mx-2 py-2 max-w-[50%] bg-white dark:bg-gray-800;
 		}
 	}
 
