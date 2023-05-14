@@ -11,12 +11,6 @@ form.search {
 
 	// Input field of the search
 	input {
-		@apply
-			block w-full p-2 pl-10 text-sm border rounded-lg
-			text-gray-900 border-gray-300 bg-gray-50
-			focus:ring-blue-500 focus:border-blue-500
-			dark:text-white dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400
-			dark:focus:ring-blue-500 dark:focus:border-blue-500
-		;
+		@apply input-text py-2 pl-10 pr-2 block w-full text-sm;
 	}
 }

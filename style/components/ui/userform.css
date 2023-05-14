@@ -43,7 +43,7 @@
 
 		// Reset button
 		button[type="reset"] {
-			@apply btn-link;
+			@apply btn-link text-sm;
 		}
 	}
 
