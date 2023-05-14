@@ -1,25 +1,19 @@
 ul.idx:not(.index__tree *) { // exclude the index tree
-	@apply
-		w-full p-0 text-sm font-medium rounded-lg border list-none
-		text-gray-900 bg-white border-gray-200
-		dark:bg-gray-700 dark:border-gray-600 dark:text-white
-	;
+	@apply list-container;
 
 	li, div.li {
 		@apply m-0 p-0;
 	}
 
 	a {
-		@apply
-			block w-full px-4 py-2 border-b cursor-pointer no-underline
-			border-gray-200 hover:bg-gray-100 hover:text-blue-700
-			focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700
-			dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white
-			dark:focus:ring-gray-500 dark:focus:text-white
-		;
+		@apply list-element;
+	}
+
+	li:first-child a {
+		@apply list-element-first;
 	}
 
 	li:last-child a {
-		@apply border-b-0;
+		@apply list-element-last;
 	}
 }

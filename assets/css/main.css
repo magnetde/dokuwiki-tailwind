@@ -12316,8 +12316,8 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
   border-bottom-width:1px;
   --tw-border-opacity:1;
   border-color:rgb(229 231 235/var(--tw-border-opacity));
-  padding-left:1.25rem;
-  padding-right:1.25rem;
+  padding-left:1rem;
+  padding-right:1rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
   text-decoration-line:none;
@@ -15328,8 +15328,15 @@ ul.idx:not(.index__tree *) a:focus {
   }
 }
 
+ul.idx:not(.index__tree *) li:first-child a {
+  border-top-left-radius:.5rem;
+  border-top-right-radius:.5rem;
+}
+
 ul.idx:not(.index__tree *) li:last-child a {
   border-bottom-width: 0px;
+  border-bottom-left-radius:.5rem;
+  border-bottom-right-radius:.5rem;
   border-bottom-width:0;
 }
 
@@ -16355,11 +16362,12 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 .admin_tasks,
 .admin_plugins {
-  margin-top: 1.5rem !important;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 0px;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+  width:100%;
+  list-style-type:none;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -16396,6 +16404,11 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+.admin_tasks,
+.admin_plugins {
+  margin-top: 1.5rem !important;
+}
+
 .admin_tasks li, .admin_plugins li {
   margin: 0px;
   padding: 0px;
@@ -16405,10 +16418,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 .admin_tasks div.li a, .admin_plugins div.li a {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  display:flex;
+  display:block;
   width:100%;
   cursor:pointer;
-  align-items:center;
   border-bottom-width:1px;
   --tw-border-opacity:1;
   border-color:rgb(229 231 235/var(--tw-border-opacity));
@@ -16497,6 +16509,11 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+.admin_tasks div.li a, .admin_plugins div.li a {
+  display:flex;
+  align-items:center;
+}
+
 .admin_tasks div.li a .icon, .admin_plugins div.li a .icon {
   margin-right:.5rem;
 }
@@ -16529,8 +16546,15 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+.admin_tasks li:first-child div.li a, .admin_plugins li:first-child div.li a {
+  border-top-left-radius:.5rem;
+  border-top-right-radius:.5rem;
+}
+
 .admin_tasks li:last-child div.li a, .admin_plugins li:last-child div.li a {
   border-bottom-width: 0px;
+  border-bottom-left-radius:.5rem;
+  border-bottom-right-radius:.5rem;
   border-bottom-width:0;
 }
 

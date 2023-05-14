@@ -28,11 +28,8 @@
 					if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
 
 					// Button
-					echo '<a href="' . $item->getLink()  . '" data-tooltip-target="pagetool-button-' . $index . '" class="'
-						.clsx("
-							btn-icon page-tool-btn
-						")
-						.'" data-tooltip-placement="bottom">'
+					echo '<a href="' . $item->getLink()  . '" data-tooltip-target="pagetool-button-' . $index . '" '
+						.'class="btn-icon page-tool-btn" data-tooltip-placement="bottom">'
 						.inlineSVG($item->getSvg())
 						.'</a>';
 
