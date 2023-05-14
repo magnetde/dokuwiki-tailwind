@@ -8,36 +8,25 @@
 	fieldset {
 		// Header
 		legend {
-			@apply mb-8 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white;
+			@apply mb-8 text-xl font-bold leading-tight text-gray-900 md:text-2xl dark:text-white;
 		}
 
 		// Input elements
 		label {
 			// Labels of input elements
 			span {
-				@apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+				@apply input-label mb-2;
 			}
 
 			input {
 				// text input element
 				&[type="text"], &[type="password"], &[type="email"] {
-					@apply
-						block w-full p-2.5 text-sm rounded-lg
-						bg-gray-50 border border-gray-300 text-gray-900
-						focus:ring-blue-500 focus:border-blue-500
-						dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-						dark:focus:ring-blue-500 dark:focus:border-blue-500
-					;
+					@apply input-text block w-full text-sm;
 				}
 
 				// Checkbox
 				&[type="checkbox"] {
-					@apply
-						inline-block align-top mt-[0.18rem] w-4 h-4 border rounded focus:ring-2
-						border-gray-300 bg-gray-50 focus:ring-blue-300
-						dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600
-						dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800
-					;
+					@apply input-checkbox inline-block align-top mt-[0.18rem];
 
 					// Checkbox label
 					& + span {
@@ -49,20 +38,12 @@
 
 		// Submit button
 		button[type="submit"] {
-			@apply
-				block w-full my-6 px-5 py-2.5 font-medium rounded-lg text-sm text-center focus:ring-4 focus:outline-none
-				text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300
-				dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
-			;
+			@apply btn-primary block w-full my-6;
 		}
 
 		// Reset button
 		button[type="reset"] {
-			@apply
-				text-sm font-medium focus:outline-none rounded-lg focus:ring-4
-				text-gray-700 bg-white hover:text-blue-700 focus:ring-gray-200
-				dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white
-			;
+			@apply btn-link;
 		}
 	}
 

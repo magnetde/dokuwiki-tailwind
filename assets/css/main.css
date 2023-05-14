@@ -1673,6 +1673,108 @@ body {
   margin-bottom: 0;
 }
 
+.btn-icon {
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+  display:flex;
+  align-items:center;
+  border-radius:.5rem;
+  border-width:1px;
+  --tw-border-opacity:1;
+  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  padding:.5rem;
+  font-size:.75rem;
+  line-height:1rem;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(55 65 81/var(--tw-text-opacity));
+}
+
+.btn-icon:hover{
+  --tw-bg-opacity:1;
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity))
+}
+
+.btn-icon:focus{
+  outline:2px solid transparent;
+  outline-offset:2px;
+  box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(209 213 219/var(--tw-ring-opacity))
+}
+
+:is(.dark .btn-icon){
+  --tw-border-opacity:1;
+  border-color:rgb(75 85 99/var(--tw-border-opacity));
+  --tw-bg-opacity:1;
+  background-color:rgb(31 41 55/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+:is(.dark .btn-icon:hover){
+  --tw-bg-opacity:1;
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+:is(.dark .btn-icon:focus){
+  --tw-ring-opacity:1;
+  --tw-ring-color:rgb(107 114 128/var(--tw-ring-opacity))
+}
+
+.btn-icon:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+.btn-icon:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+
+.btn-icon:focus::first-line {
+  z-index: 10;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-icon {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
+  .btn-icon:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .btn-icon:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
+  }
+}
+
 /* Common UI elements*/
 
 /* Components for specific DokuWiki pages*/
@@ -11134,11 +11236,9 @@ pre.code .sc-2 {
 }
 
 .dw-content .secedit .btn_secedit button {
-  margin-top: -0.75rem;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(55 65 81 / var(--tw-text-opacity));
-  margin-left:auto;
   display:flex;
   align-items:center;
   border-radius:.5rem;
@@ -11163,7 +11263,6 @@ pre.code .sc-2 {
 }
 
 .dw-content .secedit .btn_secedit button:focus{
-  z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
@@ -11202,7 +11301,6 @@ pre.code .sc-2 {
 }
 
 .dw-content .secedit .btn_secedit button:focus {
-  z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -11210,6 +11308,10 @@ pre.code .sc-2 {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+
+.dw-content .secedit .btn_secedit button:focus::first-line {
+  z-index: 10;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11233,6 +11335,11 @@ pre.code .sc-2 {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
   }
+}
+
+.dw-content .secedit .btn_secedit button {
+  margin-top: -0.75rem;
+  margin-left:auto;
 }
 
 /* hover on the previous sections displays the button*/
@@ -11432,20 +11539,17 @@ form.doku_form.search-results-form .search-form {
 }
 
 form.doku_form.search-results-form .search-form input {
-  order: 2;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
-  width:100%;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
   border-color:rgb(209 213 219/var(--tw-border-opacity));
   --tw-bg-opacity:1;
   background-color:rgb(249 250 251/var(--tw-bg-opacity));
-  padding-left:.625rem;
-  padding-right:.625rem;
+  padding-left:.75rem;
+  padding-right:.75rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
   --tw-text-opacity:1;
@@ -11520,49 +11624,16 @@ form.doku_form.search-results-form .search-form input:focus {
   }
 }
 
-form.doku_form.search-results-form .search-form button.toggleAssistant {
-  order: 1;
-  margin-right: 0.5rem;
-  display: flex;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  align-items: center;
-}
-
-form.doku_form.search-results-form .search-form button.toggleAssistant > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+form.doku_form.search-results-form .search-form input {
+  order: 2;
+  width:100%;
 }
 
 form.doku_form.search-results-form .search-form button.toggleAssistant {
-  border-radius: 0.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-right:.5rem;
-  display:flex;
   align-items:center;
-}
-
-form.doku_form.search-results-form .search-form button.toggleAssistant>:not([hidden])~:not([hidden]){
-  --tw-space-x-reverse:0;
-  margin-left:calc(.5rem*(1 - var(--tw-space-x-reverse)));
-  margin-right:calc(.5rem*var(--tw-space-x-reverse))
-}
-
-form.doku_form.search-results-form .search-form button.toggleAssistant{
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -11577,7 +11648,7 @@ form.doku_form.search-results-form .search-form button.toggleAssistant{
   line-height:1.25rem;
   font-weight:500;
   --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity))
+  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 form.doku_form.search-results-form .search-form button.toggleAssistant:hover{
@@ -11588,9 +11659,9 @@ form.doku_form.search-results-form .search-form button.toggleAssistant:hover{
 form.doku_form.search-results-form .search-form button.toggleAssistant:focus{
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
@@ -11625,7 +11696,7 @@ form.doku_form.search-results-form .search-form button.toggleAssistant:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
@@ -11652,6 +11723,33 @@ form.doku_form.search-results-form .search-form button.toggleAssistant:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
+}
+
+form.doku_form.search-results-form .search-form button.toggleAssistant {
+  order: 1;
+  margin-right: 0.5rem;
+  display: flex;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  align-items: center;
+}
+
+form.doku_form.search-results-form .search-form button.toggleAssistant > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+form.doku_form.search-results-form .search-form button.toggleAssistant{
+  margin-right:.5rem;
+  display:flex;
+  align-items:center
+}
+
+form.doku_form.search-results-form .search-form button.toggleAssistant>:not([hidden])~:not([hidden]){
+  --tw-space-x-reverse:0;
+  margin-left:calc(.5rem*(1 - var(--tw-space-x-reverse)));
+  margin-right:calc(.5rem*var(--tw-space-x-reverse))
 }
 
 form.doku_form.search-results-form .search-form button.toggleAssistant:after {
@@ -11902,11 +12000,8 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 form.doku_form.search-results-form .search-form button[type="submit"] {
-  order: 3;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  margin-left:.5rem;
-  width:100%;
   border-radius:.5rem;
   --tw-bg-opacity:1;
   background-color:rgb(26 86 219/var(--tw-bg-opacity));
@@ -11930,9 +12025,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:hover{
 form.doku_form.search-results-form .search-form button[type="submit"]:focus{
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
 }
@@ -11952,12 +12047,6 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus{
   --tw-ring-color:rgb(30 66 159/var(--tw-ring-opacity))
 }
 
-@media (min-width:640px){
-  form.doku_form.search-results-form .search-form button[type="submit"]{
-    width:auto
-  }
-}
-
 form.doku_form.search-results-form .search-form button[type="submit"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
@@ -11967,7 +12056,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
@@ -11990,10 +12079,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   }
 }
 
-@media (min-width: 640px) {
-  form.doku_form.search-results-form .search-form button[type="submit"] {
-    width: auto;
-  }
+form.doku_form.search-results-form .search-form button[type="submit"] {
+  order: 3;
+  margin-left:.5rem;
 }
 
 .search-box {
@@ -12377,6 +12465,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 }
 
 .search-box .search_fulltextresult .search_fullpage_result dt a.wikilink1 {
+  text-decoration-color: currentColor;
   text-decoration-line:none;
 }
 
@@ -12385,9 +12474,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 }
 
 .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1) {
-  color: rgb(156 163 175 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity));
   --tw-text-opacity:1;
-  color:rgb(156 163 175/var(--tw-text-opacity));
+  color:rgb(107 114 128/var(--tw-text-opacity));
 }
 
 .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover{
@@ -12397,7 +12486,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 
 :is(.dark .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1)){
   --tw-text-opacity:1;
-  color:rgb(107 114 128/var(--tw-text-opacity))
+  color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
 :is(.dark .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover){
@@ -12413,7 +12502,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 @media (prefers-color-scheme: dark) {
   .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1) {
     --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity));
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
   .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover {
@@ -12482,13 +12571,17 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   }
 }
 
-.search-box .nothing {
+.search-box .nothing-found {
   margin-bottom:2rem;
   margin-top:2rem;
   text-align:center;
   font-size:1.25rem;
   line-height:1.75rem;
   font-weight:600;
+}
+
+.nothing {
+  display:none;
 }
 
 .dw-content .editBox {
@@ -12758,6 +12851,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 
 .dw-content .editBox .doku_form .editBar .summary label span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
+  display:block;
+  font-size:.875rem;
+  line-height:1.25rem;
   font-weight:500;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
@@ -12784,16 +12880,16 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-bottom:1rem;
-  display:block;
-  width:100%;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
   border-color:rgb(209 213 219/var(--tw-border-opacity));
   --tw-bg-opacity:1;
   background-color:rgb(249 250 251/var(--tw-bg-opacity));
-  padding:.625rem;
+  padding-left:.75rem;
+  padding-right:.75rem;
+  padding-bottom:.5rem;
+  padding-top:.5rem;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -12864,6 +12960,12 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
   }
+}
+
+.dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input {
+  margin-bottom:1rem;
+  display:block;
+  width:100%;
 }
 
 .dw-content .editBox .doku_form .editBar .summary label[for="edit__minoredit"] {
@@ -12952,11 +13054,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 }
 
 .dw-content .editBox .doku_form .editBar .editButtons button[name="do[preview]"] {
-  order: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-right:.5rem;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -12967,6 +13067,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   padding-right:1.25rem;
   padding-bottom:.625rem;
   padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
@@ -12985,9 +13086,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
@@ -13025,7 +13126,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
@@ -13054,12 +13155,15 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   }
 }
 
+.dw-content .editBox .doku_form .editBar .editButtons button[name="do[preview]"] {
+  order: 1;
+  margin-right:.5rem;
+}
+
 .dw-content .editBox .doku_form .editBar .editButtons button[name="do[cancel]"] {
-  order: 2;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-right:.5rem;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -13070,6 +13174,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   padding-right:1.25rem;
   padding-bottom:.625rem;
   padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
@@ -13088,9 +13193,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
@@ -13128,7 +13233,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
@@ -13157,12 +13262,14 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   }
 }
 
+.dw-content .editBox .doku_form .editBar .editButtons button[name="do[cancel]"] {
+  order: 2;
+  margin-right:.5rem;
+}
+
 .dw-content .editBox .doku_form .editBar .editButtons button[name="do[save]"] {
-  order: 3;
-  margin-right: 0px;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  width:100%;
   border-radius:.5rem;
   --tw-bg-opacity:1;
   background-color:rgb(26 86 219/var(--tw-bg-opacity));
@@ -13186,9 +13293,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
 .dw-content .editBox .doku_form .editBar .editButtons button[name="do[save]"]:focus{
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
 }
@@ -13208,12 +13315,6 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   --tw-ring-color:rgb(30 66 159/var(--tw-ring-opacity))
 }
 
-@media (min-width:640px){
-  .dw-content .editBox .doku_form .editBar .editButtons button[name="do[save]"]{
-    width:auto
-  }
-}
-
 .dw-content .editBox .doku_form .editBar .editButtons button[name="do[save]"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
@@ -13223,7 +13324,7 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
@@ -13246,10 +13347,9 @@ form.doku_form.search-results-form .search-form button[type="submit"]:focus {
   }
 }
 
-@media (min-width: 640px) {
-  .dw-content .editBox .doku_form .editBar .editButtons button[name="do[save]"] {
-    width: auto;
-  }
+.dw-content .editBox .doku_form .editBar .editButtons button[name="do[save]"] {
+  order: 3;
+  margin-right: 0px;
 }
 
 .dw-content .editBox .license {
@@ -13694,26 +13794,23 @@ div.picker.a11y {
 .changes.doku_form .revision-info .revision-buttons a {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  color: rgb(55 65 81 / var(--tw-text-opacity));
-  display:flex;
-  align-items:center;
-  border-top-width:1px;
-  border-bottom-width:1px;
-  border-left-width:1px;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  border-radius:.5rem;
+  border-width:1px;
   --tw-border-opacity:1;
   border-color:rgb(229 231 235/var(--tw-border-opacity));
   --tw-bg-opacity:1;
   background-color:rgb(255 255 255/var(--tw-bg-opacity));
-  padding-left:1rem;
-  padding-right:1rem;
-  padding-bottom:.5rem;
-  padding-top:.5rem;
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  padding-bottom:.625rem;
+  padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
   --tw-text-opacity:1;
-  color:rgb(55 65 81/var(--tw-text-opacity));
-  text-decoration-line:none;
+  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 .changes.doku_form .revision-info .revision-buttons a:hover{
@@ -13725,47 +13822,34 @@ div.picker.a11y {
 
 .changes.doku_form .revision-info .revision-buttons a:focus{
   z-index:10;
-  --tw-text-opacity:1;
-  color:rgb(26 86 219/var(--tw-text-opacity));
+  outline:2px solid transparent;
+  outline-offset:2px;
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
   --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
-  --tw-ring-color:rgb(26 86 219/var(--tw-ring-opacity))
+  --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
 
 :is(.dark .changes.doku_form .revision-info .revision-buttons a){
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
+  background-color:rgb(31 41 55/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+:is(.dark .changes.doku_form .revision-info .revision-buttons a:hover){
+  --tw-bg-opacity:1;
   background-color:rgb(55 65 81/var(--tw-bg-opacity));
   --tw-text-opacity:1;
   color:rgb(255 255 255/var(--tw-text-opacity))
 }
 
-:is(.dark .changes.doku_form .revision-info .revision-buttons a:hover){
-  --tw-bg-opacity:1;
-  background-color:rgb(75 85 99/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
-}
-
 :is(.dark .changes.doku_form .revision-info .revision-buttons a:focus){
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity));
   --tw-ring-opacity:1;
-  --tw-ring-color:rgb(63 131 248/var(--tw-ring-opacity))
-}
-
-.changes.doku_form .revision-info .revision-buttons a:first-child {
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
-.changes.doku_form .revision-info .revision-buttons a:last-child {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-right-width: 1px;
+  --tw-ring-color:rgb(55 65 81/var(--tw-ring-opacity))
 }
 
 .changes.doku_form .revision-info .revision-buttons a:hover {
@@ -13777,13 +13861,13 @@ div.picker.a11y {
 
 .changes.doku_form .revision-info .revision-buttons a:focus {
   z-index: 10;
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(26 86 219 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13791,24 +13875,47 @@ div.picker.a11y {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
+  .changes.doku_form .revision-info .revision-buttons a:hover {
+    --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  .changes.doku_form .revision-info .revision-buttons a:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
   .changes.doku_form .revision-info .revision-buttons a:focus {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
     --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+    --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
+}
+
+.changes.doku_form .revision-info .revision-buttons a {
+  border-radius: 0px;
+  border-right-width: 0px;
+  display:flex;
+  align-items:center;
+  border-radius:0;
+  border-right-width:0;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom:.5rem;
+  padding-top:.5rem;
+  text-decoration-line:none;
+}
+
+.changes.doku_form .revision-info .revision-buttons a:first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.changes.doku_form .revision-info .revision-buttons a:last-child {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-right-width: 1px;
 }
 
 .changes.doku_form .revision-info .revision-buttons a svg {
@@ -13831,6 +13938,7 @@ div.picker.a11y {
   padding-right:1.25rem;
   padding-bottom:.625rem;
   padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
@@ -13846,9 +13954,9 @@ div.picker.a11y {
 .changes.doku_form button[name="do[diff]"]:not([disabled]):focus{
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
 }
@@ -13877,7 +13985,7 @@ div.picker.a11y {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
@@ -13921,13 +14029,17 @@ div.picker.a11y {
 
 :is(.dark .changes.doku_form button[name="do[diff]"][disabled]){
   --tw-bg-opacity:1;
-  background-color:rgb(63 131 248/var(--tw-bg-opacity))
+  background-color:rgb(30 66 159/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
 @media (prefers-color-scheme: dark) {
   .changes.doku_form button[name="do[diff]"][disabled] {
     --tw-bg-opacity: 1;
-    background-color: rgb(63 131 248 / var(--tw-bg-opacity));
+    background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
@@ -13935,8 +14047,6 @@ div.picker.a11y {
 
 .changes.doku_form label.quickselect span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-bottom:.5rem;
-  margin-left:.25rem;
   display:block;
   font-size:.875rem;
   line-height:1.25rem;
@@ -13955,6 +14065,11 @@ div.picker.a11y {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
+}
+
+.changes.doku_form label.quickselect span {
+  margin-bottom:.5rem;
+  margin-left:.25rem;
 }
 
 .changes.doku_form label.quickselect select.quickselect {
@@ -14059,7 +14174,7 @@ div.picker.a11y {
 
 .diffoptions .doku_form .quickselect span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-right:.5rem;
+  display:block;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
@@ -14079,12 +14194,17 @@ div.picker.a11y {
   }
 }
 
+.diffoptions .doku_form .quickselect span {
+  margin-right:.5rem;
+  display:inline-block;
+}
+
 .diffoptions .doku_form .quickselect select {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding-right: 3rem;
+  padding-right: 2rem;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:inline-block;
+  display:block;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -14168,6 +14288,10 @@ div.picker.a11y {
   }
 }
 
+.diffoptions .doku_form .quickselect select {
+  display:inline-block;
+}
+
 .diffoptions .doku_form + p {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -14187,12 +14311,12 @@ div.picker.a11y {
   padding-right:1.25rem;
   padding-bottom:.625rem;
   padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
-  text-decoration-line:none;
 }
 
 .diffoptions .difflink:hover{
@@ -14206,9 +14330,9 @@ div.picker.a11y {
   z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
@@ -14246,7 +14370,7 @@ div.picker.a11y {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
@@ -14273,6 +14397,10 @@ div.picker.a11y {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
+}
+
+.diffoptions .difflink {
+  text-decoration-line:none;
 }
 
 /* Diff header and footer for having round edges*/
@@ -14462,9 +14590,8 @@ table.diff .diffnav {
 table.diff .diffnav a {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  vertical-align: middle;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-  display:inline-flex;
+  display:flex;
   align-items:center;
   border-radius:.5rem;
   border-width:1px;
@@ -14482,11 +14609,12 @@ table.diff .diffnav a {
 
 table.diff .diffnav a:hover{
   --tw-bg-opacity:1;
-  background-color:rgb(243 244 246/var(--tw-bg-opacity))
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity))
 }
 
 table.diff .diffnav a:focus{
-  z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
@@ -14507,7 +14635,9 @@ table.diff .diffnav a:focus{
 
 :is(.dark table.diff .diffnav a:hover){
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
 }
 
 :is(.dark table.diff .diffnav a:focus){
@@ -14518,10 +14648,11 @@ table.diff .diffnav a:focus{
 table.diff .diffnav a:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
 table.diff .diffnav a:focus {
-  z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -14529,6 +14660,10 @@ table.diff .diffnav a:focus {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+
+table.diff .diffnav a:focus::first-line {
+  z-index: 10;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14544,12 +14679,19 @@ table.diff .diffnav a:focus {
   table.diff .diffnav a:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   table.diff .diffnav a:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
   }
+}
+
+table.diff .diffnav a {
+  vertical-align: middle;
+  display:inline-flex;
 }
 
 table.diff .diffnav a.diffbothprevrev {
@@ -14622,22 +14764,19 @@ table.diff .diffnav .doku_form {
 }
 
 table.diff .diffnav select.quickselect {
-  max-width: 50%;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-left:.5rem;
-  margin-right:.5rem;
-  display:inline;
+  display:block;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
-  border-color:rgb(229 231 235/var(--tw-border-opacity));
+  border-color:rgb(209 213 219/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(255 255 255/var(--tw-bg-opacity));
-  padding-bottom:.5rem;
-  padding-top:.5rem;
+  background-color:rgb(249 250 251/var(--tw-bg-opacity));
+  padding-bottom:.625rem;
+  padding-top:.625rem;
   padding-left:.625rem;
   font-size:.875rem;
   line-height:1.25rem;
@@ -14656,7 +14795,7 @@ table.diff .diffnav select.quickselect:focus{
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(31 41 55/var(--tw-bg-opacity));
+  background-color:rgb(55 65 81/var(--tw-bg-opacity));
   --tw-text-opacity:1;
   color:rgb(255 255 255/var(--tw-text-opacity))
 }
@@ -14690,7 +14829,7 @@ table.diff .diffnav select.quickselect:focus {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
@@ -14710,6 +14849,33 @@ table.diff .diffnav select.quickselect:focus {
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+  }
+}
+
+table.diff .diffnav select.quickselect {
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  margin-left:.5rem;
+  margin-right:.5rem;
+  display:inline;
+  --tw-bg-opacity:1;
+  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  padding-bottom:.5rem;
+  padding-top:.5rem;
+}
+
+:is(.dark table.diff .diffnav select.quickselect){
+  --tw-bg-opacity:1;
+  background-color:rgb(31 41 55/var(--tw-bg-opacity))
+}
+
+table.diff .diffnav select.quickselect::file-selector-button {
+  max-width: 50%;
+}
+
+@media (prefers-color-scheme: dark) {
+  table.diff .diffnav select.quickselect {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 }
 
@@ -15204,11 +15370,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 }
 
 #dw__editform .no button[name="do[draftdel]"] {
-  order: 2;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-right:.5rem;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -15219,6 +15383,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   padding-right:1.25rem;
   padding-bottom:.625rem;
   padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
@@ -15237,9 +15402,9 @@ ul.idx:not(.index__tree *) li:last-child a {
   z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
@@ -15277,7 +15442,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
@@ -15306,12 +15471,15 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+#dw__editform .no button[name="do[draftdel]"] {
+  order: 2;
+  margin-right:.5rem;
+}
+
 #dw__editform .no button[name="do[show]"] {
-  order: 3;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-right:.5rem;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -15322,6 +15490,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   padding-right:1.25rem;
   padding-bottom:.625rem;
   padding-top:.625rem;
+  text-align:center;
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
@@ -15340,9 +15509,9 @@ ul.idx:not(.index__tree *) li:last-child a {
   z-index:10;
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(229 231 235/var(--tw-ring-opacity))
 }
@@ -15380,7 +15549,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
@@ -15409,12 +15578,14 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+#dw__editform .no button[name="do[show]"] {
+  order: 3;
+  margin-right:.5rem;
+}
+
 #dw__editform .no button[name="do[recover]"] {
-  order: 4;
-  margin-right: 0px;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  width:100%;
   border-radius:.5rem;
   --tw-bg-opacity:1;
   background-color:rgb(26 86 219/var(--tw-bg-opacity));
@@ -15438,9 +15609,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 #dw__editform .no button[name="do[recover]"]:focus{
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
 }
@@ -15460,12 +15631,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   --tw-ring-color:rgb(30 66 159/var(--tw-ring-opacity))
 }
 
-@media (min-width:640px){
-  #dw__editform .no button[name="do[recover]"]{
-    width:auto
-  }
-}
-
 #dw__editform .no button[name="do[recover]"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
@@ -15475,7 +15640,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
@@ -15498,10 +15663,9 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
-@media (min-width: 640px) {
-  #dw__editform .no button[name="do[recover]"] {
-    width: auto;
-  }
+#dw__editform .no button[name="do[recover]"] {
+  order: 4;
+  margin-right: 0px;
 }
 
 .index__tree {
@@ -15737,7 +15901,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   line-height:1.75rem;
   font-weight:700;
   line-height:1.25;
-  letter-spacing:-.025em;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -15767,7 +15930,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 #dw__login fieldset label span, #dw__register fieldset label span, #dw__resendpwd fieldset label span, #dw__profiledelete fieldset label span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-bottom:.5rem;
   display:block;
   font-size:.875rem;
   line-height:1.25rem;
@@ -15788,23 +15950,26 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+#dw__login fieldset label span, #dw__register fieldset label span, #dw__resendpwd fieldset label span, #dw__profiledelete fieldset label span {
+  margin-bottom:.5rem;
+}
+
 /* text input element*/
 
 #dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
-  width:100%;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
   border-color:rgb(209 213 219/var(--tw-border-opacity));
   --tw-bg-opacity:1;
   background-color:rgb(249 250 251/var(--tw-bg-opacity));
-  padding:.625rem;
-  font-size:.875rem;
-  line-height:1.25rem;
+  padding-left:.75rem;
+  padding-right:.75rem;
+  padding-bottom:.5rem;
+  padding-top:.5rem;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -15882,14 +16047,18 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+#dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
+  display:block;
+  width:100%;
+  font-size:.875rem;
+  line-height:1.25rem;
+}
+
 /* Checkbox*/
 
 #dw__login fieldset label input[type="checkbox"], #dw__register fieldset label input[type="checkbox"], #dw__resendpwd fieldset label input[type="checkbox"], #dw__profiledelete fieldset label input[type="checkbox"] {
-  margin-top: 0.18rem;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  vertical-align: top;
-  display:inline-block;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   height:1rem;
   width:1rem;
   border-radius:.25rem;
@@ -15897,7 +16066,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   --tw-border-opacity:1;
   border-color:rgb(209 213 219/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(249 250 251/var(--tw-bg-opacity));
+  background-color:rgb(243 244 246/var(--tw-bg-opacity));
 }
 
 #dw__login fieldset label input[type="checkbox"]:focus, #dw__register fieldset label input[type="checkbox"]:focus, #dw__resendpwd fieldset label input[type="checkbox"]:focus, #dw__profiledelete fieldset label input[type="checkbox"]:focus{
@@ -15905,7 +16074,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
-  --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
+  --tw-ring-color:rgb(63 131 248/var(--tw-ring-opacity))
 }
 
 :is(.dark #dw__login fieldset label input[type="checkbox"]),:is(.dark  #dw__register fieldset label input[type="checkbox"]),:is(.dark  #dw__resendpwd fieldset label input[type="checkbox"]),:is(.dark  #dw__profiledelete fieldset label input[type="checkbox"]){
@@ -15918,8 +16087,7 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 :is(.dark #dw__login fieldset label input[type="checkbox"]:focus),:is(.dark  #dw__register fieldset label input[type="checkbox"]:focus),:is(.dark  #dw__resendpwd fieldset label input[type="checkbox"]:focus),:is(.dark  #dw__profiledelete fieldset label input[type="checkbox"]:focus){
   --tw-ring-opacity:1;
-  --tw-ring-color:rgb(28 100 242/var(--tw-ring-opacity));
-  --tw-ring-offset-color:#1f2937
+  --tw-ring-color:rgb(28 100 242/var(--tw-ring-opacity))
 }
 
 #dw__login fieldset label input[type="checkbox"]:focus, #dw__register fieldset label input[type="checkbox"]:focus, #dw__resendpwd fieldset label input[type="checkbox"]:focus, #dw__profiledelete fieldset label input[type="checkbox"]:focus {
@@ -15927,7 +16095,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15942,8 +16110,13 @@ ul.idx:not(.index__tree *) li:last-child a {
   #dw__login fieldset label input[type="checkbox"]:focus, #dw__register fieldset label input[type="checkbox"]:focus, #dw__resendpwd fieldset label input[type="checkbox"]:focus, #dw__profiledelete fieldset label input[type="checkbox"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
-    --tw-ring-offset-color: #1F2937;
   }
+}
+
+#dw__login fieldset label input[type="checkbox"], #dw__register fieldset label input[type="checkbox"], #dw__resendpwd fieldset label input[type="checkbox"], #dw__profiledelete fieldset label input[type="checkbox"] {
+  margin-top: 0.18rem;
+  vertical-align: top;
+  display:inline-block;
 }
 
 /* Checkbox label*/
@@ -15960,10 +16133,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 #dw__login fieldset button[type="submit"], #dw__register fieldset button[type="submit"], #dw__resendpwd fieldset button[type="submit"], #dw__profiledelete fieldset button[type="submit"] {
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  margin-bottom:1.5rem;
-  margin-top:1.5rem;
-  display:block;
-  width:100%;
   border-radius:.5rem;
   --tw-bg-opacity:1;
   background-color:rgb(26 86 219/var(--tw-bg-opacity));
@@ -15987,9 +16156,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 #dw__login fieldset button[type="submit"]:focus, #dw__register fieldset button[type="submit"]:focus, #dw__resendpwd fieldset button[type="submit"]:focus, #dw__profiledelete fieldset button[type="submit"]:focus{
   outline:2px solid transparent;
   outline-offset:2px;
-  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000);
+  --tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   --tw-ring-opacity:1;
   --tw-ring-color:rgb(164 202 254/var(--tw-ring-opacity))
 }
@@ -16018,7 +16187,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
@@ -16039,6 +16208,13 @@ ul.idx:not(.index__tree *) li:last-child a {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
+}
+
+#dw__login fieldset button[type="submit"], #dw__register fieldset button[type="submit"], #dw__resendpwd fieldset button[type="submit"], #dw__profiledelete fieldset button[type="submit"] {
+  margin-bottom:1.5rem;
+  margin-top:1.5rem;
+  display:block;
+  width:100%;
 }
 
 /* Reset button*/
@@ -16932,11 +17108,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -17103,11 +17274,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 
 .font-medium {
@@ -17535,11 +17701,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
-.hover\:text-blue-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
-}
-
 .hover\:text-gray-400:hover {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -17553,10 +17714,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.focus\:z-10:focus {
-  z-index: 10;
 }
 
 .focus\:outline-none:focus {
@@ -17794,11 +17951,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   .dark\:focus\:text-white:focus {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
-  .dark\:focus\:ring-gray-500:focus {
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
   }
 
   .dark\:focus\:ring-gray-600:focus {
