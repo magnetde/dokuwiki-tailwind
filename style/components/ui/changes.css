@@ -35,7 +35,7 @@
 
 			.sum {
 				@apply
-					text-lg font-semibold overflow-hidden whitespace-nowrap text-ellipsis
+					text-lg font-semibold truncate
 					text-gray-900 dark:text-white
 				;
 

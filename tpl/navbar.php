@@ -21,7 +21,7 @@
 			echo '<img class="h-8 mr-3" src="' . $logo_url . '" alt="' . $title . '"/>';
 		}
 
-		echo '<span class="self-center text-2xl font-semibold whitespace-nowrap overflow-ellipsis dark:text-white">' . $title . '</span>';
+		echo '<span class="self-center text-2xl font-semibold truncate dark:text-white">' . $title . '</span>';
 		echo '</a>';
 		?>
 

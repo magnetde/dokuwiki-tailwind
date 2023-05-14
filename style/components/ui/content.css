@@ -40,6 +40,7 @@
 
 // Main content and left sidebar
 .dw-content, .dw-sidebar {
+	// extend the Tailwindcss typography
 	@apply
 		prose-headings:scroll-mt-20
 		prose-pre:rounded-lg
