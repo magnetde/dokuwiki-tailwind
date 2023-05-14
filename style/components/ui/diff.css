@@ -62,7 +62,7 @@ table.diff {
 	}
 
 	th {
-		@apply p-4 w-1/2 text-sm font-medium text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800;
+		@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
 
 		.wikilink1 {
 			@apply link-primary;
@@ -151,7 +151,7 @@ table.diff {
 		}
 
 		&.diff-blockheader {
-			@apply px-3 py-1.5 font-medium text-gray-600 bg-sky-100 dark:text-gray-400 dark:bg-sky-900;
+			@apply text-secondary px-3 py-1.5 font-medium bg-sky-100 dark:bg-sky-900;
 		}
 
 		&.diff-lineheader {

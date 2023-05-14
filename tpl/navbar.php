@@ -32,9 +32,10 @@
 
 		<!--- Mobile menu --->
 		<button class="<?php echo clsx("
-			inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden order-3
-			hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200
-			dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600
+			text-secondary
+			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden order-3 focus:ring-2
+			hover:bg-gray-100 focus:outline-none focus:ring-gray-200
+			dark:hover:bg-gray-700 dark:focus:ring-gray-600
 		") ?>" type="button" data-collapse-toggle="navbar-default" aria-controls="navbar-default" aria-expanded="false">
 			<span class="sr-only">
 				<?php tpl_getLang('open_menu') ?>
@@ -110,7 +111,7 @@
 						if(!empty($_SERVER['REMOTE_USER'])) {
 							echo '<div class="px-4 py-3">'
 								.'<span class="text-primary block text-sm">' . hsc($INFO['userinfo']['name']) . '</span>'
-								.'<span class="block text-sm  text-gray-500 truncate dark:text-gray-400">' . $INFO['userinfo']['mail'] . '</span>'
+								.'<span class="text-secondary block text-sm truncate">' . $INFO['userinfo']['mail'] . '</span>'
 								.'</div>';
 						}
 						?>

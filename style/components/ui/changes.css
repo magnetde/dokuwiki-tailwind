@@ -62,7 +62,7 @@
 			@apply block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500;
 
 			.subtitle-name {
-				@apply font-medium text-gray-500 dark:text-gray-400
+				@apply text-secondary font-medium;
 			}
 		}
 

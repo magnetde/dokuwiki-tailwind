@@ -34,5 +34,5 @@
 }
 
 #admin__version {
-	@apply mt-6 text-sm font-medium text-gray-500 dark:text-gray-400;
+	@apply text-secondary mt-6 text-sm font-medium;
 }

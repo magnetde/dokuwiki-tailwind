@@ -9,7 +9,7 @@
 	}
 
 	.bchead {
-		@apply inline mr-2 text-gray-500 dark:text-gray-400;
+		@apply text-secondary inline mr-2;
 	}
 
 	// hide first separator; usually gets removed by the backend

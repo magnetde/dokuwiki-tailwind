@@ -1901,6 +1901,42 @@ body {
 
 /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
 
+.text-primary {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .text-primary){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-primary {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.text-secondary {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+:is(.dark .text-secondary){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-secondary {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
 [data-tooltip-style^='light'] + .tooltip-container > .tooltip-arrow:before {
   border-style: solid;
   border-color: #e5e7eb;
@@ -10232,9 +10268,26 @@ form.search button {
 /* Input field of the search*/
 
 form.search input {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark form.search input){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  form.search input {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+form.search input {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -10245,8 +10298,6 @@ form.search input {
   padding-right:.75rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 form.search input:focus{
@@ -10260,9 +10311,7 @@ form.search input:focus{
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark form.search input)::-moz-placeholder{
@@ -10295,8 +10344,6 @@ form.search input:focus {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   form.search input::-moz-placeholder {
@@ -11057,8 +11104,6 @@ pre.code .sc-2 {
 
 .breadcrumb-list .bchead {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  margin-right:.5rem;
-  display:inline;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -11073,6 +11118,11 @@ pre.code .sc-2 {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+.breadcrumb-list .bchead {
+  margin-right:.5rem;
+  display:inline;
 }
 
 /* hide first separator; usually gets removed by the backend*/
@@ -11161,6 +11211,10 @@ pre.code .sc-2 {
 }
 
 /* Main content and left sidebar*/
+
+.dw-content, .dw-sidebar {
+  /* extend the Tailwindcss typography*/
+}
 
 .dw-content :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
   scroll-margin-top: 5rem;
@@ -11809,18 +11863,8 @@ footer .license a {
 
 .dw__toc a {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  padding-bottom:.25rem;
-  padding-top:.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
-}
-
-.dw__toc a:hover{
-  --tw-border-opacity:1;
-  border-color:rgb(209 213 219/var(--tw-border-opacity));
-  --tw-text-opacity:1;
-  color:rgb(31 41 55/var(--tw-text-opacity))
 }
 
 :is(.dark .dw__toc a){
@@ -11828,20 +11872,30 @@ footer .license a {
   color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
-.dw__toc a:hover {
-  border-left-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
 @media (prefers-color-scheme: dark) {
   .dw__toc a {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
 
+.dw__toc a {
+  padding-bottom:.25rem;
+  padding-top:.25rem;
+  font-weight:500;
+}
+
+.dw__toc a:hover{
+  border-color:rgb(209 213 219/var(--tw-border-opacity));
+  color:rgb(31 41 55/var(--tw-text-opacity));
+  border-left-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
   .dw__toc a:hover {
     --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -11947,9 +12001,26 @@ form.doku_form.search-results-form .search-form {
 }
 
 form.doku_form.search-results-form .search-form input {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark form.doku_form.search-results-form .search-form input){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  form.doku_form.search-results-form .search-form input {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+form.doku_form.search-results-form .search-form input {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -11960,8 +12031,6 @@ form.doku_form.search-results-form .search-form input {
   padding-right:.75rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 form.doku_form.search-results-form .search-form input:focus{
@@ -11975,9 +12044,7 @@ form.doku_form.search-results-form .search-form input:focus{
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark form.doku_form.search-results-form .search-form input)::-moz-placeholder{
@@ -12010,8 +12077,6 @@ form.doku_form.search-results-form .search-form input:focus {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   form.doku_form.search-results-form .search-form input::-moz-placeholder {
@@ -12442,14 +12507,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle u
 }
 
 form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li {
-  padding: 0px;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  display:block;
-  padding:0;
-  padding-left:1rem;
-  padding-right:1rem;
-  padding-bottom:.5rem;
-  padding-top:.5rem;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -12464,6 +12522,16 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li {
+  padding: 0px;
+  display:block;
+  padding:0;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom:.5rem;
+  padding-top:.5rem;
 }
 
 form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li:not(.active):hover{
@@ -12633,9 +12701,26 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
 }
 
 .search-box .search-tab {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+:is(.dark .search-box .search-tab){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .search-box .search-tab {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+.search-box .search-tab {
   z-index: 1;
   overflow: auto;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
   margin-bottom:-1px;
   display:inline-flex;
   align-items:center;
@@ -12648,18 +12733,11 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
   padding-right:1.25rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
-  --tw-text-opacity:1;
-  color:rgb(107 114 128/var(--tw-text-opacity));
 }
 
 .search-box .search-tab:hover{
   --tw-text-opacity:1;
   color:rgb(75 85 99/var(--tw-text-opacity))
-}
-
-:is(.dark .search-box .search-tab){
-  --tw-text-opacity:1;
-  color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
 :is(.dark .search-box .search-tab:hover){
@@ -12677,11 +12755,6 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
 }
 
 @media (prefers-color-scheme: dark) {
-  .search-box .search-tab {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
   .search-box .search-tab:hover {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -12950,9 +13023,6 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
 
 .search-box .search_fulltextresult .search_fullpage_result dt {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  font-size:1rem;
-  line-height:1.5rem;
-  font-weight:600;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -12967,6 +13037,12 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
+}
+
+.search-box .search_fulltextresult .search_fullpage_result dt {
+  font-size:1rem;
+  line-height:1.5rem;
+  font-weight:600;
 }
 
 .search-box .search_fulltextresult .search_fullpage_result dt a {
@@ -12988,14 +13064,21 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
 
-.search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover{
-  --tw-text-opacity:1;
-  color:rgb(75 85 99/var(--tw-text-opacity))
-}
-
 :is(.dark .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1)){
   --tw-text-opacity:1;
   color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1) {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+.search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover{
+  --tw-text-opacity:1;
+  color:rgb(75 85 99/var(--tw-text-opacity))
 }
 
 :is(.dark .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover){
@@ -13009,11 +13092,6 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
 }
 
 @media (prefers-color-scheme: dark) {
-  .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1) {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
   .search-box .search_fulltextresult .search_fullpage_result dt a:not(.wikilink1):hover {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -13360,10 +13438,6 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
 
 .dw-content .editBox .doku_form .editBar .summary label span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -13380,15 +13454,39 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
   }
 }
 
+.dw-content .editBox .doku_form .editBar .summary label span {
+  display:block;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
+}
+
 .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] span {
   margin-bottom:.5rem;
   display:block;
 }
 
 .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -13399,8 +13497,6 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
   padding-right:.75rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input:focus{
@@ -13414,9 +13510,7 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input)::-moz-placeholder{
@@ -13449,8 +13543,6 @@ form.doku_form.search-results-form .search-form button[type="submit"] {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .dw-content .editBox .doku_form .editBar .summary label[for="edit__summary"] input::-moz-placeholder {
@@ -14117,13 +14209,7 @@ div.picker.a11y {
 }
 
 .changes.doku_form .revision-info .summary .sum {
-  text-overflow: ellipsis;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  overflow:hidden;
-  white-space:nowrap;
-  font-size:1.125rem;
-  line-height:1.75rem;
-  font-weight:600;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -14140,9 +14226,17 @@ div.picker.a11y {
   }
 }
 
+.changes.doku_form .revision-info .summary .sum {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:1.125rem;
+  line-height:1.75rem;
+  font-weight:600;
+}
+
 .changes.doku_form .revision-info .summary .sum.empty {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  font-style:italic;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -14157,6 +14251,10 @@ div.picker.a11y {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+.changes.doku_form .revision-info .summary .sum.empty {
+  font-style:italic;
 }
 
 .changes.doku_form .revision-info .summary .sizechange {
@@ -14271,7 +14369,6 @@ div.picker.a11y {
 
 .changes.doku_form .revision-info .subtitle .subtitle-name {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -14286,6 +14383,10 @@ div.picker.a11y {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+.changes.doku_form .revision-info .subtitle .subtitle-name {
+  font-weight:500;
 }
 
 .changes.doku_form .revision-info .revision-buttons {
@@ -14556,10 +14657,6 @@ div.picker.a11y {
 
 .changes.doku_form label.quickselect span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -14577,17 +14674,39 @@ div.picker.a11y {
 }
 
 .changes.doku_form label.quickselect span {
+  display:block;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
   margin-bottom:.5rem;
   margin-left:.25rem;
 }
 
 .changes.doku_form label.quickselect select.quickselect {
-  text-overflow: ellipsis;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .changes.doku_form label.quickselect select.quickselect){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .changes.doku_form label.quickselect select.quickselect {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.changes.doku_form label.quickselect select.quickselect {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -14599,8 +14718,6 @@ div.picker.a11y {
   padding-left:.625rem;
   font-size:.875rem;
   line-height:1.25rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 .changes.doku_form label.quickselect select.quickselect:focus{
@@ -14614,9 +14731,7 @@ div.picker.a11y {
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark .changes.doku_form label.quickselect select.quickselect)::-moz-placeholder{
@@ -14649,8 +14764,6 @@ div.picker.a11y {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .changes.doku_form label.quickselect select.quickselect::-moz-placeholder {
@@ -14688,10 +14801,6 @@ div.picker.a11y {
 
 .diffoptions .doku_form .quickselect span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -14709,17 +14818,39 @@ div.picker.a11y {
 }
 
 .diffoptions .doku_form .quickselect span {
+  display:block;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
   margin-right:.5rem;
   display:inline-block;
 }
 
 .diffoptions .doku_form .quickselect select {
-  text-overflow: ellipsis;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .diffoptions .doku_form .quickselect select){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .diffoptions .doku_form .quickselect select {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.diffoptions .doku_form .quickselect select {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -14731,8 +14862,6 @@ div.picker.a11y {
   padding-left:.625rem;
   font-size:.875rem;
   line-height:1.25rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 .diffoptions .doku_form .quickselect select:focus{
@@ -14746,9 +14875,7 @@ div.picker.a11y {
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark .diffoptions .doku_form .quickselect select)::-moz-placeholder{
@@ -14781,8 +14908,6 @@ div.picker.a11y {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .diffoptions .doku_form .quickselect select::-moz-placeholder {
@@ -15022,8 +15147,25 @@ table.diff tr:last-child th, table.diff tr:last-child td {
 }
 
 table.diff th {
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(107 114 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(107 114 128/var(--tw-text-opacity));
+}
+
+:is(.dark table.diff th){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  table.diff th {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+table.diff th {
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   width:50%;
   --tw-bg-opacity:1;
   background-color:rgb(255 255 255/var(--tw-bg-opacity));
@@ -15031,23 +15173,17 @@ table.diff th {
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
-  --tw-text-opacity:1;
-  color:rgb(107 114 128/var(--tw-text-opacity));
 }
 
 :is(.dark table.diff th){
   --tw-bg-opacity:1;
-  background-color:rgb(31 41 55/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(156 163 175/var(--tw-text-opacity))
+  background-color:rgb(31 41 55/var(--tw-bg-opacity))
 }
 
 @media (prefers-color-scheme: dark) {
   table.diff th {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
@@ -15280,12 +15416,30 @@ table.diff .diffnav .doku_form {
 }
 
 table.diff .diffnav select.quickselect {
-  text-overflow: ellipsis;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark table.diff .diffnav select.quickselect){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  table.diff .diffnav select.quickselect {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+table.diff .diffnav select.quickselect {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-right: 2rem;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -15297,8 +15451,6 @@ table.diff .diffnav select.quickselect {
   padding-left:.625rem;
   font-size:.875rem;
   line-height:1.25rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 table.diff .diffnav select.quickselect:focus{
@@ -15312,9 +15464,7 @@ table.diff .diffnav select.quickselect:focus{
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark table.diff .diffnav select.quickselect)::-moz-placeholder{
@@ -15347,8 +15497,6 @@ table.diff .diffnav select.quickselect:focus {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   table.diff .diffnav select.quickselect::-moz-placeholder {
@@ -15462,16 +15610,9 @@ table.diff td:not(.diffnav):last-child {
 }
 
 table.diff td:not(.diffnav).diff-blockheader {
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 242 254 / var(--tw-bg-opacity));
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-  padding-left:.75rem;
-  padding-right:.75rem;
-  padding-bottom:.375rem;
-  padding-top:.375rem;
-  font-weight:500;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
   --tw-text-opacity:1;
-  color:rgb(75 85 99/var(--tw-text-opacity));
+  color:rgb(107 114 128/var(--tw-text-opacity));
 }
 
 :is(.dark table.diff td:not(.diffnav).diff-blockheader){
@@ -15481,10 +15622,25 @@ table.diff td:not(.diffnav).diff-blockheader {
 
 @media (prefers-color-scheme: dark) {
   table.diff td:not(.diffnav).diff-blockheader {
-    --tw-bg-opacity: 1;
-    background-color: rgb(12 74 110 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+table.diff td:not(.diffnav).diff-blockheader {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 242 254 / var(--tw-bg-opacity));
+  padding-left:.75rem;
+  padding-right:.75rem;
+  padding-bottom:.375rem;
+  padding-top:.375rem;
+  font-weight:500;
+}
+
+@media (prefers-color-scheme: dark) {
+  table.diff td:not(.diffnav).diff-blockheader {
+    --tw-bg-opacity: 1;
+    background-color: rgb(12 74 110 / var(--tw-bg-opacity));
   }
 }
 
@@ -15703,10 +15859,27 @@ table.diff_sidebyside tr:first-child th {
 
 ul.idx:not(.index__tree *) {
   /* exclude the index tree*/
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark ul.idx:not(.index__tree *)){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  ul.idx:not(.index__tree *) {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+ul.idx:not(.index__tree *) {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 0px;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   width:100%;
   list-style-type:none;
   border-radius:.5rem;
@@ -15719,17 +15892,13 @@ ul.idx:not(.index__tree *) {
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 :is(.dark ul.idx:not(.index__tree *)){
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15738,8 +15907,6 @@ ul.idx:not(.index__tree *) {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
@@ -15862,14 +16029,7 @@ ul.idx:not(.index__tree *) li:last-child a {
 }
 
 #dw__editform .no #draft__status {
-  flex-grow: 1;
-  text-overflow: ellipsis;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  margin-top:.5rem;
-  overflow:hidden;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -15884,6 +16044,17 @@ ul.idx:not(.index__tree *) li:last-child a {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+#dw__editform .no #draft__status {
+  flex-grow: 1;
+  margin-top:.5rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
 }
 
 #dw__editform .no button {
@@ -16221,15 +16392,8 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 .index__tree a {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
-  text-decoration-line:none;
-}
-
-.index__tree a:hover{
-  --tw-text-opacity:1;
-  color:rgb(31 41 55/var(--tw-text-opacity))
 }
 
 :is(.dark .index__tree a){
@@ -16237,17 +16401,25 @@ ul.idx:not(.index__tree *) li:last-child a {
   color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
-.index__tree a:hover {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
 @media (prefers-color-scheme: dark) {
   .index__tree a {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
 
+.index__tree a {
+  font-weight:500;
+  text-decoration-line:none;
+}
+
+.index__tree a:hover{
+  color:rgb(31 41 55/var(--tw-text-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
   .index__tree a:hover {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -16282,10 +16454,15 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 /* remove hover effect on folders*/
 
-.index__tree li.closed > div.li a:hover, .index__tree li.open > div.li a:hover{
+.index__tree li.closed > div.li a:hover, .index__tree li.open > div.li a:hover {
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity))
+}
+
+:is(.dark .index__tree li.closed > div.li a:hover),:is(.dark  .index__tree li.open > div.li a:hover){
+  --tw-text-opacity:1;
+  color:rgb(156 163 175/var(--tw-text-opacity))
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16417,11 +16594,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 #dw__login fieldset legend, #dw__register fieldset legend, #dw__resendpwd fieldset legend, #dw__profiledelete fieldset legend {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  margin-bottom:2rem;
-  font-size:1.25rem;
-  line-height:1.75rem;
-  font-weight:700;
-  line-height:1.25;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -16438,6 +16610,14 @@ ul.idx:not(.index__tree *) li:last-child a {
   }
 }
 
+#dw__login fieldset legend, #dw__register fieldset legend, #dw__resendpwd fieldset legend, #dw__profiledelete fieldset legend {
+  margin-bottom:2rem;
+  font-size:1.25rem;
+  line-height:1.75rem;
+  font-weight:700;
+  line-height:1.25;
+}
+
 @media (min-width: 768px) {
   #dw__login fieldset legend, #dw__register fieldset legend, #dw__resendpwd fieldset legend, #dw__profiledelete fieldset legend {
     font-size: 1.5rem;
@@ -16451,10 +16631,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 #dw__login fieldset label span, #dw__register fieldset label span, #dw__resendpwd fieldset label span, #dw__profiledelete fieldset label span {
   color: rgb(17 24 39 / var(--tw-text-opacity));
-  display:block;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(17 24 39/var(--tw-text-opacity));
 }
@@ -16472,15 +16648,36 @@ ul.idx:not(.index__tree *) li:last-child a {
 }
 
 #dw__login fieldset label span, #dw__register fieldset label span, #dw__resendpwd fieldset label span, #dw__profiledelete fieldset label span {
+  display:block;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
   margin-bottom:.5rem;
 }
 
 /* text input element*/
 
 #dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark #dw__login fieldset label input[type="text"]),:is(.dark  #dw__login fieldset label input[type="password"]),:is(.dark  #dw__login fieldset label input[type="email"]),:is(.dark  #dw__register fieldset label input[type="text"]),:is(.dark  #dw__register fieldset label input[type="password"]),:is(.dark  #dw__register fieldset label input[type="email"]),:is(.dark  #dw__resendpwd fieldset label input[type="text"]),:is(.dark  #dw__resendpwd fieldset label input[type="password"]),:is(.dark  #dw__resendpwd fieldset label input[type="email"]),:is(.dark  #dw__profiledelete fieldset label input[type="text"]),:is(.dark  #dw__profiledelete fieldset label input[type="password"]),:is(.dark  #dw__profiledelete fieldset label input[type="email"]){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  #dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+#dw__login fieldset label input[type="text"], #dw__login fieldset label input[type="password"], #dw__login fieldset label input[type="email"], #dw__register fieldset label input[type="text"], #dw__register fieldset label input[type="password"], #dw__register fieldset label input[type="email"], #dw__resendpwd fieldset label input[type="text"], #dw__resendpwd fieldset label input[type="password"], #dw__resendpwd fieldset label input[type="email"], #dw__profiledelete fieldset label input[type="text"], #dw__profiledelete fieldset label input[type="password"], #dw__profiledelete fieldset label input[type="email"] {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   border-radius:.5rem;
   border-width:1px;
   --tw-border-opacity:1;
@@ -16491,8 +16688,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   padding-right:.75rem;
   padding-bottom:.5rem;
   padding-top:.5rem;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 #dw__login fieldset label input[type="text"]:focus, #dw__login fieldset label input[type="password"]:focus, #dw__login fieldset label input[type="email"]:focus, #dw__register fieldset label input[type="text"]:focus, #dw__register fieldset label input[type="password"]:focus, #dw__register fieldset label input[type="email"]:focus, #dw__resendpwd fieldset label input[type="text"]:focus, #dw__resendpwd fieldset label input[type="password"]:focus, #dw__resendpwd fieldset label input[type="email"]:focus, #dw__profiledelete fieldset label input[type="text"]:focus, #dw__profiledelete fieldset label input[type="password"]:focus, #dw__profiledelete fieldset label input[type="email"]:focus{
@@ -16506,9 +16701,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 :is(.dark #dw__login fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__login fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__login fieldset label input[type="email"])::-moz-placeholder,:is(.dark  #dw__register fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__register fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__register fieldset label input[type="email"])::-moz-placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__resendpwd fieldset label input[type="email"])::-moz-placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="text"])::-moz-placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="password"])::-moz-placeholder,:is(.dark  #dw__profiledelete fieldset label input[type="email"])::-moz-placeholder{
@@ -16546,8 +16739,6 @@ ul.idx:not(.index__tree *) li:last-child a {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   #dw__login fieldset label input[type="text"]::-moz-placeholder, #dw__login fieldset label input[type="password"]::-moz-placeholder, #dw__login fieldset label input[type="email"]::-moz-placeholder, #dw__register fieldset label input[type="text"]::-moz-placeholder, #dw__register fieldset label input[type="password"]::-moz-placeholder, #dw__register fieldset label input[type="email"]::-moz-placeholder, #dw__resendpwd fieldset label input[type="text"]::-moz-placeholder, #dw__resendpwd fieldset label input[type="password"]::-moz-placeholder, #dw__resendpwd fieldset label input[type="email"]::-moz-placeholder, #dw__profiledelete fieldset label input[type="text"]::-moz-placeholder, #dw__profiledelete fieldset label input[type="password"]::-moz-placeholder, #dw__profiledelete fieldset label input[type="email"]::-moz-placeholder {
@@ -16741,11 +16932,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 /* Reset button*/
 
 #dw__login fieldset button[type="reset"], #dw__register fieldset button[type="reset"], #dw__resendpwd fieldset button[type="reset"], #dw__profiledelete fieldset button[type="reset"] {
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   color: rgb(55 65 81 / var(--tw-text-opacity));
   border-radius:.5rem;
-  --tw-bg-opacity:1;
-  background-color:rgb(255 255 255/var(--tw-bg-opacity));
+  background-color:transparent;
   font-weight:500;
   --tw-text-opacity:1;
   color:rgb(55 65 81/var(--tw-text-opacity));
@@ -16769,8 +16958,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 :is(.dark #dw__login fieldset button[type="reset"]),:is(.dark  #dw__register fieldset button[type="reset"]),:is(.dark  #dw__resendpwd fieldset button[type="reset"]),:is(.dark  #dw__profiledelete fieldset button[type="reset"]){
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
-  --tw-bg-opacity:1;
-  background-color:rgb(31 41 55/var(--tw-bg-opacity));
   --tw-text-opacity:1;
   color:rgb(156 163 175/var(--tw-text-opacity))
 }
@@ -16804,8 +16991,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   #dw__login fieldset button[type="reset"], #dw__register fieldset button[type="reset"], #dw__resendpwd fieldset button[type="reset"], #dw__profiledelete fieldset button[type="reset"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
@@ -16830,9 +17015,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 #dw__login > p, #dw__register > p, #dw__resendpwd > p, #dw__profiledelete > p {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:400;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -16847,6 +17029,12 @@ ul.idx:not(.index__tree *) li:last-child a {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+#dw__login > p, #dw__register > p, #dw__resendpwd > p, #dw__profiledelete > p {
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:400;
 }
 
 #dw__login > p a, #dw__register > p a, #dw__resendpwd > p a, #dw__profiledelete > p a {
@@ -16880,10 +17068,30 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 .admin_tasks,
 .admin_plugins {
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-text-opacity:1;
+  color:rgb(17 24 39/var(--tw-text-opacity));
+}
+
+:is(.dark .admin_tasks),:is(.dark 
+.admin_plugins){
+  --tw-text-opacity:1;
+  color:rgb(255 255 255/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin_tasks,
+.admin_plugins {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.admin_tasks,
+.admin_plugins {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 0px;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
   width:100%;
   list-style-type:none;
   border-radius:.5rem;
@@ -16896,8 +17104,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   font-size:.875rem;
   line-height:1.25rem;
   font-weight:500;
-  --tw-text-opacity:1;
-  color:rgb(17 24 39/var(--tw-text-opacity));
 }
 
 :is(.dark .admin_tasks),:is(.dark 
@@ -16905,9 +17111,7 @@ ul.idx:not(.index__tree *) li:last-child a {
   --tw-border-opacity:1;
   border-color:rgb(75 85 99/var(--tw-border-opacity));
   --tw-bg-opacity:1;
-  background-color:rgb(55 65 81/var(--tw-bg-opacity));
-  --tw-text-opacity:1;
-  color:rgb(255 255 255/var(--tw-text-opacity))
+  background-color:rgb(55 65 81/var(--tw-bg-opacity))
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16917,8 +17121,6 @@ ul.idx:not(.index__tree *) li:last-child a {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
@@ -17078,10 +17280,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 #admin__version {
   color: rgb(107 114 128 / var(--tw-text-opacity));
-  margin-top:1.5rem;
-  font-size:.875rem;
-  line-height:1.25rem;
-  font-weight:500;
   --tw-text-opacity:1;
   color:rgb(107 114 128/var(--tw-text-opacity));
 }
@@ -17096,6 +17294,13 @@ ul.idx:not(.index__tree *) li:last-child a {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
+}
+
+#admin__version {
+  margin-top:1.5rem;
+  font-size:.875rem;
+  line-height:1.25rem;
+  font-weight:500;
 }
 
 .sr-only {
@@ -17570,18 +17775,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   white-space: nowrap;
 }
 
-.overflow-ellipsis {
-  text-overflow: ellipsis;
-}
-
-.text-ellipsis {
-  text-overflow: ellipsis;
-}
-
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded {
   border-radius: 0.25rem;
 }
@@ -17960,11 +18153,9 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 @media (min-width: 768px) {
   .md\:btn-link {
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     color: rgb(55 65 81 / var(--tw-text-opacity));
     border-radius:.5rem;
-    --tw-bg-opacity:1;
-    background-color:rgb(255 255 255/var(--tw-bg-opacity));
+    background-color:transparent;
     font-weight:500;
     --tw-text-opacity:1;
     color:rgb(55 65 81/var(--tw-text-opacity));
@@ -17988,8 +18179,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   :is(.dark .md\:btn-link){
     --tw-border-opacity:1;
     border-color:rgb(75 85 99/var(--tw-border-opacity));
-    --tw-bg-opacity:1;
-    background-color:rgb(31 41 55/var(--tw-bg-opacity));
     --tw-text-opacity:1;
     color:rgb(156 163 175/var(--tw-text-opacity))
   }
@@ -18023,8 +18212,6 @@ ul.idx:not(.index__tree *) li:last-child a {
     .md\:btn-link {
       --tw-border-opacity: 1;
       border-color: rgb(75 85 99 / var(--tw-border-opacity));
-      --tw-bg-opacity: 1;
-      background-color: rgb(31 41 55 / var(--tw-bg-opacity));
       --tw-text-opacity: 1;
       color: rgb(156 163 175 / var(--tw-text-opacity));
     }

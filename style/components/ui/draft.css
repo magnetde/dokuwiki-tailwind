@@ -3,7 +3,7 @@
 	@apply flex flex-nowrap;
 
 	#draft__status {
-		@apply mt-2 flex-grow truncate text-sm font-medium text-gray-500 dark:text-gray-400;
+		@apply text-secondary mt-2 flex-grow truncate text-sm font-medium;
 	}
 
 	button {
