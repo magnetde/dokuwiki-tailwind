@@ -46,21 +46,7 @@
 		</div>
 
 		<!--- Content --->
-		<article id="dw-content" class="<?php echo clsx("
-			dw-content
-			w-full max-w-none mt-16
-			prose dark:prose-invert
-			prose-headings:scroll-mt-20
-			prose-pre:rounded-lg
-			prose-ul:my-2 prose-li:my-1
-			prose-table:text-base
-			prose-code:p-0.5
-			prose-code:rounded
-			prose-code:text-blue-800
-			prose-code:bg-blue-50
-			dark:prose-code:text-blue-300
-			dark:prose-code:bg-blue-950
-		") ?>">
+		<article id="dw-content" class="dw-content w-full max-w-none mt-16 prose dark:prose-invert">
 
 			<?php echo $content ?>
 

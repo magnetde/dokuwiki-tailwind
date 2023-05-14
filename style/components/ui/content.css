@@ -40,6 +40,19 @@
 
 // Main content and left sidebar
 .dw-content, .dw-sidebar {
+	@apply
+		prose-headings:scroll-mt-20
+		prose-pre:rounded-lg
+		prose-ul:my-2 prose-li:my-1
+		prose-table:text-base
+		prose-code:p-0.5
+		prose-code:rounded
+		prose-code:text-blue-800
+		prose-code:bg-blue-50
+		dark:prose-code:text-blue-300
+		dark:prose-code:bg-blue-950
+	;
+
 	// increase the font weight of h5 headers
 	h5 {
 		@apply font-semibold;
@@ -56,7 +69,8 @@
 	}
 
 	// regular links
-	a.wikilink1, a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
+	p > a.wikilink1, p > .curid > a.wikilink1,
+	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
 		@apply link-primary font-inherit;
 	}
 
@@ -258,6 +272,7 @@ footer .license a {
 	@apply inline-block underline;
 }
 
+// Error box at the top of the page
 .error {
 	@apply mb-8 p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400;
 }

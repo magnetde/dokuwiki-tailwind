@@ -1899,6 +1899,8 @@ body {
   }
 }
 
+/* adding "no-underline" and "decoration-current" to overwrite the prose style*/
+
 [data-tooltip-style^='light'] + .tooltip-container > .tooltip-arrow:before {
   border-style: solid;
   border-color: #e5e7eb;
@@ -11160,6 +11162,47 @@ pre.code .sc-2 {
 
 /* Main content and left sidebar*/
 
+.dw-content :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
+  scroll-margin-top: 5rem;
+}
+
+.dw-content :is(:where(code):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(code):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 245 255 / var(--tw-bg-opacity));
+  padding: 0.125rem;
+  --tw-text-opacity: 1;
+  color: rgb(30 66 159 / var(--tw-text-opacity));
+}
+
+.dw-content :is(:where(pre):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  border-radius: 0.5rem;
+}
+
+.dw-content :is(:where(ul):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(ul):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dw-content :is(:where(li):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(li):not(:where([class~="not-prose"] *))) {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.dw-content :is(:where(table):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(table):not(:where([class~="not-prose"] *))) {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-content :is(:where(code):not(:where([class~="not-prose"] *))), .dw-sidebar :is(:where(code):not(:where([class~="not-prose"] *))) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 37 84 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(164 202 254 / var(--tw-text-opacity));
+  }
+}
+
 /* increase the font weight of h5 headers*/
 
 .dw-content h5, .dw-sidebar h5 {
@@ -11181,8 +11224,7 @@ pre.code .sc-2 {
 
 /* regular links*/
 
-.dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
-  /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
+.dw-content p > a.wikilink1, .dw-content p > .curid > a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar p > a.wikilink1, .dw-sidebar p > .curid > a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
   color: rgb(26 86 219 / var(--tw-text-opacity));
   text-decoration-color: currentColor;
   font-weight:500;
@@ -11191,27 +11233,27 @@ pre.code .sc-2 {
   text-decoration-line:none;
 }
 
-.dw-content a.wikilink1:hover, .dw-content a.urlextern:hover, .dw-content a.mail:hover, .dw-content a.windows:hover, .dw-content a.mediafile:hover, .dw-content a.interwiki:hover, .dw-sidebar a.wikilink1:hover, .dw-sidebar a.urlextern:hover, .dw-sidebar a.mail:hover, .dw-sidebar a.windows:hover, .dw-sidebar a.mediafile:hover, .dw-sidebar a.interwiki:hover{
+.dw-content p > a.wikilink1:hover, .dw-content p > .curid > a.wikilink1:hover, .dw-content a.urlextern:hover, .dw-content a.mail:hover, .dw-content a.windows:hover, .dw-content a.mediafile:hover, .dw-content a.interwiki:hover, .dw-sidebar p > a.wikilink1:hover, .dw-sidebar p > .curid > a.wikilink1:hover, .dw-sidebar a.urlextern:hover, .dw-sidebar a.mail:hover, .dw-sidebar a.windows:hover, .dw-sidebar a.mediafile:hover, .dw-sidebar a.interwiki:hover{
   text-decoration-line:underline
 }
 
-:is(.dark .dw-content a.wikilink1),:is(.dark  .dw-content a.urlextern),:is(.dark  .dw-content a.mail),:is(.dark  .dw-content a.windows),:is(.dark  .dw-content a.mediafile),:is(.dark  .dw-content a.interwiki),:is(.dark  .dw-sidebar a.wikilink1),:is(.dark  .dw-sidebar a.urlextern),:is(.dark  .dw-sidebar a.mail),:is(.dark  .dw-sidebar a.windows),:is(.dark  .dw-sidebar a.mediafile),:is(.dark  .dw-sidebar a.interwiki){
+:is(.dark .dw-content p > a.wikilink1),:is(.dark  .dw-content p > .curid > a.wikilink1),:is(.dark  .dw-content a.urlextern),:is(.dark  .dw-content a.mail),:is(.dark  .dw-content a.windows),:is(.dark  .dw-content a.mediafile),:is(.dark  .dw-content a.interwiki),:is(.dark  .dw-sidebar p > a.wikilink1),:is(.dark  .dw-sidebar p > .curid > a.wikilink1),:is(.dark  .dw-sidebar a.urlextern),:is(.dark  .dw-sidebar a.mail),:is(.dark  .dw-sidebar a.windows),:is(.dark  .dw-sidebar a.mediafile),:is(.dark  .dw-sidebar a.interwiki){
   --tw-text-opacity:1;
   color:rgb(63 131 248/var(--tw-text-opacity))
 }
 
-.dw-content a.wikilink1:hover, .dw-content a.urlextern:hover, .dw-content a.mail:hover, .dw-content a.windows:hover, .dw-content a.mediafile:hover, .dw-content a.interwiki:hover, .dw-sidebar a.wikilink1:hover, .dw-sidebar a.urlextern:hover, .dw-sidebar a.mail:hover, .dw-sidebar a.windows:hover, .dw-sidebar a.mediafile:hover, .dw-sidebar a.interwiki:hover {
+.dw-content p > a.wikilink1:hover, .dw-content p > .curid > a.wikilink1:hover, .dw-content a.urlextern:hover, .dw-content a.mail:hover, .dw-content a.windows:hover, .dw-content a.mediafile:hover, .dw-content a.interwiki:hover, .dw-sidebar p > a.wikilink1:hover, .dw-sidebar p > .curid > a.wikilink1:hover, .dw-sidebar a.urlextern:hover, .dw-sidebar a.mail:hover, .dw-sidebar a.windows:hover, .dw-sidebar a.mediafile:hover, .dw-sidebar a.interwiki:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
+  .dw-content p > a.wikilink1, .dw-content p > .curid > a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar p > a.wikilink1, .dw-sidebar p > .curid > a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-.dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
+.dw-content p > a.wikilink1, .dw-content p > .curid > a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar p > a.wikilink1, .dw-sidebar p > .curid > a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
   font-weight: inherit;
 }
 
@@ -11728,6 +11770,8 @@ footer .license a {
   display:inline-block;
   text-decoration-line:underline;
 }
+
+/* Error box at the top of the page*/
 
 .error {
   background-color: rgb(253 242 242 / var(--tw-bg-opacity));
@@ -15008,7 +15052,6 @@ table.diff th {
 }
 
 table.diff th .wikilink1 {
-  /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
   color: rgb(26 86 219 / var(--tw-text-opacity));
   text-decoration-color: currentColor;
   font-weight:500;
@@ -16807,7 +16850,6 @@ ul.idx:not(.index__tree *) li:last-child a {
 }
 
 #dw__login > p a, #dw__register > p a, #dw__resendpwd > p a, #dw__profiledelete > p a {
-  /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
   color: rgb(26 86 219 / var(--tw-text-opacity));
   text-decoration-color: currentColor;
   font-weight:500;
@@ -18296,51 +18338,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   opacity: 1;
 }
 
-.prose-headings\:scroll-mt-20 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
-  scroll-margin-top: 5rem;
-}
-
-.prose-code\:rounded :is(:where(code):not(:where([class~="not-prose"] *))) {
-  border-radius: 0.25rem;
-}
-
-.prose-code\:bg-blue-50 :is(:where(code):not(:where([class~="not-prose"] *))) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(235 245 255 / var(--tw-bg-opacity));
-}
-
-.prose-code\:p-0 :is(:where(code):not(:where([class~="not-prose"] *))) {
-  padding: 0px;
-}
-
-.prose-code\:p-0\.5 :is(:where(code):not(:where([class~="not-prose"] *))) {
-  padding: 0.125rem;
-}
-
-.prose-code\:text-blue-800 :is(:where(code):not(:where([class~="not-prose"] *))) {
-  --tw-text-opacity: 1;
-  color: rgb(30 66 159 / var(--tw-text-opacity));
-}
-
-.prose-pre\:rounded-lg :is(:where(pre):not(:where([class~="not-prose"] *))) {
-  border-radius: 0.5rem;
-}
-
-.prose-ul\:my-2 :is(:where(ul):not(:where([class~="not-prose"] *))) {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.prose-li\:my-1 :is(:where(li):not(:where([class~="not-prose"] *))) {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.prose-table\:text-base :is(:where(table):not(:where([class~="not-prose"] *))) {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 @supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))) or (-webkit-backdrop-filter: blur(0)) {
   .supports-backdrop-blur\:bg-white\/60 {
     background-color: rgb(255 255 255 / 0.6);
@@ -18485,16 +18482,6 @@ ul.idx:not(.index__tree *) li:last-child a {
   .dark\:focus\:ring-gray-600:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
-  }
-
-  .dark\:prose-code\:bg-blue-950 :is(:where(code):not(:where([class~="not-prose"] *))) {
-    --tw-bg-opacity: 1;
-    background-color: rgb(23 37 84 / var(--tw-bg-opacity));
-  }
-
-  .dark\:prose-code\:text-blue-300 :is(:where(code):not(:where([class~="not-prose"] *))) {
-    --tw-text-opacity: 1;
-    color: rgb(164 202 254 / var(--tw-text-opacity));
   }
 }
 
