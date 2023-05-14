@@ -1,0 +1,16 @@
+@import "flowbite";
+
+// DokuWiki search form
+form.search {
+	@apply relative w-full lg:w-[32rem];
+
+	// Hide the button (usually gets removed by the backend)
+	button {
+		display: none;
+	}
+
+	// Input field of the search
+	input {
+		@apply input-text py-2 pl-10 pr-2 block w-full text-sm;
+	}
+}

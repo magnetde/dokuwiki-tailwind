@@ -9,7 +9,7 @@
 	}
 
 	.bchead {
-		@apply inline mr-2 text-gray-500 dark:text-gray-400;
+		@apply text-secondary inline mr-2;
 	}
 
 	// hide first separator; usually gets removed by the backend
@@ -40,6 +40,20 @@
 
 // Main content and left sidebar
 .dw-content, .dw-sidebar {
+	// extend the Tailwindcss typography
+	@apply
+		prose-headings:scroll-mt-20
+		prose-pre:rounded-lg
+		prose-ul:my-2 prose-li:my-1
+		prose-table:text-base
+		prose-code:p-0.5
+		prose-code:rounded
+		prose-code:text-blue-800
+		prose-code:bg-blue-50
+		dark:prose-code:text-blue-300
+		dark:prose-code:bg-blue-950
+	;
+
 	// increase the font weight of h5 headers
 	h5 {
 		@apply font-semibold;
@@ -56,8 +70,9 @@
 	}
 
 	// regular links
-	a.wikilink1, a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply decoration-blue-500;
+	p > a.wikilink1, p > .curid > a.wikilink1,
+	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
+		@apply link-primary font-inherit;
 	}
 
 	// Special links with icons
@@ -85,6 +100,7 @@
 			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%239ca3af')]
 		;
 	}
+
 	// for "a.mediafile" see the import statement at the top of this file
 
 	a.interwiki {
@@ -161,7 +177,7 @@
 
 	// dead links
 	a.wikilink2 {
-		@apply decoration-red-500;
+		@apply link-error font-inherit;
 	}
 
 	// Fix the margin in downloadable code blocks
@@ -230,12 +246,7 @@
 			}
 
 			button {
-				@apply 
-					flex items-center p-2 text-xs font-medium ml-auto -mt-3
-					text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700
-					focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none
-					dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
-				;
+				@apply btn-icon ml-auto -mt-3;
 			}
 		}
 	}
@@ -262,6 +273,7 @@ footer .license a {
 	@apply inline-block underline;
 }
 
+// Error box at the top of the page
 .error {
 	@apply mb-8 p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400;
 }

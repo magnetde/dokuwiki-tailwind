@@ -6,7 +6,7 @@
 
 	a {
 		@apply
-			font-medium no-underline text-gray-500 dark:text-gray-400
+			text-secondary font-medium no-underline
 			hover:text-gray-800 hover:dark:text-gray-200
 		;
 	}
@@ -34,7 +34,7 @@
 	// remove hover effect on folders
 	li.closed, li.open {
 		& > div.li a {
-			@apply hover:text-gray-500 hover:dark:text-gray-400;
+			@apply hover:text-secondary;
 		}
 	}
 

@@ -1,0 +1,24 @@
+// Styling IDs is not a great solution but changing the html with event handlers is worse
+#dw__editform .no {
+	@apply flex flex-nowrap;
+
+	#draft__status {
+		@apply text-secondary mt-2 flex-grow truncate text-sm font-medium;
+	}
+
+	button {
+		@apply mt-10;
+
+		&[name="do[draftdel]"] {
+			@apply btn-secondary order-2 mr-2;
+		}
+
+		&[name="do[show]"] {
+			@apply btn-secondary order-3 mr-2;
+		}
+
+		&[name="do[recover]"] {
+			@apply btn-primary order-4 mr-0;
+		}
+	}
+}

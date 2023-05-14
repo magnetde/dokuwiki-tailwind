@@ -1,0 +1,19 @@
+ul.idx:not(.index__tree *) { // exclude the index tree
+	@apply list-container;
+
+	li, div.li {
+		@apply m-0 p-0;
+	}
+
+	a {
+		@apply list-element;
+	}
+
+	li:first-child a {
+		@apply list-element-first;
+	}
+
+	li:last-child a {
+		@apply list-element-last;
+	}
+}

@@ -1,0 +1,109 @@
+.changes.doku_form {
+	@apply mt-10;
+
+	ul {
+		@apply
+			mt-8 ml-4 relative border-l border-gray-200 dark:border-gray-700
+			divide-y divide-gray-200 dark:divide-gray-700
+		;
+	}
+
+	li {
+		@apply my-0 list-none;
+	}
+
+	// Checkbox
+	div.li input {
+		@apply
+			absolute mt-[1.35rem] w-5 h-5 -left-2.5 rounded-full ring-4 border
+			border-gray-300 bg-gray-100 ring-white
+			dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:ring-gray-900
+		;
+	}
+
+	// Revision info
+	.revision-info {
+		@apply p-3 flex items-center justify-between;
+
+		.rev-description {
+			@apply mr-2 overflow-auto;
+		}
+
+		// Revision header
+		.summary {
+			@apply flex items-baseline mb-2;
+
+			.sum {
+				@apply text-primary text-lg font-semibold truncate;
+
+				&.empty {
+					@apply text-secondary italic;
+				}
+			}
+
+			.sizechange {
+				@apply
+					text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
+					bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
+				;
+
+				&.positive {
+					@apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300;
+				}
+
+				&.negative {
+					@apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300;
+				}
+			}
+		}
+
+		// Date and user info
+		.subtitle {
+			@apply block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500;
+
+			.subtitle-name {
+				@apply text-secondary font-medium;
+			}
+		}
+
+		.revision-buttons {
+			@apply inline-flex rounded-md shadow-sm;
+
+			// Diff link button and revision preview button
+			a {
+				@apply
+					btn-secondary
+					px-4 py-2 flex items-center no-underline
+					rounded-none border-r-0 last:border-r first:rounded-l-lg last:rounded-r-lg
+				;
+
+				svg {
+					@apply w-5 h-5 fill-current;
+				}
+			}
+		}
+	}
+
+	button[name="do[diff]"] {
+		@apply mt-8;
+
+		&:not([disabled]) {
+			@apply btn-primary;
+		}
+
+		&[disabled] {
+			@apply btn-primary-disabled;
+		}
+	}
+
+	// Only on recent page
+	label.quickselect {
+		span {
+			@apply input-label ml-1 mb-2;
+		}
+
+		select.quickselect {
+			@apply input-select block;
+		}
+	}
+}

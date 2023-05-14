@@ -21,7 +21,7 @@
 			echo '<img class="h-8 mr-3" src="' . $logo_url . '" alt="' . $title . '"/>';
 		}
 
-		echo '<span class="self-center text-2xl font-semibold whitespace-nowrap overflow-ellipsis dark:text-white">' . $title . '</span>';
+		echo '<span class="self-center text-2xl font-semibold truncate dark:text-white">' . $title . '</span>';
 		echo '</a>';
 		?>
 
@@ -32,9 +32,10 @@
 
 		<!--- Mobile menu --->
 		<button class="<?php echo clsx("
-			inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden order-3
-			hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200
-			dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600
+			text-secondary
+			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden order-3 focus:ring-2
+			hover:bg-gray-100 focus:outline-none focus:ring-gray-200
+			dark:hover:bg-gray-700 dark:focus:ring-gray-600
 		") ?>" type="button" data-collapse-toggle="navbar-default" aria-controls="navbar-default" aria-expanded="false">
 			<span class="sr-only">
 				<?php tpl_getLang('open_menu') ?>
@@ -56,9 +57,8 @@
 				<li>
 					<!--- Tools button --->
 					<button data-dropdown-toggle="dropdown-tools" class="<?php echo clsx("
-						flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded
-						hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto
-						dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent
+						md:btn-link
+						flex items-center justify-between w-full
 					") ?>">
 						<?php echo $lang['tools'] ?> <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -66,19 +66,13 @@
 					</button>
 
 					<!-- Dropdown menu of the tools -->
-					<div id="dropdown-tools" class="z-10 hidden font-medium bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+					<div id="dropdown-tools" class="dropdown-container w-44">
 						<ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
 							foreach($menu_items as $item) {
 								echo '<li>'
-									.'<a class="'
-									.clsx("
-										block px-4 py-2 text-sm
-										text-gray-700 hover:bg-gray-100
-										dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white
-									")
-									.'" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+									.'<a class="dropdown-element" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
 									.$item->getLabel()
 									.'</a></li>';
 							}
@@ -112,12 +106,12 @@
 					</button>
 
 					<!-- Dropdown menu of the avatar -->
-					<div id="user-dropdown" class="z-10 hidden my-4 font-medium text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+					<div id="user-dropdown" class="dropdown-container my-4">
 						<?php
 						if(!empty($_SERVER['REMOTE_USER'])) {
 							echo '<div class="px-4 py-3">'
-								.'<span class="block text-sm text-gray-900 dark:text-white">' . hsc($INFO['userinfo']['name']) . '</span>'
-								.'<span class="block text-sm  text-gray-500 truncate dark:text-gray-400">' . $INFO['userinfo']['mail'] . '</span>'
+								.'<span class="text-primary block text-sm">' . hsc($INFO['userinfo']['name']) . '</span>'
+								.'<span class="text-secondary block text-sm truncate">' . $INFO['userinfo']['mail'] . '</span>'
 								.'</div>';
 						}
 						?>
@@ -125,13 +119,7 @@
 							<?php
 							$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
 							foreach($menu_items as $item) {
-								echo '<li><a class="'
-									.clsx("
-										block px-4 py-2
-										text-sm text-gray-700 hover:bg-gray-100
-										dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white
-									")
-									.'" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
+								echo '<li><a class="dropdown-element" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
 							}
 							?>
 						</ul>

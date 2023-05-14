@@ -1,0 +1,5 @@
+// Common UI elements
+@import "common/all.css";
+
+// Components for specific DokuWiki pages
+@import "ui/all.css";

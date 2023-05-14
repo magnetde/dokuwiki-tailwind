@@ -78,20 +78,8 @@ class TPLContentDisplay extends EventHandler {
 
 			$id = bin2hex($path);
 
-			$elm->outertext = '<span class="'
-				.clsx("
-					font-semibold overflow-hidden whitespace-nowrap text-ellipsis text-gray-700 dark:text-gray-300
-				")
-				.'">' . $path . '</span>'
-				.'<a href="' . $href . '" class="'
-				.clsx("
-					flex items-center p-2 text-xs font-medium text-gray-700
-					bg-white border border-gray-200 rounded-lg hover:bg-gray-100
-					hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300
-					dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400
-					dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
-				")
-				.'" data-tooltip-target="' . $id . '" data-tooltip-placement="bottom">'
+			$elm->outertext = '<span class="font-semibold truncate text-gray-700 dark:text-gray-300">' . $path . '</span>'
+				.'<a href="' . $href . '" class="btn-icon" data-tooltip-target="' . $id . '" data-tooltip-placement="bottom">'
 				.'<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">'
 				.'<path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />'
 				.'</svg>'
@@ -267,28 +255,18 @@ class TPLContentDisplay extends EventHandler {
 	 * Determines the content and the number of results for both tabs.
 	 */
 	private function getSearchTabs($html) {
-		$nothing = $html->find('.nothing', 0);
+		// determine element and count of tab 1
+		list($elm1, $count1) = $this->getResultsElement($html,
+			'search_quickresult', 'tab-content-quickhits', '.search_quickhits li');
 
-		if(empty($nothing)) {
-			// determine element and count of tab 1
-			list($elm1, $count1) = $this->getResultsElement($html,
-				'search_quickresult', 'tab-content-quickhits', '.search_quickhits li');
+		// determine element and count of tab 2
+		list($elm2, $count2) = $this->getResultsElement($html,
+			'search_fulltextresult', 'tab-content-fulltext', '.search_results .search_fullpage_result');
 
-			// determine element and count of tab 2
-			list($elm2, $count2) = $this->getResultsElement($html,
-				'search_fulltextresult', 'tab-content-fulltext', '.search_results .search_fullpage_result');
-
-			// add the active class of the active tab
-			$show_tab1 = $count1 > 0 || $count2 == 0;
-			$results1 = $this->resultSetActive($elm1, true, $show_tab1);
-			$results2 = $this->resultSetActive($elm2, false, !$show_tab1);
-		} else {
-			// remove the nothing element
-			$nothing->outertext = '';
-
-			list($results1, $count1) = array($this->resultsEmpty(true, true), 0);
-			list($results2, $count2) = array($this->resultsEmpty(false, false), 0);
-		}
+		// add the active class of the active tab
+		$show_tab1 = $count1 > 0 || $count2 == 0;
+		$results1 = $this->resultSetActive($elm1, true, $show_tab1);
+		$results2 = $this->resultSetActive($elm2, false, !$show_tab1);
 
 		return array($results1, $count1, $results2, $count2);
 	}
@@ -345,7 +323,7 @@ class TPLContentDisplay extends EventHandler {
 
 		return '<div id="' . $id . '" class="' . $class
 			.($active ? ' active' : '') . '">'
-			.'<div class="nothing">' . $lang['nothingfound']  . '</div>'
+			.'<div class="nothing-found">' . $lang['nothingfound']  . '</div>'
 			.'</div>';
 	}
 }

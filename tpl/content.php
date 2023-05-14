@@ -28,29 +28,13 @@
 					if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
 
 					// Button
-					echo '<a href="' . $item->getLink()  . '" data-tooltip-target="pagetool-button-' . $index . '" class="'
-						.clsx("
-							page-tool-btn
-							flex items-center p-2 text-xs font-medium text-gray-700
-							bg-white border border-gray-200 rounded-lg
-							hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300
-							dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400
-							dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
-						")
-						.'" data-tooltip-placement="bottom">'
+					echo '<a href="' . $item->getLink()  . '" data-tooltip-target="pagetool-button-' . $index . '" '
+						.'class="btn-icon page-tool-btn" data-tooltip-placement="bottom">'
 						.inlineSVG($item->getSvg())
 						.'</a>';
 
 					// Tooltip
-					echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="'
-						.clsx("
-							absolute z-10 inline-block px-3 py-2
-							text-sm font-medium text-white
-							transition-opacity duration-300
-							bg-gray-900 rounded-lg shadow-sm tooltip
-							dark:bg-gray-700 opacity-0 invisible
-						")
-						.'">'
+					echo '<div id="pagetool-button-' . $index . '" role="tooltip" class="tooltip-container">'
 						.$item->getLabel()
 						.'<div class="tooltip-arrow" data-popper-arrow=""></div>'
 						.'</div>';
@@ -62,21 +46,7 @@
 		</div>
 
 		<!--- Content --->
-		<article id="dw-content" class="<?php echo clsx("
-			dw-content
-			w-full max-w-none mt-16
-			prose dark:prose-invert
-			prose-headings:scroll-mt-20
-			prose-pre:rounded-lg
-			prose-ul:my-2 prose-li:my-1
-			prose-table:text-base
-			prose-code:p-0.5
-			prose-code:rounded
-			prose-code:text-blue-800
-			prose-code:bg-blue-50
-			dark:prose-code:text-blue-300
-			dark:prose-code:bg-blue-950
-		") ?>">
+		<article id="dw-content" class="dw-content w-full max-w-none mt-16 prose dark:prose-invert">
 
 			<?php echo $content ?>
 

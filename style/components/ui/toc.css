@@ -5,10 +5,9 @@
 
 	a {
 		@apply
-			py-1
-			font-medium text-gray-500 dark:text-gray-400
+			text-secondary py-1 font-medium hover:border-l
 			hover:text-gray-800 hover:dark:text-gray-200
-			hover:border-l hover:border-gray-300 hover:dark:border-gray-300
+			hover:border-gray-300 hover:dark:border-gray-300
 		;
 	}
 
