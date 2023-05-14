@@ -1,8 +1,10 @@
-html {
-	font-size: calc(1em * 0.875);
-	height: 100%;
-}
+@layer base {
+	html {
+		font-size: calc(1em * 0.875);
+		height: 100%;
+	}
 
-body {
-	min-height: 100%;
+	body {
+		min-height: 100%;
+	}
 }

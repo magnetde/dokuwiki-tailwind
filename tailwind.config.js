@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
     content: [
         './**/*.php',
@@ -7,9 +10,13 @@ module.exports = {
     darkMode: 'media',
     theme: {
         extend: {
+            fontFamily: {
+                'sans': ['Inter', ...defaultTheme.fontFamily.sans],
+                'mono': ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
+            },
             // make the navbar height constant
             height: {
-                navbar: '4.5rem',
+                'navbar': '4.5rem',
             },
             // make the sidebar width a constant
             width: {
@@ -24,7 +31,7 @@ module.exports = {
                 DEFAULT: 'transparent',
             },
             fontWeight: {
-                inherit: 'inherit',
+                'inherit': 'inherit',
             },
         },
     },

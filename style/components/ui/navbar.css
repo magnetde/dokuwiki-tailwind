@@ -1,5 +1,3 @@
-@import "flowbite";
-
 // DokuWiki search form
 form.search {
 	@apply relative w-full lg:w-[32rem];
