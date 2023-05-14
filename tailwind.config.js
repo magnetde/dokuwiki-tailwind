@@ -22,7 +22,10 @@ module.exports = {
             // fix some border UI bugs on Safari
             borderColor: {
                 DEFAULT: 'transparent',
-            }
+            },
+            fontWeight: {
+                inherit: 'inherit',
+            },
         },
     },
     plugins: [

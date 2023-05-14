@@ -11182,8 +11182,37 @@ pre.code .sc-2 {
 /* regular links*/
 
 .dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
-  text-decoration-color: #3F83F8;
-  text-decoration-color:#3f83f8;
+  /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+  text-decoration-color: currentColor;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(26 86 219/var(--tw-text-opacity));
+  text-decoration-line:none;
+}
+
+.dw-content a.wikilink1:hover, .dw-content a.urlextern:hover, .dw-content a.mail:hover, .dw-content a.windows:hover, .dw-content a.mediafile:hover, .dw-content a.interwiki:hover, .dw-sidebar a.wikilink1:hover, .dw-sidebar a.urlextern:hover, .dw-sidebar a.mail:hover, .dw-sidebar a.windows:hover, .dw-sidebar a.mediafile:hover, .dw-sidebar a.interwiki:hover{
+  text-decoration-line:underline
+}
+
+:is(.dark .dw-content a.wikilink1),:is(.dark  .dw-content a.urlextern),:is(.dark  .dw-content a.mail),:is(.dark  .dw-content a.windows),:is(.dark  .dw-content a.mediafile),:is(.dark  .dw-content a.interwiki),:is(.dark  .dw-sidebar a.wikilink1),:is(.dark  .dw-sidebar a.urlextern),:is(.dark  .dw-sidebar a.mail),:is(.dark  .dw-sidebar a.windows),:is(.dark  .dw-sidebar a.mediafile),:is(.dark  .dw-sidebar a.interwiki){
+  --tw-text-opacity:1;
+  color:rgb(63 131 248/var(--tw-text-opacity))
+}
+
+.dw-content a.wikilink1:hover, .dw-content a.urlextern:hover, .dw-content a.mail:hover, .dw-content a.windows:hover, .dw-content a.mediafile:hover, .dw-content a.interwiki:hover, .dw-sidebar a.wikilink1:hover, .dw-sidebar a.urlextern:hover, .dw-sidebar a.mail:hover, .dw-sidebar a.windows:hover, .dw-sidebar a.mediafile:hover, .dw-sidebar a.interwiki:hover {
+  text-decoration-line: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
+    --tw-text-opacity: 1;
+    color: rgb(63 131 248 / var(--tw-text-opacity));
+  }
+}
+
+.dw-content a.wikilink1, .dw-content a.urlextern, .dw-content a.mail, .dw-content a.windows, .dw-content a.mediafile, .dw-content a.interwiki, .dw-sidebar a.wikilink1, .dw-sidebar a.urlextern, .dw-sidebar a.mail, .dw-sidebar a.windows, .dw-sidebar a.mediafile, .dw-sidebar a.interwiki {
+  font-weight: inherit;
 }
 
 /* Special links with icons*/
@@ -11352,8 +11381,36 @@ pre.code .sc-2 {
 /* dead links*/
 
 .dw-content a.wikilink2, .dw-sidebar a.wikilink2 {
-  text-decoration-color: #F05252;
-  text-decoration-color:#f05252;
+  color: rgb(200 30 30 / var(--tw-text-opacity));
+  text-decoration-color: currentColor;
+  font-weight:500;
+  --tw-text-opacity:1;
+  color:rgb(200 30 30/var(--tw-text-opacity));
+  text-decoration-line:none;
+}
+
+.dw-content a.wikilink2:hover, .dw-sidebar a.wikilink2:hover{
+  text-decoration-line:underline
+}
+
+:is(.dark .dw-content a.wikilink2),:is(.dark  .dw-sidebar a.wikilink2){
+  --tw-text-opacity:1;
+  color:rgb(240 82 82/var(--tw-text-opacity))
+}
+
+.dw-content a.wikilink2:hover, .dw-sidebar a.wikilink2:hover {
+  text-decoration-line: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-content a.wikilink2, .dw-sidebar a.wikilink2 {
+    --tw-text-opacity: 1;
+    color: rgb(240 82 82 / var(--tw-text-opacity));
+  }
+}
+
+.dw-content a.wikilink2, .dw-sidebar a.wikilink2 {
+  font-weight: inherit;
 }
 
 /* Fix the margin in downloadable code blocks*/
@@ -14952,11 +15009,11 @@ table.diff th {
 
 table.diff th .wikilink1 {
   /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
-  color: rgb(28 100 242 / var(--tw-text-opacity));
+  color: rgb(26 86 219 / var(--tw-text-opacity));
   text-decoration-color: currentColor;
   font-weight:500;
   --tw-text-opacity:1;
-  color:rgb(28 100 242/var(--tw-text-opacity));
+  color:rgb(26 86 219/var(--tw-text-opacity));
   text-decoration-line:none;
 }
 
@@ -16751,11 +16808,11 @@ ul.idx:not(.index__tree *) li:last-child a {
 
 #dw__login > p a, #dw__register > p a, #dw__resendpwd > p a, #dw__profiledelete > p a {
   /* adding "no-underline" and "decoration-current" to overwrite the prose style*/
-  color: rgb(28 100 242 / var(--tw-text-opacity));
+  color: rgb(26 86 219 / var(--tw-text-opacity));
   text-decoration-color: currentColor;
   font-weight:500;
   --tw-text-opacity:1;
-  color:rgb(28 100 242/var(--tw-text-opacity));
+  color:rgb(26 86 219/var(--tw-text-opacity));
   text-decoration-line:none;
 }
 

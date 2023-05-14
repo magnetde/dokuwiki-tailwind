@@ -57,7 +57,7 @@
 
 	// regular links
 	a.wikilink1, a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply decoration-blue-500;
+		@apply link-primary font-inherit;
 	}
 
 	// Special links with icons
@@ -162,7 +162,7 @@
 
 	// dead links
 	a.wikilink2 {
-		@apply decoration-red-500;
+		@apply link-error font-inherit;
 	}
 
 	// Fix the margin in downloadable code blocks
