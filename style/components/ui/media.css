@@ -1,0 +1,61 @@
+// Media manager sidebar
+.dw-sidebar div.namespaces {
+	h2.group {
+		@apply mt-0 mb-1;
+	}
+
+	.panelHeader {
+		@apply text-secondary text-sm font-medium;
+	}
+
+	div.panelContent {
+		@apply mt-4 text-sm;
+
+		ul {
+			@apply pl-5;
+		}
+
+		li {
+			@apply list-none pl-0;
+		}
+
+		div.li a {
+			@apply relative;
+
+			&:before {
+				@apply absolute w-4 h-4 top-[0.075rem] -left-5;
+			}
+		}
+
+		// remove hover effect on folders
+		li.closed, li.open {
+			& > div.li a {
+				@apply hover:text-secondary;
+			}
+		}
+
+		li.closed > div.li a:before {
+			@apply
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
+			;
+		}
+
+		li.open > div.li a:before {
+			@apply
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%239ca3af')]
+			;
+		}
+
+		span.curid a {
+			@apply font-medium text-blue-600 dark:text-blue-500 hover:text-blue-700 dark:hover:text-blue-600;
+		}
+	}
+}
+
+#mediamanager__page {
+	.namespaces {
+		@apply hidden;
+	}
+}

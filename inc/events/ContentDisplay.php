@@ -40,6 +40,7 @@ class TPLContentDisplay extends EventHandler {
 		$this->modifyEditor($html);
 		$this->modifyDiff($html);
 		$this->modifySearch($html);
+		$this->modifyMediaManager($html);
 
 		$content = $html->save();
 		$html->clear();
@@ -325,5 +326,13 @@ class TPLContentDisplay extends EventHandler {
 			.($active ? ' active' : '') . '">'
 			.'<div class="nothing-found">' . $lang['nothingfound']  . '</div>'
 			.'</div>';
+	}
+
+	private function modifyMediaManager($html) {
+		$mngr = $html->find('#mediamanager__page', 0);
+		if(!$mngr)
+			return;
+
+		// TODO
 	}
 }

@@ -12,7 +12,7 @@ require "$event_dir/RevisionRecentOutput.php";
 require "$event_dir/FormRevisionsOutput.php";
 require "$event_dir/FormRecentOutput.php";
 require "$event_dir/HTMLSecEditButton.php";
-require "$event_dir/TPLContentDisplay.php";
+require "$event_dir/ContentDisplay.php";
 
 /**
  * Class, that handles all DokuWiki events.
