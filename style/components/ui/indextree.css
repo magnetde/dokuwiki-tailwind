@@ -1,7 +1,7 @@
 .index__tree {
 	@apply
-		mt-8 px-4 py-2 w-full border rounded-lg min-h-[25vh] max-h-[50vh] overflow-x-hidden overflow-y-auto
-		border-gray-200 dark:border-gray-600
+		box-b mt-8 px-4 py-2 w-full border rounded-lg min-h-[25vh] max-h-[50vh]
+		overflow-x-hidden overflow-y-auto
 	;
 
 	a {

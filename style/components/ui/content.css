@@ -185,17 +185,11 @@
 		@apply mt-6 mb-7;
 
 		dt {
-			@apply
-				flex flex-nowrap items-center justify-between space-x-4 w-full pl-4 pr-3 py-3 border
-				border-gray-200 bg-gray-50 rounded-t-lg dark:border-gray-600 dark:bg-gray-700
-			;
+			@apply box-header flex flex-nowrap items-center justify-between space-x-4 pl-4 pr-3 py-3;
 		}
 
 		dd {
-			@apply
-				p-0 bg-white bg-gradient-to-r border-x border-b rounded-b-lg
-				border-gray-200  dark:bg-gray-900 dark:border-gray-600
-			;
+			@apply box-b p-0 bg-gradient-to-r border-x border-b rounded-b-lg;
 
 			pre.code {
 				@apply m-0 rounded-t-none rounded-b-lg;

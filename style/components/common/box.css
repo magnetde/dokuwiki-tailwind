@@ -1,0 +1,21 @@
+@layer components {
+	.box-b {
+		@apply border-gray-200 dark:border-gray-600;
+	}
+
+	.box-hf-bg {
+		@apply bg-gray-50 dark:bg-gray-700;
+	}
+
+	.box-hf {
+		@apply box-b box-hf-bg;
+	}
+
+	.box-header {
+		@apply box-hf p-4 border rounded-t-lg w-full block;
+	}
+
+	.box-footer {
+		@apply box-hf p-4 border rounded-b-lg w-full block;
+	}
+}

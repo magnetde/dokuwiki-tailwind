@@ -52,8 +52,8 @@
 
 		.tabs {
 			@apply
-				flex flex-wrap text-sm font-medium text-center border-b
-				text-gray-500 border-gray-200 dark:text-gray-400 dark:border-gray-700
+				box-b flex flex-wrap text-sm font-medium text-center border-b
+				text-gray-500 dark:text-gray-400
 			;
 
 			li {
@@ -74,7 +74,7 @@
 		}
 
 		.panelHeader {
-			
+			@apply box-header mt-6;
 		}
 	}
 }

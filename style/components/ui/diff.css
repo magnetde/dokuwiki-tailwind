@@ -27,10 +27,7 @@
 // Diff header and footer for having round edges
 
 .diff-header, .diff-footer {
-	@apply
-		w-full h-4 block border-x
-		border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700
-	;
+	@apply box-hf w-full h-4 block border-x;
 }
 
 .diff-header {
@@ -45,7 +42,7 @@ table.diff {
 	@apply w-full overflow-x-auto;
 
 	tr:first-child td, th {
-		@apply border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700;
+		@apply box-hf border-b;
 
 		&:first-child {
 			@apply border-l;
@@ -57,7 +54,7 @@ table.diff {
 
 	tr:last-child {
 		th, td {
-			@apply border-b border-gray-200 dark:border-gray-600;
+			@apply box-b border-b;
 		}
 	}
 
@@ -143,11 +140,11 @@ table.diff {
 
 		// Borders
 		&:first-child, &.diff-lineheader, &.empty {
-			@apply border-l border-gray-200 dark:border-gray-600;
+			@apply box-b border-l;
 		}
 
 		&:last-child {
-			@apply border-r border-gray-200 dark:border-gray-600;
+			@apply box-b border-r;
 		}
 
 		&.diff-blockheader {
@@ -155,7 +152,7 @@ table.diff {
 		}
 
 		&.diff-lineheader {
-			@apply px-1.5 w-0 text-center align-top bg-gray-50 dark:bg-gray-900;
+			@apply px-1.5 w-0 text-center align-top bg-gray-50 dark:bg-gray-800/[0.5];
 
 			&.added {
 				@apply bg-green-100 dark:bg-green-900;
