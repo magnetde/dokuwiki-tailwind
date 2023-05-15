@@ -16,22 +16,6 @@ if(!defined('DOKU_INC'))
 use simple_html_dom\simple_html_dom;
 
 /**
- * Wrapper to return the avatar of an user.
- */
-function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
-	global $INFO;
-
-	$email = strtolower(trim($email));
-
-	$avatar_url = "https://www.gravatar.com/avatar/";
-	$avatar_url .= md5($email);
-	$avatar_url .= "?s=$size&d=$d&r=$r";
-
-	$media_link = ml("$avatar_url&.jpg", ['cache' => 'recache', 'w' => $size, 'h' => $size]);
-	return $media_link;
-}
-
-/**
  * Wrapper to create a search form.
  * This function overwrites the search button.
  *
@@ -75,6 +59,22 @@ function _tpl_search_input() {
 		.' clip-rule="evenodd">'
 		.'</path></svg>'
 		.'</div>';
+}
+
+/**
+ * Wrapper to return the avatar of an user.
+ */
+function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
+	global $INFO;
+
+	$email = strtolower(trim($email));
+
+	$avatar_url = "https://www.gravatar.com/avatar/";
+	$avatar_url .= md5($email);
+	$avatar_url .= "?s=$size&d=$d&r=$r";
+
+	$media_link = ml("$avatar_url&.jpg", ['cache' => 'recache', 'w' => $size, 'h' => $size]);
+	return $media_link;
 }
 
 /**
@@ -176,10 +176,13 @@ function _tpl_getTOC() {
 	return $content;
 }
 
+/**
+ * Removes the prefix $prefix from string $string.
+ * If $string has no prefix $prefix, $string is returned.
+ */
 function _tpl_remove_prefix($str, $prefix) {
-	if(substr($str, 0, strlen($prefix)) == $prefix) {
+	if(substr($str, 0, strlen($prefix)) == $prefix)
 		$str = substr($str, strlen($prefix));
-	}
 
 	return $str;
 }

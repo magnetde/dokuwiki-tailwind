@@ -6,9 +6,8 @@
 -->
 
 <?php
-if(!defined('DOKU_INC')) {
+if(!defined('DOKU_INC'))
 	die();
-}
 
 // must be run from within DokuWiki
 @require_once dirname(__FILE__) . '/inc/global.php';
@@ -56,7 +55,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 	<body class="dark:bg-gray-900 antialiased" data-bs-spy="scroll" data-bs-target="#dw__toc" data-bs-offset="120">
 
 		<!--- Navbar --->
-		<?php require_once('tpl/navbar.php'); ?>
+		<?php require_once('inc/ui/navbar.php'); ?>
 
 		<?php
 		// Render the content initially
@@ -99,7 +98,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						'mr-0 lg:mr-[theme(width.sidebar-lg)] xl:mr-0' :
 						'ml-0 xl:ml-[theme(width.sidebar-lg)] 2xl:ml-[theme(width.sidebar-2xl)]',
 					) ?>">
-						<?php require_once('tpl/content.php'); ?>
+						<?php require_once('inc/ui/content.php'); ?>
 					</div>
 
 					<!--- Right sidebar --->

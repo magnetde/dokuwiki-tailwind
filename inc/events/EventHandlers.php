@@ -1,9 +1,18 @@
 <?php
 
 // Import the events.
-spl_autoload_register(function($class_name) {
-	include tpl_incdir() . 'inc/events/' . $class_name . '.php';
-});
+
+$event_dir = __DIR__;
+
+// Super classes
+require "$event_dir/EventHandler.php";
+require "$event_dir/RevisionRecentOutput.php";
+
+// Event handlers
+require "$event_dir/FormRevisionsOutput.php";
+require "$event_dir/FormRecentOutput.php";
+require "$event_dir/HTMLSecEditButton.php";
+require "$event_dir/TPLContentDisplay.php";
 
 /**
  * Class, that handles all DokuWiki events.
