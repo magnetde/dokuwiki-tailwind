@@ -7,7 +7,7 @@
 	a {
 		@apply
 			text-secondary font-medium no-underline
-			hover:text-gray-800 hover:dark:text-gray-200
+			hover:text-gray-700 hover:dark:text-gray-300
 		;
 	}
 
