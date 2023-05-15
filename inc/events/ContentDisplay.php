@@ -54,7 +54,9 @@ class TPLContentDisplay extends EventHandler {
 		$headers = array('h1', 'h2', 'h3', 'h4'); // no anchor for h5
 
 		foreach($headers as $header) {
-			foreach($html->find($header) as $elm) {
+			$selector = $header . '[id]';
+
+			foreach($html->find($selector) as $elm) {
 				$elm->addClass('group');
 
 				$class = clsx("
@@ -332,6 +334,9 @@ class TPLContentDisplay extends EventHandler {
 		$mngr = $html->find('#mediamanager__page', 0);
 		if(!$mngr)
 			return;
+
+		$file_list = $mngr->find('.filelist', 0);
+		$file_list->addClass('not-prose');
 
 		foreach($mngr->find('img') as $img) {
 			if($img->src == '/lib/images/plus.gif')
