@@ -16,6 +16,17 @@ if(!defined('DOKU_INC'))
 use simple_html_dom\simple_html_dom;
 
 /**
+ * Removes the prefix $prefix from string $string.
+ * If $string has no prefix $prefix, $string is returned.
+ */
+function _tpl_remove_prefix($str, $prefix) {
+	if(substr($str, 0, strlen($prefix)) == $prefix)
+		$str = substr($str, strlen($prefix));
+
+	return $str;
+}
+
+/**
  * Wrapper to create a search form.
  * This function overwrites the search button.
  *
@@ -92,11 +103,10 @@ function _tpl_breadcrumbs($youarehere = false) {
 	// Capture the output
 	ob_start();
 
-	if(!$youarehere) {
+	if(!$youarehere)
 		tpl_breadcrumbs($sep = $sep);
-	} else {
+	else
 		tpl_youarehere($sep = $sep);
-	}
 
 	$content = ob_get_clean();
 
@@ -177,12 +187,16 @@ function _tpl_getTOC() {
 }
 
 /**
- * Removes the prefix $prefix from string $string.
- * If $string has no prefix $prefix, $string is returned.
+ * Extracts the namespace navigation from the media manager.
  */
-function _tpl_remove_prefix($str, $prefix) {
-	if(substr($str, 0, strlen($prefix)) == $prefix)
-		$str = substr($str, strlen($prefix));
+function _tpl_getMediaNamespaces($content) {
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
 
-	return $str;
+	$namespaces = $html->find('div.namespaces', 0)->outertext;
+
+	$html->clear();
+	unset($html);
+
+	return $namespaces;
 }

@@ -12,7 +12,8 @@ if(!defined('DOKU_INC'))
 // must be run from within DokuWiki
 @require_once dirname(__FILE__) . '/inc/global.php';
 
-$showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
+// Show sidebar at pages (if exists) or if the media manager is opened.
+$showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT == 'media');
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +74,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 				<div class="pt-10 px-6 sticky overflow-y-auto top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] lg:w-sidebar-lg 2xl:w-sidebar-2xl">
 					<div class="dw-sidebar prose prose-sm 2xl:prose-base dark:prose-invert">
 					<?php
-					tpl_includeFile('sidebarheader.html');
-					tpl_include_page($conf['sidebar'], true, true);
-					tpl_includeFile('sidebarfooter.html');
+					if($ACT != 'media') {
+						tpl_includeFile('sidebarheader.html');
+						tpl_include_page($conf['sidebar'], true, true);
+						tpl_includeFile('sidebarfooter.html');
+					} else
+						// Extract the media navigator from the media manager content
+						echo _tpl_getMediaNamespaces($content);
 					?>
 					</div>
 				</div>
