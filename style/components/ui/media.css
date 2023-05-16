@@ -181,8 +181,41 @@
 				}
 
 				&.thumbs {
+					@apply grid grid-cols-4 m-4 gap-4;
+
 					li {
-						
+						@apply
+							flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:box-hf-bg
+							bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700
+						;
+
+						dt {
+							@apply my-4;
+
+							img {
+								@apply w-16 h-16 mx-auto;
+							}
+						}
+
+						dd {
+							@apply mx-3 font-medium;
+
+							&:last-child {
+								@apply mb-3;
+							}
+						}
+
+						dd.name {
+							@apply mb-2 truncate;
+
+							a {
+								@apply link-primary;
+							}
+						}
+
+						dd.size, dd.date, dd.filesize {
+							@apply text-secondary text-sm truncate;
+						}
 					}
 				}
 			}

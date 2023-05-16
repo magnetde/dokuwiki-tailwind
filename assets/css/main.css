@@ -7598,7 +7598,122 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-align: right;
 }
 
+#mediamanager__page .filelist .panelContent ul.thumbs {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 #mediamanager__page .filelist .panelContent ul.thumbs li {
+  display: flex;
+  max-width: 24rem;
+  flex-direction: column;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #mediamanager__page .filelist .panelContent ul.thumbs li:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+
+  #mediamanager__page .filelist .panelContent ul.thumbs li {
+    --tw-border-opacity: 1;
+    border-color: rgb(55 65 81 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  }
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dt {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dt img {
+  margin-left: auto;
+  margin-right: auto;
+  height: 4rem;
+  width: 4rem;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  font-weight: 500;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd:last-child {
+  margin-bottom: 0.75rem;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd.name {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd.name a {
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  text-decoration-color: currentColor;
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd.name a:hover {
+  text-decoration-line: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  #mediamanager__page .filelist .panelContent ul.thumbs li dd.name a {
+    --tw-text-opacity: 1;
+    color: rgb(63 131 248 / var(--tw-text-opacity));
+  }
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .filelist .panelContent ul.thumbs li dd.filesize {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #mediamanager__page .filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .filelist .panelContent ul.thumbs li dd.filesize {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+#mediamanager__page .filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .filelist .panelContent ul.thumbs li dd.filesize {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 #mediamanager__page .filelist .panelContent .ui-resizable-handle {
