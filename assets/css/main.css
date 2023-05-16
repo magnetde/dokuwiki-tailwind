@@ -7146,23 +7146,23 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
   display: none;
 }
 
-#mediamanager__page .filelist {
+#mediamanager__page .panel.filelist {
   width: 100%;
 }
 
-#mediamanager__page .filelist .tabs {
+#mediamanager__page .panel.filelist .tabs {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .tabs {
+  #mediamanager__page .panel.filelist .tabs {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#mediamanager__page .filelist .tabs {
+#mediamanager__page .panel.filelist .tabs {
   display: flex;
   flex-wrap: wrap;
   border-bottom-width: 1px;
@@ -7173,17 +7173,17 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .tabs {
+  #mediamanager__page .panel.filelist .tabs {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .tabs li {
+#mediamanager__page .panel.filelist .tabs li {
   margin-bottom: -1px;
 }
 
-#mediamanager__page .filelist .tabs li a {
+#mediamanager__page .panel.filelist .tabs li a {
   display: inline-block;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -7192,7 +7192,7 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
   padding: 1rem;
 }
 
-#mediamanager__page .filelist .tabs li a:hover {
+#mediamanager__page .panel.filelist .tabs li a:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
@@ -7200,13 +7200,13 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .tabs li a:hover {
+  #mediamanager__page .panel.filelist .tabs li a:hover {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .tabs li strong {
+#mediamanager__page .panel.filelist .tabs li strong {
   display: inline-block;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -7219,7 +7219,7 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
-.dw__toc a#mediamanager__page .filelist .tabs li strong {
+.dw__toc a#mediamanager__page .panel.filelist .tabs li strong {
   border-left-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(26 86 219 / var(--tw-border-opacity));
@@ -7228,7 +7228,7 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw__toc a#mediamanager__page .filelist .tabs li strong {
+  .dw__toc a#mediamanager__page .panel.filelist .tabs li strong {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-text-opacity: 1;
@@ -7236,51 +7236,51 @@ ul.idx:not(.index__tree *):not(div.namespaces *) li:last-child a {
   }
 }
 
- .dw__toc .nav a#mediamanager__page .filelist .tabs li strong {
+ .dw__toc .nav a#mediamanager__page .panel.filelist .tabs li strong {
   padding-left: calc(1rem - 1px);
 }
 
- .dw__toc .nav .nav a#mediamanager__page .filelist .tabs li strong {
+ .dw__toc .nav .nav a#mediamanager__page .panel.filelist .tabs li strong {
   padding-left: calc(2rem - 1px);
 }
 
- .dw__toc .nav .nav .nav a#mediamanager__page .filelist .tabs li strong {
+ .dw__toc .nav .nav .nav a#mediamanager__page .panel.filelist .tabs li strong {
   padding-left: calc(3rem - 1px);
 }
 
- .dw__toc .nav .nav .nav .nav a#mediamanager__page .filelist .tabs li strong {
+ .dw__toc .nav .nav .nav .nav a#mediamanager__page .panel.filelist .tabs li strong {
   padding-left: calc(4rem - 1px);
 }
 
-.dw__toc .nav a#mediamanager__page .filelist .tabs li strong + .nav {
+.dw__toc .nav a#mediamanager__page .panel.filelist .tabs li strong + .nav {
   display: block;
 }
 
-form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li:not(#mediamanager__page .filelist .tabs li strong):hover {
+form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li:not(#mediamanager__page .panel.filelist .tabs li strong):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li:not(#mediamanager__page .filelist .tabs li strong):hover {
+  form.doku_form.search-results-form .search-form div.advancedOptions div.toggle li:not(#mediamanager__page .panel.filelist .tabs li strong):hover {
     --tw-bg-opacity: 1;
     background-color: rgb(75 85 99 / var(--tw-bg-opacity));
   }
 }
 
-.search-box .search-tab#mediamanager__page .filelist .tabs li strong {
+.search-box .search-tab#mediamanager__page .panel.filelist .tabs li strong {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .search-box .search-tab#mediamanager__page .filelist .tabs li strong {
+  .search-box .search-tab#mediamanager__page .panel.filelist .tabs li strong {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-.search-box .search-tab#mediamanager__page .filelist .tabs li strong {
+.search-box .search-tab#mediamanager__page .panel.filelist .tabs li strong {
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
   --tw-bg-opacity: 1;
@@ -7290,25 +7290,25 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .search-box .search-tab#mediamanager__page .filelist .tabs li strong {
+  .search-box .search-tab#mediamanager__page .panel.filelist .tabs li strong {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity));
   }
 
-  .search-box .search-tab#mediamanager__page .filelist .tabs li strong .count {
+  .search-box .search-tab#mediamanager__page .panel.filelist .tabs li strong .count {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 
-.search-box .search_quickresult#mediamanager__page .filelist .tabs li strong, .search-box .search_fulltextresult#mediamanager__page .filelist .tabs li strong {
+.search-box .search_quickresult#mediamanager__page .panel.filelist .tabs li strong, .search-box .search_fulltextresult#mediamanager__page .panel.filelist .tabs li strong {
   display: block;
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .tabs li strong {
+  #mediamanager__page .panel.filelist .tabs li strong {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-text-opacity: 1;
@@ -7316,31 +7316,31 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#mediamanager__page .filelist .panelHeader {
+#mediamanager__page .panel.filelist .panelHeader {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader {
+  #mediamanager__page .panel.filelist .panelHeader {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelHeader {
+#mediamanager__page .panel.filelist .panelHeader {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader {
+  #mediamanager__page .panel.filelist .panelHeader {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelHeader {
+#mediamanager__page .panel.filelist .panelHeader {
   display: block;
   width: 100%;
   border-top-left-radius: 0.5rem;
@@ -7356,20 +7356,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-right: 0.625rem;
 }
 
-#mediamanager__page .filelist .panelHeader h3 {
+#mediamanager__page .panel.filelist .panelHeader.a11y {
+  display: none;
+}
+
+#mediamanager__page .panel.filelist .panelHeader h3 {
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelHeader h3 strong > strong {
+#mediamanager__page .panel.filelist .panelHeader h3 strong > strong {
   font-weight: 700;
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul {
+#mediamanager__page .panel.filelist .panelHeader form.options ul {
   display: flex;
   align-items: center;
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul > :not([hidden]) ~ :not([hidden]) {
+#mediamanager__page .panel.filelist .panelHeader form.options ul > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
@@ -7377,7 +7381,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* Control groups*/
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup {
   display: inline-block;
   border-radius: 0.4rem;
   border-width: 1px;
@@ -7387,7 +7391,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup {
+  #mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -7395,7 +7399,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button {
   margin: -1px;
   display: inline-block;
   border-radius: 0.4rem;
@@ -7406,42 +7410,42 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.25rem;
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button span {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button span {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button span {
+  #mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button span {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button span {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button span {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button:not(.ui-state-active) {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button:not(.ui-state-active) {
   cursor: pointer;
   border-color: transparent;
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button:not(.ui-state-active):hover span {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button:not(.ui-state-active):hover span {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button:not(.ui-state-active):hover span {
+  #mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button:not(.ui-state-active):hover span {
     --tw-text-opacity: 1;
     color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -7449,7 +7453,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active {
+  #mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -7457,35 +7461,35 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active span {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active span {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active span {
+  #mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup .ui-button.ui-state-active span {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelHeader form.options ul .ui-controlgroup input {
+#mediamanager__page .panel.filelist .panelHeader form.options ul .ui-controlgroup input {
   display: none;
 }
 
-#mediamanager__page .filelist .panelContent {
+#mediamanager__page .panel.filelist .panelContent {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent {
+  #mediamanager__page .panel.filelist .panelContent {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent {
+#mediamanager__page .panel.filelist .panelContent {
   height: auto !important;
   overflow: auto;
   border-bottom-right-radius: 0.5rem;
@@ -7495,11 +7499,15 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   border-bottom-width: 1px;
 }
 
-#mediamanager__page .filelist .panelContent img.load {
+#mediamanager__page .panel.filelist .panelContent.a11y {
+  display: none;
+}
+
+#mediamanager__page .panel.filelist .panelContent img.load {
   padding: 1rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows > :not([hidden]) ~ :not([hidden]) {
+#mediamanager__page .panel.filelist .panelContent ul.rows > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
@@ -7508,13 +7516,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent ul.rows > :not([hidden]) ~ :not([hidden]) {
+  #mediamanager__page .panel.filelist .panelContent ul.rows > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-divide-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl {
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -7523,41 +7531,41 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl:hover {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent ul.rows dl:hover {
+  #mediamanager__page .panel.filelist .panelContent ul.rows dl:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dt {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dt {
   float: left;
   text-align: center;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dt img {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dt img {
   margin-right: 1rem;
   height: 1.75rem;
   width: 1.75rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd {
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd.name {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd.name {
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd.name a {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd.name a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
@@ -7565,32 +7573,32 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-decoration-color: currentColor;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd.name a:hover {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd.name a:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent ul.rows dl dd.name a {
+  #mediamanager__page .panel.filelist .panelContent ul.rows dl dd.name a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd.size {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd.size {
   width: 15%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd.date {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd.date {
   width: 15%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#mediamanager__page .filelist .panelContent ul.rows dl dd.filesize {
+#mediamanager__page .panel.filelist .panelContent ul.rows dl dd.filesize {
   width: 20%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7598,26 +7606,26 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-align: right;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs {
   margin: 1rem;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li {
   display: flex;
   max-width: 24rem;
   flex-direction: column;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li > :not([hidden]) ~ :not([hidden]) {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -7629,18 +7637,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li:hover {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent ul.thumbs li:hover {
+  #mediamanager__page .panel.filelist .panelContent ul.thumbs li:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent ul.thumbs li {
+  #mediamanager__page .panel.filelist .panelContent ul.thumbs li {
     --tw-border-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -7648,36 +7656,36 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dt {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dt {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dt img {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dt img {
   margin-left: auto;
   margin-right: auto;
   height: 4rem;
   width: 4rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd:last-child {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd:last-child {
   margin-bottom: 0.75rem;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd.name {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.name {
   margin-bottom: 0.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd.name a {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.name a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
@@ -7685,30 +7693,30 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-decoration-color: currentColor;
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd.name a:hover {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.name a:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent ul.thumbs li dd.name a {
+  #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.name a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .filelist .panelContent ul.thumbs li dd.filesize {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.filesize {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .filelist .panelContent ul.thumbs li dd.filesize {
+  #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.filesize {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .filelist .panelContent ul.thumbs li dd.filesize {
+#mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.size, #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.date, #mediamanager__page .panel.filelist .panelContent ul.thumbs li dd.filesize {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -7716,19 +7724,19 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-#mediamanager__page .filelist .panelContent .ui-resizable-handle {
+#mediamanager__page .panel.filelist .panelContent .ui-resizable-handle {
   display: none;
 }
 
-#mediamanager__page .filelist .panelContent div.upload {
+#mediamanager__page .panel.filelist .panelContent div.upload {
   padding: 1rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader {
   margin-top: 1.5rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -7747,14 +7755,14 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:hover {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:focus {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:focus {
   z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -7766,7 +7774,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -7775,47 +7783,47 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:hover {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:focus {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-button {
   display: inline-block;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list {
   margin-top: 0.75rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li {
   display: flex;
   align-items: baseline;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -7828,7 +7836,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input:focus {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -7836,24 +7844,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input::-moz-placeholder {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input::placeholder {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input:focus {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -7861,7 +7869,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-name-input {
   margin-right: 0.5rem;
   width: 50%;
   padding-left: 0.75rem;
@@ -7872,7 +7880,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -7891,14 +7899,14 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:hover {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:focus {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:focus {
   z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -7910,7 +7918,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -7919,31 +7927,31 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:hover {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:focus {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-list li .qq-upload-cancel {
   margin-right: auto;
   padding: 0.5rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container {
   margin-top: 2rem;
   display: flex;
   align-items: center;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -7959,12 +7967,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:hover {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:focus {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -7975,27 +7983,27 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:hover {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:focus {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-upload-action:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check {
   margin-left: 1rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"] {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"] {
   height: 1rem;
   width: 1rem;
   border-radius: 0.25rem;
@@ -8006,7 +8014,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"]:focus {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"]:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -8015,7 +8023,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"] {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -8023,57 +8031,57 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     --tw-ring-offset-color: #1F2937;
   }
 
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"]:focus {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"] {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check input[type="checkbox"] {
   margin-right: 0.125rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check span {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check span {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check span {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check span {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check span {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-action-container .qq-overwrite-check span {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader > li > :not([hidden]) ~ :not([hidden]) {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader > li > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file {
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file a {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
@@ -8081,30 +8089,30 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-decoration-color: currentColor;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file a:hover {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file a:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file a {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-file a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-size {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-size {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-size {
+  #mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-size {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-size {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-uploader .qq-upload-size {
   margin-left: 0.375rem;
   margin-right: auto;
   font-size: 0.875rem;
@@ -8112,11 +8120,11 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-failed-text {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-failed-text {
   display: none;
 }
 
-#mediamanager__page .filelist .panelContent div.upload #mediamanager__uploader .qq-upload-fail .qq-upload-failed-text {
+#mediamanager__page .panel.filelist .panelContent div.upload #mediamanager__uploader .qq-upload-fail .qq-upload-failed-text {
   margin: 0px;
   display: inline;
   overflow: hidden;
@@ -8128,29 +8136,29 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.375rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload .maxsize {
+#mediamanager__page .panel.filelist .panelContent div.upload .maxsize {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.upload .maxsize {
+  #mediamanager__page .panel.filelist .panelContent div.upload .maxsize {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.upload .maxsize {
+#mediamanager__page .panel.filelist .panelContent div.upload .maxsize {
   margin-top: 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-#mediamanager__page .filelist .panelContent div.upload .maxsize .allowedmime {
+#mediamanager__page .panel.filelist .panelContent div.upload .maxsize .allowedmime {
   text-decoration-line: underline;
 }
 
-#mediamanager__page .filelist .panelContent div.search > :not([hidden]) ~ :not([hidden]) {
+#mediamanager__page .panel.filelist .panelContent div.search > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
@@ -8159,62 +8167,62 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.search > :not([hidden]) ~ :not([hidden]) {
+  #mediamanager__page .panel.filelist .panelContent div.search > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-divide-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch {
   padding: 1rem;
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch div.no p, #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch div.no p, #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label {
   display: flex;
   align-items: center;
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch div.no p > :not([hidden]) ~ :not([hidden]), #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label > :not([hidden]) ~ :not([hidden]) {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch div.no p > :not([hidden]) ~ :not([hidden]), #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label {
   flex-grow: 1;
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label span {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label span {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label span {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label span {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label span {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label span {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -8227,7 +8235,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input:focus {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -8235,24 +8243,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input::-moz-placeholder {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input::placeholder {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input:focus {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -8260,11 +8268,11 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch label input {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch label input {
   flex-grow: 1;
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch button {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch button {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -8280,12 +8288,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch button:hover {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#mediamanager__page .filelist .panelContent div.search #dw__mediasearch button:focus {
+#mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -8296,20 +8304,27 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch button {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch button {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch button:hover {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch button:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #mediamanager__page .filelist .panelContent div.search #dw__mediasearch button:focus {
+  #mediamanager__page .panel.filelist .panelContent div.search #dw__mediasearch button:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
+}
+
+#mediamanager__page .panel.filelist .ui-resizable-handle {
+  display: none;
+}
+
+#mediamanager__page .panel.file {
 }
 
 .admin_tasks,

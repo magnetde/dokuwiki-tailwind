@@ -1,6 +1,7 @@
 jQuery(() => {
 	// Edit the search header
 	var form = jQuery('.search-results-form');
+
 	if(!form.length)
 		return;
 

@@ -51,288 +51,289 @@
 	.panel .a11y {
 		@apply hidden;
 	}
+}
 
-	.filelist {
-		@apply w-full;
+#mediamanager__page .panel.filelist {
+	@apply w-full;
 
-		.tabs {
-			@apply
-				box-b flex flex-wrap font-medium text-center border-b
-				text-gray-500 dark:text-gray-400
-			;
+	.tabs {
+		@apply
+			box-b flex flex-wrap font-medium text-center border-b
+			text-gray-500 dark:text-gray-400
+		;
 
-			li {
-				@apply -mb-px;
+		li {
+			@apply -mb-px;
 
-				a {
-					@apply
-						inline-block p-4 border-b-2 border-transparent rounded-t-lg
-						hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
-					;
-				}
+			a {
+				@apply
+					inline-block p-4 border-b-2 border-transparent rounded-t-lg
+					hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
+				;
+			}
 
-				strong {
-					@apply
-						inline-block p-4 font-inherit rounded-t-lg active border-b-2
-						text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500
-					;
-				}
+			strong {
+				@apply
+					inline-block p-4 font-inherit rounded-t-lg active border-b-2
+					text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500
+				;
+			}
+		}
+	}
+
+	.panelHeader {
+		@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+
+		&.a11y {
+			@apply hidden;
+		}
+
+		h3 {
+			@apply font-medium;
+
+			strong > strong {
+				@apply font-bold;
 			}
 		}
 
-		.panelHeader {
-			@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+		form.options ul {
+			@apply flex items-center space-x-3;
 
-			h3 {
-				@apply font-medium;
+			// Control groups
+			.ui-controlgroup {
+				@apply toggle-box;
 
-				strong > strong {
-					@apply font-bold;
-				}
-			}
+				.ui-button {
+					@apply toggle-button;
 
-			form.options ul {
-				@apply flex items-center space-x-3;
-
-				// Control groups
-				.ui-controlgroup {
-					@apply
-						inline-block border rounded-[0.4rem]
-						bg-gray-200/[0.6] border-gray-200 dark:bg-gray-700 dark:border-gray-600
-					;
-
-					.ui-button {
-						@apply px-4 py-1 -m-px inline-block border rounded-[0.4rem];
-
-						span {
-							@apply text-secondary text-sm font-medium;
-						}
-
-						&:not(.ui-state-active) {
-							@apply cursor-pointer border-transparent;
-
-							&:hover span {
-								@apply text-gray-600 dark:text-gray-300
-							}
-						}
-
-						&.ui-state-active {
-							@apply bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-600;
-
-							span {
-								@apply text-primary;
-							}
-						}
+					&:not(.ui-state-active) {
+						@apply toggle-button-inactive;
 					}
 
-					input {
-						@apply hidden;
-					}
-				}
-			}
-		}
-
-		.panelContent {
-			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
-
-			img.load {
-				@apply p-4;
-			}
-
-			ul {
-				&.rows {
-					@apply divide-y divide-gray-200 dark:divide-gray-700;
-
-					dl {
-						@apply px-4 py-2 flex items-center hover:box-hf-bg;
-
-						dt {
-							@apply float-left text-center;
-
-							img {
-								@apply w-7 h-7 mr-4;
-							}
-						}
-
-						dd {
-							@apply font-medium;
-						}
-
-						dd.name {
-							@apply flex-grow truncate;
-
-							a {
-								@apply link-primary;
-							}
-						}
-
-						dd.size {
-							@apply w-[15%] truncate;
-						}
-
-						dd.date {
-							@apply w-[15%] truncate;
-						}
-
-						dd.filesize {
-							@apply w-[20%] text-right truncate;
-						}
+					&.ui-state-active {
+						@apply toggle-button-active;
 					}
 				}
 
-				&.thumbs {
-					@apply grid grid-cols-4 m-4 gap-4;
-
-					li {
-						@apply
-							flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:box-hf-bg
-							bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700
-						;
-
-						dt {
-							@apply my-4;
-
-							img {
-								@apply w-16 h-16 mx-auto;
-							}
-						}
-
-						dd {
-							@apply mx-3 font-medium;
-
-							&:last-child {
-								@apply mb-3;
-							}
-						}
-
-						dd.name {
-							@apply mb-2 truncate;
-
-							a {
-								@apply link-primary;
-							}
-						}
-
-						dd.size, dd.date, dd.filesize {
-							@apply text-secondary text-sm truncate;
-						}
-					}
-				}
-			}
-
-			.ui-resizable-handle {
-				@apply hidden;
-			}
-
-			div.upload {
-				@apply p-4;
-
-				#mediamanager__uploader {
-					@apply mt-6;
-
-					.qq-upload-button {
-						@apply btn-secondary inline-block;
-					}
-
-					.qq-upload-list {
-						@apply mt-3;
-
-						li {
-							@apply py-2 flex items-baseline;
-
-							.qq-upload-name-input {
-								@apply input-text px-3 py-2 mr-2 w-1/2 text-sm;
-							}
-
-							.qq-upload-cancel {
-								@apply btn-secondary p-2 mr-auto;
-							}
-						}
-					}
-
-					.qq-action-container {
-						@apply mt-8 flex items-center;
-
-						.qq-upload-action {
-							@apply btn-primary;
-						}
-
-						.qq-overwrite-check {
-							@apply ml-4;
-
-							input[type="checkbox"] {
-								@apply input-checkbox mr-0.5;
-							}
-
-							span {
-								@apply input-label;
-							}
-						}
-					}
-
-					.qq-uploader {
-						> li {
-							@apply space-x-2;
-						}
-
-						.qq-upload-file {
-							@apply text-primary font-medium;
-
-							a {
-								@apply link-primary;
-							}
-						}
-
-						.qq-upload-size {
-							@apply text-secondary ml-1.5 mr-auto font-medium text-sm;
-						}
-					}
-
-					.qq-upload-failed-text {
-						@apply hidden;
-					}
-
-					.qq-upload-fail .qq-upload-failed-text {
-						@apply inline m-0 px-2 py-1.5 truncate;
-					}
-				}
-
-				.maxsize {
-					@apply text-secondary mt-3 text-sm;
-
-					.allowedmime {
-						@apply underline;
-					}
-				}
-			}
-
-			div.search {
-				@apply divide-y divide-gray-200 dark:divide-gray-700;
-
-				#dw__mediasearch {
-					@apply p-4;
-
-					div.no p, label {
-						@apply flex items-center space-x-4;
-					}
-
-					label {
-						@apply flex-grow;
-
-						span {
-							@apply input-label;
-						}
-
-						input {
-							@apply input-text flex-grow;
-						}
-					}
-
-					button {
-						@apply btn-primary;
-					}
+				input {
+					@apply hidden;
 				}
 			}
 		}
 	}
+
+	.panelContent {
+		@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
+
+		&.a11y {
+			@apply hidden;
+		}
+
+		img.load {
+			@apply p-4;
+		}
+
+		ul {
+			&.rows {
+				@apply divide-y divide-gray-200 dark:divide-gray-700;
+
+				dl {
+					@apply px-4 py-2 flex items-center hover:box-hf-bg;
+
+					dt {
+						@apply float-left text-center;
+
+						img {
+							@apply w-7 h-7 mr-4;
+						}
+					}
+
+					dd {
+						@apply font-medium;
+					}
+
+					dd.name {
+						@apply flex-grow truncate;
+
+						a {
+							@apply link-primary;
+						}
+					}
+
+					dd.size {
+						@apply w-[15%] truncate;
+					}
+
+					dd.date {
+						@apply w-[15%] truncate;
+					}
+
+					dd.filesize {
+						@apply w-[20%] text-right truncate;
+					}
+				}
+			}
+
+			&.thumbs {
+				@apply grid grid-cols-4 m-4 gap-4;
+
+				li {
+					@apply
+						flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:box-hf-bg
+						bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700
+					;
+
+					dt {
+						@apply my-4;
+
+						img {
+							@apply w-16 h-16 mx-auto;
+						}
+					}
+
+					dd {
+						@apply mx-3 font-medium;
+
+						&:last-child {
+							@apply mb-3;
+						}
+					}
+
+					dd.name {
+						@apply mb-2 truncate;
+
+						a {
+							@apply link-primary;
+						}
+					}
+
+					dd.size, dd.date, dd.filesize {
+						@apply text-secondary text-sm truncate;
+					}
+				}
+			}
+		}
+
+		.ui-resizable-handle {
+			@apply hidden;
+		}
+
+		div.upload {
+			@apply p-4;
+
+			#mediamanager__uploader {
+				@apply mt-6;
+
+				.qq-upload-button {
+					@apply btn-secondary inline-block;
+				}
+
+				.qq-upload-list {
+					@apply mt-3;
+
+					li {
+						@apply py-2 flex items-baseline;
+
+						.qq-upload-name-input {
+							@apply input-text px-3 py-2 mr-2 w-1/2 text-sm;
+						}
+
+						.qq-upload-cancel {
+							@apply btn-secondary p-2 mr-auto;
+						}
+					}
+				}
+
+				.qq-action-container {
+					@apply mt-8 flex items-center;
+
+					.qq-upload-action {
+						@apply btn-primary;
+					}
+
+					.qq-overwrite-check {
+						@apply ml-4;
+
+						input[type="checkbox"] {
+							@apply input-checkbox mr-0.5;
+						}
+
+						span {
+							@apply input-label;
+						}
+					}
+				}
+
+				.qq-uploader {
+					> li {
+						@apply space-x-2;
+					}
+
+					.qq-upload-file {
+						@apply text-primary font-medium;
+
+						a {
+							@apply link-primary;
+						}
+					}
+
+					.qq-upload-size {
+						@apply text-secondary ml-1.5 mr-auto font-medium text-sm;
+					}
+				}
+
+				.qq-upload-failed-text {
+					@apply hidden;
+				}
+
+				.qq-upload-fail .qq-upload-failed-text {
+					@apply inline m-0 px-2 py-1.5 truncate;
+				}
+			}
+
+			.maxsize {
+				@apply text-secondary mt-3 text-sm;
+
+				.allowedmime {
+					@apply underline;
+				}
+			}
+		}
+
+		div.search {
+			@apply divide-y divide-gray-200 dark:divide-gray-700;
+
+			#dw__mediasearch {
+				@apply p-4;
+
+				div.no p, label {
+					@apply flex items-center space-x-4;
+				}
+
+				label {
+					@apply flex-grow;
+
+					span {
+						@apply input-label;
+					}
+
+					input {
+						@apply input-text flex-grow;
+					}
+				}
+
+				button {
+					@apply btn-primary;
+				}
+			}
+		}
+	}
+
+	.ui-resizable-handle {
+		@apply hidden;
+	}
+}
+
+#mediamanager__page .panel.file {
+
 }
