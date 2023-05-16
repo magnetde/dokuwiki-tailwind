@@ -53,49 +53,63 @@
 	}
 }
 
-#mediamanager__page .panel.filelist {
-	@apply w-full;
-
-	.tabs {
-		@apply
-			box-b flex flex-wrap font-medium text-center border-b
-			text-gray-500 dark:text-gray-400
-		;
-
-		li {
-			@apply -mb-px;
-
-			a {
-				@apply
-					inline-block p-4 border-b-2 border-transparent rounded-t-lg
-					hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
-				;
-			}
-
-			strong {
-				@apply
-					inline-block p-4 font-inherit rounded-t-lg active border-b-2
-					text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500
-				;
-			}
-		}
-	}
-
-	.panelHeader {
-		@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+#mediamanager__page {
+	.panel.filelist, .panel.file {
+		@apply w-full;
 
 		&.a11y {
 			@apply hidden;
 		}
 
-		h3 {
-			@apply font-medium;
+		ul.tabs {
+			@apply
+				box-b flex flex-wrap font-medium text-center border-b
+				text-gray-500 dark:text-gray-400
+			;
 
-			strong > strong {
-				@apply font-bold;
+			li {
+				@apply -mb-px;
+
+				a {
+					@apply
+						inline-block p-4 border-b-2 border-transparent rounded-t-lg
+						hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
+					;
+				}
+
+				strong {
+					@apply
+						inline-block p-4 font-inherit rounded-t-lg active border-b-2
+						text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500
+					;
+				}
 			}
 		}
 
+		.panelHeader {
+			@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+
+			&.a11y {
+				@apply hidden;
+			}
+
+			h3 {
+				@apply font-medium;
+
+				strong > strong {
+					@apply font-bold;
+				}
+			}
+		}
+	}
+
+	.ui-resizable-handle {
+		@apply hidden;
+	}
+}
+
+#mediamanager__page .panel.filelist {
+	.panelHeader {
 		form.options ul {
 			@apply flex items-center space-x-3;
 
@@ -161,21 +175,21 @@
 					}
 
 					dd.size {
-						@apply w-[15%] truncate;
+						@apply text-secondary w-[15%] truncate;
 					}
 
 					dd.date {
-						@apply w-[15%] truncate;
+						@apply text-secondary w-[15%] truncate;
 					}
 
 					dd.filesize {
-						@apply w-[20%] text-right truncate;
+						@apply text-secondary w-[20%] text-right truncate;
 					}
 				}
 			}
 
 			&.thumbs {
-				@apply grid grid-cols-4 m-4 gap-4;
+				@apply grid grid-cols-4 p-4 gap-4;
 
 				li {
 					@apply
@@ -328,12 +342,16 @@
 			}
 		}
 	}
-
-	.ui-resizable-handle {
-		@apply hidden;
-	}
 }
 
 #mediamanager__page .panel.file {
+	@apply mt-8;
 
+	ul.tabs li .back {
+		@apply
+			inline-block p-4 border-b-2 border-transparent rounded-t-lg
+			cursor-pointer text-lg font-medium
+			hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
+		;
+	}
 }

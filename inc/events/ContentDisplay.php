@@ -335,8 +335,8 @@ class TPLContentDisplay extends EventHandler {
 		if(!$mngr)
 			return;
 
-		$file_list = $mngr->find('.filelist', 0);
-		$file_list->addClass('not-prose');
+		foreach(array('filelist', 'file') as $panel_class)
+			$mngr->find('.panel.' . $panel_class, 0)->addClass('not-prose');
 
 		foreach($mngr->find('img') as $img) {
 			if($img->src == '/lib/images/plus.gif')
