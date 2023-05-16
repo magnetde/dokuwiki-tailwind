@@ -99,7 +99,7 @@
 	// Only on recent page
 	label.quickselect {
 		span {
-			@apply input-label ml-1 mb-2;
+			@apply input-label block ml-1 mb-2;
 		}
 
 		select.quickselect {

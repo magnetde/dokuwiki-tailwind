@@ -6,7 +6,7 @@
 
 		.quickselect {
 			span {
-				@apply input-label mr-2 inline-block;
+				@apply input-label mr-2;
 			}
 
 			select {

@@ -15,7 +15,7 @@
 		label {
 			// Labels of input elements
 			span {
-				@apply input-label mb-2;
+				@apply input-label block mb-2;
 			}
 
 			input {

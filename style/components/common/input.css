@@ -1,6 +1,6 @@
 @layer components {
 	.input-label {
-		@apply text-primary block text-sm font-medium;
+		@apply text-primary text-sm font-medium;
 	}
 
 	.input-text {

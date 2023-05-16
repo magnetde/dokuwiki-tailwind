@@ -8,6 +8,7 @@
 		@apply text-secondary text-sm font-medium;
 	}
 
+	// Tree view
 	div.panelContent {
 		@apply mt-4 text-sm;
 
@@ -40,23 +41,29 @@
 	}
 }
 
+// Media manager content
 #mediamanager__page {
+	// Hide namespaces because they where moved to the sidebar
 	.namespaces {
 		@apply hidden;
 	}
 
+	.panel .a11y {
+		@apply hidden;
+	}
+
 	.filelist {
-		.a11y {
-			@apply hidden;
-		}
+		@apply w-full;
 
 		.tabs {
 			@apply
-				box-b flex flex-wrap text-sm font-medium text-center border-b
+				box-b flex flex-wrap font-medium text-center border-b
 				text-gray-500 dark:text-gray-400
 			;
 
 			li {
+				@apply -mb-px;
+
 				a {
 					@apply
 						inline-block p-4 border-b-2 border-transparent rounded-t-lg
@@ -74,7 +81,225 @@
 		}
 
 		.panelHeader {
-			@apply box-header mt-6;
+			@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+
+			h3 {
+				@apply font-medium;
+
+				strong > strong {
+					@apply font-bold;
+				}
+			}
+
+			form.options ul {
+				@apply flex items-center space-x-3;
+
+				// Control groups
+				.ui-controlgroup {
+					@apply
+						inline-block border rounded-[0.4rem]
+						bg-gray-200/[0.6] border-gray-200 dark:bg-gray-700 dark:border-gray-600
+					;
+
+					.ui-button {
+						@apply px-4 py-1 -m-px inline-block border rounded-[0.4rem];
+
+						span {
+							@apply text-secondary text-sm font-medium;
+						}
+
+						&:not(.ui-state-active) {
+							@apply cursor-pointer border-transparent;
+
+							&:hover span {
+								@apply text-gray-600 dark:text-gray-300
+							}
+						}
+
+						&.ui-state-active {
+							@apply bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-600;
+
+							span {
+								@apply text-primary;
+							}
+						}
+					}
+
+					input {
+						@apply hidden;
+					}
+				}
+			}
+		}
+
+		.panelContent {
+			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
+
+			img.load {
+				@apply p-4;
+			}
+
+			ul {
+				&.rows {
+					@apply divide-y divide-gray-200 dark:divide-gray-700;
+
+					dl {
+						@apply px-4 py-2 flex items-center hover:box-hf-bg;
+
+						dt {
+							@apply float-left text-center;
+
+							img {
+								@apply w-7 h-7 mr-4;
+							}
+						}
+
+						dd {
+							@apply font-medium;
+						}
+
+						dd.name {
+							@apply flex-grow truncate;
+
+							a {
+								@apply link-primary;
+							}
+						}
+
+						dd.size {
+							@apply w-[15%] truncate;
+						}
+
+						dd.date {
+							@apply w-[15%] truncate;
+						}
+
+						dd.filesize {
+							@apply w-[20%] text-right truncate;
+						}
+					}
+				}
+
+				&.thumbs {
+					li {
+						
+					}
+				}
+			}
+
+			.ui-resizable-handle {
+				@apply hidden;
+			}
+
+			div.upload {
+				@apply p-4;
+
+				#mediamanager__uploader {
+					@apply mt-6;
+
+					.qq-upload-button {
+						@apply btn-secondary inline-block;
+					}
+
+					.qq-upload-list {
+						@apply mt-3;
+
+						li {
+							@apply py-2 flex items-baseline;
+
+							.qq-upload-name-input {
+								@apply input-text px-3 py-2 mr-2 w-1/2 text-sm;
+							}
+
+							.qq-upload-cancel {
+								@apply btn-secondary p-2 mr-auto;
+							}
+						}
+					}
+
+					.qq-action-container {
+						@apply mt-8 flex items-center;
+
+						.qq-upload-action {
+							@apply btn-primary;
+						}
+
+						.qq-overwrite-check {
+							@apply ml-4;
+
+							input[type="checkbox"] {
+								@apply input-checkbox mr-0.5;
+							}
+
+							span {
+								@apply input-label;
+							}
+						}
+					}
+
+					.qq-uploader {
+						> li {
+							@apply space-x-2;
+						}
+
+						.qq-upload-file {
+							@apply text-primary font-medium;
+
+							a {
+								@apply link-primary;
+							}
+						}
+
+						.qq-upload-size {
+							@apply text-secondary ml-1.5 mr-auto font-medium text-sm;
+						}
+					}
+
+					.qq-upload-failed-text {
+						@apply hidden;
+					}
+
+					.qq-upload-fail .qq-upload-failed-text {
+						@apply inline m-0 px-2 py-1.5 truncate;
+					}
+				}
+
+				.maxsize {
+					@apply text-secondary mt-3 text-sm;
+
+					.allowedmime {
+						@apply underline;
+					}
+				}
+			}
+
+			div.search {
+				@apply divide-y divide-gray-200 dark:divide-gray-700;
+
+				#dw__mediasearch {
+					@apply p-4;
+
+					div.no p, label {
+						@apply flex items-center space-x-4;
+					}
+
+					label {
+						@apply flex-grow;
+
+						span {
+							@apply input-label;
+						}
+
+						input {
+							@apply input-text flex-grow;
+						}
+					}
+
+					button {
+						@apply btn-primary;
+					}
+				}
+			}
 		}
 	}
 }

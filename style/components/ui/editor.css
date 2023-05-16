@@ -50,7 +50,7 @@
 				@apply order-2 my-8 block;
 
 				label span {
-					@apply input-label;
+					@apply input-label block;
 				}
 
 				label[for="edit__summary"] {
