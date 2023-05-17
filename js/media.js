@@ -13,11 +13,11 @@ function addTreeHandler() {
  
 		load_data: function(show_sublist, img) {
 			// get the enclosed link (is always the first one)
-			var $link = img.parent().find('div.li a.idx_dir');
+			var link = img.parent().find('div.li a.idx_dir');
 
 			jQuery.post(
 				DOKU_BASE + 'lib/exe/ajax.php',
-				$link[0].search.substr(1) + '&call=medians',
+				link[0].search.substr(1) + '&call=medians',
 				show_sublist,
 				'html'
 			);

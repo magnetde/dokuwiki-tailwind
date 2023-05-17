@@ -70,9 +70,9 @@
 			li {
 				@apply -mb-px;
 
-				a {
+				a, .back {
 					@apply
-						inline-block p-4 border-b-2 border-transparent rounded-t-lg
+						inline-block p-4 border-b-2 border-transparent rounded-t-lg cursor-pointer
 						hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
 					;
 				}
@@ -349,14 +349,6 @@
 #mediamanager__page .panel.file {
 	@apply mt-8;
 
-	ul.tabs li .back {
-		@apply
-			inline-block p-4 border-b-2 border-transparent rounded-t-lg
-			cursor-pointer text-lg font-medium
-			hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
-		;
-	}
-
 	.panelHeader {
 		a {
 			@apply link-primary;
@@ -408,6 +400,10 @@
 			a {
 				@apply link-primary;
 			}
+		}
+
+		form.changes {
+			@apply px-4;
 		}
 	}
 }
