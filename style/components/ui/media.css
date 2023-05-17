@@ -5,12 +5,12 @@
 	}
 
 	.panelHeader {
-		@apply text-secondary text-sm font-medium;
+		@apply text-secondary font-medium;
 	}
 
 	// Tree view
-	div.panelContent {
-		@apply mt-4 text-sm;
+	.panelContent {
+		@apply mt-4;
 
 		ul {
 			@apply pl-0;
@@ -101,6 +101,14 @@
 				}
 			}
 		}
+
+		.panelContent {
+			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
+		}
+
+		img.load {
+			@apply p-4 w-6 h-6;
+		}
 	}
 
 	.ui-resizable-handle {
@@ -137,14 +145,8 @@
 	}
 
 	.panelContent {
-		@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
-
 		&.a11y {
 			@apply hidden;
-		}
-
-		img.load {
-			@apply p-4;
 		}
 
 		ul {
@@ -353,5 +355,59 @@
 			cursor-pointer text-lg font-medium
 			hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
 		;
+	}
+
+	.panelHeader {
+		a {
+			@apply link-primary;
+		}
+
+		#mediamanager__btn_delete button {
+			@apply btn-secondary px-2.5 py-1.5 hover:text-red-600 dark:hover:text-red-400;
+		}
+	}
+
+	.panelContent {
+		@apply flex flex-col;
+
+		.image {
+			@apply px-4 py-6 border-b box-b;
+
+			img {
+				@apply mx-auto;
+			}
+		}
+
+		dl {
+			@apply p-4;
+
+			dt, dd {
+				@apply py-1 text-base font-medium truncate;
+			}
+
+			dt {
+				@apply text-primary;
+			}
+
+			dd {
+				@apply text-secondary;
+			}
+		}
+
+		// first dl
+		dl:first-of-type {
+			@apply grid grid-cols-2 border-b box-b;
+
+			dd {
+				@apply text-right;
+			}
+		}
+
+		// second dl
+		dl:last-of-type {
+			a {
+				@apply link-primary;
+			}
+		}
 	}
 }

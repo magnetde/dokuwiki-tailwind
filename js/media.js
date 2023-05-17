@@ -10,6 +10,7 @@ function addTreeHandler() {
 
 	tree.dw_tree({
 		toggle_selector: 'img',
+ 
 		load_data: function(show_sublist, img) {
 			// get the enclosed link (is always the first one)
 			var $link = img.parent().find('div.li a.idx_dir');
@@ -23,7 +24,7 @@ function addTreeHandler() {
 		},
 
 		toggle_display: function(img, opening) {
-			console.log(img, opening);
+			// TODO: handle dark color theme
 			if(opening)
 				img.attr('src', '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280');
 			else
@@ -39,19 +40,34 @@ function updateMediaContent(mngr) {
 		// hide the file list
 		mngr.find('.panel.filelist').addClass('a11y');
 
+		var file = mngr.find('.panel.file');
+
 		// add the back button to the tab panel, if it does not exists
-		if(!mngr.find('.panel.file .tabs .back').length) {
-			var back = jQuery('<span>').addClass('back').html('←')
+		if(!file.find('.tabs .back').length) {
+			var back = jQuery('<span>').addClass('back').text(LANG.template.tailwind.mediaselect)
 				.on('click', () => {
 					hideFile(mngr);
 				});
 
 			var li = jQuery('<li>').append(back);
-			mngr.find('.panel.file .tabs').prepend(li);
+			file.find('.tabs').prepend(li);
+		}
+
+		// move the delete button to the panel header
+		var actions = file.find('.panelContent .actions');
+		if(actions.length) {
+			// cache the button element
+			var btn = actions.find('#mediamanager__btn_delete');
+
+			// remove the action element, the button gets staled
+			actions.remove();
+
+			// append button to header
+			file.find('.panelHeader').append(btn);
 		}
 
 		// show the file
-		mngr.find('.panel.file').removeClass('a11y');
+		file.removeClass('a11y');
 	}
 	else
 		hideFile(mngr);

@@ -57,7 +57,7 @@
 	<footer class="mt-10 text-sm">
 		<hr class="h-px my-6 border-0 bg-gray-200 dark:bg-gray-700">
 
-		<div class="my-6 text-center text-secondary">
+		<div class="px-4 my-6 text-center text-secondary">
 			<span class="block"><?php tpl_pageinfo() ?></span>
 			<span class="block mt-7"><?php tpl_license('0') ?></span>
 		</div>
