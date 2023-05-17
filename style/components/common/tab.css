@@ -1,0 +1,27 @@
+@layer components {
+	.tab-container {
+		@apply
+			box-b flex flex-wrap font-medium text-center border-b
+			text-gray-500 dark:text-gray-400
+		;
+	}
+
+	.tab-inactive, .tab-active, .tab-disabled {
+		@apply inline-block p-4 -mb-px font-inherit border-b-2 rounded-t-lg;
+	}
+
+	.tab-inactive {
+		@apply
+			border-transparent cursor-pointer
+			hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
+		;
+	}
+
+	.tab-active {
+		@apply active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500;
+	}
+
+	.tab-disabled {
+		@apply cursor-not-allowed text-gray-400 dark:text-gray-500;
+	}
+}

@@ -57,31 +57,24 @@
 	.panel.filelist, .panel.file {
 		@apply w-full;
 
-		&.a11y {
+		.a11y {
 			@apply hidden;
 		}
 
 		ul.tabs {
-			@apply
-				box-b flex flex-wrap font-medium text-center border-b
-				text-gray-500 dark:text-gray-400
-			;
+			@apply tab-container;
 
 			li {
-				@apply -mb-px;
-
-				a, .back {
-					@apply
-						inline-block p-4 border-b-2 border-transparent rounded-t-lg cursor-pointer
-						hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300
-					;
+				a {
+					@apply tab-inactive;
 				}
 
 				strong {
-					@apply
-						inline-block p-4 font-inherit rounded-t-lg active border-b-2
-						text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500
-					;
+					@apply tab-active;
+				}
+
+				&.file .disabled {
+					@apply tab-disabled;
 				}
 			}
 		}
@@ -347,7 +340,9 @@
 }
 
 #mediamanager__page .panel.file {
-	@apply mt-8;
+	.tabs {
+		@apply !hidden;
+	}
 
 	.panelHeader {
 		a {

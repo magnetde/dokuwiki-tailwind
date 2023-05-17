@@ -37,23 +37,20 @@ function addTreeHandler() {
 // Also, the back button is added to the file tab.
 function updateMediaContent(mngr) {
 	if(fileShown(mngr)) {
-		// hide the file list
-		mngr.find('.panel.filelist').addClass('a11y');
-
+		var filelist = mngr.find('.panel.filelist');
 		var file = mngr.find('.panel.file');
 
-		// add the back button to the tab panel, if it does not exists
-		if(!file.find('.tabs .back').length) {
-			var back = jQuery('<span>').addClass('back').text(LANG.template.tailwind.mediaselect)
-				.on('click', () => {
-					hideFile(mngr);
-				});
+		// hide the file list header / content
+		filelist.find('.panelHeader, .panelContent').addClass('a11y');
 
-			var li = jQuery('<li>').append(back);
-			file.find('.tabs').prepend(li);
-		}
+		// remove the old file tabs and replace them with the file tabs of the file panel
+		filelist.find('.tabs .file').remove();
 
-		// move the delete button to the panel header
+		var tabs = file.find('.tabs li').clone(true).addClass('file');
+		console.log(tabs);
+		filelist.find('.tabs').append(tabs);
+
+		// move the file delete button to the panel header
 		var actions = file.find('.panelContent .actions');
 		if(actions.length) {
 			// cache the button element
@@ -84,12 +81,26 @@ function fileShown(mngr) {
 
 // Hides the file panel and shows the file list.
 function hideFile(mngr) {
-	mngr.find('.panel.filelist').removeClass('a11y');
-	mngr.find('.panel.file').addClass('a11y').html('');
+	var filelist = mngr.find('.panel.filelist');
+	var file = mngr.find('.panel.file');
+
+	// add the disabled file panels to the regular tab panel, if they do not exist
+	if(!file.find('.tabs .file').length) {
+		var tabs = ['media_viewtab', 'media_historytab'].map(id => (
+			jQuery('<li>').addClass('file').append(
+				jQuery('<span>').addClass('disabled').text(LANG.template.tailwind[id])
+			)
+		));
+
+		filelist.find('.tabs').append(tabs);
+	}
+
+	filelist.removeClass('a11y');
+	file.addClass('a11y');
 }
 
 // Adds a observer, that checks, if the file panel has been displayed.
-function addFileObserver() {
+function addMediaObserver() {
 	var mngr = jQuery('#mediamanager__page');
 
 	if(!mngr.length)
@@ -98,17 +109,14 @@ function addFileObserver() {
 	updateMediaContent(mngr);
 
 	// Create a observer of the file element
-	var observer = new MutationObserver(function(mutations) {
-		updateMediaContent(mngr);
-	});
+	var fileListObserver = new MutationObserver(() => { hideFile(mngr); });
+	fileListObserver.observe(mngr.find('.panel.filelist').get(0), { childList: true });
 
-	var file = mngr.find('.panel.file').get(0);
-	observer.observe(file, {
-		childList: true,
-	});
+	var fileObserver = new MutationObserver(() => { updateMediaContent(mngr); });
+	fileObserver.observe(mngr.find('.panel.file').get(0), { childList: true });
 }
 
 jQuery(() => {
 	addTreeHandler();
-	addFileObserver();
+	addMediaObserver();
 });
