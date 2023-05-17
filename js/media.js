@@ -40,28 +40,8 @@ function updateMediaContent(mngr) {
 		var filelist = mngr.find('.panel.filelist');
 		var file = mngr.find('.panel.file');
 
-		// hide the file list header / content
-		filelist.find('.panelHeader, .panelContent').addClass('a11y');
-
-		// remove the old file tabs and replace them with the file tabs of the file panel
-		filelist.find('.tabs .file').remove();
-
-		var tabs = file.find('.tabs li').clone(true).addClass('file');
-		console.log(tabs);
-		filelist.find('.tabs').append(tabs);
-
-		// move the file delete button to the panel header
-		var actions = file.find('.panelContent .actions');
-		if(actions.length) {
-			// cache the button element
-			var btn = actions.find('#mediamanager__btn_delete');
-
-			// remove the action element, the button gets staled
-			actions.remove();
-
-			// append button to header
-			file.find('.panelHeader').append(btn);
-		}
+		prepareContent(mngr, filelist, file);
+		moveDelete(file);
 
 		// show the file
 		file.removeClass('a11y');
@@ -77,6 +57,46 @@ function fileShown(mngr) {
 			return true;
 
 	return false;
+}
+
+// hides the filelist and moves the file tabs to the filelist tab bar
+function prepareContent(mngr, filelist, file) {
+	// hide the file list header / content
+	filelist.find('.panelHeader, .panelContent').addClass('a11y');
+
+	// remove the old file tabs and replace them with the file tabs of the file panel
+	filelist.find('.tabs .file').remove();
+
+	// unselect all filelist tabs by replacing the <strong> element with a <a> element
+	filelist.find('.tabs strong').replaceWith(function() {
+		// because the active filelist tab is still selected, even if the file list is hidden
+		// clicking this tab just hides the file panel
+
+		return jQuery('<a>', { href: '#' })
+			.append(jQuery(this).contents())
+			.on('click', () => {
+				hideFile(mngr);
+			});
+	});
+
+	var tabs = file.find('.tabs li').clone(true).addClass('file');
+	filelist.find('.tabs').append(tabs);
+}
+
+// moves the file delete button into the file header
+function moveDelete(file) {
+	// move the file delete button to the panel header
+	var actions = file.find('.panelContent .actions');
+	if(actions.length) {
+		// cache the button element
+		var btn = actions.find('#mediamanager__btn_delete');
+
+		// remove the action element, the button gets staled
+		actions.remove();
+
+		// append button to header
+		file.find('.panelHeader').append(btn);
+	}
 }
 
 // Hides the file panel and shows the file list.

@@ -54,12 +54,12 @@
 }
 
 #mediamanager__page {
+	.a11y {
+		@apply hidden;
+	}
+
 	.panel.filelist, .panel.file {
 		@apply w-full;
-
-		.a11y {
-			@apply hidden;
-		}
 
 		ul.tabs {
 			@apply tab-container;
