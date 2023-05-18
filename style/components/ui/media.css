@@ -355,6 +355,7 @@
 			@apply hidden;
 		}
 
+		// dl is the key-value list for the file overview and the file list
 		dl {
 			@apply p-4;
 
@@ -371,24 +372,55 @@
 			}
 		}
 
-		// first dl
+		// first dl is a grid, because the second is the backlink list
 		dl:first-of-type {
-			@apply grid grid-cols-2 border-b box-b;
+			@apply grid grid-cols-[auto_minmax(0,_1fr)] border-b box-b;
 
 			dd {
 				@apply text-right;
 			}
 		}
 
-		// second dl
+		// second dl (backlink list)
 		dl:last-of-type {
 			a {
 				@apply link-primary;
 			}
 		}
 
+		// change list
 		form.changes {
 			@apply px-4;
+
+			// TODO
+		}
+
+		// diff table
+		.table > table {
+			@apply w-full;
+
+			// same as `th` at `table.diff` (see diff.css)
+			th {
+				@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
+
+				.wikilink1 {
+					@apply link-primary block;
+				}
+
+				.sum {
+					@apply text-primary;
+				}
+			}
+
+			td {
+				dd strong {
+					@apply text-secondary font-medium;
+				}
+			}
+
+			.img_tags {
+				@apply border-0;
+			}
 		}
 	}
 }
