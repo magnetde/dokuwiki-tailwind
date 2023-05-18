@@ -1,3 +1,8 @@
+jQuery(() => {
+	addTreeHandler();
+	setupMediaContent();
+});
+
 // Adds a new click listeners to the navigation tree of the media manager, that adds other icons.
 function addTreeHandler() {
 	var tree = jQuery('#media__tree');
@@ -33,43 +38,37 @@ function addTreeHandler() {
 	});
 }
 
-// Adds listeners to the filelist tabs, that close the file panel when clicked.
-function addTabListeners(mngr) {
-	mngr.find('.panel.filelist .tabs li')
-		.off('click.tab')
-		.on('click.tab', () => {
-			mngr.find('.panel.file').addClass('a11y');
-			hideFile(mngr);
-	});
+// Setup, that the media content is updated if it changes.
+function setupMediaContent() {
+	var mngr = jQuery('#mediamanager__page');
+
+	if(!mngr.length)
+		return;
+
+	refreshMediaContent(mngr);
+
+	// overwrite the `init_options` function at the mediamanager object,
+	// so the GUI can be recalculated, when the content changed.
+	var init_options = dw_mediamanager.init_options;
+
+	dw_mediamanager.init_options = function() {
+		init_options(); // call the old function
+		refreshMediaContent(mngr);
+	};
 }
 
-// Hides the file panel and shows the file list.
-function hideFile(mngr) {
+// This function refreshes the media content if it has been changed (at page start or after tab change).
+// Also, the events are added to the filelist tabs.
+function refreshMediaContent(mngr) {
 	var filelist = mngr.find('.panel.filelist');
 	var file = mngr.find('.panel.file');
 
-	// remove the old file tabs and replace them with disabled elements
-	filelist.find('.tabs .file').remove();
+	// Hide the file panel if the filelist tabs are clicked.
+	filelist.find('.tabs li')
+		.off('click.tab')
+		.on('click.tab', () => hideFile(mngr));
 
-	var tabs = ['media_viewtab', 'media_historytab'].map(id => (
-		jQuery('<li>').addClass('file').append(
-			jQuery('<span>').addClass('disabled').text(LANG.template.tailwind[id])
-		)
-	));
-
-	filelist.find('.tabs').append(tabs);
-
-	filelist.removeClass('a11y');
-	file.addClass('a11y');
-}
-
-// This function hides the file list, if the file overview is shown.
-// Also, the back button is added to the file tab.
-function updateMediaContent(mngr) {
-	if(fileShown(mngr)) {
-		var filelist = mngr.find('.panel.filelist');
-		var file = mngr.find('.panel.file');
-
+	if(fileShown(file)) {
 		prepareContent(mngr, filelist, file);
 		moveDeleteBtn(file);
 
@@ -81,9 +80,7 @@ function updateMediaContent(mngr) {
 }
 
 // Checks, if the file panel is shown.
-function fileShown(mngr) {
-	var file = mngr.find('.panel.file');
-
+function fileShown(file) {
 	for(var expectedClass of ['tabs', 'panelHeader', 'panelContent'])
 		if(file.find('.' + expectedClass).length)
 			return true;
@@ -93,10 +90,10 @@ function fileShown(mngr) {
 
 // hides the filelist and moves the file tabs to the filelist tab bar
 function prepareContent(mngr, filelist, file) {
-	// hide the file list header / content
+	// hide the filelist header / content
 	filelist.find('.panelHeader, .panelContent').addClass('a11y');
 
-	// remove the old file tabs and replace them with the file tabs of the file panel
+	// remove the old file tabs to replace them with the file tabs of the file panel
 	filelist.find('.tabs .file').remove();
 
 	// unselect all filelist tabs by replacing the <strong> element with a <a> element
@@ -111,8 +108,11 @@ function prepareContent(mngr, filelist, file) {
 			});
 	});
 
-	var tabs = file.find('.tabs li').clone(true).addClass('file');
-	filelist.find('.tabs').append(tabs);
+	// Clone the file tabs and add thhe 'details' event to them
+	file.find('.tabs li').clone()
+		.addClass('file')
+		.on('click', 'a', dw_mediamanager.details)
+		.appendTo(filelist.find('.tabs'));
 }
 
 // moves the file delete button into the file header
@@ -131,28 +131,24 @@ function moveDeleteBtn(file) {
 	}
 }
 
-// Adds a observer, that checks, if the file panel has been displayed.
-function addMediaObserver() {
-	var mngr = jQuery('#mediamanager__page');
+// Hides the file panel and shows the file list.
+function hideFile(mngr) {
+	console.error('hideFile');
 
-	if(!mngr.length)
-		return;
+	var filelist = mngr.find('.panel.filelist');
+	var file = mngr.find('.panel.file');
 
-	addTabListeners(mngr);
-	updateMediaContent(mngr);
+	// remove the old file tabs and replace them with disabled elements
+	filelist.find('.tabs .file').remove();
 
-	// overwrite the `init_options` function at the mediamanager object,
-	// so the GUI can be recalculated, when the content changed.
+	var tabs = ['media_viewtab', 'media_historytab'].map(id => (
+		jQuery('<li>').addClass('file').append(
+			jQuery('<span>').addClass('disabled').text(LANG.template.tailwind[id])
+		)
+	));
 
-	var init_options = dw_mediamanager.init_options;
+	filelist.find('.tabs').append(tabs);
 
-	dw_mediamanager.init_options = function() {
-		init_options(); // call the old function
-		updateMediaContent(mngr);
-	};
+	filelist.removeClass('a11y');
+	file.addClass('a11y').html('');
 }
-
-jQuery(() => {
-	addTreeHandler();
-	addMediaObserver();
-});

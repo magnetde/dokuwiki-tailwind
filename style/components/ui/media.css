@@ -351,6 +351,10 @@
 			}
 		}
 
+		.actions {
+			@apply hidden;
+		}
+
 		dl {
 			@apply p-4;
 
