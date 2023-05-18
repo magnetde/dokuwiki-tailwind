@@ -36,6 +36,8 @@ abstract class RevisionRecentOutput extends EventHandler {
 	 * If the revision is a revision at the recent page,
 	 * the second parameter must be true.
 	 * Styles are applied with CSS.
+	 * 
+	 * If this function should be changed, the function `modifyChange` (media.js) must also be adapted.
 	 */
 	private function modifyRevision($content) {
 		global $lang;

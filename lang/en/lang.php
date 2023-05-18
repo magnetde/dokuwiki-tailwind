@@ -10,3 +10,4 @@ $lang['search_content']         = 'Content';
 $lang['js']['search_filter']    = 'Filter';
 $lang['js']['media_viewtab']    = 'View';
 $lang['js']['media_historytab'] = 'History';
+$lang['js']['media_preview']    = 'Preview';

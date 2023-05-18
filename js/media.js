@@ -31,9 +31,9 @@ function addTreeHandler() {
 		toggle_display: function(img, opening) {
 			// TODO: handle dark color theme
 			if(opening)
-				img.attr('src', '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280');
+				img.attr('src', DOKU_TPL + 'icon.php?icon=chevron-down&color=%236b7280');
 			else
-				img.attr('src', '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280');
+				img.attr('src', DOKU_TPL + 'icon.php?icon=chevron-right&color=%236b7280');
 		},
 	});
 }
@@ -53,7 +53,9 @@ function setupMediaContent() {
 
 	dw_mediamanager.init_options = function() {
 		init_options(); // call the old function
+
 		refreshMediaContent(mngr);
+		modifyChangeContent(mngr);
 	};
 }
 
@@ -151,4 +153,71 @@ function hideFile(mngr) {
 
 	filelist.removeClass('a11y');
 	file.addClass('a11y').html('');
+}
+
+function modifyChangeContent(mngr) {
+	var revs = mngr.find('#page__revisions');
+	if(!revs.length)
+		return;
+
+	revs.find('div.li').replaceWith(function() {
+		return modifyChange(jQuery(this));
+	});
+}
+
+// Modifies a single change element, so the change styles can be applied.
+// This function works similar as the `modifyRevision` in RevisionRecentOutput.php.
+// If this function should be changed, the function `modifyRevision` must also be adapted.
+function modifyChange(div) {
+	// First collect the elements
+	var input = div.find('input');
+
+	var date = div.find('span.date');
+	var diff_link = div.find('a.diff_link'); // may not exist
+
+	// revlink contains a description of the page
+	var revlink = div.find('a.wikilink1');
+	if(!revlink.length) // revlink is either of class wikilink1 or wikilink2
+		revlink = div.find('a.wikilink2');
+
+	// Ignore the summary text, because it would get hidden anyway
+	var user = div.find('span.user');
+	var sizechange = div.find('span.sizechange');
+
+	// Then reorder them
+	var revinfo = jQuery('<div>').addClass('revision-info');
+
+	revinfo.append(input);
+
+	// Add the left content
+	jQuery('<div>').addClass('rev-description')
+		.append(
+			jQuery('<div>').addClass('summary').append(sizechange), // first line (description and size change)
+			jQuery('<span>').addClass('subtitle').append(date, ', ', user),
+		)
+		.appendTo(revinfo);
+
+	// Add the right content
+	var btns = jQuery('<div>').addClass('revision-buttons').attr('role', 'group');
+
+	// Modify the diff link, if exists
+	if(diff_link.length) {
+		var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">'
+			+'<path fill="currentColor" d="'
+			+'m15.3 13.3l-3.6-3.6q-.15-.15-.212-.325T11.425 9q0-.2.063-.375T11.7 8.3l3.6-3.6q.3-.3.7-.3t.7.3q.3.3.3.713t-.3.712L14.825 8H21q.425 0 .713.288T22 9q0 .425-.288.713T21 10h-6.175l1.875 1.875q.3.3.3.7t-.3.7q-.3.3-.687.325t-.713-.3Zm-8 5.975q.3.3.7.313t.7-.288l3.6-3.6q.15-.15.212-.325t.063-.375q0-.2-.063-.375T12.3 14.3l-3.6-3.6q-.3-.3-.7-.3t-.7.3q-.3.3-.3.713t.3.712L9.175 14H3q-.425 0-.713.288T2 15q0 .425.288.713T3 16h6.175L7.3 17.875q-.3.3-.3.7t.3.7Z'
+			+'"/></svg>';
+
+		diff_link.html(svg);
+		btns.append(diff_link);
+	}
+
+	// Add a button to the wikilink if it exists
+	if(!revlink.hasClass('wikilink2')) {
+		revlink.text(LANG.template.tailwind.media_preview);
+		btns.append(revlink);
+	}
+
+	revinfo.append(btns);
+
+	return jQuery('<div>').addClass('li').append(input, revinfo);
 }

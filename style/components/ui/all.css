@@ -9,5 +9,5 @@
 @import "draft.css";
 @import "indextree.css";
 @import "userform.css";
-@import "media.css";
+@import "media.css"; // must come after changes.css
 @import "admin.css";

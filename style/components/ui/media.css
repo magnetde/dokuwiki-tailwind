@@ -261,7 +261,7 @@
 
 				.qq-uploader {
 					> li {
-						@apply space-x-2;
+						@apply flex items-center;
 					}
 
 					.qq-upload-file {
@@ -273,7 +273,10 @@
 					}
 
 					.qq-upload-size {
-						@apply text-secondary ml-1.5 mr-auto font-medium text-sm;
+						@apply
+							text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
+							bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
+						;
 					}
 				}
 
@@ -282,7 +285,7 @@
 				}
 
 				.qq-upload-fail .qq-upload-failed-text {
-					@apply inline m-0 px-2 py-1.5 truncate;
+					@apply inline ml-auto mr-0 my-0 px-2 py-1.5 truncate;
 				}
 			}
 
@@ -427,6 +430,25 @@
 
 			.img_tags {
 				@apply border-0;
+			}
+		}
+
+		// overwrite the change list style, because the changes description is not needed anymore
+		.revision-info {
+			.rev-description {
+				@apply flex items-center;
+
+				.summary {
+					@apply order-2 mb-0;
+				}
+
+				.sum {
+					@apply hidden;
+				}
+
+				.subtitle {
+					@apply mb-0 text-base font-medium text-gray-700 dark:text-gray-200;
+				}
 			}
 		}
 	}
