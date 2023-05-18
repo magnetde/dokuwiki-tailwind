@@ -43,18 +43,12 @@
 
 // Media manager content
 #mediamanager__page {
+	.a11y {
+		@apply !hidden;
+	}
+
 	// Hide namespaces because they where moved to the sidebar
 	.namespaces {
-		@apply hidden;
-	}
-
-	.panel .a11y {
-		@apply hidden;
-	}
-}
-
-#mediamanager__page {
-	.a11y {
 		@apply hidden;
 	}
 
@@ -81,10 +75,6 @@
 
 		.panelHeader {
 			@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
-
-			&.a11y {
-				@apply hidden;
-			}
 
 			h3 {
 				@apply font-medium;
@@ -138,10 +128,6 @@
 	}
 
 	.panelContent {
-		&.a11y {
-			@apply hidden;
-		}
-
 		ul {
 			&.rows {
 				@apply divide-y divide-gray-200 dark:divide-gray-700;

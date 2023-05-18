@@ -33,6 +33,36 @@ function addTreeHandler() {
 	});
 }
 
+// Adds listeners to the filelist tabs, that close the file panel when clicked.
+function addTabListeners(mngr) {
+	mngr.find('.panel.filelist .tabs li')
+		.off('click.tab')
+		.on('click.tab', () => {
+			mngr.find('.panel.file').addClass('a11y');
+			hideFile(mngr);
+	});
+}
+
+// Hides the file panel and shows the file list.
+function hideFile(mngr) {
+	var filelist = mngr.find('.panel.filelist');
+	var file = mngr.find('.panel.file');
+
+	// remove the old file tabs and replace them with disabled elements
+	filelist.find('.tabs .file').remove();
+
+	var tabs = ['media_viewtab', 'media_historytab'].map(id => (
+		jQuery('<li>').addClass('file').append(
+			jQuery('<span>').addClass('disabled').text(LANG.template.tailwind[id])
+		)
+	));
+
+	filelist.find('.tabs').append(tabs);
+
+	filelist.removeClass('a11y');
+	file.addClass('a11y');
+}
+
 // This function hides the file list, if the file overview is shown.
 // Also, the back button is added to the file tab.
 function updateMediaContent(mngr) {
@@ -41,7 +71,7 @@ function updateMediaContent(mngr) {
 		var file = mngr.find('.panel.file');
 
 		prepareContent(mngr, filelist, file);
-		moveDelete(file);
+		moveDeleteBtn(file);
 
 		// show the file
 		file.removeClass('a11y');
@@ -52,8 +82,10 @@ function updateMediaContent(mngr) {
 
 // Checks, if the file panel is shown.
 function fileShown(mngr) {
+	var file = mngr.find('.panel.file');
+
 	for(var expectedClass of ['tabs', 'panelHeader', 'panelContent'])
-		if(mngr.find('.panel.file .' + expectedClass).length)
+		if(file.find('.' + expectedClass).length)
 			return true;
 
 	return false;
@@ -84,7 +116,7 @@ function prepareContent(mngr, filelist, file) {
 }
 
 // moves the file delete button into the file header
-function moveDelete(file) {
+function moveDeleteBtn(file) {
 	// move the file delete button to the panel header
 	var actions = file.find('.panelContent .actions');
 	if(actions.length) {
@@ -99,26 +131,6 @@ function moveDelete(file) {
 	}
 }
 
-// Hides the file panel and shows the file list.
-function hideFile(mngr) {
-	var filelist = mngr.find('.panel.filelist');
-	var file = mngr.find('.panel.file');
-
-	// add the disabled file panels to the regular tab panel, if they do not exist
-	if(!file.find('.tabs .file').length) {
-		var tabs = ['media_viewtab', 'media_historytab'].map(id => (
-			jQuery('<li>').addClass('file').append(
-				jQuery('<span>').addClass('disabled').text(LANG.template.tailwind[id])
-			)
-		));
-
-		filelist.find('.tabs').append(tabs);
-	}
-
-	filelist.removeClass('a11y');
-	file.addClass('a11y');
-}
-
 // Adds a observer, that checks, if the file panel has been displayed.
 function addMediaObserver() {
 	var mngr = jQuery('#mediamanager__page');
@@ -126,14 +138,18 @@ function addMediaObserver() {
 	if(!mngr.length)
 		return;
 
+	addTabListeners(mngr);
 	updateMediaContent(mngr);
 
-	// Create a observer of the file element
-	var fileListObserver = new MutationObserver(() => { hideFile(mngr); });
-	fileListObserver.observe(mngr.find('.panel.filelist').get(0), { childList: true });
+	// overwrite the `init_options` function at the mediamanager object,
+	// so the GUI can be recalculated, when the content changed.
 
-	var fileObserver = new MutationObserver(() => { updateMediaContent(mngr); });
-	fileObserver.observe(mngr.find('.panel.file').get(0), { childList: true });
+	var init_options = dw_mediamanager.init_options;
+
+	dw_mediamanager.init_options = function() {
+		init_options(); // call the old function
+		updateMediaContent(mngr);
+	};
 }
 
 jQuery(() => {
