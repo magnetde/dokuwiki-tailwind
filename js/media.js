@@ -135,8 +135,6 @@ function moveDeleteBtn(file) {
 
 // Hides the file panel and shows the file list.
 function hideFile(mngr) {
-	console.error('hideFile');
-
 	var filelist = mngr.find('.panel.filelist');
 	var file = mngr.find('.panel.file');
 

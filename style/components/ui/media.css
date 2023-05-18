@@ -346,7 +346,7 @@
 	.panelContent {
 		@apply flex flex-col;
 
-		.image {
+		div.image {
 			@apply px-4 py-6 border-b box-b;
 
 			img {
@@ -405,7 +405,33 @@
 			}
 		}
 
+		// diff options
+
+		.diffoptions {
+			@apply p-4 mt-0 border-b box-b;
+
+			label {
+				span {
+					@apply input-label pr-2;
+				}
+
+				select {
+					@apply input-select;
+				}
+			}
+		}
+
+		// bug fix
+		#mediamanager__diff {
+			@apply !w-full;
+		}
+
 		// diff table
+
+		.table {
+			@apply w-full;
+		}
+
 		.table > table {
 			@apply w-full;
 
@@ -423,8 +449,12 @@
 			}
 
 			td {
+				// values, that has been changed
 				dd strong {
-					@apply text-secondary font-medium;
+					@apply
+						px-1.5 py-0.5 rounded font-medium
+						text-blue-800 bg-blue-50 dark:text-blue-300 dark:bg-blue-950
+					;
 				}
 			}
 
