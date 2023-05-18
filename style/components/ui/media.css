@@ -388,11 +388,18 @@
 			}
 		}
 
-		// change list
+		// fix some design issues at the change list
 		form.changes {
-			@apply px-4;
+			@apply mt-0 mb-4 px-4;
 
-			// TODO
+			div.no ul {
+				@apply mt-0 ml-4 pl-[1.625rem];
+
+				// increse the top padding of the first change element
+				li:first-child .li {
+					@apply pt-3;
+				}
+			}
 		}
 
 		// diff table
