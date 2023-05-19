@@ -503,19 +503,19 @@
 			}
 
 			.imageDiff {
-				@apply pt-4 pb-6 w-full;
+				@apply pt-4 pb-6;
+
+				.image2 {
+					@apply absolute top-4 left-0; // top must be same as the padding
+				}
 			}
 
 			// overlapping
 			.imageDiff.opacity {
-				@apply relative;
+				@apply relative w-full;
 
 				.image1, .image2 {
 					@apply w-full !max-w-full;
-				}
-
-				.image2 {
-					@apply absolute top-4 left-0; // top must be same as the padding
 				}
 
 				img {
@@ -523,9 +523,17 @@
 				}
 			}
 
-			// portions
+			// only for portions
 			.imageDiff.portions {
+				@apply relative mx-auto;
 
+				.image2 {
+					@apply overflow-hidden border-r border-r-red-500;
+				}
+
+				img {
+					@apply !w-[unset] max-w-none;
+				}
 			}
 		}
 	}
