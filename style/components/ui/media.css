@@ -346,7 +346,8 @@
 	.panelContent {
 		@apply flex flex-col;
 
-		div.image {
+		// .image if not in table or .image in table row
+		div.image:not(td *), tr.image td {
 			@apply px-4 py-6 border-b box-b;
 
 			img {
@@ -421,6 +422,25 @@
 			}
 		}
 
+		// overwrite the change list style, because the changes description is not needed anymore
+		.revision-info {
+			.rev-description {
+				@apply flex items-center;
+
+				.summary {
+					@apply order-2 mb-0;
+				}
+
+				.sum {
+					@apply hidden;
+				}
+
+				.subtitle {
+					@apply mb-0 text-base font-medium text-gray-700 dark:text-gray-200;
+				}
+			}
+		}
+
 		// bug fix
 		#mediamanager__diff {
 			@apply !w-full;
@@ -463,22 +483,49 @@
 			}
 		}
 
-		// overwrite the change list style, because the changes description is not needed anymore
-		.revision-info {
-			.rev-description {
-				@apply flex items-center;
+		// overlapping / slider diff
+		#mediamanager__diff {
+			// @apply px-6 py-4;
 
-				.summary {
-					@apply order-2 mb-0;
+			div.slider {
+				@apply
+					relative mt-5 mb-4 mx-6 !w-[calc(100%-3rem)] !max-w-[calc(100%-3rem)] h-2 text-left
+					rounded-lg appearance-none cursor-pointer bg-gray-200 dark:bg-gray-700
+				;
+
+				.ui-slider-handle {
+					@apply
+						absolute z-10 w-4 h-4 -top-1 -ml-2 rounded-full cursor-pointer
+						bg-blue-700 hover:bg-blue-800
+						dark:bg-blue-600 dark:hover:bg-blue-700
+					;
+				}
+			}
+
+			.imageDiff {
+				@apply pt-4 pb-6 w-full;
+			}
+
+			// overlapping
+			.imageDiff.opacity {
+				@apply relative;
+
+				.image1, .image2 {
+					@apply w-full !max-w-full;
 				}
 
-				.sum {
-					@apply hidden;
+				.image2 {
+					@apply absolute top-4 left-0; // top must be same as the padding
 				}
 
-				.subtitle {
-					@apply mb-0 text-base font-medium text-gray-700 dark:text-gray-200;
+				img {
+					@apply mx-auto;
 				}
+			}
+
+			// portions
+			.imageDiff.portions {
+
 			}
 		}
 	}
