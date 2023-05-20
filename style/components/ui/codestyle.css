@@ -61,7 +61,7 @@ pre.code {
 	// Specials elements
 
 	.re0, .re1, .re2, .re3, .re4, .re5, .re6 {
-		// unset
+		@apply text-inherit;
 	}
 
 	// Diff

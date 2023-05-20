@@ -16,14 +16,48 @@ if(!defined('DOKU_INC'))
 use simple_html_dom\simple_html_dom;
 
 /**
+ * Checks if the string $string has the prefix $prefix.
+ */
+function _tpl_has_prefix($str, $prefix) {
+	return substr($str, 0, strlen($prefix)) == $prefix;
+}
+
+/**
  * Removes the prefix $prefix from string $string.
  * If $string has no prefix $prefix, $string is returned.
  */
 function _tpl_remove_prefix($str, $prefix) {
-	if(substr($str, 0, strlen($prefix)) == $prefix)
+	if(_tpl_has_prefix($str, $prefix))
 		$str = substr($str, strlen($prefix));
 
 	return $str;
+}
+
+/**
+ * Prints the DokuWiki meta headers by removing the css.php style sheet.
+ */
+function _tpl_metaheaders() {
+	// Capture the original meta headers
+	ob_start();
+	tpl_metaheaders();
+	$content = ob_get_clean();
+
+	// Parse the html
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	if($html) {
+		// Remove the button and turn it into an icon
+		foreach($html->find('link[rel="stylesheet"]') as $elm)
+			if(_tpl_has_prefix($elm->href, '/lib/exe/css.php'))
+				$elm->outertext = ''; // remove css.php stylesheet
+
+		$content = $html->save();
+		$html->clear();
+	}
+
+	unset($html);
+	echo $content;
 }
 
 /**

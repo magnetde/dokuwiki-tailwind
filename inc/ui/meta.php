@@ -6,7 +6,7 @@
 	<?php tpl_pagetitle() ?> - <?php echo strip_tags($conf['title']) ?>
 </title>
 <?php
-tpl_metaheaders();
+_tpl_metaheaders();
 
 echo tpl_favicon(array(
 	'favicon',
