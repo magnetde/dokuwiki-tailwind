@@ -221,6 +221,36 @@ function _tpl_getTOC() {
 }
 
 /**
+ * Prints the media tree with modified collapse icons.
+ */
+function _tpl_mediaTree() {
+	ob_start();
+	tpl_mediaTree();
+	$content = ob_get_clean();
+
+	// TODO: this can be done just by string replacement
+
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	$tree = $html->find('#media__tree', 0);
+	if($tree) {
+		foreach($tree->find('img') as $img) {
+			if($img->src == '/lib/images/plus.gif')
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280';
+			elseif($img->src == '/lib/images/minus.gif')
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280';
+		}
+	}
+
+	$content = $html->save();
+	$html->clear();
+	unset($html);
+
+	echo $content;
+}
+
+/**
  * Extracts the namespace navigation from the media manager.
  */
 function _tpl_getMediaNamespaces($content) {

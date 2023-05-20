@@ -7,6 +7,7 @@
 if(!defined('DOKU_INC'))
 	die();
 
+@require_once dirname(__FILE__) . '/inc/global.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +27,9 @@ if(!defined('DOKU_INC'))
 					<h1><?php echo hsc($lang['mediaselect'])?></h1>
 
 					<?php /* keep the id! additional elements are inserted via JS here */?>
-					<div id="media__opts"></div>
+					<div id="media__opts" class="media-opts"></div>
 
-					<?php tpl_mediaTree() ?>
+					<?php _tpl_mediaTree() ?>
 				</div>
 			</nav>
 

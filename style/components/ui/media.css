@@ -7,36 +7,36 @@
 	.panelHeader {
 		@apply text-secondary font-medium;
 	}
+}
 
-	// Tree view
-	.panelContent {
-		@apply mt-4;
+// Tree view (sidebar and media popup)
+#media__tree {
+	@apply mt-4;
+
+	ul {
+		@apply pl-0;
 
 		ul {
-			@apply pl-0;
-
-			ul {
-				@apply pl-4;
-			}
+			@apply pl-4;
 		}
+	}
 
-		li {
-			@apply list-none pl-0;
-		}
+	li {
+		@apply list-none pl-0;
+	}
 
-		img {
-			@apply inline m-0 cursor-pointer;
-		}
+	img {
+		@apply inline m-0 cursor-pointer;
+	}
 
-		div.li {
-			@apply inline ml-1;
+	div.li {
+		@apply inline ml-1;
 
-			a {
-				@apply
-					text-secondary font-medium no-underline
-					hover:text-gray-700 hover:dark:text-gray-300
-				;
-			}
+		a {
+			@apply
+				text-secondary font-medium no-underline
+				hover:text-gray-700 hover:dark:text-gray-300
+			;
 		}
 	}
 }
@@ -581,14 +581,30 @@
 	@apply w-full;
 
 	.mediamanager-main {
-		@apply flex items-stretch w-full;
+		@apply w-full;
 
 		.mediamanager-aside {
+			@apply p-4 fixed w-1/4 h-full top-0 left-0 overflow-y-auto border-r box-b;
 
+			h1 {
+				@apply text-primary mb-6 text-xl font-bold;
+			}
+
+			.media-opts {
+				@apply mb-4 pb-4 border-b box-b;
+
+				input[type="checkbox"] {
+					@apply input-checkbox;
+				}
+
+				label {
+					@apply input-label ml-2;
+				}
+			}
 		}
 
 		.mediamanager-content {
-			@apply p-4;
+			@apply p-4 fixed w-3/4 h-full top-0 right-0 overflow-y-auto;
 
 			#media__content h1:first-child {
 				// H1
