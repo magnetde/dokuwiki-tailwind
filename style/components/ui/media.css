@@ -576,3 +576,23 @@
 		}
 	}
 }
+
+.mediamanager-popup {
+	@apply w-full;
+
+	.mediamanager-main {
+		@apply flex items-stretch w-full;
+
+		.mediamanager-aside {
+
+		}
+
+		.mediamanager-content {
+			@apply p-4;
+
+			#media__content h1:first-child {
+				// H1
+			}
+		}
+	}
+}
