@@ -92,12 +92,12 @@
 
 	.license {
 		@apply
-			p-4 mt-12 mb-2 text-sm text-center
-			text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400
+			p-4 mt-12 mb-2 text-sm text-center rounded-lg
+			text-blue-800 bg-blue-50 dark:bg-gray-800 dark:text-blue-400
 		;
 
 		a {
-			@apply inline-block text-inherit decoration-current;
+			@apply inline-block text-inherit underline;
 		}
 	}
 }

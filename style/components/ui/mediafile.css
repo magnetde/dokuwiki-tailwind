@@ -1,4 +1,4 @@
-#dw-content a.mediafile {
+.dw-content a.mediafile {
 	& {
 		@apply bg-[url(/lib/images/fileicons/svg/file.svg)];
 	}

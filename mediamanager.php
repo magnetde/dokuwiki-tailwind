@@ -21,7 +21,7 @@ if(!defined('DOKU_INC'))
 	<div id="media__manager" class="mediamanager-popup">
 		<?php html_msgarea() ?>
 
-		<div class="mediamanager-main">
+		<div class="dw-content mediamanager-main">
 			<nav id="mediamgr__aside" class="mediamanager-aside">
 				<div class="pad">
 					<h1><?php echo hsc($lang['mediaselect'])?></h1>

@@ -27,15 +27,22 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 		<aside class="border-r border-gray-900/10 dark:border-gray-50/[0.06] hidden lg:block lg:w-sidebar-lg 2xl:w-sidebar-2xl">
 			<div class="pt-10 px-6 sticky overflow-y-auto top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] lg:w-sidebar-lg 2xl:w-sidebar-2xl">
 				<div class="dw-sidebar prose prose-sm 2xl:prose-base dark:prose-invert">
-				<?php
-				if($ACT != 'media') {
+				<?php if($ACT != 'media') {
 					tpl_includeFile('sidebarheader.html');
 					tpl_include_page($conf['sidebar'], true, true);
 					tpl_includeFile('sidebarfooter.html');
-				} else
-					// Extract the media navigator from the media manager content
-					echo _tpl_getMediaNamespaces($content);
-				?>
+				} else { ?>
+					<div class="panel namespaces">
+						<h2>
+							<?php echo $lang['namespaces'] ?>
+						</h2>
+						<div class="panelHeader">
+							<?php echo $lang['media_namespaces'] ?>
+						</div>
+
+						<?php _tpl_mediaTree() ?>
+					</div>
+				<?php } ?>
 				</div>
 			</div>
 		</aside>

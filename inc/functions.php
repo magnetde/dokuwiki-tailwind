@@ -249,18 +249,3 @@ function _tpl_mediaTree() {
 
 	echo $content;
 }
-
-/**
- * Extracts the namespace navigation from the media manager.
- */
-function _tpl_getMediaNamespaces($content) {
-	$html = new simple_html_dom;
-	$html->load($content, true, false);
-
-	$namespaces = $html->find('div.namespaces', 0)->outertext;
-
-	$html->clear();
-	unset($html);
-
-	return $namespaces;
-}

@@ -583,12 +583,12 @@
 	.mediamanager-main {
 		@apply w-full;
 
+		h1 {
+			@apply text-primary mb-6 text-xl font-bold;
+		}
+
 		.mediamanager-aside {
 			@apply p-4 fixed w-1/4 h-full top-0 left-0 overflow-y-auto border-r box-b;
-
-			h1 {
-				@apply text-primary mb-6 text-xl font-bold;
-			}
 
 			.media-opts {
 				@apply mb-4 pb-4 border-b box-b;
