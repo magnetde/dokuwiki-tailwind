@@ -17,7 +17,7 @@ if(!defined('DOKU_INC'))
 	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 </head>
 
-<body>
+<body class="dark:bg-gray-900 antialiased">
 	<div id="media__manager" class="mediamanager-popup">
 		<?php html_msgarea() ?>
 

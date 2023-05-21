@@ -215,87 +215,6 @@
 
 		div.upload {
 			@apply p-4;
-
-			#mediamanager__uploader {
-				@apply mt-6;
-
-				.qq-upload-button {
-					@apply btn-secondary inline-block;
-				}
-
-				.qq-upload-list {
-					@apply mt-3;
-
-					li {
-						@apply py-2 flex items-baseline;
-
-						.qq-upload-name-input {
-							@apply input-text px-3 py-2 mr-2 w-1/2 text-sm;
-						}
-
-						.qq-upload-cancel {
-							@apply btn-secondary p-2 mr-auto;
-						}
-					}
-				}
-
-				.qq-action-container {
-					@apply mt-8 flex items-center;
-
-					.qq-upload-action {
-						@apply btn-primary;
-					}
-
-					.qq-overwrite-check {
-						@apply ml-4;
-
-						input[type="checkbox"] {
-							@apply input-checkbox mr-0.5;
-						}
-
-						span {
-							@apply input-label;
-						}
-					}
-				}
-
-				.qq-uploader {
-					> li {
-						@apply flex items-center;
-					}
-
-					.qq-upload-file {
-						@apply text-primary font-medium;
-
-						a {
-							@apply link-primary;
-						}
-					}
-
-					.qq-upload-size {
-						@apply
-							text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
-							bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
-						;
-					}
-				}
-
-				.qq-upload-failed-text {
-					@apply hidden;
-				}
-
-				.qq-upload-fail .qq-upload-failed-text {
-					@apply inline ml-auto mr-0 my-0 px-2 py-1.5 truncate;
-				}
-			}
-
-			.maxsize {
-				@apply text-secondary mt-3 text-sm;
-
-				.allowedmime {
-					@apply underline;
-				}
-			}
 		}
 
 		div.search {
@@ -324,6 +243,91 @@
 					@apply btn-primary;
 				}
 			}
+		}
+	}
+}
+
+// The media manager and media popup uploader.
+#mediamanager__uploader {
+	@apply mt-6;
+
+	.qq-upload-button {
+		@apply btn-secondary inline-block;
+	}
+
+	.qq-upload-list {
+		@apply mt-3;
+
+		li {
+			@apply py-2 flex items-baseline;
+
+			.qq-upload-name-input {
+				@apply input-text px-3 py-2 mr-2 w-1/2 text-sm;
+			}
+
+			.qq-upload-cancel {
+				@apply btn-secondary p-2 mr-auto;
+			}
+		}
+	}
+
+	.qq-action-container {
+		@apply mt-8 flex items-center;
+
+		.qq-upload-action {
+			@apply btn-primary;
+		}
+
+		.qq-overwrite-check {
+			@apply ml-4;
+
+			input[type="checkbox"] {
+				@apply input-checkbox mr-0.5;
+			}
+
+			span {
+				@apply input-label;
+			}
+		}
+	}
+
+	.qq-uploader {
+		> li {
+			@apply flex items-center;
+		}
+
+		.qq-upload-file {
+			@apply text-primary font-medium;
+
+			a {
+				@apply link-primary;
+			}
+		}
+
+		.qq-upload-size {
+			@apply
+				text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
+				bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
+			;
+		}
+	}
+
+	.qq-upload-failed-text {
+		@apply hidden;
+	}
+
+	.qq-upload-fail .qq-upload-failed-text {
+		@apply inline ml-auto mr-0 my-0 px-2 py-1.5 truncate;
+	}
+}
+
+// The maximum size
+#mediamanager__page, #media__content {
+	.maxsize {
+		@apply text-secondary mt-3 text-sm;
+
+		.allowedmime {
+			@apply underline;
 		}
 	}
 }
@@ -577,6 +581,7 @@
 	}
 }
 
+// Styles exlusively for the media manager popup
 .mediamanager-popup {
 	@apply w-full;
 
@@ -603,12 +608,126 @@
 			}
 		}
 
+		// Right-side content
 		.mediamanager-content {
 			@apply p-4 fixed w-3/4 h-full top-0 right-0 overflow-y-auto;
 
-			#media__content h1:first-child {
-				// H1
+			// Upload text
+			.upload {
+				@apply text-secondary text-sm font-medium;
 			}
+
+			#dw__mediasearch p {
+				@apply flex items-center mt-6 pt-6 mb-6 border-t box-b;
+
+				label {
+					@apply flex items-center flex-grow mr-2;
+
+					span {
+						@apply input-label mr-2;
+					}
+
+					input {
+						@apply input-text flex-grow;
+					}
+				}
+
+				button[type="submit"] {
+					@apply btn-primary;
+				}
+			}
+
+			// Media files
+			#media__content > div[title] {
+				@apply py-3 pr-3 flex items-center flex-nowrap border-t box-b text-base;
+
+				// border at the bottom
+				&:last-child {
+					@apply border-b;
+				}
+
+				a.mediafile {
+					@apply ml-0 mr-2 bg-[size:1.25rem] cursor-pointer;
+				}
+
+				span.info {
+					@apply text-secondary truncate;
+				}
+
+				a img {
+					@apply inline;
+				}
+
+				a.btn_media_delete {
+					@apply flex-grow;
+				}
+
+				.detail img {
+					@apply p-1 max-w-[3rem] max-h-[3rem] rounded box-hf-bg;
+				}
+
+				.clearer {
+					@apply clear-both h-0 overflow-hidden;
+				}
+			}
+		}
+	}
+}
+
+// Media popup
+#media__manager + div[role="dialog"] {
+	@apply dropdown-container;
+
+	.ui-dialog-titlebar {
+		@apply flex items-center px-4 py-3;
+
+		.ui-dialog-title {
+			@apply text-primary flex-grow font-semibold;
+		}
+
+		.ui-dialog-titlebar-close {
+
+		}
+	}
+
+	.ui-draggable-handle {
+		@apply cursor-move;
+	}
+
+	.ui-dialog-content {
+		@apply flex flex-col items-stretch py-4;
+
+		> * {
+			@apply px-4;
+		}
+
+		p[id] {
+			@apply flex items-center;
+
+			&:not(:first-child) {
+				@apply mt-2.5
+			}
+
+			label {
+				@apply input-label flex-grow;
+			}
+
+			button.button {
+				@apply ml-1 p-1 rounded;
+
+				&.selected {
+					@apply bg-gray-100 dark:bg-gray-600;
+				}
+			}
+		}
+
+		// button element
+		p:last-child {
+			@apply mt-4 pt-4 border-t border-gray-100 dark:border-gray-600;
+		}
+
+		#media__sendbtn {
+			@apply btn-primary px-2.5 py-1.5 float-right;
 		}
 	}
 }

@@ -59,7 +59,15 @@
 					}
 
 					input {
-						@apply input-text mb-4 block w-full;
+						@apply mb-4 block w-full;
+
+						&:not(.missing) {
+							@apply input-text;
+						}
+
+						&.missing {
+							@apply input-text-error;
+						}
 					}
 				}
 

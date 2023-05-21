@@ -34,10 +34,10 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 				} else { ?>
 					<div class="panel namespaces">
 						<h2>
-							<?php echo $lang['namespaces'] ?>
+							<?php echo hsc($lang['namespaces']) ?>
 						</h2>
 						<div class="panelHeader">
-							<?php echo $lang['media_namespaces'] ?>
+							<?php echo hsc($lang['media_namespaces']) ?>
 						</div>
 
 						<?php _tpl_mediaTree() ?>
