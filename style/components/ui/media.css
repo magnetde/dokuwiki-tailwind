@@ -133,7 +133,7 @@
 				@apply divide-y divide-gray-200 dark:divide-gray-700;
 
 				dl {
-					@apply px-4 py-2 flex items-center hover:box-hf-bg;
+					@apply px-4 py-2 flex items-center hover:bg-gray-50 dark:hover:bg-gray-800;
 
 					dt {
 						@apply float-left text-center;
@@ -174,7 +174,7 @@
 
 				li {
 					@apply
-						flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:box-hf-bg
+						flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:bg-gray-50 dark:hover:bg-gray-800
 						bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700
 					;
 
@@ -639,7 +639,7 @@
 
 			// Media files
 			#media__content > div[title] {
-				@apply py-3 pr-3 flex items-center flex-nowrap border-t box-b text-base;
+				@apply p-3 flex items-center flex-nowrap border-t box-b text-base hover:bg-gray-50 dark:hover:bg-gray-800;
 
 				// border at the bottom
 				&:last-child {
@@ -647,11 +647,15 @@
 				}
 
 				a.mediafile {
-					@apply ml-0 mr-2 bg-[size:1.25rem] cursor-pointer;
+					@apply ml-0 mr-2 font-medium bg-[size:1.25rem] cursor-pointer decoration-current text-primary;
 				}
 
 				span.info {
 					@apply text-secondary truncate;
+				}
+
+				a[href] {
+					@apply ml-2;
 				}
 
 				a img {
@@ -659,7 +663,7 @@
 				}
 
 				a.btn_media_delete {
-					@apply flex-grow;
+					@apply mr-auto;
 				}
 
 				.detail img {
@@ -685,8 +689,26 @@
 			@apply text-primary flex-grow font-semibold;
 		}
 
+		// close button
 		.ui-dialog-titlebar-close {
+			@apply
+				block relative w-7 h-7 rounded-lg indent-[-9999px] bg-transparent
+				hover:bg-gray-50 dark:hover:bg-gray-800
+			;
 
+			.ui-button-icon {
+				@apply
+					w-4 h-4 absolute left-1.5 top-1.5 bg-contain
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%239ca3af')]
+				;
+			}
+
+			&:hover .ui-button-icon {
+				@apply
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23111827')]
+					dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23fff')]
+				;
+			}
 		}
 	}
 
@@ -701,6 +723,7 @@
 			@apply px-4;
 		}
 
+		// selects
 		p[id] {
 			@apply flex items-center;
 
@@ -713,10 +736,10 @@
 			}
 
 			button.button {
-				@apply ml-1 p-1 rounded;
+				@apply ml-1 p-1 rounded hover:bg-gray-50 dark:hover:bg-gray-800/[0.4];
 
 				&.selected {
-					@apply bg-gray-100 dark:bg-gray-600;
+					@apply bg-gray-200 dark:bg-gray-600;
 				}
 			}
 		}
