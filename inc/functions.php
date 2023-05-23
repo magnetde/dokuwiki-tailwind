@@ -263,9 +263,9 @@ function _tpl_mediaContent() {
 
 	$content = $html->find('#media__content', 0);
 	if($content) {
-		_tpl_replaceImage($content, '/lib/images/magnifier.png', 'btn-open');
-		_tpl_replaceImage($content, '/lib/images/mediamanager.png', 'btn-manager');
-		_tpl_replaceImage($content, '/lib/images/trash.png', 'btn-trash');
+		_tpl_replaceIconButton($content, '/lib/images/magnifier.png', 'btn-open');
+		_tpl_replaceIconButton($content, '/lib/images/mediamanager.png', 'btn-manager');
+		_tpl_replaceIconButton($content, '/lib/images/trash.png', 'btn-trash');
 	}
 
 	$content = $html->save();
@@ -278,12 +278,18 @@ function _tpl_mediaContent() {
 /**
  * Replaces all image elements, with the specific source path with div elements with the given class.
  */
-function _tpl_replaceImage($html, $src, $class) {
+function _tpl_replaceIconButton($html, $src, $class) {
 	foreach($html->find('img[src="' . $src . '"]') as $img) {
 		$title = $img->title;
 		$div = '<div class="img-icon ' . $class . '"';
-		if($title)
-			$div .= ' title="' . $title . '"';
+
+		$parent = $img->parent();
+		if($title) {
+			if($parent && $parent->tag == 'a')
+				$parent->title = $title;
+			else
+				$div .= ' title="' . $title . '"';
+		}
 
 		$img->outertext = $div . '></div>';
 	}

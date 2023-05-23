@@ -87,6 +87,10 @@
 
 		.panelContent {
 			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
+
+			.nothing {
+				@apply block my-8 text-center font-semibold text-xl;
+			}
 		}
 
 		img.load {
