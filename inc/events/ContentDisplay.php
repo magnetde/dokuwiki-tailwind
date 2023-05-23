@@ -330,6 +330,10 @@ class TPLContentDisplay extends EventHandler {
 			.'</div>';
 	}
 
+	/**
+	 * modifies the media manager page by adding the "not-prose" class to the file list
+	 * and by changing the file list icons.
+	 */
 	private function modifyMediaManager($html) {
 		$mngr = $html->find('#mediamanager__page', 0);
 		if(!$mngr)

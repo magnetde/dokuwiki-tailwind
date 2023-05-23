@@ -12,10 +12,10 @@
 	}
 
 	.box-header {
-		@apply box-hf p-4 border rounded-t-lg w-full block;
+		@apply box-hf w-full p-4 border rounded-t-lg block;
 	}
 
 	.box-footer {
-		@apply box-hf p-4 border rounded-b-lg w-full block;
+		@apply box-hf w-full p-4 border rounded-b-lg block;
 	}
 }

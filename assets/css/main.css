@@ -2963,9 +2963,34 @@ footer .license a {
   text-decoration-line: underline;
 }
 
+/* Success box at the top of the page*/
+
+.success {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 250 247 / var(--tw-bg-opacity));
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(3 84 63 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .success {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(49 196 141 / var(--tw-text-opacity));
+  }
+}
+
 /* Error box at the top of the page*/
 
 .error {
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -5060,8 +5085,8 @@ div.picker.a11y {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 0.625rem;
   padding-right: 2rem;
   font-size: 0.875rem;
@@ -5157,8 +5182,8 @@ div.picker.a11y {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 0.625rem;
   padding-right: 2rem;
   font-size: 0.875rem;
@@ -5597,8 +5622,8 @@ table.diff .diffnav select.quickselect {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 0.625rem;
   padding-right: 2rem;
   font-size: 0.875rem;
@@ -8197,21 +8222,21 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   flex-direction: column;
 }
 
-/* .image if not in table or .image in table row*/
+/* .image if not in table*/
 
-#mediamanager__page .panel.file .panelContent div.image:not(td *), #mediamanager__page .panel.file .panelContent tr.image td {
+#mediamanager__page .panel.file .panelContent div.image:not(td *) {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #mediamanager__page .panel.file .panelContent div.image:not(td *), #mediamanager__page .panel.file .panelContent tr.image td {
+  #mediamanager__page .panel.file .panelContent div.image:not(td *) {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#mediamanager__page .panel.file .panelContent div.image:not(td *), #mediamanager__page .panel.file .panelContent tr.image td {
+#mediamanager__page .panel.file .panelContent div.image:not(td *) {
   border-bottom-width: 1px;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -8219,9 +8244,34 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 1.5rem;
 }
 
-#mediamanager__page .panel.file .panelContent div.image:not(td *) img, #mediamanager__page .panel.file .panelContent tr.image td img {
+#mediamanager__page .panel.file .panelContent div.image:not(td *) img {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* image in table*/
+
+#mediamanager__page .panel.file .panelContent tr.image {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #mediamanager__page .panel.file .panelContent tr.image {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+}
+
+#mediamanager__page .panel.file .panelContent tr.image {
+  border-bottom-width: 1px;
+}
+
+#mediamanager__page .panel.file .panelContent tr.image img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 #mediamanager__page .panel.file .panelContent .actions {
@@ -8312,8 +8362,8 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 0.625rem;
   padding-right: 2rem;
   font-size: 0.875rem;
@@ -9820,39 +9870,39 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* Base styles applied for the other pages*/
 
-#user__manager .leftalign {
+#user__manager .leftalign, #config__manager .leftalign {
   text-align: left;
 }
 
-#user__manager .centeralign {
+#user__manager .centeralign, #config__manager .centeralign {
   text-align: center;
 }
 
-#user__manager .rightalign {
+#user__manager .rightalign, #config__manager .rightalign {
   text-align: right;
 }
 
-#user__manager .medialeft {
+#user__manager .medialeft, #config__manager .medialeft {
   float: left;
 }
 
-#user__manager .mediaright {
+#user__manager .mediaright, #config__manager .mediaright {
   float: right;
 }
 
-#user__manager .mediacenter {
+#user__manager .mediacenter, #config__manager .mediacenter {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-#user__manager div.no {
+#user__manager div.no, #config__manager div.no {
   margin: 0px;
   display: inline;
   padding: 0px;
 }
 
-#user__manager a {
+#user__manager a, #config__manager a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
@@ -9860,30 +9910,48 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-decoration-color: currentColor;
 }
 
-#user__manager a:hover {
+#user__manager a:hover, #config__manager a:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager a {
+  #user__manager a, #config__manager a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-#user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"] {
+#user__manager label, #config__manager label {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"] {
+  #user__manager label, #config__manager label {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"] {
+#user__manager label, #config__manager label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+#user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+#user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -9896,7 +9964,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#user__manager input[type="text"]:focus, #user__manager input[type="password"]:focus, #user__manager input[type="email"]:focus {
+#user__manager input[type="text"]:focus, #user__manager input[type="password"]:focus, #user__manager input[type="email"]:focus, #config__manager input[type="text"]:focus, #config__manager input[type="password"]:focus, #config__manager input[type="email"]:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -9904,24 +9972,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"] {
+  #user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #user__manager input[type="text"]::-moz-placeholder, #user__manager input[type="password"]::-moz-placeholder, #user__manager input[type="email"]::-moz-placeholder {
+  #user__manager input[type="text"]::-moz-placeholder, #user__manager input[type="password"]::-moz-placeholder, #user__manager input[type="email"]::-moz-placeholder, #config__manager input[type="text"]::-moz-placeholder, #config__manager input[type="password"]::-moz-placeholder, #config__manager input[type="email"]::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager input[type="text"]::placeholder, #user__manager input[type="password"]::placeholder, #user__manager input[type="email"]::placeholder {
+  #user__manager input[type="text"]::placeholder, #user__manager input[type="password"]::placeholder, #user__manager input[type="email"]::placeholder, #config__manager input[type="text"]::placeholder, #config__manager input[type="password"]::placeholder, #config__manager input[type="email"]::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager input[type="text"]:focus, #user__manager input[type="password"]:focus, #user__manager input[type="email"]:focus {
+  #user__manager input[type="text"]:focus, #user__manager input[type="password"]:focus, #user__manager input[type="email"]:focus, #config__manager input[type="text"]:focus, #config__manager input[type="password"]:focus, #config__manager input[type="email"]:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -9929,7 +9997,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager input[type="checkbox"] {
+#user__manager input[type="checkbox"], #config__manager input[type="checkbox"] {
   height: 1rem;
   width: 1rem;
   border-radius: 0.25rem;
@@ -9942,7 +10010,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
-#user__manager input[type="checkbox"]:focus {
+#user__manager input[type="checkbox"]:focus, #config__manager input[type="checkbox"]:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -9951,7 +10019,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="checkbox"] {
+  #user__manager input[type="checkbox"], #config__manager input[type="checkbox"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -9959,18 +10027,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     --tw-ring-offset-color: #1F2937;
   }
 
-  #user__manager input[type="checkbox"]:focus {
+  #user__manager input[type="checkbox"]:focus, #config__manager input[type="checkbox"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager input[type="checkbox"]:checked {
+#user__manager input[type="checkbox"]:checked, #config__manager input[type="checkbox"]:checked {
   border-color: transparent;
   background-color: currentColor;
 }
 
-#user__manager input[type="file"] {
+#user__manager input[type="file"], #config__manager input[type="file"] {
   cursor: pointer;
   border-radius: 0.5rem;
   border-width: 1px;
@@ -9984,13 +10052,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-#user__manager input[type="file"]:focus {
+#user__manager input[type="file"]:focus, #config__manager input[type="file"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="file"] {
+  #user__manager input[type="file"], #config__manager input[type="file"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -9999,18 +10067,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #user__manager input[type="file"]::-moz-placeholder {
+  #user__manager input[type="file"]::-moz-placeholder, #config__manager input[type="file"]::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager input[type="file"]::placeholder {
+  #user__manager input[type="file"]::placeholder, #config__manager input[type="file"]::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 }
 
-#user__manager input[type="file"] input[type="button"] {
+#user__manager input[type="file"] input[type="button"], #config__manager input[type="file"] input[type="button"] {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10026,12 +10094,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#user__manager input[type="file"] input[type="button"]:hover {
+#user__manager input[type="file"] input[type="button"]:hover, #config__manager input[type="file"] input[type="button"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#user__manager input[type="file"] input[type="button"]:focus {
+#user__manager input[type="file"] input[type="button"]:focus, #config__manager input[type="file"] input[type="button"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10042,23 +10110,144 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="file"] input[type="button"] {
+  #user__manager input[type="file"] input[type="button"], #config__manager input[type="file"] input[type="button"] {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #user__manager input[type="file"] input[type="button"]:hover {
+  #user__manager input[type="file"] input[type="button"]:hover, #config__manager input[type="file"] input[type="button"]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #user__manager input[type="file"] input[type="button"]:focus {
+  #user__manager input[type="file"] input[type="button"]:focus, #config__manager input[type="file"] input[type="button"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager button {
+#user__manager textarea, #config__manager textarea {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #user__manager textarea, #config__manager textarea {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+#user__manager textarea, #config__manager textarea {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#user__manager textarea:focus, #config__manager textarea:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #user__manager textarea, #config__manager textarea {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+
+  #user__manager textarea::-moz-placeholder, #config__manager textarea::-moz-placeholder {
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  #user__manager textarea::placeholder, #config__manager textarea::placeholder {
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  #user__manager textarea:focus, #config__manager textarea:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(63 131 248 / var(--tw-border-opacity));
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+  }
+}
+
+#user__manager select, #config__manager select {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #user__manager select, #config__manager select {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+#user__manager select, #config__manager select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.625rem;
+  padding-right: 2rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#user__manager select:focus, #config__manager select:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #user__manager select, #config__manager select {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+
+  #user__manager select::-moz-placeholder, #config__manager select::-moz-placeholder {
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  #user__manager select::placeholder, #config__manager select::placeholder {
+    --tw-placeholder-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+  }
+
+  #user__manager select:focus, #config__manager select:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(63 131 248 / var(--tw-border-opacity));
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+  }
+}
+
+#user__manager button, #config__manager button {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10074,12 +10263,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#user__manager button:hover {
+#user__manager button:hover, #config__manager button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#user__manager button:focus {
+#user__manager button:focus, #config__manager button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10090,42 +10279,42 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager button {
+  #user__manager button, #config__manager button {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #user__manager button:hover {
+  #user__manager button:hover, #config__manager button:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #user__manager button:focus {
+  #user__manager button:focus, #config__manager button:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager div.table {
+#user__manager div.table, #config__manager div.table {
   margin-bottom: 1rem;
   display: block;
   width: 100%;
   overflow-x: auto;
 }
 
-#user__manager table {
+#user__manager table, #config__manager table {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager table {
+  #user__manager table, #config__manager table {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager table {
+#user__manager table, #config__manager table {
   width: 100%;
   max-width: 100%;
   text-align: left;
@@ -10133,13 +10322,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-#user__manager table input[type="text"], #user__manager table input[type="password"], #user__manager table input[type="email"] {
+#user__manager table input[type="text"], #user__manager table input[type="password"], #user__manager table input[type="email"], #user__manager table select, #user__manager table textarea, #config__manager table input[type="text"], #config__manager table input[type="password"], #config__manager table input[type="email"], #config__manager table select, #config__manager table textarea {
   width: 100%;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-#user__manager thead {
+#user__manager thead, #config__manager thead {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   font-size: 0.75rem;
@@ -10150,7 +10339,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager thead {
+  #user__manager thead, #config__manager thead {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
@@ -10158,30 +10347,40 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager thead input[type="text"], #user__manager thead input[type="password"], #user__manager thead input[type="email"] {
+#user__manager thead input[type="text"], #user__manager thead input[type="password"], #user__manager thead input[type="email"], #config__manager thead input[type="text"], #config__manager thead input[type="password"], #config__manager thead input[type="email"] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager thead input[type="text"], #user__manager thead input[type="password"], #user__manager thead input[type="email"] {
+  #user__manager thead input[type="text"], #user__manager thead input[type="password"], #user__manager thead input[type="email"], #config__manager thead input[type="text"], #config__manager thead input[type="password"], #config__manager thead input[type="email"] {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 }
 
-#user__manager tbody tr {
+/* yeah this exists*/
+
+#user__manager tbody + tbody tr:first-child, #config__manager tbody + tbody tr:first-child {
+  border-top-width: 1px;
+  border-color: var(--tw-prose-td-borders);
+}
+
+#user__manager tbody tr:not(:last-child), #config__manager tbody tr:not(:last-child) {
   border-bottom-width: 1px;
 }
 
-#user__manager th, #user__manager td {
+#user__manager th, #user__manager td, #config__manager th, #config__manager td {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  vertical-align: middle;
 }
 
 /* Specific styles*/
+
+/* User manager*/
 
 #user__manager table button[name="fn[start]"]:not([disabled]), #user__manager table button[name="fn[prev]"]:not([disabled]), #user__manager table button[name="fn[next]"]:not([disabled]), #user__manager table button[name="fn[last]"]:not([disabled]) {
   border-radius: 0.5rem;
@@ -10304,6 +10503,244 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   flex-grow: 1;
+}
+
+/* Config manager*/
+
+/* hide anchor links*/
+
+#config__manager h1, #config__manager h2, #config__manager h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#config__manager h1 a, #config__manager h2 a, #config__manager h3 a {
+  display: none;
+}
+
+/* tables*/
+
+#config__manager fieldset {
+  margin-bottom: 1.5rem;
+}
+
+/* table header*/
+
+#config__manager fieldset legend {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager fieldset legend {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+}
+
+#config__manager fieldset legend {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager fieldset legend {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+}
+
+#config__manager fieldset legend {
+  display: block;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-width: 1px;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+#config__manager fieldset div.table {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager fieldset div.table {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+}
+
+#config__manager fieldset div.table {
+  margin-bottom: 0px;
+  width: 100%;
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+#config__manager fieldset table {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: table !important;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+/* add a table footer*/
+
+#config__manager fieldset:after {
+  content: '';
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager fieldset:after {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+}
+
+#config__manager fieldset:after {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager fieldset:after {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+}
+
+#config__manager fieldset:after {
+  display: block;
+  width: 100%;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-width: 1px;
+  padding: 1rem;
+  height: 1rem;
+  padding: 0px;
+}
+
+/* setting label*/
+
+#config__manager td.label {
+  width: 60%;
+  text-align: left;
+}
+
+#config__manager td.label .outkey {
+  position: relative;
+  z-index: 10;
+  float: left;
+  margin-top: -0.75rem;
+  margin-left: -0.625rem;
+  display: block;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  font-size: 0.6rem;
+  font-weight: 300;
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager td.label .outkey {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  }
+}
+
+#config__manager td.label label {
+  order: 1;
+  clear: left;
+  display: block;
+  vertical-align: middle;
+}
+
+#config__manager td.label img {
+  order: 2;
+  float: right;
+  margin: 0px;
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+
+/* setting value*/
+
+#config__manager td.value {
+  width: 40%;
+}
+
+#config__manager button[type="submit"] {
+  margin-right: 0.5rem;
+}
+
+#config__manager button[type="reset"] {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+#config__manager button[type="reset"]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(26 86 219 / var(--tw-text-opacity));
+}
+
+#config__manager button[type="reset"]:focus {
+  z-index: 10;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  #config__manager button[type="reset"] {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
+  #config__manager button[type="reset"]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  #config__manager button[type="reset"]:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
+  }
 }
 
 .sr-only {
