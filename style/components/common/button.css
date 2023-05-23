@@ -54,4 +54,27 @@
 			dark:focus:ring-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white
 		;
 	}
+
+	.toggle-box {
+		@apply
+			inline-flex items-center flex-row border rounded-[0.4rem]
+			bg-gray-200/[0.6] border-gray-200 dark:bg-gray-700 dark:border-gray-600
+		;
+	}
+
+	.toggle-button {
+		@apply px-4 py-2 -m-px border rounded-[0.5rem] text-secondary text-sm font-medium;
+	}
+
+	.toggle-button-inactive {
+		@apply cursor-pointer border-transparent;
+
+		&:hover {
+			@apply text-gray-600 dark:text-gray-300
+		}
+	}
+
+	.toggle-button-active {
+		@apply text-primary bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-600;
+	}
 }

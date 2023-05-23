@@ -40,6 +40,7 @@ class TPLContentDisplay extends EventHandler {
 		$this->modifyEditor($html);
 		$this->modifyDiff($html);
 		$this->modifySearch($html);
+		$this->modifyMediaManager($html);
 
 		$content = $html->save();
 		$html->clear();
@@ -53,7 +54,9 @@ class TPLContentDisplay extends EventHandler {
 		$headers = array('h1', 'h2', 'h3', 'h4'); // no anchor for h5
 
 		foreach($headers as $header) {
-			foreach($html->find($header) as $elm) {
+			$selector = $header . '[id]';
+
+			foreach($html->find($selector) as $elm) {
 				$elm->addClass('group');
 
 				$class = clsx("
@@ -325,5 +328,21 @@ class TPLContentDisplay extends EventHandler {
 			.($active ? ' active' : '') . '">'
 			.'<div class="nothing-found">' . $lang['nothingfound']  . '</div>'
 			.'</div>';
+	}
+
+	private function modifyMediaManager($html) {
+		$mngr = $html->find('#mediamanager__page', 0);
+		if(!$mngr)
+			return;
+
+		foreach(array('filelist', 'file') as $panel_class)
+			$mngr->find('.panel.' . $panel_class, 0)->addClass('not-prose');
+
+		foreach($mngr->find('img') as $img) {
+			if($img->src == '/lib/images/plus.gif')
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280';
+			elseif($img->src == '/lib/images/minus.gif')
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280';
+		}
 	}
 }

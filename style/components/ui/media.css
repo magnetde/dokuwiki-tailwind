@@ -1,0 +1,792 @@
+// Media manager sidebar
+.dw-sidebar div.namespaces {
+	h2 {
+		@apply mt-0 mb-1;
+	}
+
+	.panelHeader {
+		@apply text-secondary font-medium;
+	}
+}
+
+// Tree view (sidebar and media popup)
+#media__tree {
+	@apply mt-4;
+
+	ul {
+		@apply pl-0;
+
+		ul {
+			@apply pl-4;
+		}
+	}
+
+	li {
+		@apply list-none pl-0;
+	}
+
+	img {
+		@apply inline m-0 cursor-pointer;
+	}
+
+	div.li {
+		@apply inline ml-1;
+
+		a {
+			@apply
+				text-secondary font-medium no-underline
+				hover:text-gray-700 hover:dark:text-gray-300
+			;
+		}
+	}
+}
+
+// Media manager content
+#mediamanager__page {
+	.a11y {
+		@apply !hidden;
+	}
+
+	// Hide namespaces because they where moved to the sidebar
+	.namespaces {
+		@apply hidden;
+	}
+
+	.panel.filelist, .panel.file {
+		@apply w-full;
+
+		ul.tabs {
+			@apply tab-container;
+
+			li {
+				a {
+					@apply tab-inactive;
+				}
+
+				strong {
+					@apply tab-active;
+				}
+
+				&.file .disabled {
+					@apply tab-disabled;
+				}
+			}
+		}
+
+		.panelHeader {
+			@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+
+			h3 {
+				@apply font-medium;
+
+				strong > strong {
+					@apply font-bold;
+				}
+			}
+		}
+
+		.panelContent {
+			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
+
+			.nothing {
+				@apply block my-8 text-center font-semibold text-xl;
+			}
+		}
+
+		img.load {
+			@apply p-4 w-6 h-6;
+		}
+	}
+
+	.ui-resizable-handle {
+		@apply hidden;
+	}
+}
+
+#mediamanager__page .panel.filelist {
+	.panelHeader {
+		form.options ul {
+			@apply flex items-center space-x-3;
+
+			// Control groups
+			.ui-controlgroup {
+				@apply toggle-box;
+
+				.ui-button {
+					@apply toggle-button;
+
+					&:not(.ui-state-active) {
+						@apply toggle-button-inactive;
+					}
+
+					&.ui-state-active {
+						@apply toggle-button-active;
+					}
+				}
+
+				input {
+					@apply hidden;
+				}
+			}
+		}
+	}
+
+	.panelContent {
+		ul {
+			&.rows {
+				@apply divide-y divide-gray-200 dark:divide-gray-700;
+
+				dl {
+					@apply px-4 py-2 flex items-center hover:bg-gray-50 dark:hover:bg-gray-800;
+
+					dt {
+						@apply float-left text-center;
+
+						img {
+							@apply w-7 h-7 mr-4;
+						}
+					}
+
+					dd {
+						@apply font-medium;
+					}
+
+					dd.name {
+						@apply flex-grow truncate;
+
+						a {
+							@apply link-primary;
+						}
+					}
+
+					dd.size {
+						@apply text-secondary w-[15%] truncate;
+					}
+
+					dd.date {
+						@apply text-secondary w-[15%] truncate;
+					}
+
+					dd.filesize {
+						@apply text-secondary w-[20%] text-right truncate;
+					}
+				}
+			}
+
+			&.thumbs {
+				@apply grid grid-cols-4 p-4 gap-4;
+
+				li {
+					@apply
+						flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:bg-gray-50 dark:hover:bg-gray-800
+						bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700
+					;
+
+					dt {
+						@apply my-4;
+
+						img {
+							@apply w-16 h-16 mx-auto;
+						}
+					}
+
+					dd {
+						@apply mx-3 font-medium;
+
+						&:last-child {
+							@apply mb-3;
+						}
+					}
+
+					dd.name {
+						@apply mb-2 truncate;
+
+						a {
+							@apply link-primary;
+						}
+					}
+
+					dd.size, dd.date, dd.filesize {
+						@apply text-secondary text-sm truncate;
+					}
+				}
+			}
+		}
+
+		.ui-resizable-handle {
+			@apply hidden;
+		}
+
+		div.upload {
+			@apply p-4;
+		}
+
+		div.search {
+			@apply divide-y divide-gray-200 dark:divide-gray-700;
+
+			#dw__mediasearch {
+				@apply p-4;
+
+				div.no p, label {
+					@apply flex items-center space-x-4;
+				}
+
+				label {
+					@apply flex-grow;
+
+					span {
+						@apply input-label;
+					}
+
+					input {
+						@apply input-text flex-grow;
+					}
+				}
+
+				button {
+					@apply btn-primary;
+				}
+			}
+		}
+	}
+}
+
+// The media manager and media popup uploader.
+#mediamanager__uploader {
+	@apply mt-6;
+
+	.qq-upload-button {
+		@apply btn-secondary inline-block;
+	}
+
+	.qq-upload-list {
+		@apply mt-3;
+
+		li {
+			@apply py-2 flex items-baseline;
+
+			.qq-upload-name-input {
+				@apply input-text px-3 py-2 mr-2 w-1/2 text-sm;
+			}
+
+			.qq-upload-cancel {
+				@apply btn-secondary p-2 mr-auto;
+			}
+		}
+	}
+
+	.qq-action-container {
+		@apply mt-8 flex items-center;
+
+		.qq-upload-action {
+			@apply btn-primary;
+		}
+
+		.qq-overwrite-check {
+			@apply ml-4;
+
+			input[type="checkbox"] {
+				@apply input-checkbox mr-0.5;
+			}
+
+			span {
+				@apply input-label;
+			}
+		}
+	}
+
+	.qq-uploader {
+		> li {
+			@apply flex items-center;
+		}
+
+		.qq-upload-file {
+			@apply text-primary font-medium;
+
+			a {
+				@apply link-primary;
+			}
+		}
+
+		.qq-upload-size {
+			@apply
+				text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
+				bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
+			;
+		}
+	}
+
+	.qq-upload-failed-text {
+		@apply hidden;
+	}
+
+	.qq-upload-fail .qq-upload-failed-text {
+		@apply inline ml-auto mr-0 my-0 px-2 py-1.5 truncate;
+	}
+}
+
+// The maximum size
+#mediamanager__page, #media__content {
+	.maxsize {
+		@apply text-secondary mt-3 text-sm;
+
+		.allowedmime {
+			@apply underline;
+		}
+	}
+}
+
+#mediamanager__page .panel.file {
+	.tabs {
+		@apply !hidden;
+	}
+
+	.panelHeader {
+		a {
+			@apply link-primary;
+		}
+
+		#mediamanager__btn_delete button {
+			@apply btn-secondary px-2.5 py-1.5 hover:text-red-600 dark:hover:text-red-400;
+		}
+	}
+
+	.panelContent {
+		@apply flex flex-col;
+
+		// .image if not in table or .image in table row
+		div.image:not(td *), tr.image td {
+			@apply px-4 py-6 border-b box-b;
+
+			img {
+				@apply mx-auto;
+			}
+		}
+
+		.actions {
+			@apply hidden;
+		}
+
+		// See above for the metadata list
+
+		// fix some design issues at the change list
+		form.changes {
+			@apply mt-0 mb-4 px-4;
+
+			div.no ul {
+				@apply mt-0 ml-4 pl-[1.625rem];
+
+				// increse the top padding of the first change element
+				li:first-child .li {
+					@apply pt-3;
+				}
+			}
+		}
+
+		// diff options
+
+		.diffoptions {
+			@apply p-4 mt-0 border-b box-b;
+
+			label {
+				span {
+					@apply input-label pr-2;
+				}
+
+				select {
+					@apply input-select;
+				}
+			}
+		}
+
+		// overwrite the change list style, because the changes description is not needed anymore
+		.revision-info {
+			.rev-description {
+				@apply flex items-center;
+
+				.summary {
+					@apply order-2 mb-0;
+				}
+
+				.sum {
+					@apply hidden;
+				}
+
+				.subtitle {
+					@apply mb-0 text-base font-medium text-gray-700 dark:text-gray-200;
+				}
+			}
+		}
+
+		// bug fix
+		#mediamanager__diff {
+			@apply !w-full;
+		}
+
+		// diff table
+
+		.table {
+			@apply w-full;
+		}
+
+		.table > table {
+			@apply w-full;
+
+			// same as `th` at `table.diff` (see diff.css)
+			th {
+				@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
+
+				.wikilink1 {
+					@apply link-primary block;
+				}
+
+				.sum {
+					@apply text-primary;
+				}
+			}
+
+			td {
+				// values, that has been changed
+				dd strong {
+					@apply
+						px-1.5 py-0.5 rounded font-medium
+						text-blue-800 bg-blue-50 dark:text-blue-300 dark:bg-blue-950
+					;
+				}
+			}
+
+			.img_tags {
+				@apply border-0;
+			}
+		}
+
+		// overlapping / slider diff
+		#mediamanager__diff {
+			// @apply px-6 py-4;
+
+			div.slider {
+				@apply
+					relative mt-5 mb-4 mx-6 !w-[calc(100%-3rem)] !max-w-[calc(100%-3rem)] h-2 text-left
+					rounded-lg appearance-none cursor-pointer bg-gray-200 dark:bg-gray-700
+				;
+
+				.ui-slider-handle {
+					@apply
+						absolute z-10 w-4 h-4 -top-1 -ml-2 rounded-full cursor-pointer
+						bg-blue-700 hover:bg-blue-800
+						dark:bg-blue-600 dark:hover:bg-blue-700
+					;
+				}
+			}
+
+			.imageDiff {
+				@apply pt-4 pb-6;
+
+				.image2 {
+					@apply absolute top-4 left-0; // top must be same as the padding
+				}
+			}
+
+			// overlapping
+			.imageDiff.opacity {
+				@apply relative w-full;
+
+				.image1, .image2 {
+					@apply w-full !max-w-full;
+				}
+
+				img {
+					@apply mx-auto;
+				}
+			}
+
+			// only for portions
+			.imageDiff.portions {
+				@apply relative mx-auto;
+
+				.image2 {
+					@apply overflow-hidden border-r border-r-red-500;
+				}
+
+				img {
+					@apply !w-[unset] max-w-none;
+				}
+			}
+		}
+	}
+}
+
+// The media metadata list, used by the media manager as file details and the detail page of the single file.
+#mediamanager__page .panel.file .panelContent, .media-details .metadata {
+	// dl is the key-value list for the file overview and the file list
+	dl {
+		@apply p-4;
+
+		dt, dd {
+			@apply py-1 text-base font-medium truncate;
+		}
+
+		dt {
+			@apply text-primary;
+		}
+
+		dd {
+			@apply text-secondary;
+		}
+	}
+
+	// first dl is a grid, because the second is the backlink list
+	dl:first-of-type {
+		@apply grid grid-cols-[auto_minmax(0,_1fr)] border-b box-b;
+
+		dd {
+			@apply text-right;
+		}
+	}
+
+	// second dl (backlink list)
+	dl:last-of-type {
+		a {
+			@apply link-primary;
+		}
+	}
+}
+
+// Formatting of the media detail page.
+.media-details {
+	@apply w-full;
+
+	// Detail header
+	.header {
+		@apply box-header;
+
+		.name {
+			@apply text-primary font-medium;
+		}
+	}
+
+	// Image block
+	.image {
+		@apply px-4 py-6 w-full border-x box-b;
+
+		img {
+			@apply mx-auto my-0;
+		}
+	}
+
+	// Metdata block
+	.metadata {
+		@apply border box-b rounded-b;
+
+		// ACL warning
+		p:last-child {
+			@apply text-secondary px-4 pt-0 pb-4 my-0 text-sm;
+		}
+	}
+}
+
+// Styles exlusively for the media manager popup
+.mediamanager-popup {
+	@apply w-full;
+
+	.mediamanager-main {
+		@apply w-full;
+
+		h1 {
+			@apply text-primary mb-6 text-xl font-bold;
+		}
+
+		.mediamanager-aside {
+			@apply p-4 fixed w-1/4 h-full top-0 left-0 overflow-y-auto border-r box-b;
+
+			.media-opts {
+				@apply mb-4 pb-4 border-b box-b;
+
+				input[type="checkbox"] {
+					@apply input-checkbox;
+				}
+
+				label {
+					@apply input-label ml-2;
+				}
+			}
+		}
+
+		// Right-side content
+		.mediamanager-content {
+			@apply p-4 fixed w-3/4 h-full top-0 right-0 overflow-y-auto;
+
+			// Upload text
+			.upload {
+				@apply text-secondary text-sm font-medium;
+			}
+
+			#dw__mediasearch p {
+				@apply flex items-center mt-6 pt-6 mb-6 border-t box-b;
+
+				label {
+					@apply flex items-center flex-grow mr-2;
+
+					span {
+						@apply input-label mr-2;
+					}
+
+					input {
+						@apply input-text flex-grow;
+					}
+				}
+
+				button[type="submit"] {
+					@apply btn-primary;
+				}
+			}
+
+			// Media files
+			#media__content > div[title] {
+				@apply
+					px-2 flex items-center border-t box-b text-sm
+					hover:bg-gray-50 dark:hover:bg-gray-800
+				;
+
+				// border at the bottom
+				&:last-child {
+					@apply border-b;
+				}
+
+				> *:not(.detail) {
+					@apply py-3;
+				}
+
+				.detail {
+					@apply -order-1 py-2 mr-2;
+
+					img {
+						@apply p-1 max-w-[3rem] max-h-[3rem] rounded box-hf-bg;
+					}
+				}
+
+				a.mediafile {
+					@apply
+						mr-2 pl-[1.5rem] font-medium truncate
+						bg-[size:1rem] cursor-pointer decoration-current text-primary
+					;
+				}
+
+				span.info {
+					@apply flex-grow text-secondary truncate;
+				}
+
+				// button icons
+				a[href] {
+					@apply btn-icon p-2 ml-2;
+
+					.img-icon {
+						@apply inline-block w-4 h-4 bg-center;
+
+						&.btn-open {
+							@apply
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%239ca3af')]
+							;
+						}
+
+						&.btn-manager {
+							@apply
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=%239ca3af')]
+							;
+						}
+
+						&.btn-trash {
+							@apply
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=%239ca3af')]
+							;
+						}
+					}
+				}
+
+				.clearer {
+					@apply clear-both h-0 overflow-hidden;
+				}
+			}
+		}
+	}
+}
+
+// Media popup
+#media__manager + div[role="dialog"] {
+	@apply dropdown-container;
+
+	.ui-dialog-titlebar {
+		@apply flex items-center px-4 py-3;
+
+		.ui-dialog-title {
+			@apply text-primary flex-grow font-semibold;
+		}
+
+		// close button
+		.ui-dialog-titlebar-close {
+			@apply
+				block relative w-7 h-7 rounded-lg indent-[-9999px] bg-transparent
+				hover:bg-gray-50 dark:hover:bg-gray-800
+			;
+
+			.ui-button-icon {
+				@apply
+					w-4 h-4 absolute left-1.5 top-1.5 bg-contain
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%239ca3af')]
+				;
+			}
+
+			&:hover .ui-button-icon {
+				@apply
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23111827')]
+					dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23fff')]
+				;
+			}
+		}
+	}
+
+	.ui-draggable-handle {
+		@apply cursor-move;
+	}
+
+	.ui-dialog-content {
+		@apply flex flex-col items-stretch py-4;
+
+		> * {
+			@apply px-4;
+		}
+
+		// selects
+		p[id] {
+			@apply flex items-center;
+
+			&:not(:first-child) {
+				@apply mt-2.5
+			}
+
+			label {
+				@apply input-label flex-grow;
+			}
+
+			button.button {
+				@apply ml-1 p-1 rounded hover:bg-gray-50 dark:hover:bg-gray-800/[0.4];
+
+				&.selected {
+					@apply bg-gray-200 dark:bg-gray-600;
+				}
+			}
+		}
+
+		// button element
+		p:last-child {
+			@apply mt-4 pt-4 border-t border-gray-100 dark:border-gray-600;
+		}
+
+		#media__sendbtn {
+			@apply btn-primary px-2.5 py-1.5 float-right;
+		}
+	}
+}

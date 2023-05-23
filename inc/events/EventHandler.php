@@ -1,6 +1,6 @@
 <?php
 
-@require_once dirname(__FILE__) . '/util.php'; // Include the utility functions
+require_once __DIR__ . '/util.php'; // Include the utility functions
 
 /**
  * Abstract class used to implement all event handlers, that modifies content,

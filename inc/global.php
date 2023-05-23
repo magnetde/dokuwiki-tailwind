@@ -16,4 +16,4 @@ require "$template_dir/inc/events/EventHandlers.php";
 EventHandlers::initialize();
 
 // Load PHP Simple HTML DOM class
-require "$template_dir/inc/simple_html_dom.php";
+require "$template_dir/inc/vendor/simple_html_dom.php";

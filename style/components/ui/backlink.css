@@ -1,4 +1,4 @@
-ul.idx:not(.index__tree *) { // exclude the index tree
+ul.idx:not(.index__tree *):not(#media__tree *) { // exclude the index and media tree
 	@apply list-container;
 
 	li, div.li {

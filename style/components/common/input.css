@@ -1,6 +1,6 @@
 @layer components {
 	.input-label {
-		@apply text-primary block text-sm font-medium;
+		@apply text-primary text-sm font-medium;
 	}
 
 	.input-text {
@@ -14,9 +14,19 @@
 		;
 	}
 
+	.input-text-error {
+		@apply
+			px-3 py-2 rounded-lg border
+			text-red-900 bg-red-50 border-red-500
+			placeholder-red-700 focus:ring-red-500 focus:border-red-500
+			dark:bg-red-100 dark:border-red-400
+		;
+	}
+
 	.input-checkbox {
 		@apply
-			h-4 w-4 rounded border border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500
+			h-4 w-4 rounded border focus:ring-2
+			border-gray-300 bg-gray-100 focus:ring-blue-500
 			dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600
 		;
 	}

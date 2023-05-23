@@ -41,18 +41,20 @@
 // Main content and left sidebar
 .dw-content, .dw-sidebar {
 	// extend the Tailwindcss typography
-	@apply
-		prose-headings:scroll-mt-20
-		prose-pre:rounded-lg
-		prose-ul:my-2 prose-li:my-1
-		prose-table:text-base
-		prose-code:p-0.5
-		prose-code:rounded
-		prose-code:text-blue-800
-		prose-code:bg-blue-50
-		dark:prose-code:text-blue-300
-		dark:prose-code:bg-blue-950
-	;
+	&:where(.prose) {
+		@apply
+			prose-headings:scroll-mt-20
+			prose-pre:rounded-lg
+			prose-ul:my-2 prose-li:my-1
+			prose-table:text-base
+			prose-code:p-0.5
+			prose-code:rounded
+			prose-code:text-blue-800
+			prose-code:bg-blue-50
+			dark:prose-code:text-blue-300
+			dark:prose-code:bg-blue-950
+		;
+	}
 
 	// increase the font weight of h5 headers
 	h5 {
@@ -77,7 +79,7 @@
 
 	// Special links with icons
 	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply bg-no-repeat bg-left bg-contain py-0 pr-0 pl-[1.35rem] ml-0.5;
+		@apply bg-no-repeat bg-left bg-contain py-0 pr-0 pl-[1.4rem] ml-0.5;
 	}
 
 	// Link icons have the forground #6b7280 (same as gray-500) or #9ca3af (same as gray-400) at dark mode.
@@ -185,17 +187,11 @@
 		@apply mt-6 mb-7;
 
 		dt {
-			@apply
-				flex flex-nowrap items-center justify-between space-x-4 w-full pl-4 pr-3 py-3 border
-				border-gray-200 bg-gray-50 rounded-t-lg dark:border-gray-600 dark:bg-gray-700
-			;
+			@apply box-header flex flex-nowrap items-center justify-between space-x-4 pl-4 pr-3 py-3;
 		}
 
 		dd {
-			@apply
-				p-0 bg-white bg-gradient-to-r border-x border-b rounded-b-lg
-				border-gray-200  dark:bg-gray-900 dark:border-gray-600
-			;
+			@apply box-b p-0 bg-gradient-to-r border-x border-b rounded-b-lg;
 
 			pre.code {
 				@apply m-0 rounded-t-none rounded-b-lg;

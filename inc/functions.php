@@ -16,19 +16,48 @@ if(!defined('DOKU_INC'))
 use simple_html_dom\simple_html_dom;
 
 /**
- * Wrapper to return the avatar of an user.
+ * Checks if the string $string has the prefix $prefix.
  */
-function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
-	global $INFO;
+function _tpl_has_prefix($str, $prefix) {
+	return substr($str, 0, strlen($prefix)) == $prefix;
+}
 
-	$email = strtolower(trim($email));
+/**
+ * Removes the prefix $prefix from string $string.
+ * If $string has no prefix $prefix, $string is returned.
+ */
+function _tpl_remove_prefix($str, $prefix) {
+	if(_tpl_has_prefix($str, $prefix))
+		$str = substr($str, strlen($prefix));
 
-	$avatar_url = "https://www.gravatar.com/avatar/";
-	$avatar_url .= md5($email);
-	$avatar_url .= "?s=$size&d=$d&r=$r";
+	return $str;
+}
 
-	$media_link = ml("$avatar_url&.jpg", ['cache' => 'recache', 'w' => $size, 'h' => $size]);
-	return $media_link;
+/**
+ * Prints the DokuWiki meta headers by removing the css.php style sheet.
+ */
+function _tpl_metaheaders() {
+	// Capture the original meta headers
+	ob_start();
+	tpl_metaheaders();
+	$content = ob_get_clean();
+
+	// Parse the html
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	if($html) {
+		// Remove the button and turn it into an icon
+		foreach($html->find('link[rel="stylesheet"]') as $elm)
+			if(_tpl_has_prefix($elm->href, '/lib/exe/css.php'))
+				$elm->outertext = ''; // remove css.php stylesheet
+
+		$content = $html->save();
+		$html->clear();
+	}
+
+	unset($html);
+	echo $content;
 }
 
 /**
@@ -78,6 +107,22 @@ function _tpl_search_input() {
 }
 
 /**
+ * Wrapper to return the avatar of an user.
+ */
+function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
+	global $INFO;
+
+	$email = strtolower(trim($email));
+
+	$avatar_url = "https://www.gravatar.com/avatar/";
+	$avatar_url .= md5($email);
+	$avatar_url .= "?s=$size&d=$d&r=$r";
+
+	$media_link = ml("$avatar_url&.jpg", ['cache' => 'recache', 'w' => $size, 'h' => $size]);
+	return $media_link;
+}
+
+/**
  * Function to create breadcrumbs or the "you are here" list.
  *
  * The breadcrumbs cannot be modified by using events.
@@ -92,11 +137,10 @@ function _tpl_breadcrumbs($youarehere = false) {
 	// Capture the output
 	ob_start();
 
-	if(!$youarehere) {
+	if(!$youarehere)
 		tpl_breadcrumbs($sep = $sep);
-	} else {
+	else
 		tpl_youarehere($sep = $sep);
-	}
 
 	$content = ob_get_clean();
 
@@ -176,10 +220,77 @@ function _tpl_getTOC() {
 	return $content;
 }
 
-function _tpl_remove_prefix($str, $prefix) {
-	if(substr($str, 0, strlen($prefix)) == $prefix) {
-		$str = substr($str, strlen($prefix));
+/**
+ * Prints the media tree with modified collapse icons.
+ */
+function _tpl_mediaTree() {
+	ob_start();
+	tpl_mediaTree();
+	$content = ob_get_clean();
+
+	// TODO: this can be done just by string replacement
+
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	$tree = $html->find('#media__tree', 0);
+	if($tree) {
+		foreach($tree->find('img') as $img) {
+			if($img->src == '/lib/images/plus.gif')
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280';
+			elseif($img->src == '/lib/images/minus.gif')
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280';
+		}
 	}
 
-	return $str;
+	$content = $html->save();
+	$html->clear();
+	unset($html);
+
+	echo $content;
+}
+
+/**
+ * Modifies the media popup content by replacing the file action icons.
+ */
+function _tpl_mediaContent() {
+	ob_start();
+	tpl_mediaContent();
+	$content = ob_get_clean();
+
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	$content = $html->find('#media__content', 0);
+	if($content) {
+		_tpl_replaceIconButton($content, '/lib/images/magnifier.png', 'btn-open');
+		_tpl_replaceIconButton($content, '/lib/images/mediamanager.png', 'btn-manager');
+		_tpl_replaceIconButton($content, '/lib/images/trash.png', 'btn-trash');
+	}
+
+	$content = $html->save();
+	$html->clear();
+	unset($html);
+
+	echo $content;
+}
+
+/**
+ * Replaces all image elements, with the specific source path with div elements with the given class.
+ */
+function _tpl_replaceIconButton($html, $src, $class) {
+	foreach($html->find('img[src="' . $src . '"]') as $img) {
+		$title = $img->title;
+		$div = '<div class="img-icon ' . $class . '"';
+
+		$parent = $img->parent();
+		if($title) {
+			if($parent && $parent->tag == 'a')
+				$parent->title = $title;
+			else
+				$div .= ' title="' . $title . '"';
+		}
+
+		$img->outertext = $div . '></div>';
+	}
 }

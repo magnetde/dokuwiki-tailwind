@@ -77,10 +77,7 @@ form.doku_form.search-results-form {
 	@apply mt-6 w-full;
 
 	.search-header {
-		@apply
-			px-2.5 pt-2.5 flex align-bottom font-medium border rounded-t-md
-			bg-gray-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600
-		;
+		@apply box-header px-2.5 pt-2.5 pb-0 flex align-bottom font-medium;
 	}
 
 	.search-tab {
@@ -91,7 +88,7 @@ form.doku_form.search-results-form {
 		;
 
 		&.active {
-			@apply rounded-t-md text-gray-700 bg-white border-gray-200 dark:text-gray-200 dark:bg-gray-900 dark:border-gray-600;
+			@apply box-b rounded-t-md text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-900;
 		}
 
 		.count {
@@ -107,10 +104,7 @@ form.doku_form.search-results-form {
 	}
 
 	.search_quickresult, .search_fulltextresult {
-		@apply
-			hidden border-x border-b rounded-b-md max-h-[50vh] overflow-x-hidden overflow-y-auto
-			border-gray-200 dark:border-gray-600
-		;
+		@apply box-b hidden border-x border-b rounded-b-md max-h-[50vh] overflow-x-hidden overflow-y-auto;
 
 		&.active {
 			@apply block;
