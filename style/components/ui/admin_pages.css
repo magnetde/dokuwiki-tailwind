@@ -191,3 +191,21 @@
 		@apply btn-secondary;
 	}
 }
+
+// popularity page
+// (using a very specific selectors to not redesign other elements by accident)
+#dw-content > h1 ~ form fieldset {
+	@apply !w-full;
+
+	textarea {
+		@apply !w-full input-text mb-6;
+	}
+
+	label[for] {
+		@apply input-label;
+	}
+
+	button[type="submit"] {
+		@apply btn-primary mt-4 mb-4;
+	}
+}
