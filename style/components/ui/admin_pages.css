@@ -1,0 +1,107 @@
+// Base styles applied for the other pages
+#user__manager {
+	.leftalign {
+		@apply text-left;
+	}
+	.centeralign {
+		@apply text-center;
+	}
+	.rightalign {
+		@apply text-right;
+	}
+
+	.medialeft {
+		@apply float-left;
+	}
+	.mediaright {
+		@apply float-right;
+	}
+	.mediacenter {
+		@apply block mx-auto;
+	}
+
+	div.no {
+		@apply inline m-0 p-0;
+	}
+
+	a {
+		@apply link-primary;
+	}
+
+	input {
+		&[type="text"], &[type="password"], &[type="email"] {
+			@apply input-text;
+		}
+
+		&[type="checkbox"] {
+			@apply input-checkbox;
+		}
+
+		&[type="file"] {
+			@apply input-file;
+		}
+	}
+
+	button {
+		@apply btn-primary;
+	}
+
+	div.table {
+		@apply mb-4 w-full block overflow-x-auto;
+	}
+
+	table {
+		@apply w-full max-w-full text-sm text-left text-primary;
+
+		input {
+			&[type="text"], &[type="password"], &[type="email"] {
+				@apply w-full text-sm;
+			}
+		}
+	}
+
+	thead {
+		@apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+
+		input {
+			&[type="text"], &[type="password"], &[type="email"] {
+				@apply bg-white dark:bg-gray-800;
+			}
+		}
+	}
+
+	tbody tr {
+		@apply border-b;
+	}
+
+	th, td {
+		@apply px-4 py-3;
+	}
+}
+
+// Specific styles
+
+#user__manager {
+	table button {
+		&[name="fn[start]"], &[name="fn[prev]"], &[name="fn[next]"], &[name="fn[last]"] {
+			&:not([disabled]) {
+				@apply btn-secondary;
+			}
+			&[disabled] {
+				@apply btn-secondary-disabled;
+			}
+		}
+	}
+
+	div.import_users form {
+		@apply flex items-center;
+
+		label {
+			@apply flex items-center flex-grow input-label;
+
+			input {
+				@apply mx-2 flex-grow;
+			}
+		}
+	}
+}
