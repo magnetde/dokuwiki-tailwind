@@ -38,7 +38,7 @@
 	.input-select {
 		@apply
 			text-primary
-			py-2.5 pl-2.5 pr-8 text-sm rounded-lg truncate border
+			pl-2.5 pr-8 py-2 text-sm rounded-lg truncate border
 			bg-gray-50 border-gray-300
 			focus:ring-blue-500 focus:border-blue-500
 			dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400

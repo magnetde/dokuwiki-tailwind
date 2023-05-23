@@ -354,12 +354,21 @@
 	.panelContent {
 		@apply flex flex-col;
 
-		// .image if not in table or .image in table row
-		div.image:not(td *), tr.image td {
+		// .image if not in table
+		div.image:not(td *) {
 			@apply px-4 py-6 border-b box-b;
 
 			img {
 				@apply mx-auto;
+			}
+		}
+
+		// image in table
+		tr.image {
+			@apply border-b box-b;
+
+			img {
+				@apply mx-auto my-6
 			}
 		}
 

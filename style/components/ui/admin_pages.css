@@ -1,5 +1,6 @@
 // Base styles applied for the other pages
-#user__manager {
+#user__manager,
+#config__manager {
 	.leftalign {
 		@apply text-left;
 	}
@@ -28,6 +29,10 @@
 		@apply link-primary;
 	}
 
+	label {
+		@apply input-label;
+	}
+
 	input {
 		&[type="text"], &[type="password"], &[type="email"] {
 			@apply input-text;
@@ -42,6 +47,14 @@
 		}
 	}
 
+	textarea {
+		@apply input-text;
+	}
+
+	select {
+		@apply input-select;
+	}
+
 	button {
 		@apply btn-primary;
 	}
@@ -53,15 +66,13 @@
 	table {
 		@apply w-full max-w-full text-sm text-left text-primary;
 
-		input {
-			&[type="text"], &[type="password"], &[type="email"] {
-				@apply w-full text-sm;
-			}
+		input[type="text"], input[type="password"], input[type="email"], select, textarea {
+			@apply w-full text-sm;
 		}
 	}
 
 	thead {
-		@apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+		@apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
 
 		input {
 			&[type="text"], &[type="password"], &[type="email"] {
@@ -70,17 +81,23 @@
 		}
 	}
 
-	tbody tr {
+	// yeah this exists
+	tbody + tbody tr:first-child {
+		@apply border-t border-[--tw-prose-td-borders];
+	}
+
+	tbody tr:not(:last-child) {
 		@apply border-b;
 	}
 
 	th, td {
-		@apply px-4 py-3;
+		@apply px-4 py-3 align-middle;
 	}
 }
 
 // Specific styles
 
+// User manager
 #user__manager {
 	table button {
 		&[name="fn[start]"], &[name="fn[prev]"], &[name="fn[next]"], &[name="fn[last]"] {
@@ -103,5 +120,74 @@
 				@apply mx-2 flex-grow;
 			}
 		}
+	}
+}
+
+// Config manager
+#config__manager {
+	// hide anchor links
+	h1, h2, h3 {
+		@apply mt-8 mb-6;
+
+		a {
+			@apply hidden;
+		}
+	}
+
+	// tables
+	fieldset {
+		@apply mb-6;
+
+		// table header
+		legend {
+			@apply box-header font-medium;
+		}
+
+		div.table {
+			@apply w-full border-x box-b mb-0;
+		}
+
+		table {
+			@apply !table my-0 table-fixed w-full max-w-full;
+		}
+
+		// add a table footer
+		&:after {
+			content: '';
+			@apply box-footer p-0 h-4;
+		}
+	}
+
+	// setting label
+	td.label {
+		@apply w-[60%] text-left;
+
+		.outkey {
+			@apply
+				block -mt-3 -ml-2.5 rounded z-10 relative float-left text-[0.6rem] font-light
+				bg-white dark:bg-gray-800
+			;
+		}
+
+		label {
+			@apply order-1 block clear-left align-middle;
+		}
+
+		img {
+			@apply order-2 block m-0 px-4 py-0 align-middle float-right;
+		}
+	}
+
+	// setting value
+	td.value {
+		@apply w-[40%];
+	}
+
+	button[type="submit"] {
+		@apply mr-2;
+	}
+
+	button[type="reset"] {
+		@apply btn-secondary;
 	}
 }
