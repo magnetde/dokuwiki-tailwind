@@ -11,3 +11,4 @@
 @import "userform.css";
 @import "media.css"; // must come after changes.css and diff.css
 @import "admin.css";
+@import "admin_pages.css";

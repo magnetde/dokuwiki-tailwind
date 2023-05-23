@@ -27,6 +27,14 @@
 		;
 	}
 
+	.btn-secondary-disabled {
+		@apply
+			py-2.5 px-5 font-medium rounded-lg text-sm text-center border cursor-not-allowed
+			text-gray-400 bg-white border-gray-200
+			dark:text-gray-500 dark:bg-gray-800 dark:border-gray-600
+		;
+	}
+
 	.btn-white {
 		@apply
 			py-2.5 px-5 font-medium rounded-lg text-sm items-center border
