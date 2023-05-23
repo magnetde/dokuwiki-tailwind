@@ -639,35 +639,67 @@
 
 			// Media files
 			#media__content > div[title] {
-				@apply p-3 flex items-center flex-nowrap border-t box-b text-base hover:bg-gray-50 dark:hover:bg-gray-800;
+				@apply
+					px-2 flex items-center border-t box-b text-sm
+					hover:bg-gray-50 dark:hover:bg-gray-800
+				;
 
 				// border at the bottom
 				&:last-child {
 					@apply border-b;
 				}
 
+				> *:not(.detail) {
+					@apply py-3;
+				}
+
+				.detail {
+					@apply -order-1 py-2 mr-2;
+
+					img {
+						@apply p-1 max-w-[3rem] max-h-[3rem] rounded box-hf-bg;
+					}
+				}
+
 				a.mediafile {
-					@apply ml-0 mr-2 font-medium bg-[size:1.25rem] cursor-pointer decoration-current text-primary;
+					@apply
+						mr-2 pl-[1.5rem] font-medium truncate
+						bg-[size:1rem] cursor-pointer decoration-current text-primary
+					;
 				}
 
 				span.info {
-					@apply text-secondary truncate;
+					@apply flex-grow text-secondary truncate;
 				}
 
+				// button icons
 				a[href] {
-					@apply ml-2;
-				}
+					@apply btn-icon p-2 ml-2;
 
-				a img {
-					@apply inline;
-				}
+					.img-icon {
+						@apply inline-block w-4 h-4 bg-center;
 
-				a.btn_media_delete {
-					@apply mr-auto;
-				}
+						&.btn-open {
+							@apply
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%239ca3af')]
+							;
+						}
 
-				.detail img {
-					@apply p-1 max-w-[3rem] max-h-[3rem] rounded box-hf-bg;
+						&.btn-manager {
+							@apply
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=%239ca3af')]
+							;
+						}
+
+						&.btn-trash {
+							@apply
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=%239ca3af')]
+							;
+						}
+					}
 				}
 
 				.clearer {
