@@ -37,7 +37,7 @@
 	}
 
 	input {
-		&[type="text"], &[type="password"], &[type="email"] {
+		&[type="text"], &[type="password"], &[type="email"], &[type="date"] {
 			@apply input-text;
 		}
 
@@ -250,6 +250,66 @@
 						@apply block;
 					}
 				}
+			}
+		}
+	}
+
+	// Log viewer
+	&.dw-page-logviewer {
+		form.doku_form {
+			@apply mt-2 -mb-14 float-right;
+
+			label {
+				@apply flex items-center;
+
+				span {
+					@apply mr-2;
+				}
+
+				input {
+					@apply text-sm;
+				}
+			}
+		}
+
+		ul.tabs {
+			@apply m-0 p-0 w-full clear-right tab-container;
+
+			li {
+				@apply m-0 p-0;
+
+				a {
+					@apply tab-inactive no-underline;
+				}
+
+				strong {
+					@apply tab-active;
+				}
+			}
+		}
+
+		// Search
+		#plugin__logviewer > label {
+			@apply flex items-center box-header mt-4;
+
+			input {
+				@apply ml-2 flex-grow input-text bg-white dark:bg-gray-800;
+			}
+		}
+
+		// Log panel
+		dl {
+			@apply
+				p-4 font-mono text-sm leading-7 whitespace-break-spaces overflow-auto
+				text-gray-200 bg-gray-800
+			;
+
+			dt {
+				@apply font-medium space-x-2;
+			}
+
+			dd {
+				@apply mb-4 text-gray-300;
 			}
 		}
 	}
