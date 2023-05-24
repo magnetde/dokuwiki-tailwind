@@ -210,4 +210,28 @@
 			}
 		}
 	}
+
+	&.dw-page-revert {
+		// search form
+		form:first-of-type div.no {
+			@apply flex items-center flex-wrap;
+
+			input[type="text"] {
+				@apply mx-2 flex-grow;
+			}
+
+			span {
+				@apply mt-2 font-medium text-sm text-secondary basis-full;
+			}
+		}
+
+		hr {
+			@apply mt-0 mb-4;
+		}
+
+		// page revert form
+		form:not(:first-of-type) div.no {
+
+		}
+	}
 }
