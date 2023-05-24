@@ -9881,39 +9881,39 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* Base styles applied for the other pages*/
 
-.dw-action-admin .leftalign {
+.dw-action-admin .leftalign, .dw-action-plugin .leftalign {
   text-align: left;
 }
 
-.dw-action-admin .centeralign {
+.dw-action-admin .centeralign, .dw-action-plugin .centeralign {
   text-align: center;
 }
 
-.dw-action-admin .rightalign {
+.dw-action-admin .rightalign, .dw-action-plugin .rightalign {
   text-align: right;
 }
 
-.dw-action-admin .medialeft {
+.dw-action-admin .medialeft, .dw-action-plugin .medialeft {
   float: left;
 }
 
-.dw-action-admin .mediaright {
+.dw-action-admin .mediaright, .dw-action-plugin .mediaright {
   float: right;
 }
 
-.dw-action-admin .mediacenter {
+.dw-action-admin .mediacenter, .dw-action-plugin .mediacenter {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-.dw-action-admin div.no {
+.dw-action-admin div.no, .dw-action-plugin div.no {
   margin: 0px;
   display: inline;
   padding: 0px;
 }
 
-.dw-action-admin a {
+.dw-action-admin a, .dw-action-plugin a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
@@ -9921,48 +9921,53 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-decoration-color: currentColor;
 }
 
-.dw-action-admin a:hover {
+.dw-action-admin a:hover, .dw-action-plugin a:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin a {
+  .dw-action-admin a, .dw-action-plugin a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-.dw-action-admin label {
+.dw-action-admin a > img, .dw-action-plugin a > img {
+  margin: 0px;
+  display: inline;
+}
+
+.dw-action-admin label, .dw-action-plugin label {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin label {
+  .dw-action-admin label, .dw-action-plugin label {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-.dw-action-admin label {
+.dw-action-admin label, .dw-action-plugin label {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
 
-.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
+.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"], .dw-action-plugin input[type="text"], .dw-action-plugin input[type="password"], .dw-action-plugin input[type="email"] {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
+  .dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"], .dw-action-plugin input[type="text"], .dw-action-plugin input[type="password"], .dw-action-plugin input[type="email"] {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
+.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"], .dw-action-plugin input[type="text"], .dw-action-plugin input[type="password"], .dw-action-plugin input[type="email"] {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -9975,7 +9980,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-.dw-action-admin input[type="text"]:focus, .dw-action-admin input[type="password"]:focus, .dw-action-admin input[type="email"]:focus {
+.dw-action-admin input[type="text"]:focus, .dw-action-admin input[type="password"]:focus, .dw-action-admin input[type="email"]:focus, .dw-action-plugin input[type="text"]:focus, .dw-action-plugin input[type="password"]:focus, .dw-action-plugin input[type="email"]:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -9983,24 +9988,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
+  .dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"], .dw-action-plugin input[type="text"], .dw-action-plugin input[type="password"], .dw-action-plugin input[type="email"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin input[type="text"]::-moz-placeholder, .dw-action-admin input[type="password"]::-moz-placeholder, .dw-action-admin input[type="email"]::-moz-placeholder {
+  .dw-action-admin input[type="text"]::-moz-placeholder, .dw-action-admin input[type="password"]::-moz-placeholder, .dw-action-admin input[type="email"]::-moz-placeholder, .dw-action-plugin input[type="text"]::-moz-placeholder, .dw-action-plugin input[type="password"]::-moz-placeholder, .dw-action-plugin input[type="email"]::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin input[type="text"]::placeholder, .dw-action-admin input[type="password"]::placeholder, .dw-action-admin input[type="email"]::placeholder {
+  .dw-action-admin input[type="text"]::placeholder, .dw-action-admin input[type="password"]::placeholder, .dw-action-admin input[type="email"]::placeholder, .dw-action-plugin input[type="text"]::placeholder, .dw-action-plugin input[type="password"]::placeholder, .dw-action-plugin input[type="email"]::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin input[type="text"]:focus, .dw-action-admin input[type="password"]:focus, .dw-action-admin input[type="email"]:focus {
+  .dw-action-admin input[type="text"]:focus, .dw-action-admin input[type="password"]:focus, .dw-action-admin input[type="email"]:focus, .dw-action-plugin input[type="text"]:focus, .dw-action-plugin input[type="password"]:focus, .dw-action-plugin input[type="email"]:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -10008,7 +10013,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-.dw-action-admin input[type="checkbox"] {
+.dw-action-admin input[type="checkbox"], .dw-action-plugin input[type="checkbox"] {
   height: 1rem;
   width: 1rem;
   border-radius: 0.25rem;
@@ -10021,7 +10026,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
-.dw-action-admin input[type="checkbox"]:focus {
+.dw-action-admin input[type="checkbox"]:focus, .dw-action-plugin input[type="checkbox"]:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -10030,7 +10035,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin input[type="checkbox"] {
+  .dw-action-admin input[type="checkbox"], .dw-action-plugin input[type="checkbox"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10038,18 +10043,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     --tw-ring-offset-color: #1F2937;
   }
 
-  .dw-action-admin input[type="checkbox"]:focus {
+  .dw-action-admin input[type="checkbox"]:focus, .dw-action-plugin input[type="checkbox"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
   }
 }
 
-.dw-action-admin input[type="checkbox"]:checked {
+.dw-action-admin input[type="checkbox"]:checked, .dw-action-plugin input[type="checkbox"]:checked {
   border-color: transparent;
   background-color: currentColor;
 }
 
-.dw-action-admin input[type="file"] {
+.dw-action-admin input[type="file"], .dw-action-plugin input[type="file"] {
   cursor: pointer;
   border-radius: 0.5rem;
   border-width: 1px;
@@ -10063,13 +10068,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.dw-action-admin input[type="file"]:focus {
+.dw-action-admin input[type="file"]:focus, .dw-action-plugin input[type="file"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin input[type="file"] {
+  .dw-action-admin input[type="file"], .dw-action-plugin input[type="file"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10078,18 +10083,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  .dw-action-admin input[type="file"]::-moz-placeholder {
+  .dw-action-admin input[type="file"]::-moz-placeholder, .dw-action-plugin input[type="file"]::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin input[type="file"]::placeholder {
+  .dw-action-admin input[type="file"]::placeholder, .dw-action-plugin input[type="file"]::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 }
 
-.dw-action-admin input[type="file"] input[type="button"] {
+.dw-action-admin input[type="file"] input[type="button"], .dw-action-plugin input[type="file"] input[type="button"] {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10105,12 +10110,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.dw-action-admin input[type="file"] input[type="button"]:hover {
+.dw-action-admin input[type="file"] input[type="button"]:hover, .dw-action-plugin input[type="file"] input[type="button"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-.dw-action-admin input[type="file"] input[type="button"]:focus {
+.dw-action-admin input[type="file"] input[type="button"]:focus, .dw-action-plugin input[type="file"] input[type="button"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10121,35 +10126,35 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin input[type="file"] input[type="button"] {
+  .dw-action-admin input[type="file"] input[type="button"], .dw-action-plugin input[type="file"] input[type="button"] {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin input[type="file"] input[type="button"]:hover {
+  .dw-action-admin input[type="file"] input[type="button"]:hover, .dw-action-plugin input[type="file"] input[type="button"]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin input[type="file"] input[type="button"]:focus {
+  .dw-action-admin input[type="file"] input[type="button"]:focus, .dw-action-plugin input[type="file"] input[type="button"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-.dw-action-admin textarea {
+.dw-action-admin textarea, .dw-action-plugin textarea {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin textarea {
+  .dw-action-admin textarea, .dw-action-plugin textarea {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-.dw-action-admin textarea {
+.dw-action-admin textarea, .dw-action-plugin textarea {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -10162,7 +10167,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-.dw-action-admin textarea:focus {
+.dw-action-admin textarea:focus, .dw-action-plugin textarea:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -10170,24 +10175,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin textarea {
+  .dw-action-admin textarea, .dw-action-plugin textarea {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin textarea::-moz-placeholder {
+  .dw-action-admin textarea::-moz-placeholder, .dw-action-plugin textarea::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin textarea::placeholder {
+  .dw-action-admin textarea::placeholder, .dw-action-plugin textarea::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin textarea:focus {
+  .dw-action-admin textarea:focus, .dw-action-plugin textarea:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -10195,19 +10200,19 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-.dw-action-admin select {
+.dw-action-admin select, .dw-action-plugin select {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin select {
+  .dw-action-admin select, .dw-action-plugin select {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-.dw-action-admin select {
+.dw-action-admin select, .dw-action-plugin select {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -10225,7 +10230,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-.dw-action-admin select:focus {
+.dw-action-admin select:focus, .dw-action-plugin select:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -10233,24 +10238,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin select {
+  .dw-action-admin select, .dw-action-plugin select {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin select::-moz-placeholder {
+  .dw-action-admin select::-moz-placeholder, .dw-action-plugin select::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin select::placeholder {
+  .dw-action-admin select::placeholder, .dw-action-plugin select::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  .dw-action-admin select:focus {
+  .dw-action-admin select:focus, .dw-action-plugin select:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -10258,7 +10263,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-.dw-action-admin button {
+.dw-action-admin button, .dw-action-plugin button {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10274,12 +10279,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.dw-action-admin button:hover {
+.dw-action-admin button:hover, .dw-action-plugin button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-.dw-action-admin button:focus {
+.dw-action-admin button:focus, .dw-action-plugin button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10290,42 +10295,42 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin button {
+  .dw-action-admin button, .dw-action-plugin button {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin button:hover {
+  .dw-action-admin button:hover, .dw-action-plugin button:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  .dw-action-admin button:focus {
+  .dw-action-admin button:focus, .dw-action-plugin button:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-.dw-action-admin div.table {
+.dw-action-admin div.table, .dw-action-plugin div.table {
   margin-bottom: 1rem;
   display: block;
   width: 100%;
   overflow-x: auto;
 }
 
-.dw-action-admin table {
+.dw-action-admin table, .dw-action-plugin table {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin table {
+  .dw-action-admin table, .dw-action-plugin table {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-.dw-action-admin table {
+.dw-action-admin table, .dw-action-plugin table {
   width: 100%;
   max-width: 100%;
   text-align: left;
@@ -10333,13 +10338,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-.dw-action-admin table input[type="text"], .dw-action-admin table input[type="password"], .dw-action-admin table input[type="email"], .dw-action-admin table select, .dw-action-admin table textarea {
+.dw-action-admin table input[type="text"], .dw-action-admin table input[type="password"], .dw-action-admin table input[type="email"], .dw-action-admin table select, .dw-action-admin table textarea, .dw-action-plugin table input[type="text"], .dw-action-plugin table input[type="password"], .dw-action-plugin table input[type="email"], .dw-action-plugin table select, .dw-action-plugin table textarea {
   width: 100%;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.dw-action-admin thead {
+.dw-action-admin thead, .dw-action-plugin thead {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   font-size: 0.75rem;
@@ -10350,7 +10355,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin thead {
+  .dw-action-admin thead, .dw-action-plugin thead {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
@@ -10358,13 +10363,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-.dw-action-admin thead input[type="text"], .dw-action-admin thead input[type="password"], .dw-action-admin thead input[type="email"] {
+.dw-action-admin thead input[type="text"], .dw-action-admin thead input[type="password"], .dw-action-admin thead input[type="email"], .dw-action-plugin thead input[type="text"], .dw-action-plugin thead input[type="password"], .dw-action-plugin thead input[type="email"] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .dw-action-admin thead input[type="text"], .dw-action-admin thead input[type="password"], .dw-action-admin thead input[type="email"] {
+  .dw-action-admin thead input[type="text"], .dw-action-admin thead input[type="password"], .dw-action-admin thead input[type="email"], .dw-action-plugin thead input[type="text"], .dw-action-plugin thead input[type="password"], .dw-action-plugin thead input[type="email"] {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
@@ -10372,16 +10377,16 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* yeah this exists*/
 
-.dw-action-admin tbody + tbody tr:first-child {
+.dw-action-admin tbody + tbody tr:first-child, .dw-action-plugin tbody + tbody tr:first-child {
   border-top-width: 1px;
   border-color: var(--tw-prose-td-borders);
 }
 
-.dw-action-admin tbody tr:not(:last-child) {
+.dw-action-admin tbody tr:not(:last-child), .dw-action-plugin tbody tr:not(:last-child) {
   border-bottom-width: 1px;
 }
 
-.dw-action-admin th, .dw-action-admin td {
+.dw-action-admin th, .dw-action-admin td, .dw-action-plugin th, .dw-action-plugin td {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.75rem;
@@ -10897,6 +10902,77 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 .dw-action-admin.dw-page-popularity form fieldset button[type="submit"] {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+/* Revert page*/
+
+/* search form*/
+
+.dw-action-admin.dw-page-revert form:first-of-type div.no {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dw-action-admin.dw-page-revert form:first-of-type div.no input[type="text"] {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  flex-grow: 1;
+}
+
+.dw-action-admin.dw-page-revert form:first-of-type div.no span {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin.dw-page-revert form:first-of-type div.no span {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+.dw-action-admin.dw-page-revert form:first-of-type div.no span {
+  margin-top: 0.5rem;
+  flex-basis: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.dw-action-admin.dw-page-revert hr {
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
+
+/* page revert form*/
+
+.dw-action-admin.dw-page-revert form:not(:first-of-type) div.no > ul label {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.dw-action-admin.dw-page-revert form:not(:first-of-type) div.no > ul + p {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin.dw-page-revert form:not(:first-of-type) div.no > ul + p {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+.dw-action-admin.dw-page-revert form:not(:first-of-type) div.no > ul + p {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.dw-action-admin.dw-page-revert form:not(:first-of-type) div.no > ul + p button {
+  display: block;
 }
 
 .sr-only {

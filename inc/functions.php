@@ -44,13 +44,14 @@ function _tpl_page_classes() {
 
 	$class = '';
 
-	if($ACT == 'admin' || _tpl_has_prefix($ACT, 'plugin_')) {
+	if($ACT == 'admin') {
 		$class .= 'dw-action-' . $ACT;
 
 		$page = $INPUT->str('page');
 		if($page)
 			$class .= ' dw-page-' . $page;
-	}
+	} elseif(_tpl_has_prefix($ACT, 'plugin_'))
+		$class .= 'dw-action-plugin ' . _tpl_remove_prefix($ACT, 'plugin_');
 
 	return $class;
 }

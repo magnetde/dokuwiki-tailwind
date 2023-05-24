@@ -1,5 +1,5 @@
 // Base styles applied for the other pages
-.dw-action-admin {
+.dw-action-admin, .dw-action-plugin {
 	.leftalign {
 		@apply text-left;
 	}
@@ -26,6 +26,10 @@
 
 	a {
 		@apply link-primary;
+
+		> img {
+			@apply m-0 inline;
+		}
 	}
 
 	label {
@@ -92,8 +96,10 @@
 	th, td {
 		@apply px-4 py-3 align-middle;
 	}
+}
 
-	// Specific styles
+// Specific styles
+.dw-action-admin {
 
 	// User manager
 	&.dw-page-usermanager {
@@ -211,6 +217,7 @@
 		}
 	}
 
+	// Revert page
 	&.dw-page-revert {
 		// search form
 		form:first-of-type div.no {
@@ -231,7 +238,19 @@
 
 		// page revert form
 		form:not(:first-of-type) div.no {
+			> ul {
+				label {
+					@apply text-base;
+				}
 
+				+ p {
+					@apply mt-3 font-medium text-sm text-secondary;
+
+					button {
+						@apply block;
+					}
+				}
+			}
 		}
 	}
 }
