@@ -269,12 +269,15 @@ footer .license a {
 	@apply inline-block underline;
 }
 
-// Success box at the top of the page
-.success {
-	@apply mt-6 mb-8 p-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400;
+// Success / error box at the top of the page
+.success, .error {
+	@apply mx-4 md:mx-6 lg:mx-8 mt-6 mb-8 p-4 text-sm rounded-lg;
 }
 
-// Error box at the top of the page
+.success {
+	@apply text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400;
+}
+
 .error {
-	@apply mt-6 mb-8 p-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400;
+	@apply text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400;
 }

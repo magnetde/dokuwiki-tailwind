@@ -46,7 +46,10 @@
 		</div>
 
 		<!--- Content --->
-		<article id="dw-content" class="dw-content w-full max-w-none mt-16 prose dark:prose-invert">
+		<article id="dw-content" class="<?php echo clsx(
+			"dw-content w-full max-w-none mt-16 prose dark:prose-invert",
+			_tpl_page_classes(),
+		) ?>">
 
 			<?php echo $content ?>
 
