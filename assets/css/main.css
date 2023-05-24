@@ -2963,17 +2963,36 @@ footer .license a {
   text-decoration-line: underline;
 }
 
-/* Success box at the top of the page*/
+/* Success / error box at the top of the page*/
 
-.success {
+.success, .error {
+  margin-left: 1rem;
+  margin-right: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 250 247 / var(--tw-bg-opacity));
   padding: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .success, .error {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .success, .error {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.success {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 250 247 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(3 84 63 / var(--tw-text-opacity));
 }
@@ -2987,17 +3006,9 @@ footer .license a {
   }
 }
 
-/* Error box at the top of the page*/
-
 .error {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(253 242 242 / var(--tw-bg-opacity));
-  padding: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(155 28 28 / var(--tw-text-opacity));
 }
@@ -9870,39 +9881,39 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* Base styles applied for the other pages*/
 
-#user__manager .leftalign, #config__manager .leftalign {
+.dw-action-admin .leftalign {
   text-align: left;
 }
 
-#user__manager .centeralign, #config__manager .centeralign {
+.dw-action-admin .centeralign {
   text-align: center;
 }
 
-#user__manager .rightalign, #config__manager .rightalign {
+.dw-action-admin .rightalign {
   text-align: right;
 }
 
-#user__manager .medialeft, #config__manager .medialeft {
+.dw-action-admin .medialeft {
   float: left;
 }
 
-#user__manager .mediaright, #config__manager .mediaright {
+.dw-action-admin .mediaright {
   float: right;
 }
 
-#user__manager .mediacenter, #config__manager .mediacenter {
+.dw-action-admin .mediacenter {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-#user__manager div.no, #config__manager div.no {
+.dw-action-admin div.no {
   margin: 0px;
   display: inline;
   padding: 0px;
 }
 
-#user__manager a, #config__manager a {
+.dw-action-admin a {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
@@ -9910,48 +9921,48 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   text-decoration-color: currentColor;
 }
 
-#user__manager a:hover, #config__manager a:hover {
+.dw-action-admin a:hover {
   text-decoration-line: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager a, #config__manager a {
+  .dw-action-admin a {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
   }
 }
 
-#user__manager label, #config__manager label {
+.dw-action-admin label {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager label, #config__manager label {
+  .dw-action-admin label {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager label, #config__manager label {
+.dw-action-admin label {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
 
-#user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
+.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
+  .dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
+.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -9964,7 +9975,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#user__manager input[type="text"]:focus, #user__manager input[type="password"]:focus, #user__manager input[type="email"]:focus, #config__manager input[type="text"]:focus, #config__manager input[type="password"]:focus, #config__manager input[type="email"]:focus {
+.dw-action-admin input[type="text"]:focus, .dw-action-admin input[type="password"]:focus, .dw-action-admin input[type="email"]:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -9972,24 +9983,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="text"], #user__manager input[type="password"], #user__manager input[type="email"], #config__manager input[type="text"], #config__manager input[type="password"], #config__manager input[type="email"] {
+  .dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #user__manager input[type="text"]::-moz-placeholder, #user__manager input[type="password"]::-moz-placeholder, #user__manager input[type="email"]::-moz-placeholder, #config__manager input[type="text"]::-moz-placeholder, #config__manager input[type="password"]::-moz-placeholder, #config__manager input[type="email"]::-moz-placeholder {
+  .dw-action-admin input[type="text"]::-moz-placeholder, .dw-action-admin input[type="password"]::-moz-placeholder, .dw-action-admin input[type="email"]::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager input[type="text"]::placeholder, #user__manager input[type="password"]::placeholder, #user__manager input[type="email"]::placeholder, #config__manager input[type="text"]::placeholder, #config__manager input[type="password"]::placeholder, #config__manager input[type="email"]::placeholder {
+  .dw-action-admin input[type="text"]::placeholder, .dw-action-admin input[type="password"]::placeholder, .dw-action-admin input[type="email"]::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager input[type="text"]:focus, #user__manager input[type="password"]:focus, #user__manager input[type="email"]:focus, #config__manager input[type="text"]:focus, #config__manager input[type="password"]:focus, #config__manager input[type="email"]:focus {
+  .dw-action-admin input[type="text"]:focus, .dw-action-admin input[type="password"]:focus, .dw-action-admin input[type="email"]:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -9997,7 +10008,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager input[type="checkbox"], #config__manager input[type="checkbox"] {
+.dw-action-admin input[type="checkbox"] {
   height: 1rem;
   width: 1rem;
   border-radius: 0.25rem;
@@ -10010,7 +10021,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
-#user__manager input[type="checkbox"]:focus, #config__manager input[type="checkbox"]:focus {
+.dw-action-admin input[type="checkbox"]:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -10019,7 +10030,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="checkbox"], #config__manager input[type="checkbox"] {
+  .dw-action-admin input[type="checkbox"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10027,18 +10038,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     --tw-ring-offset-color: #1F2937;
   }
 
-  #user__manager input[type="checkbox"]:focus, #config__manager input[type="checkbox"]:focus {
+  .dw-action-admin input[type="checkbox"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager input[type="checkbox"]:checked, #config__manager input[type="checkbox"]:checked {
+.dw-action-admin input[type="checkbox"]:checked {
   border-color: transparent;
   background-color: currentColor;
 }
 
-#user__manager input[type="file"], #config__manager input[type="file"] {
+.dw-action-admin input[type="file"] {
   cursor: pointer;
   border-radius: 0.5rem;
   border-width: 1px;
@@ -10052,13 +10063,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-#user__manager input[type="file"]:focus, #config__manager input[type="file"]:focus {
+.dw-action-admin input[type="file"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="file"], #config__manager input[type="file"] {
+  .dw-action-admin input[type="file"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10067,18 +10078,18 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #user__manager input[type="file"]::-moz-placeholder, #config__manager input[type="file"]::-moz-placeholder {
+  .dw-action-admin input[type="file"]::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager input[type="file"]::placeholder, #config__manager input[type="file"]::placeholder {
+  .dw-action-admin input[type="file"]::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 }
 
-#user__manager input[type="file"] input[type="button"], #config__manager input[type="file"] input[type="button"] {
+.dw-action-admin input[type="file"] input[type="button"] {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10094,12 +10105,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#user__manager input[type="file"] input[type="button"]:hover, #config__manager input[type="file"] input[type="button"]:hover {
+.dw-action-admin input[type="file"] input[type="button"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#user__manager input[type="file"] input[type="button"]:focus, #config__manager input[type="file"] input[type="button"]:focus {
+.dw-action-admin input[type="file"] input[type="button"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10110,35 +10121,35 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager input[type="file"] input[type="button"], #config__manager input[type="file"] input[type="button"] {
+  .dw-action-admin input[type="file"] input[type="button"] {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #user__manager input[type="file"] input[type="button"]:hover, #config__manager input[type="file"] input[type="button"]:hover {
+  .dw-action-admin input[type="file"] input[type="button"]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #user__manager input[type="file"] input[type="button"]:focus, #config__manager input[type="file"] input[type="button"]:focus {
+  .dw-action-admin input[type="file"] input[type="button"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager textarea, #config__manager textarea {
+.dw-action-admin textarea {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager textarea, #config__manager textarea {
+  .dw-action-admin textarea {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager textarea, #config__manager textarea {
+.dw-action-admin textarea {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -10151,7 +10162,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#user__manager textarea:focus, #config__manager textarea:focus {
+.dw-action-admin textarea:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -10159,24 +10170,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager textarea, #config__manager textarea {
+  .dw-action-admin textarea {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #user__manager textarea::-moz-placeholder, #config__manager textarea::-moz-placeholder {
+  .dw-action-admin textarea::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager textarea::placeholder, #config__manager textarea::placeholder {
+  .dw-action-admin textarea::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager textarea:focus, #config__manager textarea:focus {
+  .dw-action-admin textarea:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -10184,19 +10195,19 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager select, #config__manager select {
+.dw-action-admin select {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager select, #config__manager select {
+  .dw-action-admin select {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager select, #config__manager select {
+.dw-action-admin select {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -10214,7 +10225,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-#user__manager select:focus, #config__manager select:focus {
+.dw-action-admin select:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -10222,24 +10233,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager select, #config__manager select {
+  .dw-action-admin select {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #user__manager select::-moz-placeholder, #config__manager select::-moz-placeholder {
+  .dw-action-admin select::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager select::placeholder, #config__manager select::placeholder {
+  .dw-action-admin select::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #user__manager select:focus, #config__manager select:focus {
+  .dw-action-admin select:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -10247,7 +10258,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager button, #config__manager button {
+.dw-action-admin button {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10263,12 +10274,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#user__manager button:hover, #config__manager button:hover {
+.dw-action-admin button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#user__manager button:focus, #config__manager button:focus {
+.dw-action-admin button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10279,42 +10290,42 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager button, #config__manager button {
+  .dw-action-admin button {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #user__manager button:hover, #config__manager button:hover {
+  .dw-action-admin button:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #user__manager button:focus, #config__manager button:focus {
+  .dw-action-admin button:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager div.table, #config__manager div.table {
+.dw-action-admin div.table {
   margin-bottom: 1rem;
   display: block;
   width: 100%;
   overflow-x: auto;
 }
 
-#user__manager table, #config__manager table {
+.dw-action-admin table {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager table, #config__manager table {
+  .dw-action-admin table {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager table, #config__manager table {
+.dw-action-admin table {
   width: 100%;
   max-width: 100%;
   text-align: left;
@@ -10322,13 +10333,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   line-height: 1.25rem;
 }
 
-#user__manager table input[type="text"], #user__manager table input[type="password"], #user__manager table input[type="email"], #user__manager table select, #user__manager table textarea, #config__manager table input[type="text"], #config__manager table input[type="password"], #config__manager table input[type="email"], #config__manager table select, #config__manager table textarea {
+.dw-action-admin table input[type="text"], .dw-action-admin table input[type="password"], .dw-action-admin table input[type="email"], .dw-action-admin table select, .dw-action-admin table textarea {
   width: 100%;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-#user__manager thead, #config__manager thead {
+.dw-action-admin thead {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   font-size: 0.75rem;
@@ -10339,7 +10350,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager thead, #config__manager thead {
+  .dw-action-admin thead {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
@@ -10347,13 +10358,13 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager thead input[type="text"], #user__manager thead input[type="password"], #user__manager thead input[type="email"], #config__manager thead input[type="text"], #config__manager thead input[type="password"], #config__manager thead input[type="email"] {
+.dw-action-admin thead input[type="text"], .dw-action-admin thead input[type="password"], .dw-action-admin thead input[type="email"] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager thead input[type="text"], #user__manager thead input[type="password"], #user__manager thead input[type="email"], #config__manager thead input[type="text"], #config__manager thead input[type="password"], #config__manager thead input[type="email"] {
+  .dw-action-admin thead input[type="text"], .dw-action-admin thead input[type="password"], .dw-action-admin thead input[type="email"] {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
@@ -10361,16 +10372,16 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* yeah this exists*/
 
-#user__manager tbody + tbody tr:first-child, #config__manager tbody + tbody tr:first-child {
+.dw-action-admin tbody + tbody tr:first-child {
   border-top-width: 1px;
   border-color: var(--tw-prose-td-borders);
 }
 
-#user__manager tbody tr:not(:last-child), #config__manager tbody tr:not(:last-child) {
+.dw-action-admin tbody tr:not(:last-child) {
   border-bottom-width: 1px;
 }
 
-#user__manager th, #user__manager td, #config__manager th, #config__manager td {
+.dw-action-admin th, .dw-action-admin td {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.75rem;
@@ -10382,7 +10393,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* User manager*/
 
-#user__manager table button[name="fn[start]"]:not([disabled]), #user__manager table button[name="fn[prev]"]:not([disabled]), #user__manager table button[name="fn[next]"]:not([disabled]), #user__manager table button[name="fn[last]"]:not([disabled]) {
+.dw-action-admin.dw-page-usermanager table button[name="fn[start]"]:not([disabled]), .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"]:not([disabled]), .dw-action-admin.dw-page-usermanager table button[name="fn[next]"]:not([disabled]), .dw-action-admin.dw-page-usermanager table button[name="fn[last]"]:not([disabled]) {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -10401,14 +10412,14 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-#user__manager table button[name="fn[start]"]:not([disabled]):hover, #user__manager table button[name="fn[prev]"]:not([disabled]):hover, #user__manager table button[name="fn[next]"]:not([disabled]):hover, #user__manager table button[name="fn[last]"]:not([disabled]):hover {
+.dw-action-admin.dw-page-usermanager table button[name="fn[start]"]:not([disabled]):hover, .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"]:not([disabled]):hover, .dw-action-admin.dw-page-usermanager table button[name="fn[next]"]:not([disabled]):hover, .dw-action-admin.dw-page-usermanager table button[name="fn[last]"]:not([disabled]):hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
-#user__manager table button[name="fn[start]"]:not([disabled]):focus, #user__manager table button[name="fn[prev]"]:not([disabled]):focus, #user__manager table button[name="fn[next]"]:not([disabled]):focus, #user__manager table button[name="fn[last]"]:not([disabled]):focus {
+.dw-action-admin.dw-page-usermanager table button[name="fn[start]"]:not([disabled]):focus, .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"]:not([disabled]):focus, .dw-action-admin.dw-page-usermanager table button[name="fn[next]"]:not([disabled]):focus, .dw-action-admin.dw-page-usermanager table button[name="fn[last]"]:not([disabled]):focus {
   z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -10420,7 +10431,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager table button[name="fn[start]"]:not([disabled]), #user__manager table button[name="fn[prev]"]:not([disabled]), #user__manager table button[name="fn[next]"]:not([disabled]), #user__manager table button[name="fn[last]"]:not([disabled]) {
+  .dw-action-admin.dw-page-usermanager table button[name="fn[start]"]:not([disabled]), .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"]:not([disabled]), .dw-action-admin.dw-page-usermanager table button[name="fn[next]"]:not([disabled]), .dw-action-admin.dw-page-usermanager table button[name="fn[last]"]:not([disabled]) {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10429,20 +10440,20 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #user__manager table button[name="fn[start]"]:not([disabled]):hover, #user__manager table button[name="fn[prev]"]:not([disabled]):hover, #user__manager table button[name="fn[next]"]:not([disabled]):hover, #user__manager table button[name="fn[last]"]:not([disabled]):hover {
+  .dw-action-admin.dw-page-usermanager table button[name="fn[start]"]:not([disabled]):hover, .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"]:not([disabled]):hover, .dw-action-admin.dw-page-usermanager table button[name="fn[next]"]:not([disabled]):hover, .dw-action-admin.dw-page-usermanager table button[name="fn[last]"]:not([disabled]):hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  #user__manager table button[name="fn[start]"]:not([disabled]):focus, #user__manager table button[name="fn[prev]"]:not([disabled]):focus, #user__manager table button[name="fn[next]"]:not([disabled]):focus, #user__manager table button[name="fn[last]"]:not([disabled]):focus {
+  .dw-action-admin.dw-page-usermanager table button[name="fn[start]"]:not([disabled]):focus, .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"]:not([disabled]):focus, .dw-action-admin.dw-page-usermanager table button[name="fn[next]"]:not([disabled]):focus, .dw-action-admin.dw-page-usermanager table button[name="fn[last]"]:not([disabled]):focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
 }
 
-#user__manager table button[name="fn[start]"][disabled], #user__manager table button[name="fn[prev]"][disabled], #user__manager table button[name="fn[next]"][disabled], #user__manager table button[name="fn[last]"][disabled] {
+.dw-action-admin.dw-page-usermanager table button[name="fn[start]"][disabled], .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"][disabled], .dw-action-admin.dw-page-usermanager table button[name="fn[next]"][disabled], .dw-action-admin.dw-page-usermanager table button[name="fn[last]"][disabled] {
   cursor: not-allowed;
   border-radius: 0.5rem;
   border-width: 1px;
@@ -10463,7 +10474,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager table button[name="fn[start]"][disabled], #user__manager table button[name="fn[prev]"][disabled], #user__manager table button[name="fn[next]"][disabled], #user__manager table button[name="fn[last]"][disabled] {
+  .dw-action-admin.dw-page-usermanager table button[name="fn[start]"][disabled], .dw-action-admin.dw-page-usermanager table button[name="fn[prev]"][disabled], .dw-action-admin.dw-page-usermanager table button[name="fn[next]"][disabled], .dw-action-admin.dw-page-usermanager table button[name="fn[last]"][disabled] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10473,24 +10484,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#user__manager div.import_users form {
+.dw-action-admin.dw-page-usermanager div.import_users form {
   display: flex;
   align-items: center;
 }
 
-#user__manager div.import_users form label {
+.dw-action-admin.dw-page-usermanager div.import_users form label {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #user__manager div.import_users form label {
+  .dw-action-admin.dw-page-usermanager div.import_users form label {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#user__manager div.import_users form label {
+.dw-action-admin.dw-page-usermanager div.import_users form label {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -10499,7 +10510,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   align-items: center;
 }
 
-#user__manager div.import_users form label input {
+.dw-action-admin.dw-page-usermanager div.import_users form label input {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   flex-grow: 1;
@@ -10509,48 +10520,49 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* hide anchor links*/
 
-#config__manager h1, #config__manager h2, #config__manager h3 {
+.dw-action-admin.dw-page-config h1, .dw-action-admin.dw-page-config h2, .dw-action-admin.dw-page-config h3 {
   margin-top: 2rem;
   margin-bottom: 1.5rem;
 }
 
-#config__manager h1 a, #config__manager h2 a, #config__manager h3 a {
+.dw-action-admin.dw-page-config h1 a, .dw-action-admin.dw-page-config h2 a, .dw-action-admin.dw-page-config h3 a {
   display: none;
 }
 
 /* tables*/
 
-#config__manager fieldset {
+.dw-action-admin.dw-page-config fieldset {
   margin-bottom: 1.5rem;
+  scroll-margin-top: 5rem;
 }
 
 /* table header*/
 
-#config__manager fieldset legend {
+.dw-action-admin.dw-page-config fieldset legend {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager fieldset legend {
+  .dw-action-admin.dw-page-config fieldset legend {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#config__manager fieldset legend {
+.dw-action-admin.dw-page-config fieldset legend {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager fieldset legend {
+  .dw-action-admin.dw-page-config fieldset legend {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 
-#config__manager fieldset legend {
+.dw-action-admin.dw-page-config fieldset legend {
   display: block;
   width: 100%;
   border-top-left-radius: 0.5rem;
@@ -10560,26 +10572,26 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   font-weight: 500;
 }
 
-#config__manager fieldset div.table {
+.dw-action-admin.dw-page-config fieldset div.table {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager fieldset div.table {
+  .dw-action-admin.dw-page-config fieldset div.table {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#config__manager fieldset div.table {
+.dw-action-admin.dw-page-config fieldset div.table {
   margin-bottom: 0px;
   width: 100%;
   border-left-width: 1px;
   border-right-width: 1px;
 }
 
-#config__manager fieldset table {
+.dw-action-admin.dw-page-config fieldset table {
   margin-top: 0px;
   margin-bottom: 0px;
   display: table !important;
@@ -10590,32 +10602,32 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* add a table footer*/
 
-#config__manager fieldset:after {
+.dw-action-admin.dw-page-config fieldset:after {
   content: '';
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager fieldset:after {
+  .dw-action-admin.dw-page-config fieldset:after {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-#config__manager fieldset:after {
+.dw-action-admin.dw-page-config fieldset:after {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager fieldset:after {
+  .dw-action-admin.dw-page-config fieldset:after {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 
-#config__manager fieldset:after {
+.dw-action-admin.dw-page-config fieldset:after {
   display: block;
   width: 100%;
   border-bottom-right-radius: 0.5rem;
@@ -10628,12 +10640,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* setting label*/
 
-#config__manager td.label {
+.dw-action-admin.dw-page-config td.label {
   width: 60%;
   text-align: left;
 }
 
-#config__manager td.label .outkey {
+.dw-action-admin.dw-page-config td.label .outkey {
   position: relative;
   z-index: 10;
   float: left;
@@ -10648,20 +10660,20 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager td.label .outkey {
+  .dw-action-admin.dw-page-config td.label .outkey {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 }
 
-#config__manager td.label label {
+.dw-action-admin.dw-page-config td.label label {
   order: 1;
   clear: left;
   display: block;
   vertical-align: middle;
 }
 
-#config__manager td.label img {
+.dw-action-admin.dw-page-config td.label img {
   order: 2;
   float: right;
   margin: 0px;
@@ -10675,15 +10687,15 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* setting value*/
 
-#config__manager td.value {
+.dw-action-admin.dw-page-config td.value {
   width: 40%;
 }
 
-#config__manager button[type="submit"] {
+.dw-action-admin.dw-page-config button[type="submit"] {
   margin-right: 0.5rem;
 }
 
-#config__manager button[type="reset"] {
+.dw-action-admin.dw-page-config button[type="reset"] {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -10702,14 +10714,14 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-#config__manager button[type="reset"]:hover {
+.dw-action-admin.dw-page-config button[type="reset"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
-#config__manager button[type="reset"]:focus {
+.dw-action-admin.dw-page-config button[type="reset"]:focus {
   z-index: 10;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -10721,7 +10733,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #config__manager button[type="reset"] {
+  .dw-action-admin.dw-page-config button[type="reset"] {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
@@ -10730,14 +10742,14 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
-  #config__manager button[type="reset"]:hover {
+  .dw-action-admin.dw-page-config button[type="reset"]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  #config__manager button[type="reset"]:focus {
+  .dw-action-admin.dw-page-config button[type="reset"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
   }
@@ -10745,25 +10757,27 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 
 /* popularity page*/
 
-/* (using a very specific selectors to not redesign other elements by accident)*/
+.dw-action-admin.dw-page-popularity form {
+  width: 100%;
+}
 
-#dw-content > h1 ~ form fieldset {
+.dw-action-admin.dw-page-popularity form fieldset {
   width: 100% !important;
 }
 
-#dw-content > h1 ~ form fieldset textarea {
+.dw-action-admin.dw-page-popularity form fieldset textarea {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content > h1 ~ form fieldset textarea {
+  .dw-action-admin.dw-page-popularity form fieldset textarea {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#dw-content > h1 ~ form fieldset textarea {
+.dw-action-admin.dw-page-popularity form fieldset textarea {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -10776,7 +10790,7 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   padding-bottom: 0.5rem;
 }
 
-#dw-content > h1 ~ form fieldset textarea:focus {
+.dw-action-admin.dw-page-popularity form fieldset textarea:focus {
   --tw-border-opacity: 1;
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -10784,24 +10798,24 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content > h1 ~ form fieldset textarea {
+  .dw-action-admin.dw-page-popularity form fieldset textarea {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  #dw-content > h1 ~ form fieldset textarea::-moz-placeholder {
+  .dw-action-admin.dw-page-popularity form fieldset textarea::-moz-placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #dw-content > h1 ~ form fieldset textarea::placeholder {
+  .dw-action-admin.dw-page-popularity form fieldset textarea::placeholder {
     --tw-placeholder-opacity: 1;
     color: rgb(156 163 175 / var(--tw-placeholder-opacity));
   }
 
-  #dw-content > h1 ~ form fieldset textarea:focus {
+  .dw-action-admin.dw-page-popularity form fieldset textarea:focus {
     --tw-border-opacity: 1;
     border-color: rgb(63 131 248 / var(--tw-border-opacity));
     --tw-ring-opacity: 1;
@@ -10809,30 +10823,30 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
-#dw-content > h1 ~ form fieldset textarea {
+.dw-action-admin.dw-page-popularity form fieldset textarea {
   margin-bottom: 1.5rem;
   width: 100% !important;
 }
 
-#dw-content > h1 ~ form fieldset label[for] {
+.dw-action-admin.dw-page-popularity form fieldset label[for] {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content > h1 ~ form fieldset label[for] {
+  .dw-action-admin.dw-page-popularity form fieldset label[for] {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-#dw-content > h1 ~ form fieldset label[for] {
+.dw-action-admin.dw-page-popularity form fieldset label[for] {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
 
-#dw-content > h1 ~ form fieldset button[type="submit"] {
+.dw-action-admin.dw-page-popularity form fieldset button[type="submit"] {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -10848,12 +10862,12 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#dw-content > h1 ~ form fieldset button[type="submit"]:hover {
+.dw-action-admin.dw-page-popularity form fieldset button[type="submit"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
 }
 
-#dw-content > h1 ~ form fieldset button[type="submit"]:focus {
+.dw-action-admin.dw-page-popularity form fieldset button[type="submit"]:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -10864,23 +10878,23 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
 }
 
 @media (prefers-color-scheme: dark) {
-  #dw-content > h1 ~ form fieldset button[type="submit"] {
+  .dw-action-admin.dw-page-popularity form fieldset button[type="submit"] {
     --tw-bg-opacity: 1;
     background-color: rgb(28 100 242 / var(--tw-bg-opacity));
   }
 
-  #dw-content > h1 ~ form fieldset button[type="submit"]:hover {
+  .dw-action-admin.dw-page-popularity form fieldset button[type="submit"]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  #dw-content > h1 ~ form fieldset button[type="submit"]:focus {
+  .dw-action-admin.dw-page-popularity form fieldset button[type="submit"]:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
   }
 }
 
-#dw-content > h1 ~ form fieldset button[type="submit"] {
+.dw-action-admin.dw-page-popularity form fieldset button[type="submit"] {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }

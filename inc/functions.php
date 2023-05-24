@@ -34,6 +34,28 @@ function _tpl_remove_prefix($str, $prefix) {
 }
 
 /**
+ * If the current page is an admin page or a plugin page,
+ * this function returns a list of classes (as a single string),
+ * that exactly describes the current page.
+ */
+function _tpl_page_classes() {
+	global $ACT;
+	global $INPUT;
+
+	$class = '';
+
+	if($ACT == 'admin' || _tpl_has_prefix($ACT, 'plugin_')) {
+		$class .= 'dw-action-' . $ACT;
+
+		$page = $INPUT->str('page');
+		if($page)
+			$class .= ' dw-page-' . $page;
+	}
+
+	return $class;
+}
+
+/**
  * Prints the DokuWiki meta headers by removing the css.php style sheet.
  */
 function _tpl_metaheaders() {

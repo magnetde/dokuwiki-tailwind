@@ -1,6 +1,5 @@
 // Base styles applied for the other pages
-#user__manager,
-#config__manager {
+.dw-action-admin {
 	.leftalign {
 		@apply text-left;
 	}
@@ -93,119 +92,122 @@
 	th, td {
 		@apply px-4 py-3 align-middle;
 	}
-}
 
-// Specific styles
+	// Specific styles
 
-// User manager
-#user__manager {
-	table button {
-		&[name="fn[start]"], &[name="fn[prev]"], &[name="fn[next]"], &[name="fn[last]"] {
-			&:not([disabled]) {
-				@apply btn-secondary;
-			}
-			&[disabled] {
-				@apply btn-secondary-disabled;
-			}
-		}
-	}
-
-	div.import_users form {
-		@apply flex items-center;
-
-		label {
-			@apply flex items-center flex-grow input-label;
-
-			input {
-				@apply mx-2 flex-grow;
+	// User manager
+	&.dw-page-usermanager {
+		table button {
+			&[name="fn[start]"], &[name="fn[prev]"], &[name="fn[next]"], &[name="fn[last]"] {
+				&:not([disabled]) {
+					@apply btn-secondary;
+				}
+				&[disabled] {
+					@apply btn-secondary-disabled;
+				}
 			}
 		}
-	}
-}
 
-// Config manager
-#config__manager {
-	// hide anchor links
-	h1, h2, h3 {
-		@apply mt-8 mb-6;
+		div.import_users form {
+			@apply flex items-center;
 
-		a {
-			@apply hidden;
+			label {
+				@apply flex items-center flex-grow input-label;
+
+				input {
+					@apply mx-2 flex-grow;
+				}
+			}
 		}
 	}
 
-	// tables
-	fieldset {
-		@apply mb-6;
+	// Config manager
+	&.dw-page-config {
+		// hide anchor links
+		h1, h2, h3 {
+			@apply mt-8 mb-6;
 
-		// table header
-		legend {
-			@apply box-header font-medium;
+			a {
+				@apply hidden;
+			}
 		}
 
-		div.table {
-			@apply w-full border-x box-b mb-0;
+		// tables
+		fieldset {
+			@apply mb-6 scroll-mt-20;
+
+			// table header
+			legend {
+				@apply box-header font-medium;
+			}
+
+			div.table {
+				@apply w-full border-x box-b mb-0;
+			}
+
+			table {
+				@apply !table my-0 table-fixed w-full max-w-full;
+			}
+
+			// add a table footer
+			&:after {
+				content: '';
+				@apply box-footer p-0 h-4;
+			}
 		}
 
-		table {
-			@apply !table my-0 table-fixed w-full max-w-full;
+		// setting label
+		td.label {
+			@apply w-[60%] text-left;
+
+			.outkey {
+				@apply
+					block -mt-3 -ml-2.5 rounded z-10 relative float-left text-[0.6rem] font-light
+					bg-white dark:bg-gray-800
+				;
+			}
+
+			label {
+				@apply order-1 block clear-left align-middle;
+			}
+
+			img {
+				@apply order-2 block m-0 px-4 py-0 align-middle float-right;
+			}
 		}
 
-		// add a table footer
-		&:after {
-			content: '';
-			@apply box-footer p-0 h-4;
+		// setting value
+		td.value {
+			@apply w-[40%];
+		}
+
+		button[type="submit"] {
+			@apply mr-2;
+		}
+
+		button[type="reset"] {
+			@apply btn-secondary;
 		}
 	}
 
-	// setting label
-	td.label {
-		@apply w-[60%] text-left;
+	// popularity page
+	&.dw-page-popularity form {
+		@apply w-full;
 
-		.outkey {
-			@apply
-				block -mt-3 -ml-2.5 rounded z-10 relative float-left text-[0.6rem] font-light
-				bg-white dark:bg-gray-800
-			;
+		fieldset {
+			@apply !w-full;
+
+			textarea {
+				@apply !w-full input-text mb-6;
+			}
+
+			label[for] {
+				@apply input-label;
+			}
+
+			button[type="submit"] {
+				@apply btn-primary mt-4 mb-4;
+			}
 		}
-
-		label {
-			@apply order-1 block clear-left align-middle;
-		}
-
-		img {
-			@apply order-2 block m-0 px-4 py-0 align-middle float-right;
-		}
-	}
-
-	// setting value
-	td.value {
-		@apply w-[40%];
-	}
-
-	button[type="submit"] {
-		@apply mr-2;
-	}
-
-	button[type="reset"] {
-		@apply btn-secondary;
-	}
-}
-
-// popularity page
-// (using a very specific selectors to not redesign other elements by accident)
-#dw-content > h1 ~ form fieldset {
-	@apply !w-full;
-
-	textarea {
-		@apply !w-full input-text mb-6;
-	}
-
-	label[for] {
-		@apply input-label;
-	}
-
-	button[type="submit"] {
-		@apply btn-primary mt-4 mb-4;
 	}
 }
