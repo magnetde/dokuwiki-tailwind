@@ -24,6 +24,11 @@
 		@apply inline m-0 p-0;
 	}
 
+	// hide something
+	.a11y {
+		@apply !absolute !left-[-99999em] !top-auto !w-px !h-px !overflow-hidden;
+	}
+
 	a {
 		@apply link-primary;
 
@@ -37,7 +42,7 @@
 	}
 
 	input {
-		&[type="text"], &[type="password"], &[type="email"], &[type="date"] {
+		&[type="text"], &[type="password"], &[type="email"], &[type="date"], &[type="url"] {
 			@apply input-text;
 		}
 
@@ -78,7 +83,7 @@
 		@apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
 
 		input {
-			&[type="text"], &[type="password"], &[type="email"] {
+			&[type="text"], &[type="password"], &[type="email"], &[type="url"] {
 				@apply bg-white dark:bg-gray-800;
 			}
 		}
@@ -346,10 +351,11 @@
 
 				// header
 				.extension-header {
-					@apply flex;
+					@apply flex items-center;
 
+					// name and author
 					h2 {
-						@apply my-0 font-medium text-sm text-secondary flex-grow;
+						@apply my-0 font-medium text-sm text-secondary;
 
 						strong {
 							@apply font-semibold text-lg text-primary;
@@ -360,14 +366,24 @@
 						}
 					}
 
+					.popularity {
+						@apply ml-2 w-12 rounded-full h-2.5 bg-gray-200 dark:bg-gray-700;
+
+						> * {
+							@apply h-2.5 rounded-full bg-gray-400 dark:bg-gray-500;
+						}
+					}
+
+					// button, that displays the extension actions
 					> button {
 						@apply
-							inline-flex items-center p-0.5 text-sm font-medium text-center rounded-lg focus:outline-none
+							inline-flex items-center ml-auto p-0.5 text-sm font-medium text-center rounded-lg focus:outline-none
 							text-gray-500 hover:text-gray-800 bg-transparent
 							dark:text-gray-400 dark:hover:text-gray-100
 						;
 					}
 
+					// action dropdown
 					.actions {
 						@apply divide-y-0;
 
@@ -395,10 +411,12 @@
 				.linkbar {
 					@apply block font-medium text-sm text-secondary space-x-4;
 
+					// truncate, if the links are not hovered
 					&:not(:hover) {
 						@apply truncate;
 					}
 
+					// tag list
 					.tags {
 						@apply text-gray-700 dark:text-gray-200;
 
@@ -432,6 +450,7 @@
 					dd {
 						@apply text-secondary text-right;
 
+						// truncate, if not hovered
 						&:not(:hover) {
 							@apply truncate;
 						}

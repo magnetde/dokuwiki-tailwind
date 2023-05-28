@@ -365,6 +365,7 @@ class TPLContentDisplay extends EventHandler {
 
 			// determine and cache the button bar and add an ID
 			$actions = $elm->find('.actions', 0);
+			$popularity = $elm->find('.popularity', 0);
 
 			// determine the button html code
 			$btn_html = '';
@@ -385,9 +386,16 @@ class TPLContentDisplay extends EventHandler {
 			// remove the button bar
 			$actions->outertext = '';
 
+			// determine the popularity element and move and remove it from the extension description
+			$popularity_html = '';
+			if($popularity) {
+				$popularity_html .= $popularity->outertext;
+				$popularity->outertext = '';
+			}
+
 			// set the header element
 			$header = $elm->find('h2', 0);
-			$header->outertext = '<div class="extension-header">' . $header->outertext . $btn_html . '</div>';
+			$header->outertext = '<div class="extension-header">' . $header->outertext . $popularity_html . $btn_html . '</div>';
 		}
 	}
 }
