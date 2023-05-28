@@ -42,7 +42,7 @@ abstract class RevisionRecentOutput extends EventHandler {
 	private function modifyRevision($content) {
 		global $lang;
 
-		if(strlen(trim($content)) == 0)
+		if(_tpl_trim_is_empty($content))
 			return $content;
 
 		$html = new simple_html_dom;
