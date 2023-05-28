@@ -1,0 +1,67 @@
+.ui-dialog {
+	@apply dropdown-container;
+
+	.ui-dialog-titlebar {
+		@apply flex items-center px-4 py-3;
+
+		.ui-dialog-title {
+			@apply text-primary flex-grow font-semibold;
+		}
+
+		// close button
+		.ui-dialog-titlebar-close {
+			@apply
+				block relative w-7 h-7 rounded-lg indent-[-9999px] bg-transparent
+				hover:bg-gray-50 dark:hover:bg-gray-800
+			;
+
+			.ui-button-icon {
+				@apply
+					w-4 h-4 absolute left-1.5 top-1.5 bg-contain
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%239ca3af')]
+				;
+			}
+
+			&:hover .ui-button-icon {
+				@apply
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23111827')]
+					dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23fff')]
+				;
+			}
+		}
+	}
+
+	.ui-draggable-handle {
+		@apply cursor-move;
+	}
+
+	.ui-dialog-content {
+		@apply w-full flex flex-col items-stretch py-4;
+
+		// necessary so the media dialog AND the move dialog looks good
+		> * {
+			@apply block px-4;
+		}
+	}
+
+	.ui-dialog-buttonpane {
+		@apply mt-4 p-4 text-right border-t border-gray-100 dark:border-gray-600;
+
+		.ui-dialog-buttonset {
+			@apply space-x-2;
+		}
+
+		button {
+			@apply btn-primary px-2.5 py-1.5;
+		}
+	}
+
+	.ui-resizable-handle {
+		@apply !hidden;
+	}
+
+	// move plugin fix
+	img[src$="/lib/images/throbber.gif"] {
+		@apply w-fit;
+	}
+}

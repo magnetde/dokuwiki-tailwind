@@ -27,9 +27,11 @@
 				foreach($menu_items as $item) {
 					if ($item->getType() == "top") continue; // ignore the top button because the button are already at the top
 
+					$attrs = $item->getLinkAttributes();
+
 					// Button
-					echo '<a href="' . $item->getLink()  . '" data-tooltip-target="pagetool-button-' . $index . '" '
-						.'class="btn-icon page-tool-btn" data-tooltip-placement="bottom">'
+					echo '<a href="' . $attrs['href']  . '" data-tooltip-target="pagetool-button-' . $index . '" '
+						.'class="' . clsx('btn-icon page-tool-btn', $attrs['class']) . '" data-tooltip-placement="bottom">'
 						.inlineSVG($item->getSvg())
 						.'</a>';
 

@@ -1,6 +1,7 @@
 // Default styles applied for some elements
 .dw-action-admin,
-.dw-action-plugin {
+.dw-action-plugin,
+.ui-dialog-content {
 	.leftalign {
 		@apply text-left;
 	}
