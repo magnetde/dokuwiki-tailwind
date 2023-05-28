@@ -41,6 +41,7 @@ class TPLContentDisplay extends EventHandler {
 		$this->modifyDiff($html);
 		$this->modifySearch($html);
 		$this->modifyMediaManager($html);
+		$this->modifyExtensionManager($html);
 
 		$content = $html->save();
 		$html->clear();
@@ -162,9 +163,9 @@ class TPLContentDisplay extends EventHandler {
 				$elm->addClass('deleted');
 		}
 
-		// Add the "empty" class to emoty code blocks.
+		// Add the "empty" class to empty code blocks.
 		foreach($diff->find('td[colspan="2"]') as $elm) {
-			if(strlen(trim($elm->class)) > 0)
+			if(!_tpl_trim_is_empty($elm->class))
 				continue;
 
 			if($elm->innertext == '&#160;')
@@ -347,6 +348,46 @@ class TPLContentDisplay extends EventHandler {
 				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280';
 			elseif($img->src == '/lib/images/minus.gif')
 				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280';
+		}
+	}
+
+	/**
+	 * Modifies the list of extensions by wrapping the header and the action list into a header element.
+	 * The extension extensions are accessible through a dropdown.
+	 */
+	private function modifyExtensionManager($html) {
+		$mngr = $html->find('#extension__manager', 0);
+		if(!$mngr)
+			return;
+
+		foreach($mngr->find('.extensionList li') as $elm) {
+			$id = $elm->id;
+
+			// determine and cache the button bar and add an ID
+			$actions = $elm->find('.actions', 0);
+
+			// determine the button html code
+			$btn_html = '';
+			if(!_tpl_trim_is_empty($actions->innertext)) {
+				$actions->id = $id . '-dropdown';
+				$actions->addClass('dropdown-container w-44');
+				$actions_html = $actions->save();
+
+				$dropdown_btn = '<button id="' . $id . '-dropdown-button" data-dropdown-toggle="' . $id . '-dropdown" type="button">'
+				.'<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
+				.'<path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />'
+				.'</svg>'
+				.'</button>';
+
+				$btn_html .= $dropdown_btn . $actions_html;
+			}
+
+			// remove the button bar
+			$actions->outertext = '';
+
+			// set the header element
+			$header = $elm->find('h2', 0);
+			$header->outertext = '<div class="extension-header">' . $header->outertext . $btn_html . '</div>';
 		}
 	}
 }

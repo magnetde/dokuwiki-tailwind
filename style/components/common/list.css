@@ -11,6 +11,7 @@
 		@apply
 			box-b block w-full px-4 py-2 border-b cursor-pointer no-underline
 			focus:outline-none focus:ring-2
+			!text-primary
 			hover:bg-gray-100 hover:text-blue-700
 			focus:ring-blue-700 focus:text-blue-700
 			dark:border-gray-600 dark:hover:text-white

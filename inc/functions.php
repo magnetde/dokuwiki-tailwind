@@ -34,6 +34,13 @@ function _tpl_remove_prefix($str, $prefix) {
 }
 
 /**
+ * Returns, if the trimmed string is empty.
+ */
+function _tpl_trim_is_empty($str) {
+	return strlen(trim($str)) == 0;
+}
+
+/**
  * If the current page is an admin page or a plugin page,
  * this function returns a list of classes (as a single string),
  * that exactly describes the current page.
