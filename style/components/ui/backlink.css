@@ -1,4 +1,4 @@
-ul.idx:not(.index__tree *):not(#media__tree *) { // exclude the index and media tree
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) { // exclude the index and media tree and all admin pages
 	@apply list-container;
 
 	li, div.li {
