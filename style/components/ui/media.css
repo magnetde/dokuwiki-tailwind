@@ -14,7 +14,7 @@
 	@apply mt-4;
 
 	ul {
-		@apply pl-0;
+		@apply pl-0 list-none;
 
 		ul {
 			@apply pl-4;
@@ -22,7 +22,7 @@
 	}
 
 	li {
-		@apply list-none pl-0;
+		@apply pl-0;
 	}
 
 	img {

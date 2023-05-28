@@ -43,7 +43,7 @@
 
 	input {
 		&[type="text"], &[type="password"], &[type="email"], &[type="date"], &[type="url"] {
-			@apply input-text;
+			@apply input-text text-sm;
 		}
 
 		&[type="checkbox"] {
@@ -457,6 +457,62 @@
 					}
 				}
 			}
+		}
+	}
+
+	// acl manager
+	&.dw-page-acl {
+		#acl__tree {
+			@apply w-1/4 h-80 pr-4 mr-4 text-sm float-left overflow-auto border-r box-b;
+
+			ul {
+				@apply pl-0 list-none;
+
+				ul {
+					@apply pl-4;
+				}
+			}
+
+			li {
+				@apply pl-0;
+			}
+
+			img {
+				@apply inline m-0 cursor-pointer;
+			}
+
+			div.li {
+				@apply inline;
+
+				a {
+					@apply
+						text-secondary font-medium no-underline
+						hover:text-gray-700 hover:dark:text-gray-300
+					;
+
+					&.idx_dir {
+						@apply ml-1;
+					}
+
+					&.wikilink1 {
+						@apply font-semibold;
+					}
+				}
+			}
+		}
+
+		#acl__detail {
+			#acl__user {
+				@apply text-sm;
+
+				button {
+					@apply py-2;
+				}
+			}
+		}
+
+		table .action {
+			@apply text-right;
 		}
 	}
 }

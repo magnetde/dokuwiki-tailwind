@@ -5944,32 +5944,32 @@ table.diff_sidebyside tr:first-child th {
   border-top-width: 1px;
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) {
-  /* exclude the index and media tree*/
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) {
+  /* exclude the index and media tree and all admin pages*/
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  ul.idx:not(.index__tree *):not(#media__tree *) {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  ul.idx:not(.index__tree *):not(#media__tree *) {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) {
   width: 100%;
   list-style-type: none;
   border-radius: 0.5rem;
@@ -5983,42 +5983,42 @@ ul.idx:not(.index__tree *):not(#media__tree *) {
 }
 
 @media (prefers-color-scheme: dark) {
-  ul.idx:not(.index__tree *):not(#media__tree *) {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) li, ul.idx:not(.index__tree *):not(#media__tree *) div.li {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) li, ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) div.li {
   margin: 0px;
   padding: 0px;
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) a {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  ul.idx:not(.index__tree *):not(#media__tree *) a {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) a {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  ul.idx:not(.index__tree *):not(#media__tree *) a {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) a {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a {
   display: block;
   width: 100%;
   cursor: pointer;
@@ -6030,14 +6030,14 @@ ul.idx:not(.index__tree *):not(#media__tree *) a {
   text-decoration-line: none;
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) a:hover {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) a:focus {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a:focus {
   --tw-text-opacity: 1;
   color: rgb(26 86 219 / var(--tw-text-opacity));
   outline: 2px solid transparent;
@@ -6050,17 +6050,17 @@ ul.idx:not(.index__tree *):not(#media__tree *) a:focus {
 }
 
 @media (prefers-color-scheme: dark) {
-  ul.idx:not(.index__tree *):not(#media__tree *) a {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a {
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 
-  ul.idx:not(.index__tree *):not(#media__tree *) a:hover {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  ul.idx:not(.index__tree *):not(#media__tree *) a:focus {
+  ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) a:focus {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
     --tw-ring-opacity: 1;
@@ -6068,12 +6068,12 @@ ul.idx:not(.index__tree *):not(#media__tree *) a:focus {
   }
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) li:first-child a {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) li:first-child a {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
-ul.idx:not(.index__tree *):not(#media__tree *) li:last-child a {
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) li:last-child a {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-width: 0px;
@@ -6832,6 +6832,7 @@ ul.idx:not(.index__tree *):not(#media__tree *) li:last-child a {
 }
 
 #media__tree ul {
+  list-style-type: none;
   padding-left: 0px;
 }
 
@@ -6840,7 +6841,6 @@ ul.idx:not(.index__tree *):not(#media__tree *) li:last-child a {
 }
 
 #media__tree li {
-  list-style-type: none;
   padding-left: 0px;
 }
 
@@ -10059,6 +10059,11 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
+.dw-action-admin input[type="text"], .dw-action-admin input[type="password"], .dw-action-admin input[type="email"], .dw-action-admin input[type="date"], .dw-action-admin input[type="url"], .dw-action-plugin input[type="text"], .dw-action-plugin input[type="password"], .dw-action-plugin input[type="email"], .dw-action-plugin input[type="date"], .dw-action-plugin input[type="url"] {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .dw-action-admin input[type="checkbox"], .dw-action-plugin input[type="checkbox"] {
   height: 1rem;
   width: 1rem;
@@ -11792,6 +11797,106 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* acl manager*/
+
+.dw-action-admin.dw-page-acl #acl__tree {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin.dw-page-acl #acl__tree {
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+}
+
+.dw-action-admin.dw-page-acl #acl__tree {
+  float: left;
+  margin-right: 1rem;
+  height: 20rem;
+  width: 25%;
+  overflow: auto;
+  border-right-width: 1px;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree ul ul {
+  padding-left: 1rem;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree li {
+  padding-left: 0px;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree img {
+  margin: 0px;
+  display: inline;
+  cursor: pointer;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree div.li {
+  display: inline;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree div.li a {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin.dw-page-acl #acl__tree div.li a {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+}
+
+.dw-action-admin.dw-page-acl #acl__tree div.li a {
+  font-weight: 500;
+  text-decoration-line: none;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree div.li a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin.dw-page-acl #acl__tree div.li a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+  }
+}
+
+.dw-action-admin.dw-page-acl #acl__tree div.li a.idx_dir {
+  margin-left: 0.25rem;
+}
+
+.dw-action-admin.dw-page-acl #acl__tree div.li a.wikilink1 {
+  font-weight: 600;
+}
+
+.dw-action-admin.dw-page-acl #acl__detail #acl__user {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dw-action-admin.dw-page-acl #acl__detail #acl__user button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dw-action-admin.dw-page-acl table .action {
+  text-align: right;
 }
 
 .sr-only {
