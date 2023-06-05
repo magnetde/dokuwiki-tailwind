@@ -3735,6 +3735,61 @@ form.doku_form.search-results-form .search-form div.advancedOptions div.toggle l
   }
 }
 
+/* Field sets*/
+
+.dw-action-admin fieldset, .dw-action-plugin fieldset, .ui-dialog-content fieldset {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  display: block;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin fieldset, .dw-action-plugin fieldset, .ui-dialog-content fieldset {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  }
+}
+
+@media (min-width: 768px) {
+  .dw-action-admin fieldset, .dw-action-plugin fieldset, .ui-dialog-content fieldset {
+    width: 50%;
+  }
+}
+
+/* Header*/
+
+.dw-action-admin fieldset legend, .dw-action-plugin fieldset legend, .ui-dialog-content fieldset legend {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+@media (prefers-color-scheme: dark) {
+  .dw-action-admin fieldset legend, .dw-action-plugin fieldset legend, .ui-dialog-content fieldset legend {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+.dw-action-admin fieldset legend, .dw-action-plugin fieldset legend, .ui-dialog-content fieldset legend {
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .dw-action-admin fieldset legend, .dw-action-plugin fieldset legend, .ui-dialog-content fieldset legend {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
 .ui-dialog {
   z-index: 10;
   display: none;
