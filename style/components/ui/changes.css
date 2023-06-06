@@ -27,10 +27,10 @@
 
 	// Revision info
 	.revision-info {
-		@apply p-3 flex items-center justify-between;
+		@apply pl-0 pr-3 py-3 flex items-center justify-between;
 
 		.rev-description {
-			@apply mr-2 overflow-auto;
+			@apply mr-4 overflow-auto;
 		}
 
 		// Revision header

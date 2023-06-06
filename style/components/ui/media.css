@@ -445,10 +445,6 @@
 			th {
 				@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
 
-				.wikilink1 {
-					@apply link-primary block;
-				}
-
 				.sum {
 					@apply text-primary;
 				}

@@ -138,16 +138,8 @@ form.doku_form.search-results-form {
 			dt {
 				@apply text-primary text-base font-semibold;
 
-				a {
-					@apply no-underline;
-
-					&.wikilink1 {
-						@apply no-underline decoration-current hover:underline;
-					}
-
-					&:not(.wikilink1) {
-						@apply text-secondary hover:text-gray-600 dark:hover:text-gray-300;
-					}
+				a:not(.wikilink1) {
+					@apply text-secondary no-underline hover:text-gray-600 dark:hover:text-gray-300;
 				}
 			}
 

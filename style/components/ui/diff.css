@@ -61,10 +61,6 @@ table.diff {
 	th {
 		@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
 
-		.wikilink1 {
-			@apply link-primary;
-		}
-
 		.sum {
 			@apply text-primary;
 		}
@@ -167,7 +163,7 @@ table.diff {
 		}
 
 		&.diff-addedline {
-			@apply bg-green-50 dark:bg-green-950;
+			@apply align-top bg-green-50 dark:bg-green-950;
 
 			.diff-mark {
 				@apply bg-green-200 dark:bg-green-800;
@@ -175,7 +171,7 @@ table.diff {
 		}
 
 		&.diff-deletedline {
-			@apply bg-red-50 dark:bg-red-950;
+			@apply align-top bg-red-50 dark:bg-red-950;
 
 			.diff-mark {
 				@apply bg-red-200 dark:bg-red-800;
