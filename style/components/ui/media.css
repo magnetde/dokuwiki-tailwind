@@ -626,6 +626,7 @@
 				@apply text-secondary text-sm font-medium;
 			}
 
+			// Search
 			#dw__mediasearch p {
 				@apply flex items-center mt-6 pt-6 mb-6 border-t box-b;
 
@@ -690,8 +691,8 @@
 
 						&.btn-open {
 							@apply
-								bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%236b7280')]
-								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%239ca3af')]
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=%239ca3af')]
 							;
 						}
 

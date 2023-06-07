@@ -30,7 +30,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 				<?php
 				if($ACT != 'media') {
 					tpl_includeFile('sidebarheader.html');
-					tpl_include_page($conf['sidebar'], true, true);
+					_tpl_sidebar();
 					tpl_includeFile('sidebarfooter.html');
 				} else {
 				?>
