@@ -455,7 +455,7 @@
 				dd strong {
 					@apply
 						px-1.5 py-0.5 rounded font-medium
-						text-blue-800 bg-blue-50 dark:text-blue-300 dark:bg-blue-950
+						text-primary-800 bg-primary-50 dark:text-primary-300 dark:bg-primary-950
 					;
 				}
 			}
@@ -478,8 +478,8 @@
 				.ui-slider-handle {
 					@apply
 						absolute z-10 w-4 h-4 -top-1 -ml-2 rounded-full cursor-pointer
-						bg-blue-700 hover:bg-blue-800
-						dark:bg-blue-600 dark:hover:bg-blue-700
+						bg-primary-700 hover:bg-primary-800
+						dark:bg-primary-600 dark:hover:bg-primary-700
 					;
 				}
 			}

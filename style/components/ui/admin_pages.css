@@ -244,10 +244,10 @@
 					}
 
 					.popularity {
-						@apply ml-2 w-12 rounded-full h-2.5 bg-gray-200 dark:bg-gray-700;
+						@apply ml-2 w-12 h-[0.6rem] rounded-[0.3rem] bg-gray-200 dark:bg-gray-700;
 
 						> * {
-							@apply h-2.5 rounded-full bg-gray-400 dark:bg-gray-500;
+							@apply h-[0.6rem] rounded-[0.3rem] bg-gray-400 dark:bg-gray-500;
 						}
 					}
 

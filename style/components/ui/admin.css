@@ -19,7 +19,7 @@
 
 		&:hover, &:focus {
 			svg {
-				@apply fill-blue-700 dark:fill-white;
+				@apply fill-primary-700 dark:fill-white;
 			}
 		}
 	}
