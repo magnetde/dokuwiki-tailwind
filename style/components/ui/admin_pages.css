@@ -44,7 +44,7 @@
 
 			// table header
 			legend {
-				@apply box-header font-medium;
+				@apply box-header mb-0 text-base font-medium;
 			}
 
 			div.table {

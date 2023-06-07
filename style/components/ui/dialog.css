@@ -1,5 +1,5 @@
 .ui-dialog {
-	@apply dropdown-container;
+	@apply dropdown-container absolute top-0 left-0;
 
 	.ui-dialog-titlebar {
 		@apply flex items-center px-4 py-3;
