@@ -122,13 +122,8 @@
 		}
 	}
 
-	// Field sets
-	fieldset {
-		@apply block p-6 w-full md:w-1/2 mt-8 mx-auto bg-white dark:bg-gray-800;
-
-		// Header
-		legend {
-			@apply text-primary mb-8 text-xl font-bold leading-tight md:text-2xl;
-		}
+	// Field set headers
+	fieldset legend {
+		@apply text-primary mb-8 text-xl font-bold leading-tight md:text-2xl;
 	}
 }

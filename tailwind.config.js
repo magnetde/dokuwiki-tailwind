@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
     content: [
@@ -10,6 +11,9 @@ module.exports = {
     darkMode: 'media',
     theme: {
         extend: {
+            colors: {
+                primary: colors.blue,
+            },
             fontFamily: {
                 'sans': ['Inter', ...defaultTheme.fontFamily.sans],
                 'mono': ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],

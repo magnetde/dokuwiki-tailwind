@@ -101,7 +101,7 @@
 	.license {
 		@apply
 			p-4 mt-12 mb-2 text-sm text-center rounded-lg
-			text-blue-800 bg-blue-50 dark:bg-gray-800 dark:text-blue-400
+			text-primary-800 bg-primary-50 dark:bg-gray-800 dark:text-primary-400
 		;
 
 		a {

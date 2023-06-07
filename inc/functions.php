@@ -153,6 +153,46 @@ function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
 }
 
 /**
+ * This function prints the sidebar by modifying lists, so they appear as nav items.
+ */
+function _tpl_sidebar() {
+	global $conf;
+
+	// Get the original sidebar
+	$content = tpl_include_page($conf['sidebar'], false, true);
+
+	// Import HTML string
+	$html = new simple_html_dom;
+	$html->load($content, true, false);
+
+	// iterate over lists
+	foreach($html->find('ul, div.level1 > ul') as $ul) {
+		if($ul->find('.node', 0)) // ignore, if sublists exist
+			continue;
+		if(!$ul->find('a', 0)) // ignore, if no links exist
+			continue;
+
+		// add class to the list
+		$ul->addClass('sidebar-nav-list');
+
+		foreach($ul->find('.li') as $li) {
+			$item = $li->firstChild();
+			if($item->tag != 'a')
+				$item = $li;
+
+			// add class to list elements
+			$item->addClass('sidebar-nav-item');
+		}
+	}
+
+	$content = $html->save();
+	$html->clear();
+	unset($html);
+
+	echo $content;
+}
+
+/**
  * Function to create breadcrumbs or the "you are here" list.
  *
  * The breadcrumbs cannot be modified by using events.
@@ -179,9 +219,8 @@ function _tpl_breadcrumbs($youarehere = false) {
 	$html->load($content, true, false);
 
 	// Return original content if Simple HTML DOM fail or exceeded page size (default MAX_FILE_SIZE => 600KB)
-	if(!$html) {
+	if(!$html)
 		return $content;
-	}
 
 	// Get title and remove the node
 	$elm = $html->find('.bchead', 0);
@@ -198,9 +237,8 @@ function _tpl_breadcrumbs($youarehere = false) {
 		foreach($html->childNodes() as $elm) {
 			$body = $elm->outertext . $body;
 		}
-	} else {
+	} else
 		$body = $html->save();
-	}
 
 	$html->clear();
 	unset($html);

@@ -1,0 +1,43 @@
+// Modify some sidebar elements
+.dw-sidebar {
+	hr {
+		@apply my-7;
+	}
+
+	// Sidebar nav lists
+	.sidebar-nav-list {
+		@apply pl-0 list-none;
+
+		li {
+			@apply pl-0;
+		}
+
+		// Add an hover effect to nav items
+		.sidebar-nav-item {
+			@apply
+				block -mx-3 px-3 py-2 text-base font-medium rounded-lg
+				text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700
+			;
+
+			// elements, that are not links
+			&.li {
+				@apply text-gray-600 dark:text-gray-300;
+			}
+		}
+
+		// links
+		a.sidebar-nav-item {
+			@apply no-underline hover:no-underline;
+
+			// links with icon
+			&.urlextern, &.mail, &.windows, &.mediafile, &.interwiki {
+				@apply bg-no-repeat bg-[center_left_0.75rem] bg-[length:1.5rem] pl-10;
+			}
+
+			// non-existing links
+			&.wikilink2 {
+				@apply text-red-700 dark:text-red-500;
+			}
+		}
+	}
+}

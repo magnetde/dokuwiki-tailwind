@@ -445,10 +445,6 @@
 			th {
 				@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
 
-				.wikilink1 {
-					@apply link-primary block;
-				}
-
 				.sum {
 					@apply text-primary;
 				}
@@ -459,7 +455,7 @@
 				dd strong {
 					@apply
 						px-1.5 py-0.5 rounded font-medium
-						text-blue-800 bg-blue-50 dark:text-blue-300 dark:bg-blue-950
+						text-primary-800 bg-primary-50 dark:text-primary-300 dark:bg-primary-950
 					;
 				}
 			}
@@ -482,8 +478,8 @@
 				.ui-slider-handle {
 					@apply
 						absolute z-10 w-4 h-4 -top-1 -ml-2 rounded-full cursor-pointer
-						bg-blue-700 hover:bg-blue-800
-						dark:bg-blue-600 dark:hover:bg-blue-700
+						bg-primary-700 hover:bg-primary-800
+						dark:bg-primary-600 dark:hover:bg-primary-700
 					;
 				}
 			}
@@ -630,6 +626,7 @@
 				@apply text-secondary text-sm font-medium;
 			}
 
+			// Search
 			#dw__mediasearch p {
 				@apply flex items-center mt-6 pt-6 mb-6 border-t box-b;
 
@@ -694,8 +691,8 @@
 
 						&.btn-open {
 							@apply
-								bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%236b7280')]
-								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open&color=%239ca3af')]
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=%236b7280')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=%239ca3af')]
 							;
 						}
 

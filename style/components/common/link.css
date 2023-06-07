@@ -2,7 +2,7 @@
 	// adding "no-underline" and "decoration-current" to overwrite the prose style
 
 	.link-primary {
-		@apply font-medium no-underline decoration-current hover:underline text-blue-700 dark:text-blue-500;
+		@apply font-medium no-underline decoration-current hover:underline text-primary-700 dark:text-primary-500;
 	}
 
 	.link-error {
