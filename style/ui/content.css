@@ -56,6 +56,11 @@
 		;
 	}
 
+	// Remove margin, if the first element is a paragraph
+	*:first-child p, p:first-child {
+		@apply mt-0;
+	}
+
 	// increase the font weight of h5 headers
 	h5 {
 		@apply font-semibold;

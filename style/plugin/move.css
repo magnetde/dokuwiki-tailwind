@@ -1,0 +1,6 @@
+.ui-dialog {
+	// move plugin fix
+	img[src$="/lib/images/throbber.gif"] {
+		@apply w-fit;
+	}
+}
