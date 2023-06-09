@@ -9,5 +9,8 @@
 // Components for specific DokuWiki pages
 @import "ui/all.css";
 
+// Plugin styles
+@import "plugin/all.css";
+
 @import "tailwindcss/utilities";
 @import "utilities.css";

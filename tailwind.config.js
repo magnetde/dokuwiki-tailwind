@@ -43,12 +43,22 @@ module.exports = {
         require('flowbite/plugin'),
         require('@tailwindcss/typography'),
         backdropBlur,
+        rtl,
     ],
-}
+};
 
 function backdropBlur({ addVariant }) {
     addVariant(
         'supports-backdrop-blur',
         '@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))',
-    )
+    );
+}
+
+function rtl({ addVariant, e }) {
+    addVariant(
+        'rtl',
+        ({ modifySelectors, separator }) => {
+            modifySelectors(({ className }) => `[dir='rtl'] .${e(`rtl${separator}${className}`)}`);
+        }
+    );
 }
