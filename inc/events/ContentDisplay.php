@@ -52,6 +52,12 @@ class TPLContentDisplay extends EventHandler {
 
 	// Add anchors to headings
 	private function modifyHeaders($html) {
+		global $ACT;
+
+		// only add anchors if a wiki page is shown
+		if($ACT != 'show')
+			return;
+
 		$headers = array('h1', 'h2', 'h3', 'h4'); // no anchor for h5
 
 		foreach($headers as $header) {
