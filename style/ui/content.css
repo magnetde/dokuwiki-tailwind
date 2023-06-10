@@ -39,7 +39,7 @@
 }
 
 // Main content and left sidebar
-.dw-content, .dw-sidebar {
+.dokuwiki, .dokuwiki-sidebar {
 	// extend the Tailwindcss typography
 	&:where(.prose) {
 		@apply
@@ -83,7 +83,7 @@
 
 	// Special links with icons
 	a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply bg-no-repeat bg-left bg-contain py-0 pr-0 pl-[1.4rem] ml-0.5;
+		@apply py-0 pr-0 pl-[1.4rem] ml-0.5 bg-no-repeat bg-left bg-contain;
 	}
 
 	// Link icons have the forground #6b7280 (same as gray-500) or #9ca3af (same as gray-400) at dark mode.
@@ -228,7 +228,7 @@
 }
 
 // Other styles of the main content not included in the sidebar
-.dw-content {
+.dokuwiki {
 	// Section edit button
 	.secedit {
 		@apply opacity-0 hover:opacity-100 text-right;
@@ -241,8 +241,7 @@
 
 			// add a hovable whitespace at the top of the button
 			&::before {
-				content: "";
-				@apply absolute h-16 w-20 bottom-0 right-0 -z-[1];
+				@apply content-[''] absolute h-16 w-20 bottom-0 right-0 -z-[1];
 			}
 
 			button {

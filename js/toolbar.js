@@ -1,8 +1,8 @@
 function toolbarIconColor() {
 	if(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-		return '#9ca3af'; // dark:gray-400
+		return 'gray-400';
 	else
-		return '#6b7280'; // gray-500
+		return 'gray-500';
 }
 
 // Initializes the toolbar.
