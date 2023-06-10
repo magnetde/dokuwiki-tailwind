@@ -26,7 +26,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 		<?php if($showSidebar): ?>
 		<aside class="border-r border-gray-900/10 dark:border-gray-50/[0.06] hidden lg:block lg:w-sidebar-lg 2xl:w-sidebar-2xl">
 			<div class="pt-10 px-6 sticky overflow-y-auto top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] lg:w-sidebar-lg 2xl:w-sidebar-2xl">
-				<div class="dw-sidebar prose prose-sm 2xl:prose-base dark:prose-invert">
+				<div class="dokuwiki-sidebar prose prose-sm 2xl:prose-base dark:prose-invert">
 				<?php
 				if($ACT != 'media') {
 					tpl_includeFile('sidebarheader.html');

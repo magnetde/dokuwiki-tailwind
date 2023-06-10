@@ -57,8 +57,7 @@
 
 			// add a table footer
 			&:after {
-				content: '';
-				@apply box-footer p-0 h-4;
+				@apply content-[''] box-footer p-0 h-4;
 			}
 		}
 

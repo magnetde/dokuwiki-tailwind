@@ -300,6 +300,9 @@ $COLORS = array(
 	),
 );
 
+// set blue to primary color
+$COLORS['primary'] = $COLORS['blue'];
+
 /**
  * Converts a color description into a hex color string.
  * If the color is specified as a TailwindCSS color value (e.g. 'black' or 'blue-500'), its corresponding hex value is returned.

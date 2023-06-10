@@ -1,5 +1,5 @@
 // Media manager sidebar
-.dw-sidebar div.namespaces {
+.dokuwiki-sidebar div.namespaces {
 	h2 {
 		@apply mt-0 mb-1;
 	}

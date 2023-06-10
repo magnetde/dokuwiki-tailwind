@@ -1,5 +1,5 @@
 // Modify some sidebar elements
-.dw-sidebar {
+.dokuwiki-sidebar {
 	hr {
 		@apply my-7;
 	}

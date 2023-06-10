@@ -49,7 +49,7 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx(
-			"dw-content w-full max-w-none mt-16 prose dark:prose-invert",
+			"dokuwiki w-full max-w-none mt-16 prose dark:prose-invert",
 			_tpl_page_classes(),
 		) ?>">
 
