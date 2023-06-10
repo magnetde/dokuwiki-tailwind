@@ -109,7 +109,6 @@
 	}
 
 	// alignments
-
 	.wrap_leftalign {
 		@apply text-left;
 	}
@@ -124,16 +123,14 @@
 	}
 
 	// box
-
 	div.wrap_round {
-		@apply rounded-xl;
+		@apply rounded-lg;
 	}
 	span.wrap_round {
 		@apply rounded;
 	}
 
 	// mark
-
 	.wrap_lo {
 		@apply text-sm text-gray-700 dark:text-gray-200;
 	}
@@ -166,10 +163,10 @@
 
 	// spoiler
 	.wrap_spoiler {
-		@apply px-2.5 py-0.5 border rounded;
 		@apply
-			text-white bg-white border-gray-50
-			dark:text-gray-900 dark:bg-gray-900 dark:border-gray-50
+			mx-2 p-0.5 rounded
+			text-[--tw-prose-body] bg-[--tw-prose-body]
+			hover:text-[--tw-prose-body] hover:bg-white dark:hover:bg-gray-900
 			!important
 		;
 	}
@@ -195,11 +192,32 @@
 		@apply bg-none btn-secondary;
 	}
 
-	// box
-	.wrap_box {
-		@apply box-hf border rounded-lg;
+	// general styles for all notes
+
+	.wrap_danger,
+	.wrap_warning,
+	.wrap_caution,
+	.wrap_notice,
+	.wrap_safety,
+	.wrap_info,
+	.wrap_important,
+	.wrap_alert,
+	.wrap_tip,
+	.wrap_help,
+	.wrap_todo,
+	.wrap_download {
+		*:not(pre) {
+			@apply !text-inherit;
+		}
+
+		em {
+			@apply not-italic;
+		}
 	}
 
+	// notes without icons
+
+	// general div styles
 	div.wrap_box,
 	div.wrap_danger,
 	div.wrap_warning,
@@ -209,18 +227,19 @@
 		@apply p-4 mb-6 overflow-hidden;
 	}
 
+	// general span styles
 	span.wrap_box,
 	span.wrap_danger,
 	span.wrap_warning,
 	span.wrap_caution,
 	span.wrap_notice,
 	span.wrap_safety {
-		@apply py-0 px-1;
+		@apply py-0.5 px-1.5 rounded;
 	}
 
 	// notes with icons
 
-	// general styles for all note divs
+	// general div styles
 	div.wrap_info,
 	div.wrap_important,
 	div.wrap_alert,
@@ -229,12 +248,12 @@
 	div.wrap_todo,
 	div.wrap_download {
 		@apply
-			pt-4 pr-4 pb-2 pl-16 mb-6 min-h-[5rem] rounded-lg bg-[1rem_50%] bg-no-repeat text-[initial] overflow-hidden
+			pt-4 pr-4 pb-2 pl-16 mb-6 min-h-[5rem] bg-[1rem_50%] bg-no-repeat overflow-hidden
 			rtl:pr-16 rtl:pl-4 rtl:bg-[right_50%]
 		;
 	}
 
-	// general styles for all note spans
+	// general span styles
 	span.wrap_info,
 	span.wrap_important,
 	span.wrap_alert,
@@ -243,10 +262,41 @@
 	span.wrap_todo,
 	span.wrap_download {
 		@apply
-			py-0 pl-6 pr-1 min-h-[1.5rem] rounded bg-[0.15rem_50%] bg-no-repeat text-[initial]
+			py-0.5 pl-6 pr-1.5 min-h-[1.5rem] rounded bg-[0.15rem_50%] bg-no-repeat
 			rtl:pl-1 rtl:pr-6 rtl:bg-[right_50%]
 		;
 	}
+
+	// box
+	.wrap_box {
+		@apply box-hf;
+	}
+	div.wrap_box {
+		@apply border;
+	}
+	span.wrap_box {
+		@apply rounded;
+	}
+
+	// safety notes
+
+	.wrap_danger {
+		@apply text-red-800 bg-red-100 dark:text-red-300 dark:bg-red-900;
+	}
+	.wrap_warning {
+		@apply text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-900;
+	}
+	.wrap_caution {
+		@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
+	}
+	.wrap_notice {
+		@apply text-blue-800 bg-blue-100 dark:text-blue-300 dark:bg-blue-900;
+	}
+	.wrap_safety {
+		@apply text-green-800 bg-green-100 dark:text-green-300 dark:bg-green-900;
+	}
+
+	// icon notes
 
 	// info
 	.wrap_info {
@@ -323,34 +373,6 @@
 	}
 	span.wrap_download {
 		@apply bg-[url(images/note/16/download.png)];
-	}
-
-	// safety notes
-
-	.wrap_danger {
-		@apply text-red-800 bg-red-100 dark:text-red-300 dark:bg-red-900;
-	}
-	.wrap_warning {
-		@apply text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-900;
-	}
-	.wrap_caution {
-		@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
-	}
-	.wrap_notice {
-		@apply text-blue-800 bg-blue-100 dark:text-blue-300 dark:bg-blue-900;
-	}
-	.wrap_safety {
-		@apply text-green-800 bg-green-100 dark:text-green-300 dark:bg-green-900;
-	}
-
-	.wrap_danger,
-	.wrap_warning,
-	.wrap_caution,
-	.wrap_notice,
-	.wrap_safety {
-		*:not(pre) {
-			@apply !text-inherit;
-		}
 	}
 
 	// mark
