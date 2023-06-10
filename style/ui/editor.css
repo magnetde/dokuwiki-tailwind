@@ -122,6 +122,15 @@
 	// remove padding from content
 	.ui-dialog-content {
 		@apply pb-0;
+
+		// input container
+		div:first-child {
+			@apply flex items-center;
+
+			input {
+				@apply flex-grow;
+			}
+		}
 	}
 }
 
@@ -132,7 +141,7 @@
 	// files and directories
 	.type_d, .type_f, .type_u {
 		@apply
-			 py-1.5 pl-10 pr-4 bg-no-repeat bg-[0.75rem_0.6rem] bg-[length:1.25rem]
+			py-1.5 pl-10 pr-4 bg-no-repeat bg-[0.75rem_0.6rem] bg-[length:1.25rem]
 			hover:box-hf-bg text-gray-700 dark:text-gray-200
 		;
 
@@ -142,7 +151,7 @@
 	}
 
 	.wikilink1 {
-		@apply text-inherit;
+		@apply font-normal text-inherit;
 	}
 
 	// folders
