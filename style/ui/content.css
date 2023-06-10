@@ -76,6 +76,16 @@
 		@apply font-semibold;
 	}
 
+	// footnotes
+	a.fn_top {
+		@apply link-primary scroll-mt-20;
+	}
+
+	// footnote popup
+	div.insitu-footnote {
+		@apply dropdown-container p-3 w-fit max-w-[40%];
+	}
+
 	// regular links
 	a.wikilink1, a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
 		@apply link-primary font-inherit;
@@ -258,7 +268,7 @@
 	// Footnotes (at the bottom)
 	.footnotes {
 		a {
-			@apply no-underline;
+			@apply link-primary font-inherit;
 		}
 
 		.content {
