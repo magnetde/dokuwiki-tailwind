@@ -345,9 +345,9 @@ class TPLContentDisplay extends EventHandler {
 
 		foreach($mngr->find('img') as $img) {
 			if($img->src == '/lib/images/plus.gif')
-				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280';
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-500';
 			elseif($img->src == '/lib/images/minus.gif')
-				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280';
+				$img->src = '/lib/tpl/tailwind/icon.php?icon=chevron-down&color=gray-500';
 		}
 	}
 

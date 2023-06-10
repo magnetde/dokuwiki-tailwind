@@ -44,15 +44,15 @@
 
 	li.closed > div.li a:before {
 		@apply
-			content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
-			dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
+			content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-500')]
+			dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-400')]
 		;
 	}
 
 	li.open > div.li a:before {
 		@apply
-			content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%236b7280')]
-			dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%239ca3af')]
+			content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=gray-500')]
+			dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=gray-400')]
 		;
 	}
 }
