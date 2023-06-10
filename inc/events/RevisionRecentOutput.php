@@ -95,9 +95,8 @@ abstract class RevisionRecentOutput extends EventHandler {
 			.'<span class="subtitle">';
 
 		// Add the page title to the subtitle
-		if($recent_page) {
+		if($recent_page)
 			$content .= '<span class="subtitle-name">' . $revlink->innertext . '</span>, ';
-		}
 
 		$content .= $date . ', ' .$user
 			.'</span>'
@@ -129,7 +128,7 @@ abstract class RevisionRecentOutput extends EventHandler {
 		}
 
 		// Add a button to the wikilink if it exists
-		if(!$revlink->hasClass('wikilink2')) {
+		if($revlink && !$revlink->hasClass('wikilink2')) {
 			$revlink->innertext = $lang['btn_preview'];
 			$content .= $revlink->save();
 		}

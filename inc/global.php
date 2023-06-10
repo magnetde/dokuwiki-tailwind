@@ -9,7 +9,6 @@ $template_dir = tpl_incdir();
 // Load helper functions.
 require "$template_dir/inc/functions.php";
 require "$template_dir/inc/clsx.php";
-require "$template_dir/inc/icons.php";
 
 // Add the event handlers
 require "$template_dir/inc/events/EventHandlers.php";

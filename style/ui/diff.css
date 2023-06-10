@@ -91,29 +91,29 @@ table.diff {
 
 		a.diffbothprevrev:before {
 			@apply
-				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-left&color=%236b7280')]
-				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-left&color=%239ca3af')]
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-left&color=gray-500')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-left&color=gray-400')]
 			;
 		}
 
 		a.diffprevrev:before {
 			@apply
-				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-left&color=%236b7280')]
-				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-left&color=%239ca3af')]
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-left&color=gray-500')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-left&color=gray-400')]
 			;
 		}
 
 		a.diffbothnextrev:before {
 			@apply
-				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-right&color=%236b7280')]
-				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-right&color=%239ca3af')]
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-right&color=gray-500')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-double-right&color=gray-400')]
 			;
 		}
 
 		a.diffnextrev:before, a.difflastrev:before {
 			@apply
-				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
-				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
+				content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-500')]
+				dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-400')]
 			;
 		}
 

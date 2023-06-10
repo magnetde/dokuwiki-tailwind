@@ -14,15 +14,15 @@ form.doku_form.search-results-form {
 			&:after {
 				@apply
 					w-4 h-4 ml-1 -mr-1 mb-1
-					content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%23111827')]
-					dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=%239ca3af')]
+					content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=gray-900')]
+					dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-down&color=gray-400')]
 				;
 			}
 
 			&[aria-expanded="true"]:after {
 				@apply
-					content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=%23111827')]
-					dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=%239ca3af')]
+					content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=gray-900')]
+					dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=gray-400')]
 				;
 			}
 		}
@@ -36,8 +36,8 @@ form.doku_form.search-results-form {
 				&:after {
 					@apply
 						w-4 h-4 ml-2 mb-1
-						content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%236b7280')]
-						dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=%239ca3af')]
+						content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-500')]
+						dark:content-[url('/lib/tpl/tailwind/icon.php?icon=chevron-right&color=gray-400')]
 					;
 				}
 			}

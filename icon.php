@@ -6,7 +6,8 @@
  * Furthermore, the query parameters "color", "width" and "height" are supported.
  */
 
-@require_once dirname(__FILE__) . '/inc/icons.php'; // Include the icon map
+require_once dirname(__FILE__) . '/inc/icon/icons.php'; // Include the icon map
+require_once dirname(__FILE__) . '/inc/icon/colors.php'; // Include the colors
 
 global $ICONS, $UNKNOWN_ICON;
 
@@ -20,11 +21,10 @@ function hsc($string) {
 
 $icon = hsc($_GET['icon']);
 
-if(empty($icon) || !array_key_exists($icon, $ICONS)) {
+if(empty($icon) || !array_key_exists($icon, $ICONS))
 	$icon = $UNKNOWN_ICON;
-} else {
+else
 	$icon = $ICONS[$icon];
-}
 
 $width  = '1em';
 $height = '1em';
@@ -42,9 +42,8 @@ if($_GET['height']) {
 	$height = $param;
 }
 
-if($_GET['color']) {
-	$fill = hsc($_GET['color']);
-}
+if($_GET['color'])
+	$fill = parseColor(hsc($_GET['color']));
 
 $path    = sprintf('<path fill="%s" d="%s"/>', $fill, $icon);
 $svg     = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="%s" height="%s" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">%s</svg>';
@@ -52,4 +51,5 @@ $content = sprintf($svg, $width, $height, $path);
 
 $content_type = 'image/svg+xml; charset=utf-8';
 header("Content-Type: $content_type");
+
 echo $content;

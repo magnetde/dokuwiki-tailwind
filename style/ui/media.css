@@ -691,22 +691,22 @@
 
 						&.btn-open {
 							@apply
-								bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=%236b7280')]
-								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=%239ca3af')]
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=gray-500')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=open-external&color=gray-400')]
 							;
 						}
 
 						&.btn-manager {
 							@apply
-								bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=%236b7280')]
-								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=%239ca3af')]
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=gray-500')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=image-fill&color=gray-400')]
 							;
 						}
 
 						&.btn-trash {
 							@apply
-								bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=%236b7280')]
-								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=%239ca3af')]
+								bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=gray-500')]
+								dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=trash&color=gray-400')]
 							;
 						}
 					}

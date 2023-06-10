@@ -18,14 +18,14 @@
 			.ui-button-icon {
 				@apply
 					w-4 h-4 absolute left-1.5 top-1.5 bg-contain
-					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%239ca3af')]
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=gray-400')]
 				;
 			}
 
 			&:hover .ui-button-icon {
 				@apply
-					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23111827')]
-					dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=%23fff')]
+					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=gray-900')]
+					dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=white')]
 				;
 			}
 		}

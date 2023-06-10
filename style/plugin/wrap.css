@@ -1,0 +1,373 @@
+// Styles for the wrap plugin.
+
+.dw-content {
+
+	// Remove margin, if the first element is a paragraph
+	.plugin_wrap {
+		*:first-child p, p:first-child {
+			@apply mt-0;
+		}
+	}
+
+	// columns
+
+	.wrap_left,
+	.wrap_column {
+		@apply float-left mr-6;
+	}
+	[dir=rtl] .wrap_column {
+		@apply float-right ml-6 mr-0;
+	}
+	.wrap_right {
+		@apply float-right ml-6;
+	}
+	.wrap_center {
+		@apply block ml-auto mr-auto;
+	}
+
+	// CSS3 columns
+
+	.wrap_col2, .wrap_col3, .wrap_col4, .wrap_col5,
+	.wrap_colsmall, .wrap_colmedium, .wrap_collarge {
+		column-gap: 1.5em;
+	}
+	.wrap_col2 {
+		column-count: 2;
+	}
+	.wrap_col3 {
+		column-count: 3;
+	}
+	.wrap_col4 {
+		column-count: 4;
+	}
+	.wrap_col5 {
+		column-count: 5;
+	}
+
+	.wrap_colsmall {
+		column-width: 10em;
+	}
+	.wrap_colmedium {
+		column-width: 20em;
+	}
+	.wrap_collarge {
+		column-width: 30em;
+	}
+
+	// widths
+
+	.wrap_twothirds {
+		@apply
+			w-auto md:w-[65%]
+			mr-0 md:mr-[5%] rtl:mr-0 ml-0 md:rtl:ml-[5%]
+		;
+	}
+
+	.wrap_half {
+		@apply
+			w-auto md:w-[48%]
+			mr-0 md:mr-[4%] rtl:mr-0 ml-0 md:rtl:ml-[4%]
+		;
+	}
+
+	.wrap_third {
+		@apply
+			w-auto md:w-[30%]
+			mr-0 md:mr-[5%] rtl:mr-0 ml-0 md:rtl:ml-[5%]
+		;
+	}
+
+	.wrap_quarter {
+		@apply
+			w-auto md:w-[48%] lg:w-[22%]
+			mr-0 md:mr-[4%] rtl:mr-0 ml-0 md:rtl:ml-[4%]
+		;
+
+		&:nth-of-type(2n) {
+			@apply mr-0 lg:mr-[4%] rtl:ml-0 lg:rtl:ml-[4%];
+		}
+
+		&:nth-of-type(2n+1) {
+			@apply clear-left lg:clear-none;
+		}
+		&:nth-of-type(2n) {
+			@apply rtl:clear-right lg:clear-none;
+		}
+	}
+
+	// fixes
+	.wrap_half + .wrap_half,
+	.wrap_third + .wrap_twothirds,
+	.wrap_twothirds + .wrap_third,
+	.wrap_third + .wrap_third + .wrap_third,
+	.wrap_quarter + .wrap_quarter + .wrap_quarter + .wrap_quarter {
+		@apply mr-0 rtl:ml-0;
+
+		+ * {
+			@apply clear-left rtl:clear-right;
+		}
+	}
+
+	// alignments
+	.wrap_leftalign {
+		@apply text-left;
+	}
+	.wrap_centeralign {
+		@apply text-center;
+	}
+	.wrap_rightalign {
+		@apply text-right;
+	}
+	.wrap_justify {
+		@apply text-justify;
+	}
+
+	// box
+	div.wrap_round {
+		@apply rounded-lg;
+	}
+	span.wrap_round {
+		@apply rounded;
+	}
+
+	// mark
+	.wrap_lo {
+		@apply text-sm text-gray-700 dark:text-gray-200;
+	}
+	.wrap_em {
+		@apply font-semibold text-red-700 dark:text-red-500;
+	}
+
+	// miscellaneous
+
+	// tablewidth
+	.wrap_tablewidth table {
+		@apply w-full;
+	}
+
+	// indent
+	.wrap_indent {
+		@apply pl-6 rtl:pr-6 rtl:pl-6;
+	}
+
+	// outdent
+	.wrap_outdent {
+		@apply -ml-6 rtl:-mr-6 rtl:ml-0;
+		margin-left: -1.5em;
+	}
+
+	// word wrapping in pre
+	div.wrap_prewrap pre {
+		@apply whitespace-pre-wrap break-words;
+	}
+
+	// spoiler
+	.wrap_spoiler {
+		@apply
+			mx-2 p-0.5 rounded
+			text-[--tw-prose-body] bg-[--tw-prose-body]
+			hover:text-[--tw-prose-body] hover:bg-white dark:hover:bg-gray-900
+			!important
+		;
+	}
+
+	// spoiler
+	div.wrap_spoiler {
+		@apply mb-6;
+	}
+
+	// clear float
+	.wrap_clear {
+		@apply clear-both leading-[0] h-0 text-[1px] invisible overflow-hidden;
+	}
+
+	// hide
+	.wrap_hide {
+		@apply hidden;
+	}
+
+	// button-style link
+	.wrap_button a:link,
+	.wrap_button a:visited {
+		@apply bg-none btn-secondary;
+	}
+
+	// general styles for all notes
+
+	.wrap_danger,
+	.wrap_warning,
+	.wrap_caution,
+	.wrap_notice,
+	.wrap_safety,
+	.wrap_info,
+	.wrap_important,
+	.wrap_alert,
+	.wrap_tip,
+	.wrap_help,
+	.wrap_todo,
+	.wrap_download {
+		*:not(pre) {
+			@apply !text-inherit;
+		}
+
+		em {
+			@apply not-italic;
+		}
+	}
+
+	// notes without icons
+
+	// general div styles
+	div.wrap_box,
+	div.wrap_danger,
+	div.wrap_warning,
+	div.wrap_caution,
+	div.wrap_notice,
+	div.wrap_safety {
+		@apply p-4 mb-6 overflow-hidden;
+	}
+
+	// general span styles
+	span.wrap_box,
+	span.wrap_danger,
+	span.wrap_warning,
+	span.wrap_caution,
+	span.wrap_notice,
+	span.wrap_safety {
+		@apply py-0.5 px-1.5 rounded;
+	}
+
+	// notes with icons
+
+	// general div styles
+	div.wrap_info,
+	div.wrap_important,
+	div.wrap_alert,
+	div.wrap_tip,
+	div.wrap_help,
+	div.wrap_todo,
+	div.wrap_download {
+		@apply
+			pt-4 pr-4 pb-2 pl-16 mb-6 min-h-[5rem] bg-[1rem_50%] bg-[length:2rem] bg-no-repeat overflow-hidden
+			rtl:pr-16 rtl:pl-4 rtl:bg-[right_50%]
+		;
+	}
+
+	// general span styles
+	span.wrap_info,
+	span.wrap_important,
+	span.wrap_alert,
+	span.wrap_tip,
+	span.wrap_help,
+	span.wrap_todo,
+	span.wrap_download {
+		@apply
+			py-0.5 pl-6 pr-1.5 min-h-[1.5rem] rounded bg-[0.15rem_50%] bg-no-repeat
+			rtl:pl-1 rtl:pr-6 rtl:bg-[right_50%]
+		;
+	}
+
+	// box
+	.wrap_box {
+		@apply box-hf;
+	}
+	div.wrap_box {
+		@apply border;
+	}
+	span.wrap_box {
+		@apply rounded;
+	}
+
+	// safety notes
+
+	.wrap_danger {
+		@apply text-red-800 bg-red-100 dark:text-red-300 dark:bg-red-900;
+	}
+	.wrap_warning {
+		@apply text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-900;
+	}
+	.wrap_caution {
+		@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
+	}
+	.wrap_notice {
+		@apply text-blue-800 bg-blue-100 dark:text-blue-300 dark:bg-blue-900;
+	}
+	.wrap_safety {
+		@apply text-green-800 bg-green-100 dark:text-green-300 dark:bg-green-900;
+	}
+
+	// icon notes
+
+	// info
+	.wrap_info {
+		@apply
+			text-blue-800 bg-blue-100 dark:text-blue-300 dark:bg-blue-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-info&color=blue-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-info&color=blue-900')]
+		;
+	}
+
+	// important
+	.wrap_important {
+		@apply
+			text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-important&color=orange-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-important&color=orange-900')]
+		;
+	}
+
+	// alert
+	.wrap_alert {
+		@apply text-red-800 bg-red-100 dark:text-red-300 dark:bg-red-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-alert&color=red-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-alert&color=red-900')]
+		;
+	}
+
+	// tip
+	.wrap_tip {
+		@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-tip&color=yellow-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-tip&color=yellow-900')]
+		;
+	}
+
+	// help
+	.wrap_help {
+		@apply text-purple-800 bg-purple-100 dark:text-purple-300 dark:bg-purple-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-help&color=purple-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-help&color=purple-900')]
+		;
+	}
+
+	// todo
+	.wrap_todo {
+		@apply text-sky-800 bg-sky-100 dark:text-sky-300 dark:bg-sky-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-todo&color=sky-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-todo&color=sky-900')]
+		;
+	}
+
+	// download
+	.wrap_download {
+		@apply text-lime-800 bg-lime-100 dark:text-lime-300 dark:bg-lime-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-download&color=lime-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-download&color=lime-900')]
+		;
+	}
+
+	// mark
+	.wrap_hi {
+		@apply overflow-hidden text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
+	}
+
+	// miscellaneous
+	.wrap_onlyprint {
+		@apply hidden print:block;
+	}
+
+	// tabs
+	.plugin_wrap.tabs {
+		@apply mb-6;
+	}
+}

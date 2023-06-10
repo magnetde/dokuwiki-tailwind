@@ -90,20 +90,20 @@
 
 	a.urlextern {
 		@apply
-			bg-[url('/lib/tpl/tailwind/icon.php?icon=link-external&color=%236b7280')]
-			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=link-external&color=%239ca3af')]
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=link-external&color=gray-500')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=link-external&color=gray-400')]
 		;
 	}
 	a.mail {
 		@apply
-			bg-[url('/lib/tpl/tailwind/icon.php?icon=email&color=%236b7280')]
-			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=email&color=%239ca3af')]
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=email&color=gray-500')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=email&color=gray-400')]
 		;
 	}
 	a.windows {
 		@apply
-			bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%236b7280')]
-			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=%239ca3af')]
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=gray-500')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=windows-share&color=gray-400')]
 		;
 	}
 
@@ -112,14 +112,14 @@
 	a.interwiki {
 		&.iw_amazon, &.iw_amazon_de, &.iw_amazon_uk {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=amazon&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=amazon&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=amazon&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=amazon&color=gray-400')]
 			;
 		}
 		&.iw_callto, &.iw_tel {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=callto&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=callto&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=callto&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=callto&color=gray-400')]
 			;
 		}
 		&.iw_doku {
@@ -127,56 +127,56 @@
 		}
 		&.iw_go, &.iw_google {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=google&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=google&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=google&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=google&color=gray-400')]
 			;
 		}
 		&.iw_paypal {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=paypal&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=paypal&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=paypal&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=paypal&color=gray-400')]
 			;
 		}
 		&.iw_phpfn {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=php&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=php&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=php&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=php&color=gray-400')]
 			;
 		}
 		&.iw_rfc {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=rfc&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rfc&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=rfc&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rfc&color=gray-400')]
 			;
 		}
 		&.iw_skype {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=skype&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=skype&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=skype&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=skype&color=gray-400')]
 			;
 		}
 		&.iw_this {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=rss&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rss&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=rss&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=rss&color=gray-400')]
 			;
 		}
 		&.iw_user {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=user&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=user&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=user&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=user&color=gray-400')]
 			;
 		}
 		&.iw_man {
 			@apply
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=cmd&color=%236b7280')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=cmd&color=%239ca3af')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=cmd&color=gray-500')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=cmd&color=gray-400')]
 			;
 		}
 		&.iw_wp, &.iw_wpde, &.iw_wpes, &.iw_wpfr, &.iw_wpjp, &.iw_wpmeta, &.iw_wppl {
 			@apply // icons are gray-900 / gray-100 because the Wikipedia logo is too thin
-				bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23111827')]
-				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=%23f3f4f6')]
+				bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=gray-900')]
+				dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=wikipedia&color=gray-100')]
 			;
 		}
 	}
@@ -279,9 +279,9 @@ footer .license a {
 }
 
 .success {
-	@apply text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400;
+	@apply text-green-800 bg-green-50 dark:text-green-400 dark:bg-gray-800;
 }
 
 .error {
-	@apply text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400;
+	@apply text-red-800 bg-red-50 dark:text-red-400 dark:bg-gray-800;
 }

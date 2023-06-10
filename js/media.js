@@ -31,9 +31,9 @@ function addTreeHandler() {
 		toggle_display: function(img, opening) {
 			// TODO: handle dark color theme
 			if(opening)
-				img.attr('src', DOKU_TPL + 'icon.php?icon=chevron-down&color=%236b7280');
+				img.attr('src', DOKU_TPL + 'icon.php?icon=chevron-down&color=gray-500');
 			else
-				img.attr('src', DOKU_TPL + 'icon.php?icon=chevron-right&color=%236b7280');
+				img.attr('src', DOKU_TPL + 'icon.php?icon=chevron-right&color=gray-500');
 		},
 	});
 }
