@@ -248,7 +248,7 @@
 	div.wrap_todo,
 	div.wrap_download {
 		@apply
-			pt-4 pr-4 pb-2 pl-16 mb-6 min-h-[5rem] bg-[1rem_50%] bg-no-repeat overflow-hidden
+			pt-4 pr-4 pb-2 pl-16 mb-6 min-h-[5rem] bg-[1rem_50%] bg-[length:2rem] bg-no-repeat overflow-hidden
 			rtl:pr-16 rtl:pl-4 rtl:bg-[right_50%]
 		;
 	}
@@ -300,79 +300,60 @@
 
 	// info
 	.wrap_info {
-		@apply text-blue-800 bg-blue-100 dark:text-blue-300 dark:bg-blue-900;
-	}
-	div.wrap_info {
-		@apply bg-[url(images/note/48/info.png)];
-	}
-	span.wrap_info {
-		@apply bg-[url(images/note/16/info.png)];
+		@apply
+			text-blue-800 bg-blue-100 dark:text-blue-300 dark:bg-blue-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-info&color=blue-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-info&color=blue-900')]
+		;
 	}
 
 	// important
 	.wrap_important {
-		@apply text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-900;
-	}
-	div.wrap_important {
-		@apply bg-[url(images/note/48/important.png)];
-	}
-	span.wrap_important {
-		@apply bg-[url(images/note/16/important.png)];
+		@apply
+			text-orange-800 bg-orange-100 dark:text-orange-300 dark:bg-orange-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-important&color=orange-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-important&color=orange-900')]
+		;
 	}
 
 	// alert
 	.wrap_alert {
-		@apply text-red-800 bg-red-100 dark:text-red-300 dark:bg-red-900;
-	}
-	div.wrap_alert {
-		@apply bg-[url(images/note/48/alert.png)];
-	}
-	span.wrap_alert {
-		@apply bg-[url(images/note/16/alert.png)];
+		@apply text-red-800 bg-red-100 dark:text-red-300 dark:bg-red-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-alert&color=red-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-alert&color=red-900')]
+		;
 	}
 
 	// tip
 	.wrap_tip {
-		@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
-	}
-	div.wrap_tip {
-		@apply bg-[url(images/note/48/tip.png)];
-	}
-	span.wrap_tip {
-		@apply bg-[url(images/note/16/tip.png)];
+		@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-tip&color=yellow-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-tip&color=yellow-900')]
+		;
 	}
 
 	// help
 	.wrap_help {
-		@apply text-purple-800 bg-purple-100 dark:text-purple-300 dark:bg-purple-900;
-	}
-	div.wrap_help {
-		@apply bg-[url(images/note/48/help.png)];
-	}
-	span.wrap_help {
-		@apply bg-[url(images/note/16/help.png)];
+		@apply text-purple-800 bg-purple-100 dark:text-purple-300 dark:bg-purple-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-help&color=purple-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-help&color=purple-900')]
+		;
 	}
 
 	// todo
 	.wrap_todo {
-		@apply text-sky-800 bg-sky-100 dark:text-sky-300 dark:bg-sky-900;
-	}
-	div.wrap_todo {
-		@apply bg-[url(images/note/48/todo.png)];
-	}
-	span.wrap_todo {
-		@apply bg-[url(images/note/16/todo.png)];
+		@apply text-sky-800 bg-sky-100 dark:text-sky-300 dark:bg-sky-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-todo&color=sky-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-todo&color=sky-900')]
+		;
 	}
 
 	// download
 	.wrap_download {
-		@apply text-lime-800 bg-lime-100 dark:text-lime-300 dark:bg-lime-900;
-	}
-	div.wrap_download {
-		@apply bg-[url(images/note/48/download.png)];
-	}
-	span.wrap_download {
-		@apply bg-[url(images/note/16/download.png)];
+		@apply text-lime-800 bg-lime-100 dark:text-lime-300 dark:bg-lime-900
+			bg-[url('/lib/tpl/tailwind/icon.php?icon=note-download&color=lime-800')]
+			dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=note-download&color=lime-900')]
+		;
 	}
 
 	// mark
