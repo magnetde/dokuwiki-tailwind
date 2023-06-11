@@ -2113,8 +2113,12 @@ class simple_html_dom
 
 		// PaperG: Attributes should not have \r or \n in them, that counts as
 		// html whitespace.
-		$value = str_replace("\r", '', $value);
-		$value = str_replace("\n", '', $value);
+
+		// giterlizzi: Fix for DokuWiki template 
+		if ($this->strip_rn) {
+			$value = str_replace("\r", '', $value);
+			$value = str_replace("\n", '', $value);
+		}
 
 		// PaperG: If this is a "class" selector, lets get rid of the preceeding
 		// and trailing space since some people leave it in the multi class case.
