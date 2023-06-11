@@ -151,14 +151,17 @@ class TPLContentDisplay extends EventHandler {
 		foreach($diff->find('th') as $th) {
 			// Add a line break after the revision link or before the summary (like it exists in the inline view)
 			$sum = $th->find('.sum', 0);
-			$sum->outertext = '<br />' . str_replace(' – ', '', $sum->outertext);
+			if($sum) {
+				$sum->outertext = '<br />' . str_replace(' – ', '', $sum->outertext);
 
-			if($sum->innertext != ' – ')
-				$sum->outertext .= ', ';
+				if($sum->innertext != ' – ')
+					$sum->outertext .= ', ';
+			}
 
 			// Remove the line break at the user description
 			$user = $th->find('.user', 0);
-			$user->outertext = str_replace('<br />', '', $user->outertext);
+			if($user)
+				$user->outertext = str_replace('<br />', '', $user->outertext);
 		}
 
 		// Add classes to the diff lineheaders to style those different dependend on the + or - symbol
