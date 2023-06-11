@@ -20,6 +20,8 @@ class TPLContentDisplay extends EventHandler {
 	}
 
 	private function modifyContent($content) {
+		global $ACT;
+
 		// FIX :-\ smile
 		$content = str_replace(['alt=":-\"', "alt=':-\'"], 'alt=":-&#92;"', $content);
 
@@ -35,13 +37,28 @@ class TPLContentDisplay extends EventHandler {
 		if(!$html)
 			return $content;
 
-		$this->modifyHeaders($html);
-		$this->modifyDownloadBlocks($html);
-		$this->modifyEditor($html);
-		$this->modifyDiff($html);
-		$this->modifySearch($html);
-		$this->modifyMediaManager($html);
-		$this->modifyExtensionManager($html);
+		switch($ACT) {
+		case 'show':
+			$this->modifyHeaders($html);
+			$this->modifyDownloadBlocks($html);
+			break;
+		case 'edit':
+			$this->modifyEditor($html);
+			break;
+		case 'diff':
+		case 'draft':
+			$this->modifyDiff($html);
+			break;
+		case 'search':
+			$this->modifySearch($html);
+			break;
+		case 'media':
+			$this->modifyMediaManager($html);
+			break;
+		case 'admin':
+			$this->modifyExtensionManager($html);
+			break;
+		}
 
 		$content = $html->save();
 		$html->clear();
@@ -52,12 +69,6 @@ class TPLContentDisplay extends EventHandler {
 
 	// Add anchors to headings
 	private function modifyHeaders($html) {
-		global $ACT;
-
-		// only add anchors if a wiki page is shown
-		if($ACT != 'show')
-			return;
-
 		$headers = array('h1', 'h2', 'h3', 'h4'); // no anchor for h5
 
 		foreach($headers as $header) {
@@ -124,13 +135,11 @@ class TPLContentDisplay extends EventHandler {
 	 * the revision description and adding a rounded header and footer to the table.
 	 */
 	private function modifyDiff($html) {
-		$diff = $html->find('table.diff', 0);
-		if(!$diff)
-			return;
-
 		$div = $html->find('div.table', 0);
 		$div->addClass('not-prose');
 		$div->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
+
+		$diff = $html->find('table.diff', 0);
 
 		if($diff->hasClass('diff_sidebyside'))
 			$this->modifyDiffSideBySide($diff);
