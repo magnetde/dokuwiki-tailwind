@@ -1,8 +1,8 @@
 <header class="<?php echo clsx("
 	sticky h-navbar top-0 z-50 flex-none w-full
-	backdrop-blur transition-colors duration-500
-	bg-white/95, border-b border-gray-900/10 dark:bg-transparent
-	dark:border-gray-50/[0.06] supports-backdrop-blur:bg-white/60
+	backdrop-blur border-b transition-colors duration-500
+	border-gray-900/10 bg-white/95 supports-backdrop-blur:bg-white/70
+	dark:border-gray-50/[0.06] dark:bg-transparent
 ") ?>">
 	<div class="<?php echo clsx("
 		flex items-center justify-between
@@ -27,40 +27,22 @@
 
 		<!--- Search field --->
 		<div class="flex items-center md:order-1 md:justify-center">
-			<?php echo _tpl_searchform() ?>
+			<?php _tpl_searchform() ?>
 		</div>
 
-		<!--- Mobile menu --->
-		<button class="<?php echo clsx("
-			text-secondary
-			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden order-3 focus:ring-2
-			hover:bg-gray-100 focus:outline-none focus:ring-gray-200
-			dark:hover:bg-gray-700 dark:focus:ring-gray-600
-		") ?>" type="button" data-collapse-toggle="navbar-default" aria-controls="navbar-default" aria-expanded="false">
-			<span class="sr-only">
-				<?php tpl_getLang('open_menu') ?>
-			</span>
-			<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-			</svg>
-		</button>
-
 		<!--- Tools dropdown and user avatar --->
-		<div class="hidden items-center md:order-2 md:flex md:justify-end" id="navbar-default">
+		<div class="hidden items-center md:order-2 md:flex md:justify-end">
 			<ul class="<?php echo clsx("
-				flex flex-col font-medium p-4 mt-4 items-center border rounded-lg
-				md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0
-				border-gray-100 bg-gray-50
+				flex flex-row font-medium items-center rounded-lg space-x-8
 				dark:bg-gray-800 dark:border-gray-700
-				md:bg-transparent
 			") ?>">
+				<!--- Tools button --->
 				<li>
-					<!--- Tools button --->
 					<button data-dropdown-toggle="dropdown-tools" class="<?php echo clsx("
-						md:btn-link
-						flex items-center justify-between w-full
+						btn-link flex items-center justify-between w-full
 					") ?>">
-						<?php echo $lang['tools'] ?> <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<?php echo $lang['tools'] ?>
+						<svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 						</svg>
 					</button>
@@ -80,8 +62,9 @@
 						</ul>
 					</div>
 				</li>
+
+				<!--- Avatar button --->
 				<li>
-					<!--- Avatar button --->
 					<button type="button" class="<?php echo clsx("
 						flex mr-3 first-line:text-sm rounded-full md:mr-0 focus:ring-4
 						bg-gray-800 focus:ring-gray-300 dark:focus:ring-gray-600
@@ -90,41 +73,91 @@
 							<?php tpl_getLang('open_menu') ?>
 						</span>
 
-						<?php
-						if(array_key_exists('REMOTE_USER', $_SERVER)) {
-							$user = $_SERVER['REMOTE_USER'];
-							$avatar_url = _tpl_getavatar($user, $INFO['userinfo']['mail']);
-							echo '<img class="w-8 h-8 rounded-full" src="' . $avatar_url . '" alt="' . $user . '">';
-						} else {
-							echo '<div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">'
-								.'<svg class="absolute w-8 h-8 text-gray-400 top-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-								.'<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd">'
-								.'</path></svg>';
-						}
-						?>
+						<?php _tpl_avatar() ?>
 					</button>
 
 					<!-- Dropdown menu of the avatar -->
 					<div id="user-dropdown" class="dropdown-container my-4">
 						<?php
-						if(!empty($_SERVER['REMOTE_USER'])) {
-							echo '<div class="px-4 py-3">'
-								.'<span class="text-primary block text-sm">' . hsc($INFO['userinfo']['name']) . '</span>'
-								.'<span class="text-secondary block text-sm truncate">' . $INFO['userinfo']['mail'] . '</span>'
-								.'</div>';
-						}
+						if(!empty($_SERVER['REMOTE_USER']))
+							_tpl_userInfo();
 						?>
 						<ul class="py-2" aria-labelledby="user-menu-button">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
-							foreach($menu_items as $item) {
+							foreach($menu_items as $item)
 								echo '<li><a class="dropdown-element" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
-							}
 							?>
 						</ul>
 					</div>
 				</li>
 			</ul>
 		</div>
+
+		<!--- Mobile menu button --->
+		<button class="<?php echo clsx("
+			text-secondary
+			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden order-3 focus:ring-2
+			hover:bg-gray-100 focus:outline-none focus:ring-gray-200
+			dark:hover:bg-gray-700 dark:focus:ring-gray-600
+		") ?>" type="button" data-collapse-toggle="navbar-mobile-menu" aria-controls="navbar-mobile-menu" aria-expanded="false">
+			<span class="sr-only">
+				<?php tpl_getLang('open_menu') ?>
+			</span>
+			<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+			</svg>
+		</button>
 	</div>
 </header>
+
+<!--- Mobile menu --->
+<!--- The mobile menu is added as an sibling element to the navbar because it needs a lower z-index to fix some weird overscroll animations --->
+<div class="hidden fixed z-10 inset-0 overflow-y-auto dark:bg-gray-900/[0.05]" id="navbar-mobile-menu">
+	<div class="<?php echo clsx("
+		flex flex-col justify-stretch px-2 pt-[theme(height.navbar)] border-b
+		divide-y divide-gray-200 dark:divide-gray-700
+		border-gray-900/10 bg-white
+		dark:border-gray-50/5 dark:bg-gray-900
+	") ?>">
+		<!--- User info and user actions --->
+		<?php if(!empty($_SERVER['REMOTE_USER'])) { ?>
+		<div class="flex flex-col justify-stretch pt-4">
+			<div class="flex items-center px-3">
+				<?php _tpl_avatar() ?>
+				<?php _tpl_userInfo() ?>
+			</div>
+			<ul class="pb-2">
+				<?php
+				$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
+				foreach($menu_items as $item)
+					echo '<li><a class="nav-item" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
+				?>
+			</ul>
+		</div>
+		<?php } ?>
+
+		<!--- Tools --->
+		<ul class="py-2">
+			<div class="pt-3 px-3 mb-2 text-sm font-semibold text-gray-500">
+				<?php echo $lang['tools'] ?>
+			</div>
+
+			<?php
+			$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+			foreach($menu_items as $item)
+				echo '<li><a class="nav-item" href="' . $item->getLink() . '">' . $item->getLabel() . '</a></li>';
+			?>
+		</ul>
+
+		<!--- Sidebar --->
+		<?php
+		$sidebarInNavbar = $ACT == 'show' && page_findnearest($conf['sidebar']);
+
+		if($sidebarInNavbar) { ?>
+		<div class="dokuwiki-sidebar pt-5 px-3">
+			<?php _tpl_sidebar() ?>
+		</div>
+		<?php } ?>
+	</div>
+</div>

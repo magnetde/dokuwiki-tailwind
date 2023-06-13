@@ -13,13 +13,17 @@ form.search {
 
 	// Input field of the search
 	input {
-		@apply input-text py-2 pl-10 pr-2 block w-full text-sm;
+		@apply input-text py-2 pl-10 pr-2 block w-full md:text-sm;
 	}
 }
 
 // Search dropdown
 #qsearch__out {
-	@apply absolute dropdown-container w-full lg:w-[38rem] mt-3 -ml-12 shadow-md divide-y-0 border box-b;
+	@apply
+		dropdown-container shadow-md divide-y-0 border box-b -mt-[0.25rem]
+		fixed inset-x-4 top-[theme(height.navbar)]
+		md:absolute md:top-[calc(0.5*(theme(height.navbar)+2.25rem))] md:left-1/2 md:right-auto md:w-[120%] md:-translate-x-1/2
+	;
 
 	strong {
 		@apply block px-4 py-2 font-medium text-primary;
