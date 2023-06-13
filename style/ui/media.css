@@ -89,7 +89,7 @@
 			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
 
 			.nothing {
-				@apply block my-8 text-center font-semibold text-xl;
+				@apply block my-12 text-center font-semibold text-xl;
 			}
 		}
 
