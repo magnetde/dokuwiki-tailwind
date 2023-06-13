@@ -15,7 +15,7 @@
 	// Checkbox
 	div.li input {
 		@apply
-			absolute mt-[1.05rem] w-5 h-5 -left-2.5 rounded-full ring-4 border cursor-pointer
+			absolute mt-4 w-5 h-5 -left-2.5 rounded-full ring-4 border cursor-pointer
 			border-gray-300 bg-gray-100 text-primary-600 ring-white
 			dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:ring-gray-900
 		;
