@@ -27,5 +27,9 @@ form.search {
 
 	ul li {
 		@apply dropdown-element;
+
+		&:last-child {
+			@apply rounded-b-lg;
+		}
 	}
 }
