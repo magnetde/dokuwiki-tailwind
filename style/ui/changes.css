@@ -40,6 +40,12 @@
 			.sum {
 				@apply text-primary text-lg font-semibold truncate;
 
+				// Minor edits
+				&:where(.minor *) {
+					@apply text-secondary;
+				}
+
+				// Empty summary
 				&.empty {
 					@apply text-secondary italic;
 				}
