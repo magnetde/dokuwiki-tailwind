@@ -23,19 +23,7 @@
 
 		// Add an hover effect to nav items
 		.sidebar-nav-item {
-			@apply
-				block -mx-3 px-3 py-2 text-base font-medium rounded-lg
-				text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700
-			;
-
-			&:where(.curid *) {
-				@apply bg-gray-100 dark:bg-gray-700 text-primary-700;
-			}
-
-			// elements, that are not links
-			&.li {
-				@apply text-gray-600 dark:text-gray-300;
-			}
+			@apply nav-item -mx-3;
 		}
 
 		// links

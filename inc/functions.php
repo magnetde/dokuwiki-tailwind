@@ -126,20 +126,38 @@ function _tpl_searchform() {
  * Returns the text field icon.
  */
 function _tpl_search_input() {
-	// ugly code, probably needs a fix
-	return '<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">'
-		.'<svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-		.'<path fill-rule="evenodd" d='
-		.'"M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"'
-		.' clip-rule="evenodd">'
-		.'</path></svg>'
-		.'</div>';
+    ob_start(); ?>
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+	<svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd">
+	</path></svg>
+</div>
+	<?php return ob_get_clean();
+}
+
+/**
+ * Prints the user avatar element.
+ */
+function _tpl_avatar() {
+	global $INFO;
+
+	if(array_key_exists('REMOTE_USER', $_SERVER)) {
+		$user = $_SERVER['REMOTE_USER'];
+		$avatar_url = _tpl_avatarURL($user, $INFO['userinfo']['mail']);
+		echo '<img class="w-8 h-8 rounded-full" src="' . $avatar_url . '" alt="' . $user . '">';
+	} else { ?>
+<div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+	<svg class="absolute w-8 h-8 text-gray-400 top-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd">
+	</path></svg>
+</div>
+	<?php }
 }
 
 /**
  * Wrapper to return the avatar of an user.
  */
-function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
+function _tpl_avatarURL($username, $email, $size = 80, $d = 'mm', $r = 'g') {
 	global $INFO;
 
 	$email = strtolower(trim($email));
@@ -150,6 +168,18 @@ function _tpl_getavatar($username, $email, $size = 80, $d = 'mm', $r = 'g') {
 
 	$media_link = ml("$avatar_url&.jpg", ['cache' => 'recache', 'w' => $size, 'h' => $size]);
 	return $media_link;
+}
+
+/**
+ * Returns the user info, must only be called when the current user is logged in.
+ */
+function _tpl_userInfo() {
+	global $INFO;
+
+	echo '<div class="px-4 py-3">'
+		.'<span class="text-primary block text-sm">' . hsc($INFO['userinfo']['name']) . '</span>'
+		.'<span class="text-secondary block text-sm truncate">' . $INFO['userinfo']['mail'] . '</span>'
+		.'</div>';
 }
 
 /**
