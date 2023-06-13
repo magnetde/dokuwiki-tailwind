@@ -99,7 +99,7 @@ function _tpl_metaheaders() {
 function _tpl_searchform() {
 	// Capture the original search form
 	ob_start();
-	tpl_searchform($autocomplete = false);
+	tpl_searchform($autocomplete = true);
 	$content = ob_get_clean();
 
 	// Parse the html

@@ -2,6 +2,10 @@
 form.search {
 	@apply relative w-full lg:w-[32rem];
 
+	div.no {
+		@apply relative;
+	}
+
 	// Hide the button (usually gets removed by the backend)
 	button {
 		display: none;
@@ -10,5 +14,18 @@ form.search {
 	// Input field of the search
 	input {
 		@apply input-text py-2 pl-10 pr-2 block w-full text-sm;
+	}
+}
+
+// Search dropdown
+#qsearch__out {
+	@apply absolute dropdown-container w-full lg:w-[38rem] mt-3 -ml-12 shadow-md divide-y-0 border box-b;
+
+	strong {
+		@apply block px-4 py-2 font-medium text-primary;
+	}
+
+	ul li {
+		@apply dropdown-element;
 	}
 }
