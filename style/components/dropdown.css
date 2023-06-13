@@ -1,7 +1,7 @@
 @layer components {
 	.dropdown-container {
 		@apply
-			z-10 hidden p-0 font-medium divide-y rounded-lg shadow text-base list-none
+			z-10 hidden p-0 font-medium divide-y rounded-lg shadow text-base list-none border box-b
 			bg-white divide-gray-100 dark:bg-gray-700 dark:divide-gray-600
 		;
 	}
