@@ -91,7 +91,7 @@ function _tpl_metaheaders() {
 }
 
 /**
- * Wrapper to create a search form.
+ * Wrapper to print a search form.
  * This function overwrites the search button.
  *
  * The search input cannot be modified by using events.
@@ -119,7 +119,7 @@ function _tpl_searchform() {
 	$html->clear();
 	unset($html);
 
-	return $content;
+	echo $content;
 }
 
 /**

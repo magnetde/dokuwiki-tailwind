@@ -40,9 +40,13 @@
 
 // Main content and left sidebar
 .dokuwiki, .dokuwiki-sidebar {
+	@apply w-full;
+
 	// extend the Tailwindcss typography
 	&:where(.prose) {
 		@apply
+			max-w-none
+			dark:prose-invert
 			prose-headings:scroll-mt-20
 			prose-pre:rounded-lg
 			prose-ul:my-2 prose-li:my-1

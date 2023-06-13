@@ -27,7 +27,7 @@
 
 		<!--- Search field --->
 		<div class="flex items-center md:order-1 md:justify-center">
-			<?php echo _tpl_searchform() ?>
+			<?php _tpl_searchform() ?>
 		</div>
 
 		<!--- Mobile menu --->

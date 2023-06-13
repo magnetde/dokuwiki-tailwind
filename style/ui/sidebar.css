@@ -2,6 +2,8 @@
 .dokuwiki-sidebar {
 	// Apply several adjustments for the sidebar
 	@apply
+		w-full max-w-none
+		prose prose-sm dark:prose-invert
 		prose-p:text-secondary prose-p:my-2 first:prose-p:mt-0
 		prose-strong:text-secondary
 		prose-em:text-secondary

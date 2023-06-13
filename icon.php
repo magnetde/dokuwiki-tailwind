@@ -51,5 +51,6 @@ $content = sprintf($svg, $width, $height, $path);
 
 $content_type = 'image/svg+xml; charset=utf-8';
 header("Content-Type: $content_type");
+header("Cache-Control: max-age=2592000"); // 30days (60sec * 60min * 24hours * 30days)
 
 echo $content;
