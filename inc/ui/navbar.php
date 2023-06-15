@@ -14,7 +14,7 @@
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<a class="flex items-center w-fit" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<a class="flex items-center w-fit max-w-[50%] mr-3" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
@@ -113,9 +113,9 @@
 
 <!--- Mobile menu --->
 <!--- The mobile menu is added as an sibling element to the navbar because it needs a lower z-index to fix some weird overscroll animations --->
-<div class="hidden fixed z-10 inset-0 overflow-y-auto dark:bg-gray-900/[0.05]" id="navbar-mobile-menu">
+<div class="hidden fixed z-40 top-0 left-0 w-screen h-screen overflow-y-auto bg-gray-900/50 dark:bg-gray-900/80" id="navbar-mobile-menu">
 	<div class="<?php echo clsx("
-		flex flex-col justify-stretch px-2 pt-[theme(height.navbar)] border-b
+		flex flex-col justify-stretch w-full px-2 pt-[theme(height.navbar)] border-b
 		divide-y divide-gray-200 dark:divide-gray-700
 		border-gray-900/10 bg-white
 		dark:border-gray-50/5 dark:bg-gray-900
