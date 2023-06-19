@@ -243,30 +243,38 @@
 
 // Other styles of the main content not included in the sidebar
 .dokuwiki {
-	// Section edit button
-	.secedit {
-		@apply opacity-0 hover:opacity-100 text-right;
+	// Section header
+	.section-header {
+		@apply flex flex-nowrap items-baseline;
 
-		.btn_secedit {
+		// Anchor link
+		.anchor {
 			@apply
-				inline-block absolute
-				-translate-x-full // move by its own width to the left
+				ml-3 no-underline opacity-0 transition-opacity
+				text-gray-300 hover:text-gray-400
+				dark:text-gray-500 dark:hover:text-gray-400
 			;
+		}
 
-			// add a hovable whitespace at the top of the button
-			&::before {
-				@apply content-[''] absolute h-16 w-20 bottom-0 right-0 -z-[1];
-			}
+		// Section edit button
+		.secedit {
+			@apply ml-auto opacity-0;
 
-			button {
-				@apply btn-icon ml-auto -mt-3;
+			.btn_secedit {
+				@apply inline-block;
+
+				button {
+					@apply btn-icon;
+				}
 			}
 		}
-	}
 
-	// hover on the previous sections displays the button
-	*:hover + .secedit {
-		@apply opacity-100;
+		// not use the group-features of tailwind because this would not work here
+		&:hover {
+			.anchor, .secedit {
+				@apply opacity-100;
+			}
+		}
 	}
 
 	// Footnotes (at the bottom)
