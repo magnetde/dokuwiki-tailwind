@@ -53,6 +53,7 @@ class HTMLSecEditButton extends EventHandler {
 		}
 
 		$event->result = $html->save();
+
 		$html->clear();
 		unset($html);
 	}

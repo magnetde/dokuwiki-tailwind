@@ -40,6 +40,7 @@ class TPLContentDisplay extends EventHandler {
 		switch($ACT) {
 		case 'show':
 			$this->modifyHeaders($html);
+			$this->modifySectionEdit($html);
 			$this->modifyDownloadBlocks($html);
 			break;
 		case 'edit':
@@ -74,16 +75,31 @@ class TPLContentDisplay extends EventHandler {
 		foreach($headers as $header) {
 			$selector = $header . '[id]';
 
-			foreach($html->find($selector) as $elm) {
-				$elm->addClass('group');
+			foreach($html->find($selector) as $elm)
+				$elm->innertext .= '<a class="anchor" href="#' . $elm->id . '">#</a>';
+		}
+	}
 
-				$class = clsx("
-					ml-3 no-underline opacity-0 transition-opacity group-hover:opacity-100
-					text-gray-300 hover:text-gray-400
-					dark:text-gray-500 dark:hover:text-gray-400
-				");
+	/**
+	 * Modifies the section edit button by moving to the section headers.
+	 */
+	private function modifySectionEdit($html) {
+		foreach($html->find('.editbutton_section') as $elm) {
+			$classes = $elm->class;
 
-				$elm->innertext .= '<a class="' . $class . '" href="#' . $elm->id . '">#</a>';
+			// determine the current section id
+			if(preg_match('{editbutton_(\d+)}', $classes, $matches)) {
+				$secion_class = '.sectionedit' . $matches[1];
+				$header = $html->find($secion_class, 0);
+
+				if($header) {
+					// set the new section header
+					$header->addClass('section-header');
+					$header->innertext .= $elm->outertext;
+
+					// Remove the old edit button
+					$elm->outertext = '';
+				}
 			}
 		}
 	}
