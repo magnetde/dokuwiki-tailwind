@@ -31,6 +31,12 @@
 		@apply !absolute !left-[-99999em] !top-auto !w-px !h-px !overflow-hidden;
 	}
 
+	p {
+		&:first-child {
+			@apply mt-0;
+		}
+	}
+
 	a {
 		@apply link-primary;
 

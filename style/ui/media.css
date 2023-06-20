@@ -14,7 +14,7 @@
 	@apply mt-4;
 
 	ul {
-		@apply pl-0 list-none;
+		@apply pl-0 my-2 list-none;
 
 		ul {
 			@apply pl-4;
@@ -22,7 +22,7 @@
 	}
 
 	li {
-		@apply pl-0;
+		@apply pl-0 my-1;
 	}
 
 	img {
@@ -34,7 +34,7 @@
 
 		a {
 			@apply
-				text-secondary font-medium no-underline
+				text-secondary text-base font-medium no-underline
 				hover:text-gray-700 hover:dark:text-gray-300
 			;
 		}
@@ -346,8 +346,20 @@
 			@apply link-primary;
 		}
 
-		#mediamanager__btn_delete button {
-			@apply btn-secondary px-2.5 py-1.5 hover:text-red-600 dark:hover:text-red-400;
+		ul.actions {
+			@apply inline-block space-x-1;
+
+			li {
+				@apply inline-block;
+			}
+
+			button {
+				@apply btn-secondary px-2.5 py-1.5;
+
+				&:where(#mediamanager__btn_delete *) {
+					@apply hover:text-red-600 dark:hover:text-red-400
+				}
+			}
 		}
 	}
 
@@ -372,6 +384,7 @@
 			}
 		}
 
+		// Gets removed by JS
 		.actions {
 			@apply hidden;
 		}
