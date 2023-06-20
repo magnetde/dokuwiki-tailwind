@@ -68,15 +68,19 @@ class TPLContentDisplay extends EventHandler {
 		return $content;
 	}
 
-	// Add anchors to headings
+	// Add an class and anchors to headings.
 	private function modifyHeaders($html) {
-		$headers = array('h1', 'h2', 'h3', 'h4'); // no anchor for h5
+		$headers = array('h1', 'h2', 'h3', 'h4', 'h5');
 
 		foreach($headers as $header) {
 			$selector = $header . '[id]';
 
-			foreach($html->find($selector) as $elm)
-				$elm->innertext .= '<a class="anchor" href="#' . $elm->id . '">#</a>';
+			foreach($html->find($selector) as $elm) {
+				$elm->addClass('section-header');
+
+				if($header != 'h5')  // no anchor for h5
+					$elm->innertext .= '<a class="anchor" href="#' . $elm->id . '">#</a>';
+			}
 		}
 	}
 
@@ -93,8 +97,7 @@ class TPLContentDisplay extends EventHandler {
 				$header = $html->find($secion_class, 0);
 
 				if($header) {
-					// set the new section header
-					$header->addClass('section-header');
+					// add the section edit button to the header
 					$header->innertext .= $elm->outertext;
 
 					// Remove the old edit button
