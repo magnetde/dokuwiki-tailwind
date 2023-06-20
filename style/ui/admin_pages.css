@@ -243,7 +243,7 @@
 					}
 
 					.popularity {
-						@apply ml-2 w-12 h-[0.6rem] rounded-[0.3rem] bg-gray-200 dark:bg-gray-700;
+						@apply ml-2 w-12 h-[0.6rem] rounded-[0.3rem] overflow-hidden bg-gray-200 dark:bg-gray-700;
 
 						> * {
 							@apply h-[0.6rem] rounded-[0.3rem] bg-gray-400 dark:bg-gray-500;
@@ -267,8 +267,8 @@
 							@apply bg-transparent rounded-none text-left dropdown-element;
 						}
 
-						p {
-							@apply m-0 px-4 pt-2 pb-4 text-xs text-secondary;
+						> p, span {
+							@apply block m-0 px-4 py-2 text-xs text-secondary;
 						}
 					}
 				}
