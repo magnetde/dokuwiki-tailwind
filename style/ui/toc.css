@@ -30,11 +30,11 @@
 	// h3
 	.nav .nav .nav {
 		// hide non-active headers at this level by default
-		@apply hidden pb-2;
+		@apply hidden pb-1.5;
 
 		// connect the line of the first element with the last one
-		li:first-child a { // connect the first
-			@apply pt-2;
+		li:first-child a {
+			@apply pt-1.5;
 		}
 
 		a { @apply pl-[3rem] }

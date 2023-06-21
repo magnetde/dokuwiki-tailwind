@@ -60,8 +60,7 @@
 		@apply !hidden;
 	}
 
-	// move plugin fix
 	img[src$="/lib/images/throbber.gif"] {
-		@apply w-fit;
+		@apply w-fit p-4 mx-auto my-2;
 	}
 }
