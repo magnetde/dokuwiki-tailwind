@@ -72,7 +72,7 @@ function refreshMediaContent(mngr) {
 
 	if(fileShown(file)) {
 		prepareContent(mngr, filelist, file);
-		moveDeleteBtn(file);
+		moveActions(file);
 
 		// show the file
 		file.removeClass('a11y');
@@ -117,19 +117,24 @@ function prepareContent(mngr, filelist, file) {
 		.appendTo(filelist.find('.tabs'));
 }
 
-// moves the file delete button into the file header
-function moveDeleteBtn(file) {
+// moves the actions into the file header
+function moveActions(file) {
 	// move the file delete button to the panel header
 	var actions = file.find('.panelContent .actions');
 	if(actions.length) {
-		// cache the button element
-		var btn = actions.find('#mediamanager__btn_delete');
+		// selectors for children to remove
+		var remove = [':has(#mediamanager__btn_update)'].join(',');
 
-		// remove the action element, the button gets staled
+		// Filter and cache all children
+		var children = actions.children().not(remove);
+
+		// remove the action list
 		actions.remove();
 
-		// append button to header
-		file.find('.panelHeader').append(btn);
+		// awrap children inside an list and ppend button to header
+		file.find('.panelHeader').append(
+			jQuery('<ul>').addClass('actions').append(children),
+		);
 	}
 }
 

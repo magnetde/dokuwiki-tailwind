@@ -1,0 +1,44 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:diagrams
+ */
+
+// Diagram at a wiki page
+.dokuwiki {
+	.diagrams-svg-wrapper {
+		@apply my-1 w-fit overflow-auto;
+
+		&.mediaright {
+			@apply text-right;
+		}
+
+		&.medialeft {
+			@apply text-left;
+		}
+
+		&.mediacenter {
+			@apply text-center;
+		}
+
+		// edit diagram button
+		.diagrams-btn {
+			@apply btn-link mt-4 text-sm;
+		}
+	}
+}
+
+// Diagram editor
+#plugin__diagrams-editor {
+	@apply fixed border-0 inset-0 w-full h-full z-[100];
+}
+
+// New diagram button
+#media__tree .plugin_diagrams_create {
+	@apply btn-secondary inline-block mb-2.5 py-1.5 px-3 no-underline;
+}
+
+// Create diagram dialog
+.ui-dialog-content {
+	input[name="diagrams-create-filename"] {
+		@apply w-1/2 mr-2;
+	}
+}

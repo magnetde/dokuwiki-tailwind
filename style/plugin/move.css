@@ -1,3 +1,7 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:move
+ */
+
 .ui-dialog {
 	// move plugin fix
 	img[src$="/lib/images/throbber.gif"] {

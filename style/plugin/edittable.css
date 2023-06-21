@@ -1,3 +1,7 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:edittable
+ */
+
 .editbutton_table {
 	@apply !mt-0;
 }

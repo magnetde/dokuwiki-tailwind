@@ -218,20 +218,20 @@
 	}
 
 	// Images
-	img.media, img.mediaright, img.medialeft, img.mediacenter {
+	.media, .mediaright, .medialeft, .mediacenter {
 		@apply inline m-0 h-[revert-layer];
 	}
-	img.mediaright {
+	.mediaright {
 		@apply float-right;
 	}
-	img.medialeft {
+	.medialeft {
 		@apply float-left;
 	}
-	img.mediacenter {
+	.mediacenter {
 		@apply block mx-auto;
 	}
 
-	img.icon.smiley {
+	.icon.smiley {
 		@apply inline h-[1.2rem] m-0;
 	}
 
