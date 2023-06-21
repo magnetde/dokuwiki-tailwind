@@ -321,7 +321,11 @@
 	}
 
 	.qq-upload-fail .qq-upload-failed-text {
-		@apply inline ml-auto mr-0 my-0 px-2 py-1.5 truncate;
+		@apply inline ml-auto mr-0 my-0 px-2.5 py-1.5 truncate;
+	}
+
+	button {
+		@apply btn-secondary;
 	}
 }
 
@@ -695,7 +699,7 @@
 
 				// button icons
 				a[href] {
-					@apply btn-icon p-2 ml-2;
+					@apply btn-icon p-2 ml-2 my-3;
 
 					.img-icon {
 						@apply inline-block w-4 h-4 bg-center;
