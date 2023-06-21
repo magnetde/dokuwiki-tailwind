@@ -1,9 +1,17 @@
-function toolbarIconColor() {
-	if(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-		return 'gray-400';
-	else
-		return 'gray-500';
-}
+// Initialize toolbar at page load
+initializeToolbar();
+
+// Update the toolbar, if the dark mode changed
+window.addEventListener('storage', (event) => {
+	if(event.key === 'theme')
+		updateToolbarIcons();
+});
+
+// Same with media queries
+const mql = window.matchMedia('(prefers-color-scheme: dark)');
+mql.addEventListener('change', (e) => {
+	updateToolbarIcons();
+});
 
 // Initializes the toolbar.
 function initializeToolbar() {
@@ -52,6 +60,13 @@ function initializeToolbar() {
 	}
 }
 
+function toolbarIconColor() {
+	if(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+		return 'gray-400';
+	else
+		return 'gray-500';
+}
+
 function updateToolbarIcons() {
 	function updateQueryStringParameter(url, key, value) {
 		var re = new RegExp('([?&])' + key + '=.*?(&|$)', 'i');
@@ -82,18 +97,3 @@ function updateToolbarIcons() {
 	// initToolbar is defined in 'toolbar.js' in the DokuWiki repo.
 	initToolbar('tool__bar', 'wiki__text', window.toolbar);
 };
-
-// Initialize toolbar at page load
-initializeToolbar();
-
-// Update the toolbar, if the dark mode changed
-window.addEventListener('storage', (event) => {
-	if(event.key === 'theme')
-		updateToolbarIcons();
-});
-
-// Same with media queries
-const mql = window.matchMedia('(prefers-color-scheme: dark)');
-mql.addEventListener('change', (e) => {
-	updateToolbarIcons();
-});

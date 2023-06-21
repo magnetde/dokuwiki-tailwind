@@ -1,4 +1,4 @@
-if(JSINFO.ACT === 'edit') {
+if(JSINFO.ACT === 'edit' || JSINFO.ACT === 'preview') {
     /* DOKUWIKI:include_once js/toolbar.js */
     /* DOKUWIKI:include_once js/draft.js */
 }
