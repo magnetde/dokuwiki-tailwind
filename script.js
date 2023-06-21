@@ -7,6 +7,6 @@ if(JSINFO.ACT === 'search') {
     /* DOKUWIKI:include_once js/search.js */
 }
 
-if(JSINFO.ACT === 'media') {
+if(JSINFO.ACT === 'media' || JSINFO.ACT === 'show') { // media manager or media popup
     /* DOKUWIKI:include_once js/media.js */
 }
