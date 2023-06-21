@@ -38,6 +38,17 @@
 
 // Create diagram dialog
 .ui-dialog-content {
+	// may not work on Firefox
+	&:has(input[name="diagrams-create-filename"]) {
+		p {
+			@apply mb-5 text-gray-700 dark:text-gray-300;
+
+			strong {
+				@apply ml-1;
+			}
+		}
+	}
+
 	input[name="diagrams-create-filename"] {
 		@apply w-1/2 mr-2;
 	}

@@ -735,7 +735,7 @@
 	}
 }
 
-// Media popup
+// Media dialog
 #media__manager + .ui-dialog .ui-dialog-content {
 	// selects
 	p[id] {
