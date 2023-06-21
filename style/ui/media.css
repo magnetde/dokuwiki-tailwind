@@ -480,8 +480,6 @@
 
 		// overlapping / slider diff
 		#mediamanager__diff {
-			// @apply px-6 py-4;
-
 			div.slider {
 				@apply
 					relative mt-5 mb-4 mx-6 !w-[calc(100%-3rem)] !max-w-[calc(100%-3rem)] h-2 text-left
