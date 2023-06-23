@@ -1,6 +1,6 @@
 jQuery(() => {
 	addTreeHandler();
-	setupMediaContent();
+	addMediaHandler();
 });
 
 // Adds a new click listeners to the navigation tree of the media manager, that adds other icons.
@@ -39,13 +39,13 @@ function addTreeHandler() {
 }
 
 // Setup, that the media content is updated if it changes.
-function setupMediaContent() {
+function addMediaHandler() {
 	var mngr = jQuery('#mediamanager__page');
 
 	if(!mngr.length)
 		return;
 
-	refreshMediaContent(mngr);
+	modifyMediaContent(mngr);
 
 	// overwrite the `init_options` function at the mediamanager object,
 	// so the GUI can be recalculated, when the content changed.
@@ -54,14 +54,14 @@ function setupMediaContent() {
 	dw_mediamanager.init_options = function() {
 		init_options(); // call the old function
 
-		refreshMediaContent(mngr);
-		modifyChangeContent(mngr);
+		modifyMediaContent(mngr);
+		modifyMediaRevisions(mngr);
 	};
 }
 
 // This function refreshes the media content if it has been changed (at page start or after tab change).
 // Also, the events are added to the filelist tabs.
-function refreshMediaContent(mngr) {
+function modifyMediaContent(mngr) {
 	var filelist = mngr.find('.panel.filelist');
 	var file = mngr.find('.panel.file');
 
@@ -158,7 +158,7 @@ function hideFile(mngr) {
 	file.addClass('a11y').html('');
 }
 
-function modifyChangeContent(mngr) {
+function modifyMediaRevisions(mngr) {
 	var revs = mngr.find('#page__revisions');
 	if(!revs.length)
 		return;
