@@ -211,7 +211,7 @@
 		dd {
 			@apply box-b p-0 bg-gradient-to-r border-x border-b rounded-b-lg;
 
-			pre.code {
+			pre.code, pre.file {
 				@apply m-0 rounded-t-none rounded-b-lg;
 			}
 		}
