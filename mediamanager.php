@@ -35,7 +35,7 @@ if(!defined('DOKU_INC'))
 
 			<main id="mediamgr__content" class="mediamanager-content">
 				<div class="pad">
-					<?php _tpl_mediaContent() ?>
+					<?php tpl_mediaContent() ?>
 				</div>
 			</main>
 		</div>

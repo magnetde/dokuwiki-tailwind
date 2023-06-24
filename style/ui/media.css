@@ -310,7 +310,7 @@
 
 		.qq-upload-size {
 			@apply
-				text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
+				text-sm font-medium mx-2 px-2.5 py-0.5 rounded-full
 				bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
 			;
 		}
@@ -379,21 +379,12 @@
 			}
 		}
 
-		// image in table
-		tr.image {
-			@apply border-b box-b;
-
-			img {
-				@apply mx-auto my-6
-			}
-		}
-
 		// Gets removed by JS
 		.actions {
 			@apply hidden;
 		}
 
-		// See above for the metadata list
+		// See below for the metadata list
 
 		// fix some design issues at the change list
 		form.changes {
@@ -456,7 +447,7 @@
 		}
 
 		.table > table {
-			@apply w-full;
+			@apply w-full table-fixed; // fixed layout possible because only two columns exist
 
 			// same as `th` at `table.diff` (see diff.css)
 			th {
@@ -464,6 +455,19 @@
 
 				.sum {
 					@apply text-primary;
+				}
+			}
+
+			// image in (diff) table
+			tr.image {
+				@apply border-b box-b;
+
+				.image a {
+					@apply max-w-full;
+				}
+
+				img {
+					@apply mx-auto my-4 p-2 !max-w-full;
 				}
 			}
 

@@ -65,13 +65,13 @@
 
 	.toggle-box {
 		@apply
-			inline-flex items-center flex-row border rounded-[0.4rem]
+			inline-flex items-center flex-row border rounded-lg
 			bg-gray-200/[0.6] border-gray-200 dark:bg-gray-700 dark:border-gray-600
 		;
 	}
 
 	.toggle-button {
-		@apply px-4 py-2 -m-px border rounded-[0.5rem] text-secondary text-sm font-medium;
+		@apply px-4 py-2 -m-px border rounded-lg text-secondary text-sm font-medium;
 	}
 
 	.toggle-button-inactive {
