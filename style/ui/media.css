@@ -379,15 +379,6 @@
 			}
 		}
 
-		// image in table
-		tr.image {
-			@apply border-b box-b;
-
-			img {
-				@apply mx-auto my-6
-			}
-		}
-
 		// Gets removed by JS
 		.actions {
 			@apply hidden;
@@ -467,16 +458,20 @@
 				}
 			}
 
-			td {
-				// image
+			// image in (diff) table
+			tr.image {
+				@apply border-b box-b;
+
 				.image a {
 					@apply max-w-full;
-
-					img {
-						@apply p-4 !max-w-full;
-					}
 				}
 
+				img {
+					@apply mx-auto my-4 p-2 !max-w-full;
+				}
+			}
+
+			td {
 				// values, that has been changed
 				dd strong {
 					@apply

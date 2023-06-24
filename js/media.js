@@ -15,7 +15,7 @@ function addTreeHandler() {
 
 	tree.dw_tree({
 		toggle_selector: 'img',
- 
+
 		load_data: function(show_sublist, img) {
 			// get the enclosed link (is always the first one)
 			var link = img.parent().find('div.li a.idx_dir');
@@ -40,22 +40,39 @@ function addTreeHandler() {
 
 // Setup, that the media content is updated if it changes.
 function addMediaHandler() {
-	var mngr = jQuery('#mediamanager__page');
+	// Media manager fullscreen page
+	var media = jQuery('#mediamanager__page');
+	if(media.length) {
+		modifyMediaContent(media);
 
-	if(!mngr.length)
+		mediaManagerInit(() => {
+			modifyMediaContent(media);
+			modifyMediaRevisions(media);
+		});
+
 		return;
+	}
 
-	modifyMediaContent(mngr);
+	// Media manager popup
+	media = jQuery('#media__manager');
+	if(media.length) {
+		modifyMediaPopup(media);
 
-	// overwrite the `init_options` function at the mediamanager object,
-	// so the GUI can be recalculated, when the content changed.
+		mediaManagerInit(() => {
+			modifyMediaPopup(media);
+		});
+	}
+}
+
+// Overwrites the `init_options` function at the mediamanager object,
+// so the GUI can be recalculated, when the content changed.
+function mediaManagerInit(cb) {
+	// save the old version
 	var init_options = dw_mediamanager.init_options;
 
 	dw_mediamanager.init_options = function() {
 		init_options(); // call the old function
-
-		modifyMediaContent(mngr);
-		modifyMediaRevisions(mngr);
+		cb();
 	};
 }
 
@@ -206,9 +223,9 @@ function modifyChange(div) {
 	// Modify the diff link, if exists
 	if(diff_link.length) {
 		var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">'
-			+'<path fill="currentColor" d="'
-			+'m15.3 13.3l-3.6-3.6q-.15-.15-.212-.325T11.425 9q0-.2.063-.375T11.7 8.3l3.6-3.6q.3-.3.7-.3t.7.3q.3.3.3.713t-.3.712L14.825 8H21q.425 0 .713.288T22 9q0 .425-.288.713T21 10h-6.175l1.875 1.875q.3.3.3.7t-.3.7q-.3.3-.687.325t-.713-.3Zm-8 5.975q.3.3.7.313t.7-.288l3.6-3.6q.15-.15.212-.325t.063-.375q0-.2-.063-.375T12.3 14.3l-3.6-3.6q-.3-.3-.7-.3t-.7.3q-.3.3-.3.713t.3.712L9.175 14H3q-.425 0-.713.288T2 15q0 .425.288.713T3 16h6.175L7.3 17.875q-.3.3-.3.7t.3.7Z'
-			+'"/></svg>';
+			+ '<path fill="currentColor" d="'
+			+ 'm15.3 13.3l-3.6-3.6q-.15-.15-.212-.325T11.425 9q0-.2.063-.375T11.7 8.3l3.6-3.6q.3-.3.7-.3t.7.3q.3.3.3.713t-.3.712L14.825 8H21q.425 0 .713.288T22 9q0 .425-.288.713T21 10h-6.175l1.875 1.875q.3.3.3.7t-.3.7q-.3.3-.687.325t-.713-.3Zm-8 5.975q.3.3.7.313t.7-.288l3.6-3.6q.15-.15.212-.325t.063-.375q0-.2-.063-.375T12.3 14.3l-3.6-3.6q-.3-.3-.7-.3t-.7.3q-.3.3-.3.713t.3.712L9.175 14H3q-.425 0-.713.288T2 15q0 .425.288.713T3 16h6.175L7.3 17.875q-.3.3-.3.7t.3.7Z'
+			+ '"/></svg>';
 
 		diff_link.html(svg);
 		btns.append(diff_link);
@@ -223,4 +240,35 @@ function modifyChange(div) {
 	revinfo.append(btns);
 
 	return jQuery('<div>').addClass('li').append(input, revinfo);
+}
+
+// Modifies the media popup content by replacing the file action icons.
+function modifyMediaPopup(mngr) {
+	var content = mngr.find('#media__content');
+	if(content.length) {
+		popupReplaceIconButton(content, '/lib/images/magnifier.png', 'btn-open');
+		popupReplaceIconButton(content, '/lib/images/mediamanager.png', 'btn-manager');
+		popupReplaceIconButton(content, '/lib/images/trash.png', 'btn-trash');
+	}
+}
+
+// Replaces all image elements, with the specific source path with div elements with the given class.
+function popupReplaceIconButton(content, src, cls) {
+	content.find(`img[src="${src}"]`).each(function() {
+		var img = jQuery(this);
+		var div = jQuery('<div>').addClass('img-icon ' + cls);
+
+		var title = img.attr('title');
+		if(title) {
+			var parent = img.parent();
+
+			// fix the tooltip text
+			if(parent.length && parent.prop('nodeName') === 'a')
+				parent.attr('title', title);
+			else
+				div.attr('title', title);
+		}
+
+		img.replaceWith(div);
+	});
 }
