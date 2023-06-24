@@ -41,6 +41,8 @@ class TPLContentDisplay extends EventHandler {
 		case 'show':
 			$this->modifyHeaders($html);
 			$this->modifySectionEdit($html);
+			// fallthrough
+		case 'preview':
 			$this->modifyDownloadBlocks($html);
 			break;
 		case 'edit':
