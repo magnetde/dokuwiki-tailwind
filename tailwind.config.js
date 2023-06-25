@@ -37,6 +37,10 @@ module.exports = {
             fontWeight: {
                 'inherit': 'inherit',
             },
+            screens: {
+                // add print as a screen size despite it already exists because the order does not get respected
+                'print': {'raw': 'print'},
+            },
         },
     },
     plugins: [

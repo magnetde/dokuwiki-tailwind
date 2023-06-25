@@ -3,6 +3,7 @@
 	backdrop-blur border-b transition-colors duration-500
 	border-gray-900/10 bg-white/95 supports-backdrop-blur:bg-white/70
 	dark:border-gray-50/[0.06] dark:bg-transparent
+	print:bg-white print:border-b-2
 ") ?>">
 	<div class="<?php echo clsx("
 		flex items-center justify-between
@@ -14,7 +15,7 @@
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<a class="flex items-center w-fit max-w-[50%] mr-3" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<a class="flex items-center w-fit max-w-[50%] mr-3 print:max-w-full" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
