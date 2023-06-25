@@ -19,6 +19,19 @@
 		}
 	}
 
+	// draft status
+	.draft-icon {
+		@apply flex w-3 h-3 mr-2 rounded-full bg-green-500;
+
+		&.draft-error {
+			@apply bg-red-500;
+		}
+
+		&.empty {
+			@apply hidden;
+		}
+	}
+
 	#draft__status {
 		@apply hidden; // hide the old draft status
 	}

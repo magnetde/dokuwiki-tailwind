@@ -256,7 +256,7 @@ function modifyMediaPopup(mngr) {
 function popupReplaceIconButton(content, src, cls) {
 	content.find(`img[src="${src}"]`).each(function() {
 		var img = jQuery(this);
-		var div = jQuery('<div>').addClass('img-icon ' + cls);
+		var div = jQuery('<div>').addClass('img-icon').addClass(cls);
 
 		var title = img.attr('title');
 		if(title) {
