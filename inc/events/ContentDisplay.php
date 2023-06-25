@@ -143,7 +143,7 @@ class TPLContentDisplay extends EventHandler {
 		$tooltip_text_id = 'draft-status-text';
 
 		// Simply append a new child to the parent by append to the outertext
-		$elm->outertext .= '<div id="draft-icon" class="draft-icon" data-tooltip-placement="bottom" '
+		$elm->outertext .= '<div id="draft-icon" class="draft-icon empty" data-tooltip-placement="bottom" '
 			.'data-tooltip-target="' . $tooltip_id
 			.'"></div>'
 
