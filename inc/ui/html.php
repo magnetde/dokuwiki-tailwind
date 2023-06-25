@@ -51,7 +51,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 		<?php endif ?>
 
 		<!--- Middle content and left sidebar --->
-		<main class="w-full lg:flex lg:flex-auto lg:overflow-x-hidden xl:overflow-x-initial">
+		<main class="w-full lg:flex lg:flex-auto lg:overflow-x-hidden xl:[overflow-x:initial]">
 			<div class="mx-auto my-0 flex">
 
 				<!--- Main content --->

@@ -66,8 +66,7 @@
 				<!--- Avatar button --->
 				<li>
 					<button type="button" class="<?php echo clsx("
-						flex mr-3 first-line:text-sm rounded-full md:mr-0 focus:ring-4
-						bg-gray-800 focus:ring-gray-300 dark:focus:ring-gray-600
+						flex mr-3 first-line:text-sm rounded-full md:mr-0 bg-gray-800
 					") ?>" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
 						<span class="sr-only">
 							<?php tpl_getLang('open_menu') ?>
