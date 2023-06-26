@@ -81,7 +81,7 @@ class TPLContentDisplay extends EventHandler {
 				$elm->addClass('section-header');
 
 				if($header != 'h5')  // no anchor for h5
-					$elm->innertext .= '<a class="anchor" href="#' . $elm->id . '">#</a>';
+					$elm->innertext .= ' <a class="anchor" href="#' . $elm->id . '">#</a>';
 			}
 		}
 	}
