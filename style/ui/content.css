@@ -40,25 +40,25 @@
 
 // Main content and left sidebar
 .dokuwiki, .dokuwiki-sidebar {
-	@apply w-full;
-
 	// extend the Tailwindcss typography
-	&:where(.prose) {
-		@apply
-			max-w-none
-			dark:prose-invert
-			prose-headings:scroll-mt-20
-			prose-pre:rounded-lg
-			prose-ul:my-2 prose-li:my-1
-			prose-table:text-base
-			prose-code:p-0.5
-			prose-code:rounded
-			prose-code:text-primary-800
-			prose-code:bg-primary-50
-			dark:prose-code:text-primary-300
-			dark:prose-code:bg-primary-950
-		;
-	}
+	@apply
+		w-full max-w-none
+		prose dark:prose-invert
+
+		// several adjustments
+		first:prose-p:mt-0
+		prose-pre:rounded-lg
+		prose-ul:my-2 prose-li:my-1
+		prose-table:text-base
+
+		// code
+		prose-code:p-0.5
+		prose-code:rounded
+		prose-code:text-primary-800
+		prose-code:bg-primary-50
+		dark:prose-code:text-primary-300
+		dark:prose-code:bg-primary-950
+	;
 
 	// increase the font weight of h5 headers
 	h5 {
@@ -243,6 +243,8 @@
 
 // Other styles of the main content not included in the sidebar
 .dokuwiki {
+	@apply prose-headings:scroll-mt-20;
+
 	// Section header
 	.section-header {
 		@apply flex flex-nowrap items-baseline;
