@@ -1,9 +1,13 @@
 @layer base {
 	html {
-		@apply text-[calc(1em*0.875)] h-full;
+		@apply text-[calc(1em*0.875)] h-full print:text-[24pt];
 	}
 
 	body {
 		@apply min-h-full overflow-x-hidden;
+	}
+
+	@page {
+		size: A4;
 	}
 }

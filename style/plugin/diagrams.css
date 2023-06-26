@@ -5,7 +5,7 @@
 // Diagram at a wiki page
 .dokuwiki {
 	.diagrams-svg-wrapper {
-		@apply my-1 w-fit overflow-auto;
+		@apply my-1 w-fit max-w-full overflow-auto;
 
 		&.mediaright {
 			@apply text-right;
@@ -17,6 +17,10 @@
 
 		&.mediacenter {
 			@apply text-center;
+		}
+
+		.diagrams-svg {
+			@apply max-w-full;
 		}
 
 		// edit diagram button

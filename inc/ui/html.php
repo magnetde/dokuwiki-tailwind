@@ -24,7 +24,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 
 		<!--- Left sidebar --->
 		<?php if($showSidebar): ?>
-		<aside class="border-r border-gray-900/10 dark:border-gray-50/[0.06] hidden lg:block lg:w-sidebar-lg 2xl:w-sidebar-2xl">
+		<aside class="border-r border-gray-900/10 dark:border-gray-50/[0.06] hidden lg:block lg:w-sidebar-lg 2xl:w-sidebar-2xl print:hidden">
 			<div class="pt-10 px-6 sticky overflow-y-auto top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] lg:w-sidebar-lg 2xl:w-sidebar-2xl">
 				<div class="dokuwiki-sidebar">
 				<?php
@@ -51,7 +51,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 		<?php endif ?>
 
 		<!--- Middle content and left sidebar --->
-		<main class="w-full lg:flex lg:flex-auto lg:overflow-x-hidden xl:overflow-x-initial">
+		<main class="w-full lg:flex lg:flex-auto lg:overflow-x-hidden xl:[overflow-x:initial]">
 			<div class="mx-auto my-0 flex">
 
 				<!--- Main content --->
@@ -65,6 +65,9 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 					$showSidebar ?
 					'mr-0 lg:mr-[theme(width.sidebar-lg)] xl:mr-0' :
 					'ml-0 xl:ml-[theme(width.sidebar-lg)] 2xl:ml-[theme(width.sidebar-2xl)]',
+
+					// print styles
+					'print:w-full print:mx-0',
 				) ?>">
 					<?php html_msgarea(); ?>
 
@@ -72,7 +75,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 				</div>
 
 				<!--- Right sidebar --->
-				<div class="flex-none align-top hidden pl-8 text-sm 2xl:text-base xl:block xl:w-sidebar-lg 2xl:w-sidebar-2xl">
+				<div class="flex-none align-top hidden pl-8 text-sm 2xl:text-base xl:block xl:w-sidebar-lg 2xl:w-sidebar-2xl print:hidden">
 					<div class="flex overflow-y-auto sticky top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] flex-col pt-10 pb-6">
 						<?php
 						$toc = _tpl_getTOC();

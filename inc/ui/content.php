@@ -1,9 +1,13 @@
-<div class="flex flex-col justify-between w-full min-h-[calc(100vh-theme(height.navbar)-1px)] px-4 md:px-6 lg:px-8 pt-6 lg:pt-8">
+<div class="<?php echo clsx("
+	flex flex-col justify-between w-full min-h-[calc(100vh-theme(height.navbar)-1px)]
+	px-4 md:px-6 lg:px-8 pt-6 lg:pt-8
+	print:block print:px-2
+") ?>">
 
-	<div class="flex flex-col">
+	<div class="flex flex-col print:block">
 
 		<!--- Breadcrumbs and page tool buttons --->
-		<div class="flex flex-nowrap items-center justify-between">
+		<div class="flex flex-nowrap items-center justify-between print:hidden">
 			<!--- Navigation and breadcrumbs --->
 			<?php
 			if($conf['breadcrumbs'] || $conf['youarehere']) {
@@ -49,7 +53,7 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx(
-			"dokuwiki mt-16 prose",
+			"dokuwiki prose mt-16 print:mt-6",
 			_tpl_page_classes(),
 		) ?>">
 

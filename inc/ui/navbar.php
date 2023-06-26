@@ -3,18 +3,20 @@
 	backdrop-blur border-b transition-colors duration-500
 	border-gray-900/10 bg-white/95 supports-backdrop-blur:bg-white/70
 	dark:border-gray-50/[0.06] dark:bg-transparent
+	print:bg-white print:border-b-2
 ") ?>">
 	<div class="<?php echo clsx("
 		flex items-center justify-between
 		md:grid md:grid-cols-3
 		w-full h-full px-2 lg:px-4
+		print:px-2
 	") ?>">
 		<!--- Logo and title --->
 		<?php
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<a class="flex items-center w-fit max-w-[50%] mr-3" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<a class="flex items-center mr-3 w-fit max-w-[50%] md:max-w-none print:max-w-full" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
@@ -26,12 +28,12 @@
 		?>
 
 		<!--- Search field --->
-		<div class="flex items-center md:order-1 md:justify-center">
+		<div class="flex items-center md:order-1 md:justify-center print:hidden">
 			<?php _tpl_searchform() ?>
 		</div>
 
 		<!--- Tools dropdown and user avatar --->
-		<div class="hidden items-center md:order-2 md:flex md:justify-end">
+		<div class="hidden items-center md:order-2 md:flex md:justify-end print:hidden">
 			<ul class="<?php echo clsx("
 				flex flex-row font-medium items-center rounded-lg space-x-8
 				dark:bg-gray-800 dark:border-gray-700
@@ -66,8 +68,7 @@
 				<!--- Avatar button --->
 				<li>
 					<button type="button" class="<?php echo clsx("
-						flex mr-3 first-line:text-sm rounded-full md:mr-0 focus:ring-4
-						bg-gray-800 focus:ring-gray-300 dark:focus:ring-gray-600
+						flex mr-3 first-line:text-sm rounded-full md:mr-0 bg-gray-800
 					") ?>" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
 						<span class="sr-only">
 							<?php tpl_getLang('open_menu') ?>
@@ -100,6 +101,7 @@
 			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden order-3 focus:ring-2
 			hover:bg-gray-100 focus:outline-none focus:ring-gray-200
 			dark:hover:bg-gray-700 dark:focus:ring-gray-600
+			print:hidden
 		") ?>" type="button" data-collapse-toggle="navbar-mobile-menu" aria-controls="navbar-mobile-menu" aria-expanded="false">
 			<span class="sr-only">
 				<?php tpl_getLang('open_menu') ?>
@@ -113,7 +115,7 @@
 
 <!--- Mobile menu --->
 <!--- The mobile menu is added as an sibling element to the navbar because it needs a lower z-index to fix some weird overscroll animations --->
-<div class="hidden fixed z-40 top-0 left-0 w-screen h-screen overflow-y-auto bg-gray-900/50 dark:bg-gray-900/80" id="navbar-mobile-menu">
+<div class="hidden fixed z-40 top-0 left-0 w-screen h-screen overflow-y-auto bg-gray-900/50 dark:bg-gray-900/80 print:hidden" id="navbar-mobile-menu">
 	<div class="<?php echo clsx("
 		flex flex-col justify-stretch w-full px-2 pt-[theme(height.navbar)] border-b
 		divide-y divide-gray-200 dark:divide-gray-700
