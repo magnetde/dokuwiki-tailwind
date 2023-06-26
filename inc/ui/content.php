@@ -53,7 +53,7 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx(
-			"dokuwiki prose mt-16 print:mt-6",
+			"dokuwiki mt-16 print:mt-6",
 			_tpl_page_classes(),
 		) ?>">
 
