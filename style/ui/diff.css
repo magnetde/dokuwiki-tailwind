@@ -128,7 +128,7 @@ table.diff {
 
 	// Default formatting of table cells
 	td:not(.diffnav) {
-		@apply p-1 font-mono align-middle text-sm;
+		@apply px-1 py-0.5 font-mono align-middle text-sm;
 
 		&.empty {
 			@apply bg-gray-100 dark:bg-gray-800;
