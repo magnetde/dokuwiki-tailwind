@@ -9,6 +9,7 @@
 		flex items-center justify-between
 		md:grid md:grid-cols-3
 		w-full h-full px-2 lg:px-4
+		print:px-2
 	") ?>">
 		<!--- Logo and title --->
 		<?php

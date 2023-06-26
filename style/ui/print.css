@@ -61,7 +61,7 @@
 		dt {
 			@apply print:border-2 print:border-b-0 print:bg-transparent;
 
-			// hide download blocks
+			// hide download buttons
 			a {
 				@apply print:hidden;
 			}

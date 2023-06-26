@@ -38,7 +38,8 @@ module.exports = {
                 'inherit': 'inherit',
             },
             screens: {
-                // add print as a screen size despite it already exists because the order does not get respected
+                // Add print as a screen size despite it already exists ath the TailwindCSS library
+                // because the order does not get respected when using this variant.
                 'print': {'raw': 'print'},
             },
         },

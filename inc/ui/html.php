@@ -67,7 +67,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 					'ml-0 xl:ml-[theme(width.sidebar-lg)] 2xl:ml-[theme(width.sidebar-2xl)]',
 
 					// print styles
-					'print:mx-auto print:w-full',
+					'print:w-full print:mx-0',
 				) ?>">
 					<?php html_msgarea(); ?>
 
