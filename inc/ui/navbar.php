@@ -15,7 +15,7 @@
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<a class="flex items-center w-fit max-w-[50%] mr-3 print:max-w-full" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<a class="flex items-center mr-3 w-fit max-w-[50%] md:max-w-none print:max-w-full" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
