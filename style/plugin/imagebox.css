@@ -1,0 +1,48 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:imagebox
+ */
+
+div.thumb2 {
+	@apply mb-2 pr-3 w-auto;
+}
+
+div.trien {
+	@apply mt-2 mb-3 ml-0 mr-6;
+}
+
+div.tleft {
+	@apply clear-left float-left mt-2 mb-3 ml-0 mr-6;
+}
+
+div.tright {
+	@apply clear-right float-right mt-2 mb-3 ml-6 mr-0;
+}
+
+div.tcenter {
+	@apply clear-both text-center mt-2 mb-3 mx-auto;
+}
+
+div.thumb2 .thumbinner {
+	@apply inline-block p-2 text-sm overflow-hidden border rounded-md box-hf;
+}
+
+div.thumb2 .mediabox2 {
+	@apply m-0 p-1 rounded bg-white dark:bg-gray-900;
+}
+
+div.thumbcaption {
+	@apply text-sm px-1 pt-1.5 pb-1 text-left;
+}
+
+div.thumb2 .magnify {
+	@apply float-right bg-transparent;
+}
+
+div.thumb2 .magnify a,
+div.thumb2 .magnify img {
+	@apply block mt-1 mb-0 bg-transparent;
+}
+
+div.thumb2 .interwiki {
+	@apply pl-5;
+}
