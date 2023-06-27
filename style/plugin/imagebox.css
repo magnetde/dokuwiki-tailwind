@@ -3,7 +3,7 @@
  */
 
 div.thumb2 {
-	@apply mb-2 pr-3 w-auto;
+	@apply mb-2 w-auto;
 }
 
 div.trien {
