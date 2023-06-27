@@ -198,6 +198,10 @@
 	}
 
 	&.dw-page-extension {
+		.panelHeader p:first-child {
+			@apply mt-4;
+		}
+
 		#extension__viewoptions {
 			@apply flex items-center;
 
