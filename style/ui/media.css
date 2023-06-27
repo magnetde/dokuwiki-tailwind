@@ -684,21 +684,28 @@
 					@apply py-3;
 				}
 
+				// image preview
 				.detail {
 					@apply -order-1 py-2 mr-2;
 
+					a {
+						@apply flex items-center justify-center p-1 w-14 h-14 rounded-md box-hf-bg;
+					}
+
 					img {
-						@apply p-1 max-w-[3rem] max-h-[3rem] rounded box-hf-bg;
+						@apply m-0 max-w-full max-h-full;
 					}
 				}
 
+				// media name
 				a.mediafile {
 					@apply
-						mr-2 pl-[1.5rem] font-medium truncate
+						mr-2 font-medium truncate
 						bg-[size:1rem] cursor-pointer decoration-current text-primary
 					;
 				}
 
+				// info
 				span.info {
 					@apply flex-grow text-secondary truncate;
 				}
