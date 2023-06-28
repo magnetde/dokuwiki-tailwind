@@ -12,5 +12,5 @@ require_once dirname(__FILE__) . '/inc/ui/mediadetails.php';
 $content = ob_get_clean();
 
 // HTML content
-require_once dirname(__FILE__) . '/inc/ui/html.php';
+require_once dirname(__FILE__) . '/inc/ui/main.php';
 ?>
