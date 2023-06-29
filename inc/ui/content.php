@@ -24,7 +24,7 @@
 			?>
 
 			<!--- Buttons --->
-			<div class="flex items-center justify-end space-x-2">
+			<div class="flex items-center justify-end space-x-1.5">
 				<?php
 				$index = 0;
 				$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();

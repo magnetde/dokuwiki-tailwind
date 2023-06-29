@@ -4,7 +4,7 @@
 	}
 
 	body {
-		@apply min-h-full overflow-x-hidden;
+		@apply min-h-full overflow-x-hidden [font-feature-settings:"cv02","cv03","cv04","cv11"];
 	}
 
 	@page {

@@ -22,7 +22,12 @@
 
 		// Add an hover effect to nav items
 		.sidebar-nav-item {
-			@apply nav-item text-sm -mx-3;
+			@apply nav-item text-base -mx-3;
+
+			// decrease the font size, if the navigation items are in the sidebar
+			&:where(aside *) {
+				@apply text-sm;
+			}
 		}
 
 		// links

@@ -13,7 +13,7 @@ form.search {
 
 	// Input field of the search
 	input {
-		@apply input-text py-2 pl-10 pr-2 block w-full md:text-sm;
+		@apply input-text text-sm py-2 pl-10 pr-2 block w-full shadow-none;
 	}
 }
 
@@ -34,6 +34,10 @@ form.search {
 
 		&:last-child {
 			@apply rounded-b-lg;
+		}
+
+		a {
+			@apply block;
 		}
 	}
 }

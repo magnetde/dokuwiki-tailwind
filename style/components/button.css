@@ -2,9 +2,9 @@
 	.btn-primary {
 		@apply
 			px-4 py-2 font-semibold text-sm rounded-md text-center
-			focus:ring-2 focus:outline-none shadow-sm
-			text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300
-			dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800
+			focus:ring-2 focus:outline-none
+			text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 shadow-sm
+			dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 dark:shadow-none
 		;
 	}
 
