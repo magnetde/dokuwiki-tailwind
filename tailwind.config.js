@@ -10,12 +10,20 @@ module.exports = {
     ],
     darkMode: 'media',
     theme: {
+        fontSize: {
+            xs:    fontVariant(0.75),
+            sm:    fontVariant(0.875),
+            base:  fontVariant(1),
+            lg:    fontVariant(1.125),
+            xl:    fontVariant(1.25),
+            '2xl': fontVariant(1.5),
+        },
         extend: {
             colors: {
                 primary: colors.blue,
             },
             fontFamily: {
-                'sans': ['Inter', ...defaultTheme.fontFamily.sans],
+                'sans': ['Inter var', ...defaultTheme.fontFamily.sans],
                 'mono': ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
                 'serif': ['Lora', ...defaultTheme.fontFamily.serif],
             },
@@ -53,6 +61,10 @@ module.exports = {
         rtl,
     ],
 };
+
+function fontVariant(factor) {
+    return [`${factor}rem`, `${1.5 * factor}rem`];
+}
 
 // adds css query, that checks, if the browser supports backdrop blur
 function backdropBlur({ addVariant }) {

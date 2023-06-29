@@ -36,7 +36,6 @@
 		<div class="hidden items-center md:order-2 md:flex md:justify-end print:hidden">
 			<ul class="<?php echo clsx("
 				flex flex-row font-medium items-center rounded-lg space-x-8
-				dark:bg-gray-800 dark:border-gray-700
 			") ?>">
 				<!--- Tools button --->
 				<li>

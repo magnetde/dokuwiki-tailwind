@@ -1,8 +1,8 @@
 @layer components {
 	.btn-primary {
 		@apply
-			px-5 py-2.5 font-medium rounded-lg text-sm text-center
-			focus:ring-2 focus:outline-none
+			px-4 py-2 font-semibold text-sm rounded-md text-center
+			focus:ring-2 focus:outline-none shadow-sm
 			text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300
 			dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800
 		;
@@ -10,7 +10,7 @@
 
 	.btn-primary-disabled {
 		@apply
-			px-5 py-2.5 font-medium rounded-lg text-sm text-center cursor-not-allowed
+			px-3.5 py-2 font-semibold text-sm rounded-md text-center cursor-not-allowed
 			text-white bg-primary-400
 			dark:text-gray-400 dark:bg-primary-800
 		;
@@ -18,48 +18,36 @@
 
 	.btn-secondary {
 		@apply
-			px-5 py-2.5 font-medium rounded-lg text-sm text-center border
-			focus:ring-2 focus:outline-none focus:z-10
-			text-gray-900 bg-white border-gray-200
-			hover:text-primary-700 hover:bg-gray-100 focus:ring-gray-200
-			dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600
-			dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700
+			px-4 py-2 font-semibold text-sm rounded-md text-center
+			ring-1 ring-inset shadow-sm
+			text-gray-900 bg-white ring-gray-300 hover:bg-gray-50
+			dark:text-gray-400 dark:bg-gray-800 dark:ring-gray-600 dark:hover:bg-gray-700/60
 		;
 	}
 
 	.btn-secondary-disabled {
 		@apply
-			px-5 py-2.5 font-medium rounded-lg text-sm text-center border cursor-not-allowed
-			text-gray-400 bg-white border-gray-200
-			dark:text-gray-500 dark:bg-gray-800 dark:border-gray-600
-		;
-	}
-
-	.btn-white {
-		@apply
-			px-5 py-2.5 font-medium rounded-lg text-sm items-center border
-			focus:ring-2 focus:outline-none
-			text-gray-900 bg-white border-gray-300
-			hover:bg-gray-100 focus:ring-gray-200
-			dark:text-white dark:bg-gray-800 dark:border-gray-600
-			dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700
+			px-3.5 py-2 font-semibold text-sm rounded-md text-center cursor-not-allowed
+			ring-1 ring-inset shadow-sm
+			text-gray-400 bg-gray-50 ring-gray-300
+			dark:text-gray-600 dark:bg-gray-800 dark:ring-gray-600
 		;
 	}
 
 	.btn-icon {
 		@apply 
-			flex items-center p-[0.4rem] text-xs font-medium rounded-lg border
-			focus:outline-none first-line:focus:z-10 focus:ring-2
-			text-gray-700 bg-white border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:ring-gray-300
-			dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-500
+			flex items-center p-[0.5rem] font-semibold text-sm rounded-md text-center
+			ring-1 ring-inset shadow-sm
+			text-gray-900 bg-white ring-gray-300 hover:bg-gray-50
+			dark:text-gray-400 dark:bg-gray-800 dark:ring-gray-600 dark:hover:bg-gray-700/60
 		;
 	}
 
 	.btn-link {
 		@apply
 			font-medium rounded-lg
-			text-gray-700 bg-transparent hover:text-primary-700
-			dark:text-gray-400 dark:hover:text-white
+			text-gray-700 bg-transparent hover:text-gray-900
+			dark:text-gray-300 dark:hover:text-white
 		;
 	}
 
