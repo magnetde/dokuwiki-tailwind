@@ -18,7 +18,7 @@
 
 	.btn-secondary {
 		@apply
-			py-2.5 px-5 font-medium rounded-lg text-sm text-center border
+			px-5 py-2.5 font-medium rounded-lg text-sm text-center border
 			focus:ring-2 focus:outline-none focus:z-10
 			text-gray-900 bg-white border-gray-200
 			hover:text-primary-700 hover:bg-gray-100 focus:ring-gray-200
@@ -29,7 +29,7 @@
 
 	.btn-secondary-disabled {
 		@apply
-			py-2.5 px-5 font-medium rounded-lg text-sm text-center border cursor-not-allowed
+			px-5 py-2.5 font-medium rounded-lg text-sm text-center border cursor-not-allowed
 			text-gray-400 bg-white border-gray-200
 			dark:text-gray-500 dark:bg-gray-800 dark:border-gray-600
 		;
@@ -37,7 +37,7 @@
 
 	.btn-white {
 		@apply
-			py-2.5 px-5 font-medium rounded-lg text-sm items-center border
+			px-5 py-2.5 font-medium rounded-lg text-sm items-center border
 			focus:ring-2 focus:outline-none
 			text-gray-900 bg-white border-gray-300
 			hover:bg-gray-100 focus:ring-gray-200
@@ -48,7 +48,7 @@
 
 	.btn-icon {
 		@apply 
-			flex items-center p-2 text-xs font-medium rounded-lg border
+			flex items-center p-[0.4rem] text-xs font-medium rounded-lg border
 			focus:outline-none first-line:focus:z-10 focus:ring-2
 			text-gray-700 bg-white border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:ring-gray-300
 			dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-500

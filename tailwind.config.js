@@ -17,18 +17,19 @@ module.exports = {
             fontFamily: {
                 'sans': ['Inter', ...defaultTheme.fontFamily.sans],
                 'mono': ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
+                'serif': ['Lora', ...defaultTheme.fontFamily.serif],
             },
             // make the navbar height constant
             height: {
-                'navbar': '4.5rem',
+                'navbar': '4rem',
             },
             // make the sidebar width a constant
             width: {
-                'sidebar-lg':  '16rem',
-                'sidebar-2xl': '18rem',
-                'content-lg':  '54rem',
-                'content-xl':  '56rem', // only slightly larger because the toc appears
-                'content-2xl': '66rem',
+                'sidebar-lg':  '14rem',
+                'sidebar-2xl': '16rem',
+                'content-lg':  '48rem',
+                'content-xl':  '50rem', // only slightly larger because the toc appears
+                'content-2xl': '58rem',
             },
             // fix some border UI bugs on Safari
             borderColor: {
@@ -48,10 +49,12 @@ module.exports = {
         require('flowbite/plugin'),
         require('@tailwindcss/typography'),
         backdropBlur,
+        isProse,
         rtl,
     ],
 };
 
+// adds css query, that checks, if the browser supports backdrop blur
 function backdropBlur({ addVariant }) {
     addVariant(
         'supports-backdrop-blur',
@@ -59,6 +62,17 @@ function backdropBlur({ addVariant }) {
     );
 }
 
+// adds a variant, that is only used, if the current class is not a child of a 'not-prose' class
+function isProse({ addVariant, e }) {
+    addVariant(
+        'is-prose',
+        ({ modifySelectors, separator }) => {
+            modifySelectors(({ className }) => `.${e(`is-prose${separator}${className}`)}:not(:where([class~="not-prose"] *))`);
+        }
+    );
+}
+
+// adds a rtl variant
 function rtl({ addVariant, e }) {
     addVariant(
         'rtl',

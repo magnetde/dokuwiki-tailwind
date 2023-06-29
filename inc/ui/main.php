@@ -75,7 +75,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 				</div>
 
 				<!--- Right sidebar --->
-				<div class="flex-none align-top hidden pl-8 text-sm 2xl:text-base xl:block xl:w-sidebar-lg 2xl:w-sidebar-2xl print:hidden">
+				<div class="flex-none align-top hidden pl-8 text-sm xl:block xl:w-sidebar-lg 2xl:w-sidebar-2xl print:hidden">
 					<div class="flex overflow-y-auto sticky top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] flex-col pt-10 pb-6">
 						<?php
 						$toc = _tpl_getTOC();

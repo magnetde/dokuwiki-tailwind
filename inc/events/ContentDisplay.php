@@ -37,6 +37,8 @@ class TPLContentDisplay extends EventHandler {
 		if(!$html)
 			return $content;
 
+		$this->addNotProse($html);
+
 		switch($ACT) {
 		case 'show':
 			$this->modifyHeaders($html);
@@ -68,6 +70,13 @@ class TPLContentDisplay extends EventHandler {
 		unset($html);
 
 		return $content;
+	}
+
+	// Add the not-prose class to all elements, that should not be styled with the official TailwindCSS typography.
+	private function addNotProse($html) {
+		switch($ACT) {
+			// TODO
+		}
 	}
 
 	// Add an class and anchors to headings.

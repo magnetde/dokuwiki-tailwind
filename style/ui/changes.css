@@ -69,10 +69,18 @@
 
 		// Date and user info
 		.subtitle {
-			@apply block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500;
+			@apply
+				flex flex-nowrap mb-2 max-w-full
+				text-sm font-normal
+				text-gray-400 dark:text-gray-500
+			;
 
 			.subtitle-name {
-				@apply text-secondary font-medium;
+				@apply text-secondary font-medium truncate;
+			}
+
+			.date, .user {
+				@apply ml-1 whitespace-nowrap;
 			}
 		}
 

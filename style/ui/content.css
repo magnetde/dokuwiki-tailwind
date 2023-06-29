@@ -40,36 +40,6 @@
 
 // Main content and left sidebar
 .dokuwiki, .dokuwiki-sidebar {
-	// extend the Tailwindcss typography
-	@apply
-		w-full max-w-none
-		prose dark:prose-invert
-
-		// several adjustments
-		first:prose-p:mt-0
-		prose-pre:rounded-lg
-		prose-ul:my-2 prose-li:my-1
-		prose-table:text-base
-
-		// code
-		prose-code:p-0.5
-		prose-code:rounded
-		prose-code:text-primary-800
-		prose-code:bg-primary-50
-		dark:prose-code:text-primary-300
-		dark:prose-code:bg-primary-950
-	;
-
-	// increase the font weight of h5 headers
-	h5 {
-		@apply font-semibold;
-	}
-
-	// Fix lists
-	li .li {
-		@apply my-0;
-	}
-
 	// Underline text
 	em.u {
 		@apply not-italic underline;

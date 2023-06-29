@@ -41,7 +41,7 @@ function _tpl_trim_is_empty($str) {
 }
 
 /**
- * If the current page is an admin page or a plugin page,
+ * If the current page either shows text, is an admin page or a plugin page,
  * this function returns a list of classes (as a single string),
  * that exactly describes the current page.
  */
@@ -59,6 +59,8 @@ function _tpl_page_classes() {
 			$class .= ' dw-page-' . $page;
 	} elseif(_tpl_has_prefix($ACT, 'plugin_'))
 		$class .= 'dw-action-plugin ' . _tpl_remove_prefix($ACT, 'plugin_');
+	else
+		$class .= 'dw-action-' . $ACT;
 
 	return $class;
 }

@@ -53,8 +53,9 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx(
-			"dokuwiki mt-16 print:mt-6",
+			'dokuwiki',
 			_tpl_page_classes(),
+			'mt-16 print:mt-6',
 		) ?>">
 
 			<?php echo $content ?>

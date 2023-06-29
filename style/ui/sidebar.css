@@ -22,7 +22,7 @@
 
 		// Add an hover effect to nav items
 		.sidebar-nav-item {
-			@apply nav-item -mx-3;
+			@apply nav-item text-sm -mx-3;
 		}
 
 		// links
@@ -31,7 +31,7 @@
 
 			// links with icon
 			&.urlextern, &.mail, &.windows, &.mediafile, &.interwiki {
-				@apply bg-no-repeat pl-10 bg-[center_left_0.75rem] bg-[length:1.5rem];
+				@apply pl-[2.125rem] bg-no-repeat bg-[center_left_0.65rem] bg-[length:1.25rem];
 			}
 
 			// non-existing links

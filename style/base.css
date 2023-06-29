@@ -1,6 +1,6 @@
 @layer base {
 	html {
-		@apply text-[calc(1em*0.875)] h-full print:text-[24pt];
+		@apply h-full print:text-[24pt];
 	}
 
 	body {
