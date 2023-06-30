@@ -24,8 +24,7 @@ module.exports = {
             },
             fontFamily: {
                 'sans': ['Inter var', ...defaultTheme.fontFamily.sans],
-                'mono': ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
-                'serif': ['Lora', ...defaultTheme.fontFamily.serif],
+                'mono': ['"SF Mono"', ...defaultTheme.fontFamily.mono],
             },
             // make the navbar height constant
             height: {

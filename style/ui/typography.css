@@ -154,11 +154,24 @@
 		@apply mt-6 mb-7;
 
 		dt {
-			@apply box-header flex flex-nowrap items-center justify-between space-x-4 pl-4 pr-3 py-2;
+			@apply
+				pl-4 pr-3 py-2.5 flex flex-nowrap items-center justify-between
+				rounded-t-lg border-b space-x-4
+				bg-gray-800/95 border-gray-700
+				dark:bg-gray-950/50 dark:border-gray-800
+			;
+
+			> span {
+				@apply text-sm font-semibold truncate text-white;
+			}
+
+			> a {
+				@apply text-gray-200;
+			}
 		}
 
 		dd {
-			@apply box-b p-0 bg-gradient-to-r border-x border-b rounded-b-lg;
+			@apply p-0 rounded-b-lg;
 
 			pre.code, pre.file {
 				@apply m-0 rounded-t-none rounded-b-lg;
@@ -177,19 +190,19 @@
 }
 
 .dokuwiki {
-
 	// Footnotes (at the bottom)
 	.footnotes {
 		a {
-			@apply link-primary font-inherit;
+			@apply is-prose:link-primary is-prose:font-inherit;
 		}
 
 		.content {
-			@apply inline;
+			@apply is-prose:inline;
 		}
 	}
 }
 
+// Styles only needed for typographical text
 .dw-action-show, .dw-action-preview .preview {
 	// Section header
 	.section-header {
@@ -247,10 +260,5 @@
 	// footnote popup
 	div.insitu-footnote {
 		@apply dropdown-container text-sm p-3 w-fit max-w-[40%];
-	}
-
-	// Serif font
-	p, li .li {
-		// TODO @apply font-serif;
 	}
 }

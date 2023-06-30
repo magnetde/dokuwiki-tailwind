@@ -30,14 +30,12 @@ form.search {
 	}
 
 	ul li {
-		@apply dropdown-element;
-
-		&:last-child {
-			@apply rounded-b-lg;
+		a {
+			@apply dropdown-element block;
 		}
 
-		a {
-			@apply block;
+		&:last-child a {
+			@apply rounded-b-lg;
 		}
 	}
 }
