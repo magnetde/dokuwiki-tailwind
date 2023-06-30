@@ -13,9 +13,9 @@
 		// code
 		prose-code:p-0.5
 		prose-code:rounded
-		prose-code:text-primary-800
+		prose-code:text-primary-700
 		prose-code:bg-primary-50
-		dark:prose-code:text-primary-300
+		dark:prose-code:text-primary-400
 		dark:prose-code:bg-primary-950
 
 		// increase the font weight of h5 headers

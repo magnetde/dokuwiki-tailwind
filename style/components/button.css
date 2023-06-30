@@ -21,7 +21,7 @@
 			px-4 py-2 font-semibold text-sm rounded-md text-center
 			ring-1 ring-inset shadow-sm
 			text-gray-900 bg-white ring-gray-300 hover:bg-gray-50
-			dark:text-gray-400 dark:bg-gray-800 dark:ring-gray-600 dark:hover:bg-gray-700/60
+			dark:text-white dark:bg-gray-800 dark:ring-0 dark:hover:bg-gray-700/60
 		;
 	}
 
@@ -35,12 +35,7 @@
 	}
 
 	.btn-icon {
-		@apply 
-			flex items-center p-[0.5rem] font-semibold text-sm rounded-md text-center
-			ring-1 ring-inset shadow-sm
-			text-gray-900 bg-white ring-gray-300 hover:bg-gray-50
-			dark:text-gray-400 dark:bg-gray-800 dark:ring-gray-600 dark:hover:bg-gray-700/60
-		;
+		@apply btn-secondary flex items-center p-[0.5rem];
 	}
 
 	.btn-link {

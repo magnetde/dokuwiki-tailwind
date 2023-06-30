@@ -1,14 +1,14 @@
 @layer components {
 	.box-b {
-		@apply border-gray-200 dark:border-gray-600;
+		@apply border-gray-200 dark:border-gray-700/90;
 	}
 
-	.box-hf-bg {
-		@apply bg-gray-50 dark:bg-gray-700;
+	.box-bg {
+		@apply bg-white dark:bg-gray-800;
 	}
 
 	.box-hf {
-		@apply box-b box-hf-bg;
+		@apply box-b box-bg;
 	}
 
 	.box-header {

@@ -689,7 +689,7 @@
 					@apply -order-1 py-2 mr-2;
 
 					a {
-						@apply flex items-center justify-center p-1 w-14 h-14 rounded-md box-hf-bg;
+						@apply flex items-center justify-center p-1 w-14 h-14 rounded-md box-bg;
 					}
 
 					img {

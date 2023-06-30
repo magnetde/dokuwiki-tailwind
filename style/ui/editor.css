@@ -17,11 +17,11 @@
 		@apply flex flex-nowrap items-center space-x-1.5;
 
 		button {
-			@apply p-[0.1875rem] rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+			@apply p-[0.1875rem] rounded hover:bg-gray-50 dark:hover:bg-gray-600;
 		}
 
 		img {
-			@apply my-0 w-5 h-5 fill-gray-400 dark:fill-gray-500;
+			@apply my-0 w-5 h-5;
 		}
 	}
 
@@ -57,7 +57,7 @@
 				@apply box-footer order-1 flex flex-nowrap items-center justify-end space-x-2;
 
 				img {
-					@apply opacity-100 dark:opacity-50;
+					@apply cursor-pointer opacity-100 dark:opacity-50;
 				}
 			}
 
@@ -120,11 +120,11 @@
 	.license {
 		@apply
 			p-4 mt-12 mb-2 text-sm text-center rounded-lg
-			text-primary-800 bg-primary-50 dark:bg-primary-950 dark:text-primary-300
+			text-primary-700 bg-primary-50 dark:text-primary-400 dark:bg-primary-950
 		;
 
 		a {
-			@apply inline-block text-inherit underline;
+			@apply p-0 inline-block text-inherit underline bg-none;
 		}
 	}
 }
@@ -161,7 +161,7 @@
 	.type_d, .type_f, .type_u {
 		@apply
 			py-1.5 pl-10 pr-4 bg-no-repeat bg-[0.75rem_0.6rem] bg-[length:1.25rem]
-			hover:box-hf-bg text-gray-700 dark:text-gray-200
+			text-hover
 		;
 
 		&:not(:last-child) {

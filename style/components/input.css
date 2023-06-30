@@ -9,8 +9,8 @@
 			shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset
 			text-gray-900 bg-white ring-gray-300
 			placeholder-gray-400 focus:ring-primary-600
-			dark:text-white dark:bg-gray-800 dark:ring-gray-600
-			dark:placeholder-gray-500 dark:focus:ring-primary-500
+			dark:text-white dark:bg-gray-800 dark:ring-0
+			dark:placeholder-gray-500 dark:focus:ring-1 dark:focus:ring-gray-500
 		;
 	}
 
@@ -27,13 +27,10 @@
 	.input-checkbox {
 		@apply
 			w-4 h-4 rounded border focus:ring-2
-			border-gray-300 bg-gray-50 text-primary-600 focus:ring-primary-500
-			dark:border-gray-600 dark:bg-gray-800 dark:ring-offset-gray-800 dark:focus:ring-primary-600
+			border-gray-300 bg-white text-primary-600 focus:ring-primary-500
+			dark:border-gray-700 dark:bg-gray-800 dark:ring-offset-gray-800 dark:focus:ring-primary-600
+			checked:bg-current checked:border-transparent
 		;
-
-		&:checked {
-			@apply bg-current border-transparent;
-		}
 	}
 
 	.input-select {
