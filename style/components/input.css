@@ -40,14 +40,7 @@
 	}
 
 	.input-select {
-		@apply
-			text-primary
-			pl-2.5 pr-8 py-2 text-sm rounded-lg truncate border
-			bg-gray-50 border-gray-300
-			focus:ring-primary-500 focus:border-primary-500
-			dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-			dark:focus:ring-primary-500 dark:focus:border-primary-500
-		;
+		@apply input-text pl-3 pr-8 py-1.5 text-left truncate cursor-default text-sm;
 	}
 
 	.input-file {

@@ -5,12 +5,10 @@
 }
 
 .changes.doku_form {
-	@apply mt-10;
+	@apply mt-6;
 
 	ul {
-		@apply
-			mt-8 ml-4 relative border-l border-gray-200 dark:border-gray-700
-		;
+		@apply mt-6 ml-2 relative border-l border-gray-200 dark:border-gray-700;
 	}
 
 	// Checkbox
@@ -20,7 +18,7 @@
 
 	// Revision info
 	.revision-info {
-		@apply ml-5 md:ml-7 pl-0 pr-3 py-3.5 flex items-center justify-between;
+		@apply ml-5 md:ml-7 py-3.5 flex items-center justify-between;
 
 		.rev-description {
 			@apply mr-4 overflow-auto;

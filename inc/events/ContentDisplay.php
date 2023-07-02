@@ -90,6 +90,9 @@ class TPLContentDisplay extends EventHandler {
 		case 'recent';
 			$selector = '#dw__recent';
 			break;
+		case 'diff':
+			$selector = 'div.diffoptions, div.table';
+			break;
 		}
 
 		if($selector) {
@@ -185,7 +188,6 @@ class TPLContentDisplay extends EventHandler {
 	 */
 	private function modifyDiff($html) {
 		$div = $html->find('div.table', 0);
-		$div->addClass('not-prose');
 		$div->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
 
 		$diff = $html->find('table.diff', 0);
@@ -194,10 +196,6 @@ class TPLContentDisplay extends EventHandler {
 			$this->modifyDiffSideBySide($diff);
 		else
 			$this->modifyDiffInline($diff);
-
-		$diff->innertext = '<div class="diff-header"></div>'
-			.$diff->save()
-			.'<div class="diff-footer"></div>';
 	}
 
 	/**
