@@ -76,12 +76,25 @@ class TPLContentDisplay extends EventHandler {
 	private function addNotProse($html) {
 		global $ACT;
 
+		$selector = null;
+
 		switch($ACT) {
 		case 'preview':
 			// fallthrough
 		case 'edit':
-			$html->find('div.editBox', 0)->addClass('not-prose');
+			$selector = 'div.editBox';
 			break;
+		case 'revisions';
+			$selector = '#page__revisions';
+			break;
+		case 'recent';
+			$selector = '#dw__recent';
+			break;
+		}
+
+		if($selector) {
+			foreach($html->find($selector) as $elm)
+				$elm->addClass('not-prose');
 		}
 	}
 
@@ -428,6 +441,7 @@ class TPLContentDisplay extends EventHandler {
 				$actions->addClass('dropdown-container w-44');
 				$actions_html = $actions->save();
 
+				// TODO: use icon.php
 				$dropdown_btn = '<button id="' . $id . '-dropdown-button" data-dropdown-toggle="' . $id . '-dropdown" type="button">'
 				.'<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
 				.'<path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />'

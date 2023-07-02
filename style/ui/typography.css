@@ -21,12 +21,10 @@
 		// increase the font weight of h5 headers
 		prose-h5:font-semibold;
 	;
-}
 
-.dokuwiki, .dokuwiki-sidebar {
 	// Fix lists
 	li .li {
-		@apply is-prose:my-0;
+		@apply my-0;
 	}
 
 	// Underline text
@@ -182,14 +180,7 @@
 	.icon.smiley {
 		@apply inline h-[1.2rem] m-0;
 	}
-}
 
-// Other styles of the main content not included in the sidebar
-.dokuwiki {
-	@apply prose-headings:scroll-mt-20;
-}
-
-.dokuwiki {
 	// Footnotes (at the bottom)
 	.footnotes {
 		a {
@@ -202,11 +193,16 @@
 	}
 }
 
+// Other styles of the main content not included in the sidebar
+.dokuwiki {
+	@apply prose-headings:scroll-mt-20;
+}
+
 // Styles only needed for typographical text
 .dw-action-show, .dw-action-preview .preview {
 	// Section header
 	.section-header {
-		@apply is-prose:flex is-prose:flex-nowrap is-prose:items-baseline;
+		@apply flex flex-nowrap items-baseline;
 
 		// Anchor link
 		.anchor {

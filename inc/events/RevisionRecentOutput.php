@@ -65,10 +65,10 @@ abstract class RevisionRecentOutput extends EventHandler {
 		if($recent_page)
 			$revisions_link = $html->find('a.revisions_link', 0);
 
-		// revlink contains a description of the page
-		$revlink = $html->find('a.wikilink1', 0);
-		if(!$revlink) // revlink is either of class wikilink1 or wikilink2
-			$revlink = $html->find('a.wikilink2', 0);
+		// preview contains a description of the page
+		$preview = $html->find('a.wikilink1', 0);
+		if(!$preview) // revlink is either of class wikilink1 or wikilink2
+			$preview = $html->find('a.wikilink2', 0);
 
 		$summary = $html->find('span.sum', 0);
 		$user = $html->find('span.user', 0);
@@ -83,6 +83,12 @@ abstract class RevisionRecentOutput extends EventHandler {
 
 		$summary->innertext = $summary_text;
 
+		// If a preview link exists, convert the summary text to a link
+		if($preview) {
+			$summary->tag = 'a';
+			$summary->href = $preview->href;
+		}
+
 		// Then reorder them
 		$content = '';
 
@@ -96,7 +102,7 @@ abstract class RevisionRecentOutput extends EventHandler {
 
 		// Add the page title to the subtitle
 		if($recent_page)
-			$content .= '<span class="subtitle-name">' . $revlink->innertext . '</span>, ';
+			$content .= '<span class="subtitle-name">' . $preview->innertext . '</span>, ';
 
 		$content .= $date . ', ' .$user
 			.'</span>'
@@ -112,6 +118,9 @@ abstract class RevisionRecentOutput extends EventHandler {
 				.'m15.3 13.3l-3.6-3.6q-.15-.15-.212-.325T11.425 9q0-.2.063-.375T11.7 8.3l3.6-3.6q.3-.3.7-.3t.7.3q.3.3.3.713t-.3.712L14.825 8H21q.425 0 .713.288T22 9q0 .425-.288.713T21 10h-6.175l1.875 1.875q.3.3.3.7t-.3.7q-.3.3-.687.325t-.713-.3Zm-8 5.975q.3.3.7.313t.7-.288l3.6-3.6q.15-.15.212-.325t.063-.375q0-.2-.063-.375T12.3 14.3l-3.6-3.6q-.3-.3-.7-.3t-.7.3q-.3.3-.3.713t.3.712L9.175 14H3q-.425 0-.713.288T2 15q0 .425.288.713T3 16h6.175L7.3 17.875q-.3.3-.3.7t.3.7Z'
 				.'"/></svg>';
 
+			// Set the tooltip of the element
+			$this->setTitle($diff_link);
+
 			$diff_link->innertext = $svg;
 			$content .= $diff_link->save();
 		}
@@ -123,14 +132,11 @@ abstract class RevisionRecentOutput extends EventHandler {
 				.'"M4 17q-.425 0-.713-.288T3 16q0-.425.288-.713T4 15q.425 0 .713.288T5 16q0 .425-.288.713T4 17Zm0-4q-.425 0-.713-.288T3 12q0-.425.288-.713T4 11q.425 0 .713.288T5 12q0 .425-.288.713T4 13Zm0-4q-.425 0-.713-.288T3 8q0-.425.288-.713T4 7q.425 0 .713.288T5 8q0 .425-.288.713T4 9Zm3 8v-2h14v2H7Zm0-4v-2h14v2H7Zm0-4V7h14v2H7Z"'
 				.'/></svg>';
 
+			// Set the title of the element
+			$this->setTitle($revisions_link);
+
 			$revisions_link->innertext = $svg;
 			$content .= $revisions_link->save();
-		}
-
-		// Add a button to the wikilink if it exists
-		if($revlink && !$revlink->hasClass('wikilink2')) {
-			$revlink->innertext = $lang['btn_preview'];
-			$content .= $revlink->save();
 		}
 
 		$content .= '</div>';
@@ -142,7 +148,7 @@ abstract class RevisionRecentOutput extends EventHandler {
 		if($recent_page) {
 			$content = '<div class="'
 				.clsx("
-					absolute w-3 h-3 rounded-full mt-5 -left-1.5
+					absolute w-2 h-2 rounded-full mt-[1.4rem] -left-1
 					bg-gray-200 dark:bg-gray-700
 					ring-4 ring-white dark:ring-gray-900
 				")
@@ -154,5 +160,15 @@ abstract class RevisionRecentOutput extends EventHandler {
 		unset($html);
 
 		return $content;
+	}
+
+	/**
+	 * This function finds the first child element, that contains a title attribute and then
+	 * sets the title of this element to the value of the child title.
+	 */
+	private function setTitle($elm) {
+		$first = $elm->find('[title]', 0);
+		if($first && $first->title)
+			$elm->title = $first->title;
 	}
 }

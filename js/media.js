@@ -180,6 +180,8 @@ function modifyMediaRevisions(mngr) {
 	if(!revs.length)
 		return;
 
+	revs.addClass('not-prose');
+
 	revs.find('div.li').replaceWith(function() {
 		return modifyChange(jQuery(this));
 	});
@@ -195,10 +197,10 @@ function modifyChange(div) {
 	var date = div.find('span.date');
 	var diff_link = div.find('a.diff_link'); // may not exist
 
-	// revlink contains a description of the page
-	var revlink = div.find('a.wikilink1');
-	if(!revlink.length) // revlink is either of class wikilink1 or wikilink2
-		revlink = div.find('a.wikilink2');
+	// preview contains a description of the page
+	var preview = div.find('a.wikilink1');
+	if(!preview.length) // revlink is either of class wikilink1 or wikilink2
+		preview = div.find('a.wikilink2');
 
 	// Ignore the summary text, because it would get hidden anyway
 	var user = div.find('span.user');
@@ -232,9 +234,9 @@ function modifyChange(div) {
 	}
 
 	// Add a button to the wikilink if it exists
-	if(!revlink.hasClass('wikilink2')) {
-		revlink.text(LANG.template.tailwind.media_preview);
-		btns.append(revlink);
+	if(!preview.hasClass('wikilink2')) {
+		preview.text('Preview');
+		btns.append(preview);
 	}
 
 	revinfo.append(btns);

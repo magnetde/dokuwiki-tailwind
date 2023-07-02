@@ -1,33 +1,26 @@
+.dw-action-revisions {
+	p {
+		@apply text-sm;
+	}
+}
+
 .changes.doku_form {
 	@apply mt-10;
 
 	ul {
 		@apply
 			mt-8 ml-4 relative border-l border-gray-200 dark:border-gray-700
-			divide-y divide-gray-200 dark:divide-gray-700
 		;
-	}
-
-	li {
-		@apply my-0 list-none;
 	}
 
 	// Checkbox
 	div.li input {
-		@apply
-			absolute mt-4 w-5 h-5 -left-2.5 rounded-full ring-4 border cursor-pointer
-			border-gray-300 bg-gray-100 text-primary-600 ring-white
-			dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:ring-gray-900
-		;
-
-		&:checked {
-			@apply bg-current border-transparent;
-		}
+		@apply input-checkbox absolute mt-[1.1rem] w-4 h-4 -left-2 rounded-full cursor-pointer disabled:cursor-not-allowed;
 	}
 
 	// Revision info
 	.revision-info {
-		@apply pl-0 pr-3 py-3 flex items-center justify-between;
+		@apply ml-5 md:ml-7 pl-0 pr-3 py-3.5 flex items-center justify-between;
 
 		.rev-description {
 			@apply mr-4 overflow-auto;
@@ -35,10 +28,10 @@
 
 		// Revision header
 		.summary {
-			@apply flex items-baseline mb-2;
+			@apply flex items-center text-sm;
 
 			.sum {
-				@apply text-primary font-semibold truncate;
+				@apply text-primary font-medium truncate;
 
 				// Minor edits
 				&:where(.minor *) {
@@ -51,18 +44,34 @@
 				}
 			}
 
+			a.sum {
+				@apply hover:underline;
+			}
+
 			.sizechange {
 				@apply
-					text-sm font-medium ml-2 px-2.5 py-0.5 rounded-full
-					bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 // neutral, default
+					text-xs font-medium ml-2 px-2 py-0.5 rounded-full ring-1 ring-inset
+
+					// neutral, default
+					text-gray-600 bg-gray-50 ring-gray-500/10
+					dark:text-gray-500 dark:bg-gray-800 dark:ring-gray-400/20
 				;
 
+
+				// bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10
+
 				&.positive {
-					@apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300;
+					@apply
+						text-green-700 bg-green-50 ring-green-600/20
+						dark:text-green-400 dark:bg-green-500/10 dark:ring-green-500/20
+					;
 				}
 
 				&.negative {
-					@apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300;
+					@apply
+						text-red-700 bg-red-50 ring-red-600/20
+						dark:text-red-400 dark:bg-red-500/10 dark:ring-red-500/20
+					;
 				}
 			}
 		}
@@ -70,8 +79,8 @@
 		// Date and user info
 		.subtitle {
 			@apply
-				flex flex-nowrap mb-2 max-w-full
-				text-sm font-normal
+				flex flex-nowrap max-w-full mt-1
+				text-xs font-normal
 				text-gray-400 dark:text-gray-500
 			;
 
@@ -79,24 +88,21 @@
 				@apply text-secondary font-medium truncate;
 			}
 
-			.date, .user {
+			// add space between the elements
+			.date:not(:first-child), .user {
 				@apply ml-1 whitespace-nowrap;
 			}
 		}
 
 		.revision-buttons {
-			@apply inline-flex min-h-[2.25rem] rounded-md shadow-sm;
+			@apply inline-flex space-x-1;
 
 			// Diff link button and revision preview button
 			a {
-				@apply
-					btn-secondary
-					px-4 py-2 flex items-center no-underline
-					rounded-none border-r-0 last:border-r first:rounded-l-lg last:rounded-r-lg
-				;
+				@apply btn-icon;
 
 				svg {
-					@apply w-5 h-5 fill-current;
+					@apply w-4 h-4 fill-current;
 				}
 			}
 		}
