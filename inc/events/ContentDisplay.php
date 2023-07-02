@@ -93,6 +93,9 @@ class TPLContentDisplay extends EventHandler {
 		case 'diff':
 			$selector = 'div.diffoptions, div.table';
 			break;
+		case 'backlink':
+			$selector = 'ul.idx';
+			break;
 		}
 
 		if($selector) {

@@ -1,19 +1,21 @@
-ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) { // exclude the index and media tree and all admin pages
-	@apply list-container;
-
-	li, div.li {
-		@apply m-0 p-0;
+.dw-action-backlink {
+	p {
+		@apply text-sm;
 	}
+}
+
+ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) { // exclude the index and media tree and all admin pages
+	@apply p-0 list-none text-sm font-medium;
 
 	a {
-		@apply list-element;
-	}
-
-	li:first-child a {
-		@apply list-element-first;
+		@apply
+			block px-4 py-3 no-underline border-b box-b
+			text-gray-800 hover:text-gray-900 hover:bg-gray-50
+			dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-800/50
+		;
 	}
 
 	li:last-child a {
-		@apply list-element-last;
+		@apply border-b-0;
 	}
 }

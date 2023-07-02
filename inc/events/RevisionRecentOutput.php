@@ -84,7 +84,7 @@ abstract class RevisionRecentOutput extends EventHandler {
 		$summary->innertext = $summary_text;
 
 		// If a preview link exists, convert the summary text to a link
-		if($preview) {
+		if($preview && !$preview->hasClass('wikilink2')) {
 			$summary->tag = 'a';
 			$summary->href = $preview->href;
 		}

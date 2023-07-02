@@ -163,7 +163,7 @@ table.diff {
 	}
 
 	tr {
-		&:fast-child td {
+		&:fast-child > * {
 			&:first-child {
 				@apply rounded-tl-lg;
 			}
@@ -173,7 +173,7 @@ table.diff {
 			}
 		}
 
-		&:last-child td {
+		&:last-child > * {
 			&:first-child {
 				@apply rounded-bl-lg;
 			}
