@@ -6,6 +6,10 @@
 			dark:text-white dark:hover:bg-gray-800
 		;
 
+		svg {
+			@apply w-5 h-5 inline-block fill-gray-900 dark:fill-white;
+		}
+
 		&:where(.curid *) {
 			@apply text-primary-700 bg-gray-50 dark:text-white dark:bg-gray-800;
 		}

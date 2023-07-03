@@ -52,9 +52,11 @@
 		@apply hidden;
 	}
 
+	// Filelist or file panel
 	.panel.filelist, .panel.file {
 		@apply w-full;
 
+		// Tab panel
 		ul.tabs {
 			@apply tab-container;
 
@@ -73,8 +75,10 @@
 			}
 		}
 
+		// Header
 		.panelHeader {
-			@apply box-header py-2.5 pr-2.5 mt-8 flex items-center justify-between;
+			// move the bottom border to the panel content for better control
+			@apply box-header py-3 pr-2.5 mt-8 flex items-center justify-between border-b-0;
 
 			h3 {
 				@apply font-medium;
@@ -86,7 +90,7 @@
 		}
 
 		.panelContent {
-			@apply box-b !h-auto border-x border-b rounded-b-lg overflow-auto;
+			@apply box-b !h-auto border rounded-b-lg overflow-auto;
 
 			.nothing {
 				@apply block my-12 text-center font-semibold text-xl;
@@ -103,6 +107,7 @@
 	}
 }
 
+// File list, uploader or search tab
 #mediamanager__page .panel.filelist {
 	.panelHeader {
 		form.options ul {
@@ -132,12 +137,16 @@
 	}
 
 	.panelContent {
+		&:has(ul.thumbs) {
+			@apply border-t-0;
+		}
+
 		ul {
 			&.rows {
 				@apply divide-y divide-gray-200 dark:divide-gray-700;
 
 				dl {
-					@apply px-4 py-2 flex items-center hover:bg-gray-50 dark:hover:bg-gray-800;
+					@apply px-4 py-2 flex items-center text-sm hover:bg-gray-50 dark:hover:bg-gray-800;
 
 					dt {
 						@apply float-left text-center;
@@ -155,7 +164,7 @@
 						@apply flex-grow truncate;
 
 						a {
-							@apply link-primary;
+							@apply link-text;
 						}
 					}
 
@@ -174,11 +183,11 @@
 			}
 
 			&.thumbs {
-				@apply grid grid-cols-4 p-4 gap-4;
+				@apply grid grid-cols-4 p-4 gap-4 bg-gray-50 dark:bg-gray-800/20;
 
 				li {
 					@apply
-						flex flex-col space-y-2 max-w-sm border rounded-lg shadow hover:bg-gray-50 dark:hover:bg-gray-800
+						flex flex-col space-y-2 max-w-sm border rounded-md
 						bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700
 					;
 
@@ -191,7 +200,7 @@
 					}
 
 					dd {
-						@apply mx-3 font-medium;
+						@apply mx-3;
 
 						&:last-child {
 							@apply mb-3;
@@ -202,7 +211,7 @@
 						@apply mb-2 truncate;
 
 						a {
-							@apply link-primary;
+							@apply link-text text-[0.9375rem];
 						}
 					}
 
@@ -281,7 +290,7 @@
 				@apply text-primary font-medium;
 
 				a {
-					@apply link-primary;
+					@apply link-text;
 				}
 			}
 
@@ -325,10 +334,6 @@
 	.qq-upload-fail .qq-upload-failed-text {
 		@apply inline ml-auto mr-0 my-0 px-2.5 py-1.5 truncate;
 	}
-
-	button {
-		@apply btn-secondary;
-	}
 }
 
 // The maximum size
@@ -342,6 +347,7 @@
 	}
 }
 
+// File tab
 #mediamanager__page .panel.file {
 	.tabs {
 		@apply !hidden;
@@ -349,7 +355,12 @@
 
 	.panelHeader {
 		a {
-			@apply link-primary;
+			@apply link-text;
+
+			// Remove file icons in links
+			&.mediafile {
+				@apply bg-none pl-0;
+			}
 		}
 
 		ul.actions {
@@ -393,12 +404,17 @@
 			@apply mt-0 mb-4 px-4;
 
 			div.no ul {
-				@apply mt-0 ml-4 pl-[1.625rem];
+				@apply mt-0 ml-2;
 
 				// increse the top padding of the first change element
 				li:first-child .li {
-					@apply pt-3;
+					@apply pt-1;
 				}
+			}
+
+			// Fix input position
+			div.li input {
+				@apply mt-[1.45rem];
 			}
 		}
 
@@ -421,7 +437,7 @@
 		// overwrite the change list style, because the changes description is not needed anymore
 		.revision-info {
 			.rev-description {
-				@apply flex items-center;
+				@apply flex items-center h-8;
 
 				.summary {
 					@apply order-2 mb-0;
@@ -432,7 +448,7 @@
 				}
 
 				.subtitle {
-					@apply mb-0 text-base font-medium text-gray-700 dark:text-gray-200;
+					@apply my-0 text-sm font-medium text-gray-700 dark:text-gray-200;
 				}
 			}
 		}
@@ -546,14 +562,14 @@
 #mediamanager__page .panel.file .panelContent, .media-details .metadata {
 	// dl is the key-value list for the file overview and the file list
 	dl {
-		@apply p-4;
+		@apply p-4 text-sm;
 
 		dt, dd {
-			@apply py-1 text-base font-medium truncate;
+			@apply py-1 truncate;
 		}
 
 		dt {
-			@apply text-primary;
+			@apply text-primary font-medium;
 		}
 
 		dd {
@@ -645,6 +661,10 @@
 			// Upload text
 			.upload {
 				@apply text-secondary text-sm font-medium;
+			}
+
+			#mediamanager__done_form button {
+				@apply btn-secondary;
 			}
 
 			// Search

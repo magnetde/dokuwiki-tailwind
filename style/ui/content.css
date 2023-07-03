@@ -33,7 +33,7 @@
 }
 
 // Main content and left sidebar
-.dokuwiki, .dokuwiki-sidebar {
+.dokuwiki-main, .dokuwiki-sidebar {
 	// current link
 	.curid, .curid a {
 		@apply font-semibold;

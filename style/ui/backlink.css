@@ -1,21 +1,18 @@
-.dw-action-backlink {
-	p {
-		@apply text-sm;
-	}
-}
-
 ul.idx:not(.index__tree *):not(#media__tree *):not(.dw-action-admin *) { // exclude the index and media tree and all admin pages
 	@apply p-0 list-none text-sm font-medium;
 
+	li {
+		@apply block py-3 border-b border-gray-100 dark:border-gray-800;
+	}
+
 	a {
 		@apply
-			block px-4 py-3 no-underline border-b box-b
-			text-gray-800 hover:text-gray-900 hover:bg-gray-50
-			dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-800/50
+			text-gray-800 hover:text-gray-900
+			dark:text-gray-100 dark:hover:text-white
 		;
 	}
 
-	li:last-child a {
+	li:last-child {
 		@apply border-b-0;
 	}
 }

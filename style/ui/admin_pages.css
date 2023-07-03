@@ -25,6 +25,10 @@
 				}
 			}
 		}
+
+		ul.notes {
+			@apply text-sm;
+		}
 	}
 
 	// Config manager
@@ -257,9 +261,9 @@
 					// button, that displays the extension actions
 					> button {
 						@apply
-							inline-flex items-center ml-auto p-0.5 text-sm font-medium text-center rounded-lg focus:outline-none
-							text-gray-500 hover:text-gray-800 bg-transparent
-							dark:text-gray-400 dark:hover:text-gray-100
+							p-0 ml-auto w-5 h-5 shadow-none !bg-transparent bg-no-repeat bg-contain
+							bg-[url('/lib/tpl/tailwind/icon.php?icon=dots&color=gray-500')]
+							dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=dots&color=gray-400')]
 						;
 					}
 
@@ -268,7 +272,7 @@
 						@apply divide-y-0;
 
 						button {
-							@apply bg-transparent rounded-none text-left dropdown-element;
+							@apply bg-transparent rounded-none font-normal text-left dropdown-element;
 						}
 
 						> p, span {
@@ -308,10 +312,10 @@
 
 				// Show further info
 				a.info {
-					@apply block mt-5 text-xs font-semibold text-secondary;
+					@apply block mt-5 text-xs font-semibold text-secondary hover:no-underline;
 
 					&.close {
-						@apply mb-6 text-gray-400 dark:text-gray-500;
+						@apply mb-6 opacity-80;
 					}
 				}
 

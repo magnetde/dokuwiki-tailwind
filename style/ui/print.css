@@ -1,5 +1,5 @@
 // Only the main content has printable styles
-.dokuwiki {
+.dokuwiki-main {
 	&:where(.prose) {
 		@apply print:prose-code:text-gray-600 print:prose-code:bg-transparent;
 	}

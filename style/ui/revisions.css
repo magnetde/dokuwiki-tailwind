@@ -1,9 +1,3 @@
-.dw-action-revisions {
-	p {
-		@apply text-sm;
-	}
-}
-
 .changes.doku_form {
 	@apply mt-6;
 
@@ -128,4 +122,9 @@
 			@apply input-select block;
 		}
 	}
+}
+
+// minor fix
+.dw-action-recent p a {
+	@apply link-primary;
 }

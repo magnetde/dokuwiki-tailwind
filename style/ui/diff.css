@@ -1,9 +1,3 @@
-.dw-action-diff {
-	p {
-		@apply text-sm;
-	}
-}
-
 .diffoptions {
 	@apply mt-6 flex flex-nowrap items-center;
 
@@ -47,6 +41,10 @@ table.diff {
 
 		.sum {
 			@apply text-primary;
+		}
+
+		.wikilink1 {
+			@apply link-primary;
 		}
 	}
 

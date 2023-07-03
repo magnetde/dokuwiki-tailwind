@@ -53,7 +53,7 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx(
-			'dokuwiki',
+			'dokuwiki dokuwiki-main',
 			_tpl_page_classes(),
 			'mt-16 print:mt-6',
 		) ?>">

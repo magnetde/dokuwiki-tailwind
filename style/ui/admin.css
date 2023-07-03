@@ -1,38 +1,20 @@
 .admin_tasks,
 .admin_plugins {
-	@apply list-container !mt-6;
+	@apply !mt-6 p-0 space-y-1;
 
 	li {
 		@apply p-0 m-0 list-none;
-	}
 
-	div.li a {
-		@apply list-element flex items-center;
+		a {
+			@apply nav-item flex items-center text-sm hover:no-underline;
 
-		.icon {
-			@apply mr-2;
-		}
-
-		svg {
-			@apply w-5 h-5 inline-block fill-gray-600 dark:fill-gray-300;
-		}
-
-		&:hover, &:focus {
-			svg {
-				@apply fill-primary-700 dark:fill-white;
+			.icon {
+				@apply mr-2;
 			}
 		}
-	}
-
-	li:first-child div.li a {
-		@apply list-element-first;
-	}
-
-	li:last-child div.li a {
-		@apply list-element-last;
 	}
 }
 
 #admin__version {
-	@apply text-secondary mt-6 text-sm font-medium;
+	@apply text-secondary mt-6 text-xs font-medium;
 }

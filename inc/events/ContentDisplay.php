@@ -96,6 +96,15 @@ class TPLContentDisplay extends EventHandler {
 		case 'backlink':
 			$selector = 'ul.idx';
 			break;
+		case 'index':
+			$selector = '#index__tree';
+			break;
+		case 'media':
+			$selector = '#mediamanager__page panel';
+			break;
+		case 'admin':
+			$selector = '.admin_tasks, .admin_plugins, #extension__manager';
+			break;
 		}
 
 		if($selector) {
@@ -444,9 +453,7 @@ class TPLContentDisplay extends EventHandler {
 
 				// TODO: use icon.php
 				$dropdown_btn = '<button id="' . $id . '-dropdown-button" data-dropdown-toggle="' . $id . '-dropdown" type="button">'
-				.'<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-				.'<path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />'
-				.'</svg>'
+				.'<span class="icon"></span>'
 				.'</button>';
 
 				$btn_html .= $dropdown_btn . $actions_html;

@@ -1,4 +1,4 @@
-.dokuwiki, .dokuwiki-sidebar {
+.dokuwiki-main, .dokuwiki-sidebar {
 	// extend the Tailwindcss typography
 	@apply
 		w-full max-w-none
@@ -24,22 +24,22 @@
 
 	// Fix lists
 	li .li {
-		@apply my-0;
+		@apply is-prose:my-0;
 	}
 
 	// Underline text
 	em.u {
-		@apply not-italic underline;
+		@apply is-prose:not-italic is-prose:underline;
 	}
 
 	// Footnotes (in text)
 	a.fn_top {
-		@apply link-primary scroll-mt-20 no-underline;
+		@apply is-prose:link-primary is-prose:scroll-mt-20 is-prose:no-underline;
 	}
 
 	// regular links
 	a.wikilink1, a.urlextern, a.mail, a.windows, a.mediafile, a.interwiki {
-		@apply link-primary font-inherit;
+		@apply is-prose:link-primary is-prose:font-inherit;
 	}
 
 	// Special links with icons
@@ -144,7 +144,7 @@
 
 	// dead links
 	a.wikilink2 {
-		@apply link-error font-inherit;
+		@apply is-prose:link-error is-prose:font-inherit;
 	}
 
 	// Fix the margin in downloadable code blocks
@@ -194,7 +194,7 @@
 }
 
 // Other styles of the main content not included in the sidebar
-.dokuwiki {
+.dokuwiki-main {
 	@apply prose-headings:scroll-mt-20;
 }
 
@@ -257,4 +257,8 @@
 	div.insitu-footnote {
 		@apply dropdown-container text-sm p-3 w-fit max-w-[40%];
 	}
+}
+
+.dokuwiki-main p:not(:where(.dw-action-show *, .dw-action-preview .preview *)) {
+	@apply text-sm;
 }

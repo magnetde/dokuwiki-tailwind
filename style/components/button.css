@@ -2,9 +2,9 @@
 	.btn-primary {
 		@apply
 			px-4 py-2 font-semibold text-sm rounded-md text-center
-			focus:ring-2 focus:outline-none
-			text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 shadow-sm
-			dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 dark:shadow-none
+			focus:outline focus:outline-2 focus:outline-offset-1
+			text-white bg-primary-700 hover:bg-primary-800 focus:outline-primary-300 shadow-sm
+			dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:outline-primary-800 dark:shadow-none
 		;
 	}
 
@@ -29,7 +29,7 @@
 		@apply
 			px-3.5 py-2 font-semibold text-sm rounded-md text-center cursor-not-allowed
 			ring-1 ring-inset shadow-sm
-			text-gray-400 bg-gray-50 ring-gray-300
+			text-gray-400 bg-gray-50/75 ring-gray-300
 			dark:text-gray-600 dark:bg-gray-800 dark:ring-gray-600
 		;
 	}
@@ -48,17 +48,17 @@
 
 	.toggle-box {
 		@apply
-			inline-flex items-center flex-row border rounded-lg
-			bg-gray-200/[0.6] border-gray-200 dark:bg-gray-700 dark:border-gray-600
+			inline-flex items-center flex-row p-1 border rounded-lg
+			bg-gray-50 border-gray-100/70 dark:bg-gray-700/60 dark:border-gray-700/70
 		;
 	}
 
 	.toggle-button {
-		@apply px-4 py-2 -m-px border rounded-lg text-secondary text-sm font-medium;
+		@apply px-3 py-1.5 rounded text-secondary text-sm font-medium;
 	}
 
 	.toggle-button-inactive {
-		@apply cursor-pointer border-transparent;
+		@apply cursor-pointer;
 
 		&:hover {
 			@apply text-gray-600 dark:text-gray-300
@@ -66,6 +66,6 @@
 	}
 
 	.toggle-button-active {
-		@apply text-primary bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-600;
+		@apply text-primary shadow bg-white dark:bg-gray-800;
 	}
 }
