@@ -5,7 +5,7 @@ use simple_html_dom\simple_html_dom;
 /**
  * Event handler that modifies the content.
  */
-class TPLContentDisplay extends EventHandler {
+class ContentDisplay extends EventHandler {
 
 	protected function event() {
 		return 'TPL_CONTENT_DISPLAY';
@@ -124,7 +124,10 @@ class TPLContentDisplay extends EventHandler {
 				$elm->addClass('section-header');
 
 				if($header != 'h5')  // no anchor for h5
-					$elm->innertext .= ' <a class="anchor" href="#' . $elm->id . '">#</a>';
+					$elm->innertext = '<span>'
+						. $elm->innertext
+						. ' <a class="anchor" href="#' . $elm->id . '">#</a>'
+						. '</span>';
 			}
 		}
 	}
@@ -451,7 +454,6 @@ class TPLContentDisplay extends EventHandler {
 				$actions->addClass('dropdown-container w-44');
 				$actions_html = $actions->save();
 
-				// TODO: use icon.php
 				$dropdown_btn = '<button id="' . $id . '-dropdown-button" data-dropdown-toggle="' . $id . '-dropdown" type="button">'
 				.'<span class="icon"></span>'
 				.'</button>';

@@ -20,7 +20,7 @@
 
 		// Revision header
 		.summary {
-			@apply flex items-center text-sm;
+			@apply flex text-sm;
 
 			.sum {
 				@apply text-primary font-medium truncate;
@@ -93,15 +93,30 @@
 			a {
 				@apply btn-icon;
 
-				svg {
-					@apply w-4 h-4 fill-current;
+				// Set the button icons via CSS
+				&:after {
+					@apply content-[''] w-4 h-4 bg-contain bg-no-repeat;
+				}
+
+				&.diff_link:after {
+					@apply
+						bg-[url('/lib/tpl/tailwind/icon.php?icon=diff&color=gray-900')]
+						dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=diff&color=white')]
+					;
+				}
+
+				&.revisions_link:after {
+					@apply
+						bg-[url('/lib/tpl/tailwind/icon.php?icon=revisions&color=gray-900')]
+						dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=revisions&color=white')]
+					;
 				}
 			}
 		}
 	}
 
 	button[name="do[diff]"] {
-		@apply mt-8;
+		@apply mt-6;
 
 		&:not([disabled]) {
 			@apply btn-primary;

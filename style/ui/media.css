@@ -405,16 +405,6 @@
 
 			div.no ul {
 				@apply mt-0 ml-2;
-
-				// increse the top padding of the first change element
-				li:first-child .li {
-					@apply pt-1;
-				}
-			}
-
-			// Fix input position
-			div.li input {
-				@apply mt-[1.45rem];
 			}
 		}
 
@@ -430,25 +420,6 @@
 
 				select {
 					@apply input-select;
-				}
-			}
-		}
-
-		// overwrite the change list style, because the changes description is not needed anymore
-		.revision-info {
-			.rev-description {
-				@apply flex items-center h-8;
-
-				.summary {
-					@apply order-2 mb-0;
-				}
-
-				.sum {
-					@apply hidden;
-				}
-
-				.subtitle {
-					@apply my-0 text-sm font-medium text-gray-700 dark:text-gray-200;
 				}
 			}
 		}

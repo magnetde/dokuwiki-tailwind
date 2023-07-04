@@ -3,15 +3,18 @@
 use simple_html_dom\simple_html_dom;
 
 /**
- * Abstract handler class used to modify the revision and recent list.
+ * Event handler that modifies the list of the revisions or recents.
  * This event handler does not apply styles because styles are applied by CSS.
  */
-abstract class RevisionRecentOutput extends EventHandler {
+class RevisionsRecentsOutput extends EventHandler {
 
-	/**
-	 * Returns as a boolean, whether the current handler is used for the revision or the recent list.
-	 */
-	abstract protected function isRevision();
+	protected function event() {
+		return array('FORM_REVISIONS_OUTPUT', 'FORM_RECENT_OUTPUT');
+	}
+
+	protected function advise() {
+		return 'BEFORE';
+	}
 
 	/**
 	 * Handler function.
@@ -40,7 +43,7 @@ abstract class RevisionRecentOutput extends EventHandler {
 	 * If this function should be changed, the function `modifyChange` (media.js) must also be adapted.
 	 */
 	private function modifyRevision($content) {
-		global $lang;
+		global $ACT, $lang;
 
 		if(_tpl_trim_is_empty($content))
 			return $content;
@@ -48,7 +51,8 @@ abstract class RevisionRecentOutput extends EventHandler {
 		$html = new simple_html_dom;
 		$html->load($content, true, false);
 
-		$recent_page = !$this->isRevision();
+		$recent_page = $ACT === 'recent';
+		$media_page = $ACT === 'media';
 
 		// ignore the pagenav element on the recent page
 		if($recent_page && $html->find('div.pagenav', 0)) {
@@ -74,17 +78,27 @@ abstract class RevisionRecentOutput extends EventHandler {
 		$user = $html->find('span.user', 0);
 		$sizechange = $html->find('span.sizechange', 0);
 
-		// Modify the summary text, if it is empty
-		$summary_text = _tpl_remove_prefix($summary->innertext, ' – ');
-		if(empty($summary_text)) {
-			$summary_text = tpl_getLang('no_description');
-			$summary->addClass('empty');
+		// Revisions or recent
+		if(!$media_page) {
+			// Modify the summary text, if it is empty
+			$summary_text = _tpl_remove_prefix($summary->innertext, ' – ');
+
+			if(empty($summary_text)) {
+				$summary_text = tpl_getLang('no_description');
+				$summary->addClass('empty');
+			}
 		}
 
-		$summary->innertext = $summary_text;
+		// Preview exists
+		$has_preview = $preview && !$preview->hasClass('wikilink2');
+
+		if(!$media_page)
+			$summary->innertext = $summary_text;
+		elseif($has_preview)
+			$summary->innertext = $preview->innertext;
 
 		// If a preview link exists, convert the summary text to a link
-		if($preview && !$preview->hasClass('wikilink2')) {
+		if($has_preview) {
 			$summary->tag = 'a';
 			$summary->href = $preview->href;
 		}
@@ -113,29 +127,19 @@ abstract class RevisionRecentOutput extends EventHandler {
 
 		// Modify the diff link, if exists
 		if($diff_link) {
-			$svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">'
-				.'<path fill="currentColor" d="'
-				.'m15.3 13.3l-3.6-3.6q-.15-.15-.212-.325T11.425 9q0-.2.063-.375T11.7 8.3l3.6-3.6q.3-.3.7-.3t.7.3q.3.3.3.713t-.3.712L14.825 8H21q.425 0 .713.288T22 9q0 .425-.288.713T21 10h-6.175l1.875 1.875q.3.3.3.7t-.3.7q-.3.3-.687.325t-.713-.3Zm-8 5.975q.3.3.7.313t.7-.288l3.6-3.6q.15-.15.212-.325t.063-.375q0-.2-.063-.375T12.3 14.3l-3.6-3.6q-.3-.3-.7-.3t-.7.3q-.3.3-.3.713t.3.712L9.175 14H3q-.425 0-.713.288T2 15q0 .425.288.713T3 16h6.175L7.3 17.875q-.3.3-.3.7t.3.7Z'
-				.'"/></svg>';
-
 			// Set the tooltip of the element
 			$this->setTitle($diff_link);
 
-			$diff_link->innertext = $svg;
+			$diff_link->innertext = '';
 			$content .= $diff_link->save();
 		}
 
 		// Add revisions list
 		if($recent_page) {
-			$svg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">'
-				.'<path fill="currentColor" d='
-				.'"M4 17q-.425 0-.713-.288T3 16q0-.425.288-.713T4 15q.425 0 .713.288T5 16q0 .425-.288.713T4 17Zm0-4q-.425 0-.713-.288T3 12q0-.425.288-.713T4 11q.425 0 .713.288T5 12q0 .425-.288.713T4 13Zm0-4q-.425 0-.713-.288T3 8q0-.425.288-.713T4 7q.425 0 .713.288T5 8q0 .425-.288.713T4 9Zm3 8v-2h14v2H7Zm0-4v-2h14v2H7Zm0-4V7h14v2H7Z"'
-				.'/></svg>';
-
 			// Set the title of the element
 			$this->setTitle($revisions_link);
 
-			$revisions_link->innertext = $svg;
+			$revisions_link->innertext = '';
 			$content .= $revisions_link->save();
 		}
 

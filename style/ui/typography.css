@@ -207,7 +207,7 @@
 		// Anchor link
 		.anchor {
 			@apply
-				ml-3 no-underline opacity-0 transition-opacity
+				ml-1 no-underline opacity-0 transition-opacity
 				text-gray-300 hover:text-gray-400
 				dark:text-gray-500 dark:hover:text-gray-400
 			;
