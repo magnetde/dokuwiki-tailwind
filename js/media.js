@@ -182,8 +182,6 @@ function modifyMediaRevisions(mngr) {
 	if(!revs.length)
 		return;
 
-	revs.addClass('not-prose');
-
 	revs.find('div.li').replaceWith(function() {
 		return modifyChange(jQuery(this));
 	});

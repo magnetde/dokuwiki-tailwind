@@ -37,8 +37,6 @@ class ContentDisplay extends EventHandler {
 		if(!$html)
 			return $content;
 
-		$this->addNotProse($html);
-
 		switch($ACT) {
 		case 'show':
 			$this->modifyHeaders($html);
@@ -70,47 +68,6 @@ class ContentDisplay extends EventHandler {
 		unset($html);
 
 		return $content;
-	}
-
-	// Add the not-prose class to all elements, that should not be styled with the official TailwindCSS typography.
-	private function addNotProse($html) {
-		global $ACT;
-
-		$selector = null;
-
-		switch($ACT) {
-		case 'preview':
-			// fallthrough
-		case 'edit':
-			$selector = 'div.editBox';
-			break;
-		case 'revisions';
-			$selector = '#page__revisions';
-			break;
-		case 'recent';
-			$selector = '#dw__recent';
-			break;
-		case 'diff':
-			$selector = 'div.diffoptions, div.table';
-			break;
-		case 'backlink':
-			$selector = 'ul.idx';
-			break;
-		case 'index':
-			$selector = '#index__tree';
-			break;
-		case 'media':
-			$selector = '#mediamanager__page panel';
-			break;
-		case 'admin':
-			$selector = '.admin_tasks, .admin_plugins, #extension__manager';
-			break;
-		}
-
-		if($selector) {
-			foreach($html->find($selector) as $elm)
-				$elm->addClass('not-prose');
-		}
 	}
 
 	// Add an class and anchors to headings.
@@ -412,16 +369,12 @@ class ContentDisplay extends EventHandler {
 	}
 
 	/**
-	 * modifies the media manager page by adding the "not-prose" class to the file list
-	 * and by changing the file list icons.
+	 * modifies the media manager page by changing the file list icons.
 	 */
 	private function modifyMediaManager($html) {
 		$mngr = $html->find('#mediamanager__page', 0);
 		if(!$mngr)
 			return;
-
-		foreach(array('filelist', 'file') as $panel_class)
-			$mngr->find('.panel.' . $panel_class, 0)->addClass('not-prose');
 
 		foreach($mngr->find('img') as $img) {
 			if($img->src == '/lib/images/plus.gif')

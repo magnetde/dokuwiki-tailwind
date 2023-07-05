@@ -54,9 +54,10 @@ module.exports = {
     },
     plugins: [
         require('flowbite/plugin'),
-        require('@tailwindcss/typography'),
+        require('@tailwindcss/typography')({
+            target: 'legacy', // disable the not-prose functionality
+        }),
         backdropBlur,
-        isProse,
         rtl,
     ],
 };
@@ -70,16 +71,6 @@ function backdropBlur({ addVariant }) {
     addVariant(
         'supports-backdrop-blur',
         '@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))',
-    );
-}
-
-// adds a variant, that is only used, if the current class is not a child of a 'not-prose' class
-function isProse({ addVariant, e }) {
-    addVariant(
-        'is-prose',
-        ({ modifySelectors, separator }) => {
-            modifySelectors(({ className }) => `.${e(`is-prose${separator}${className}`)}:not(:where([class~="not-prose"] *))`);
-        }
     );
 }
 
