@@ -33,7 +33,9 @@
 }
 
 // Main content and left sidebar
-.dokuwiki-main, .dokuwiki-sidebar {
+.dw-action-show, .dw-action-preview .preview, .dokuwiki-sidebar {
+	@apply typography;
+
 	// current link
 	.curid, .curid a {
 		@apply font-semibold;
@@ -51,6 +53,24 @@
 	}
 	.mediacenter {
 		@apply block mx-auto;
+	}
+}
+
+.dokuwiki-main {
+	@apply prose-headings:scroll-mt-20;
+
+	a.fn_top {
+		@apply scroll-mt-20;
+	}
+}
+
+.dokuwiki-main:not(.dw-action-show) {
+	h1 {
+		// TODO: @apply typography;
+	}
+
+	p {
+		// TODO: @apply typography text-sm;
 	}
 }
 

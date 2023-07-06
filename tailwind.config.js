@@ -3,6 +3,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
+const typography = require('./lib/typography');
+
 module.exports = {
     content: [
         './**/*.php',
@@ -19,6 +21,7 @@ module.exports = {
             '2xl': fontVariant(1.5),
         },
         extend: {
+            typography,
             colors: {
                 primary: colors.blue,
             },
@@ -57,6 +60,7 @@ module.exports = {
         require('@tailwindcss/typography')({
             target: 'legacy', // disable the not-prose functionality
         }),
+        require('./lib/components').plugin,
         backdropBlur,
         rtl,
     ],
