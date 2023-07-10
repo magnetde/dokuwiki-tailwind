@@ -39,7 +39,7 @@
 	.doku_form {
 		textarea.edit {
 			@apply
-				box-b block w-full p-4 font-mono leading-[150%] text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.75rem]
+				box-b block w-full p-4 font-mono leading-[150%] text-[0.875rem] lg:text-[0.8125rem] 2xl:text-[0.75rem]
 				border-x border-y-0 focus:ring-0
 				text-gray-800 bg-white dark:text-gray-100 dark:bg-gray-800 dark:placeholder-gray-400
 			;
