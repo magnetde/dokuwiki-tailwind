@@ -26,7 +26,10 @@ form.search {
 	;
 
 	strong {
-		@apply block px-4 py-2 font-medium text-primary;
+		@apply
+			dropdown-element py-3 font-medium text-primary border-b
+			border-gray-100 dark:border-gray-600 hover:bg-transparent
+		;
 	}
 
 	ul li {
@@ -34,8 +37,12 @@ form.search {
 			@apply dropdown-element block;
 		}
 
+		&:first-child a {
+			@apply mt-1;
+		}
+
 		&:last-child a {
-			@apply rounded-b-lg;
+			@apply mb-1;
 		}
 	}
 }

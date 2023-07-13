@@ -50,7 +50,7 @@
 
 					<!-- Dropdown menu of the tools -->
 					<div id="dropdown-tools" class="dropdown-container w-44">
-						<ul class="py-2" aria-labelledby="dropdownLargeButton">
+						<ul class="py-1" aria-labelledby="dropdownLargeButton">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
 							foreach($menu_items as $item) {
@@ -82,7 +82,7 @@
 						if(!empty($_SERVER['REMOTE_USER']))
 							_tpl_userInfo();
 						?>
-						<ul class="py-2" aria-labelledby="user-menu-button">
+						<ul class="py-1" aria-labelledby="user-menu-button">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
 							foreach($menu_items as $item)

@@ -82,6 +82,10 @@ footer .license a {
 // Success / error box at the top of the page
 .notify, .success, .error {
 	@apply mx-4 md:mx-6 lg:mx-8 mt-6 mb-8 p-4 text-sm rounded-lg;
+
+	a {
+		@apply underline;
+	}
 }
 
 .notify {
