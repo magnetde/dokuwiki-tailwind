@@ -60,7 +60,7 @@ module.exports = {
         require('@tailwindcss/typography')({
             target: 'legacy', // disable the not-prose functionality
         }),
-        require('./lib/components').plugin,
+        require('./lib/components/plugin'),
         backdropBlur,
         rtl,
     ],
