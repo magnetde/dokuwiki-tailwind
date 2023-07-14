@@ -326,7 +326,7 @@ function _tpl_mediaTree() {
 	tpl_mediaTree();
 	$content = ob_get_clean();
 
-	// TODO: this can be done just by string replacement
+	// TODO: this can be done just with string replacement
 
 	$html = new simple_html_dom;
 	$html->load($content, true, false);
