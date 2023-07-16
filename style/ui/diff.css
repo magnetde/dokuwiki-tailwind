@@ -161,7 +161,7 @@ table.diff {
 	}
 
 	tr {
-		&:fast-child > * {
+		&:first-child > * {
 			&:first-child {
 				@apply rounded-tl-lg;
 			}
