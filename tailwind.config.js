@@ -8,6 +8,7 @@ module.exports = {
         './**/*.php',
         './node_modules/flowbite/**/*.js',
     ],
+    blocklist: require('./lib/blocklist'),
     darkMode: 'media',
     theme: {
         fontSize: {
