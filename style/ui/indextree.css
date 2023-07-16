@@ -21,7 +21,7 @@
 	}
 
 	li {
-		@apply list-none pl-0;
+		@apply list-none pl-0 py-0.5;
 	}
 
 	div.li a {

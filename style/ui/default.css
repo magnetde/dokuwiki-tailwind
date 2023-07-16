@@ -31,7 +31,25 @@
 		@apply !absolute !left-[-99999em] !top-auto !w-px !h-px !overflow-hidden;
 	}
 
+	h1 {
+		@apply prose-h1;
+	}
+	h2 {
+		@apply prose-h2;
+	}
+	h3 {
+		@apply prose-h3;
+	}
+	h4 {
+		@apply prose-h4;
+	}
+	h5 {
+		@apply prose-h5;
+	}
+
 	p {
+		@apply prose-p;
+
 		&:first-child {
 			@apply mt-0;
 		}
@@ -80,7 +98,7 @@
 	}
 
 	table {
-		@apply w-full max-w-full text-sm text-left text-primary;
+		@apply prose-table;
 
 		input[type="text"], input[type="password"], input[type="email"], select, textarea {
 			@apply w-full text-sm;
@@ -107,7 +125,7 @@
 	}
 
 	th, td {
-		@apply px-4 py-3 align-middle;
+		@apply !px-4 !py-3 align-middle;
 	}
 
 	// Tabs
@@ -131,5 +149,18 @@
 	// Field set headers
 	fieldset legend {
 		@apply text-primary mb-8 text-xl font-bold leading-tight md:text-2xl;
+	}
+
+	// Footnotes
+	.footnotes {
+		@apply prose-p;
+
+		a {
+			@apply link-primary;
+		}
+
+		.content {
+			@apply inline;
+		}
 	}
 }

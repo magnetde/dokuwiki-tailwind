@@ -3,6 +3,10 @@
 
 	// User manager
 	&.dw-page-usermanager {
+		#user__manager p {
+			@apply prose-p;
+		}
+
 		table button {
 			&[name="fn[start]"], &[name="fn[prev]"], &[name="fn[next]"], &[name="fn[last]"] {
 				&:not([disabled]) {
@@ -27,7 +31,7 @@
 		}
 
 		ul.notes {
-			@apply text-sm;
+			@apply prose-ul;
 		}
 	}
 
@@ -187,7 +191,7 @@
 		// Log panel
 		dl {
 			@apply
-				p-4 font-mono text-sm leading-7 whitespace-break-spaces overflow-auto
+				p-4 font-mono text-[0.825rem] leading-7 whitespace-break-spaces overflow-auto
 				text-gray-200 bg-gray-800
 			;
 
@@ -349,16 +353,12 @@
 		#acl__tree {
 			@apply w-1/4 h-80 pr-4 mr-4 text-sm float-left overflow-auto border-r box-b;
 
-			ul {
-				@apply pl-0 list-none;
-
-				ul {
-					@apply pl-4;
-				}
+			ul ul {
+				@apply pl-4;
 			}
 
 			li {
-				@apply pl-0;
+				@apply my-0.5;
 			}
 
 			img {

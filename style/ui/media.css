@@ -83,8 +83,12 @@
 			h3 {
 				@apply font-medium;
 
-				strong > strong {
-					@apply font-bold;
+				strong, strong > strong {
+					@apply font-semibold;
+				}
+
+				a {
+					@apply prose-a !text-inherit;
 				}
 			}
 		}
@@ -228,6 +232,10 @@
 
 		div.upload {
 			@apply p-4;
+
+			p:first-child {
+				@apply prose-p;
+			}
 		}
 
 		div.search {

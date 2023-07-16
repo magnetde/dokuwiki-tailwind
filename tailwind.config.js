@@ -21,7 +21,7 @@ module.exports = {
             '2xl': fontVariant(1.5),
         },
         extend: {
-            typography,
+            typography: typography.extensions,
             colors: {
                 primary: colors.blue,
             },
@@ -51,7 +51,7 @@ module.exports = {
             screens: {
                 // Add print as a screen size despite it already exists ath the TailwindCSS library
                 // because the order does not get respected when using this variant.
-                'print': {'raw': 'print'},
+                'print': { 'raw': 'print' },
             },
         },
     },
@@ -63,6 +63,7 @@ module.exports = {
         require('./lib/components/plugin'),
         backdropBlur,
         rtl,
+        typography.plugin,
     ],
 };
 
