@@ -31,7 +31,7 @@
 
 // Main content and left sidebar
 .dw-action-show, .dw-action-preview .preview, .dokuwiki-sidebar {
-	@apply prose dark:prose-invert;
+	@apply prose dark:prose-invert print:prose-print;
 
 	// current link
 	.curid, .curid a {
@@ -70,7 +70,7 @@
 	}
 
 	> p, div.level1 > p {
-		@apply prose-p;
+		@apply prose-text;
 	}
 }
 

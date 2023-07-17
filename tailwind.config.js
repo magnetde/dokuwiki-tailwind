@@ -20,7 +20,7 @@ module.exports = {
             '2xl': fontVariant(1.5),
         },
         extend: {
-            typography: require('./lib/typography/extension'),
+            typography: require('./lib/typography/styles'),
             colors: {
                 primary: colors.blue,
             },

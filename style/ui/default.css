@@ -48,7 +48,7 @@
 	}
 
 	p {
-		@apply prose-p;
+		@apply prose-text;
 
 		&:first-child {
 			@apply mt-0;
@@ -153,7 +153,7 @@
 
 	// Footnotes
 	.footnotes {
-		@apply prose-p;
+		@apply prose-p; // if the footnote contains more subelements, replace with 'prose-text'
 
 		a {
 			@apply link-primary;
