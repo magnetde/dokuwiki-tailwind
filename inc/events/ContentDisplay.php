@@ -394,6 +394,9 @@ class ContentDisplay extends EventHandler {
 			return;
 
 		foreach($mngr->find('.extensionList li') as $elm) {
+			if($elm->hasClass('notfound'))
+				continue;
+
 			$id = $elm->id;
 
 			// determine and cache the button bar and add an ID

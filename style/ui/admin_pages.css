@@ -197,6 +197,10 @@
 
 			dt {
 				@apply font-medium space-x-2;
+
+				span.log {
+					@apply space-x-2;
+				}
 			}
 
 			dd {
