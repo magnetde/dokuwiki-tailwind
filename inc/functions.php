@@ -112,6 +112,10 @@ function _tpl_searchform() {
 	foreach($html->find('button') as $elm)
 		$elm->outertext = _tpl_search_input();
 
+	// Disable autocomplete on the search input
+	foreach($html->find('input[type="text"]') as $elm)
+		$elm->autocomplete = 'off';
+
 	$content = $html->save();
 	$html->clear();
 	unset($html);
