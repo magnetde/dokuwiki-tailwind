@@ -6,8 +6,11 @@
 
 	// Remove margin, if the first element is a paragraph
 	.plugin_wrap {
-		*:first-child p, p:first-child {
+		> :first-child {
 			@apply mt-0;
+		}
+		> :last-child {
+			@apply mb-0;
 		}
 	}
 
@@ -250,7 +253,7 @@
 	div.wrap_todo,
 	div.wrap_download {
 		@apply
-			pt-4 pr-4 pb-2 pl-16 mb-6 min-h-[5rem] bg-[1rem_50%] bg-[length:2rem] bg-no-repeat overflow-hidden
+			py-4 pr-4 pl-16 mb-6 min-h-[5rem] bg-[1rem_50%] bg-[length:2rem] bg-no-repeat overflow-hidden
 			rtl:pr-16 rtl:pl-4 rtl:bg-[right_50%]
 		;
 	}
