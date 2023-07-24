@@ -3,6 +3,10 @@
 
 	// User manager
 	&.dw-page-usermanager {
+		#user__manager p {
+			@apply prose-p;
+		}
+
 		table button {
 			&[name="fn[start]"], &[name="fn[prev]"], &[name="fn[next]"], &[name="fn[last]"] {
 				&:not([disabled]) {
@@ -24,6 +28,10 @@
 					@apply mx-2 flex-grow;
 				}
 			}
+		}
+
+		ul.notes {
+			@apply prose-ul;
 		}
 	}
 
@@ -183,12 +191,16 @@
 		// Log panel
 		dl {
 			@apply
-				p-4 font-mono text-sm leading-7 whitespace-break-spaces overflow-auto
+				p-4 font-mono text-[0.825rem] leading-7 whitespace-break-spaces overflow-auto
 				text-gray-200 bg-gray-800
 			;
 
 			dt {
 				@apply font-medium space-x-2;
+
+				span.log {
+					@apply space-x-2;
+				}
 			}
 
 			dd {
@@ -257,9 +269,9 @@
 					// button, that displays the extension actions
 					> button {
 						@apply
-							inline-flex items-center ml-auto p-0.5 text-sm font-medium text-center rounded-lg focus:outline-none
-							text-gray-500 hover:text-gray-800 bg-transparent
-							dark:text-gray-400 dark:hover:text-gray-100
+							p-0 ml-auto w-5 h-5 shadow-none !bg-transparent bg-no-repeat bg-contain
+							bg-[url('/lib/tpl/tailwind/icon.php?icon=dots&color=gray-500')]
+							dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=dots&color=gray-400')]
 						;
 					}
 
@@ -268,7 +280,7 @@
 						@apply divide-y-0;
 
 						button {
-							@apply bg-transparent rounded-none text-left dropdown-element;
+							@apply bg-transparent rounded-none font-normal text-left dropdown-element;
 						}
 
 						> p, span {
@@ -308,10 +320,10 @@
 
 				// Show further info
 				a.info {
-					@apply block mt-5 text-xs font-semibold text-secondary;
+					@apply block mt-5 text-xs font-semibold text-secondary hover:no-underline;
 
 					&.close {
-						@apply mb-6 text-gray-400 dark:text-gray-500;
+						@apply mb-6 opacity-80;
 					}
 				}
 
@@ -345,16 +357,12 @@
 		#acl__tree {
 			@apply w-1/4 h-80 pr-4 mr-4 text-sm float-left overflow-auto border-r box-b;
 
-			ul {
-				@apply pl-0 list-none;
-
-				ul {
-					@apply pl-4;
-				}
+			ul ul {
+				@apply pl-4;
 			}
 
 			li {
-				@apply pl-0;
+				@apply my-0.5;
 			}
 
 			img {

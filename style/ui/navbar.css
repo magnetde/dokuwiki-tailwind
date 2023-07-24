@@ -13,7 +13,7 @@ form.search {
 
 	// Input field of the search
 	input {
-		@apply input-text py-2 pl-10 pr-2 block w-full md:text-sm;
+		@apply input-text text-sm py-2 pl-10 pr-2 block w-full shadow-none;
 	}
 }
 
@@ -26,14 +26,23 @@ form.search {
 	;
 
 	strong {
-		@apply block px-4 py-2 font-medium text-primary;
+		@apply
+			dropdown-element py-3 font-medium text-primary border-b
+			border-gray-100 dark:border-gray-600 hover:bg-transparent
+		;
 	}
 
 	ul li {
-		@apply dropdown-element;
+		a {
+			@apply dropdown-element block;
+		}
 
-		&:last-child {
-			@apply rounded-b-lg;
+		&:first-child a {
+			@apply mt-1;
+		}
+
+		&:last-child a {
+			@apply mb-1;
 		}
 	}
 }

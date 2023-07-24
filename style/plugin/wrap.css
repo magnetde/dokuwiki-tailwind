@@ -2,7 +2,7 @@
  * Styles for https://www.dokuwiki.org/plugin:wrap
  */
 
-.dokuwiki {
+.dokuwiki-main {
 
 	// Remove margin, if the first element is a paragraph
 	.plugin_wrap {

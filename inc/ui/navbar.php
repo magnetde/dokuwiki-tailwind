@@ -16,27 +16,26 @@
 		$home_link = (tpl_getConf('homePageURL') ? tpl_getConf('homePageURL') : wl());
 		$title = $conf['title'];
 
-		echo '<a class="flex items-center mr-3 w-fit max-w-[50%] md:max-w-none print:max-w-full" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
+		echo '<a class="inline-block md:flex items-center mr-3 print:max-w-full" href="' . $home_link . '" accesskey="h" title="' . $title . '">';
 
 		if(tpl_getConf('showIcon')) {
 			$logo_url = tpl_basedir() . 'images/logo.png';
-			echo '<img class="h-8 mr-3" src="' . $logo_url . '" alt="' . $title . '"/>';
+			echo '<img class="w-8 h-8 max-w-none md:mr-3" src="' . $logo_url . '" alt="' . $title . '"/>';
 		}
 
-		echo '<span class="self-center text-2xl font-semibold truncate dark:text-white">' . $title . '</span>';
+		echo '<span class="hidden self-center text-2xl font-semibold truncate text-gray-900 dark:text-white md:inline">' . $title . '</span>';
 		echo '</a>';
 		?>
 
 		<!--- Search field --->
-		<div class="flex items-center md:order-1 md:justify-center print:hidden">
+		<div class="flex items-center print:hidden">
 			<?php _tpl_searchform() ?>
 		</div>
 
 		<!--- Tools dropdown and user avatar --->
-		<div class="hidden items-center md:order-2 md:flex md:justify-end print:hidden">
+		<div class="hidden items-center md:flex md:justify-end print:hidden">
 			<ul class="<?php echo clsx("
-				flex flex-row font-medium items-center rounded-lg space-x-8
-				dark:bg-gray-800 dark:border-gray-700
+				flex flex-row items-center rounded-lg space-x-8
 			") ?>">
 				<!--- Tools button --->
 				<li>
@@ -44,14 +43,14 @@
 						btn-link flex items-center justify-between w-full
 					") ?>">
 						<?php echo $lang['tools'] ?>
-						<svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<svg class="w-5 h-5 ml-1 fill-gray-400 dark:fill-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 						</svg>
 					</button>
 
 					<!-- Dropdown menu of the tools -->
 					<div id="dropdown-tools" class="dropdown-container w-44">
-						<ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+						<ul class="py-1" aria-labelledby="dropdownLargeButton">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
 							foreach($menu_items as $item) {
@@ -83,7 +82,7 @@
 						if(!empty($_SERVER['REMOTE_USER']))
 							_tpl_userInfo();
 						?>
-						<ul class="py-2" aria-labelledby="user-menu-button">
+						<ul class="py-1" aria-labelledby="user-menu-button">
 							<?php
 							$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
 							foreach($menu_items as $item)
@@ -98,7 +97,7 @@
 		<!--- Mobile menu button --->
 		<button class="<?php echo clsx("
 			text-secondary
-			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden order-3 focus:ring-2
+			inline-flex items-center p-2 ml-1 text-sm rounded-lg md:hidden focus:ring-2
 			hover:bg-gray-100 focus:outline-none focus:ring-gray-200
 			dark:hover:bg-gray-700 dark:focus:ring-gray-600
 			print:hidden

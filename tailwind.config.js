@@ -8,27 +8,37 @@ module.exports = {
         './**/*.php',
         './node_modules/flowbite/**/*.js',
     ],
+    blocklist: require('./lib/blocklist'),
     darkMode: 'media',
     theme: {
+        fontSize: {
+            xs:    fontVariant(0.75),
+            sm:    fontVariant(0.875),
+            base:  fontVariant(1),
+            lg:    fontVariant(1.125),
+            xl:    fontVariant(1.25),
+            '2xl': fontVariant(1.5),
+        },
         extend: {
+            typography: require('./lib/typography/styles'),
             colors: {
                 primary: colors.blue,
             },
             fontFamily: {
-                'sans': ['Inter', ...defaultTheme.fontFamily.sans],
-                'mono': ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
+                'sans': ['Inter var', ...defaultTheme.fontFamily.sans],
+                'mono': ['"SF Mono"', ...defaultTheme.fontFamily.mono],
             },
             // make the navbar height constant
             height: {
-                'navbar': '4.5rem',
+                'navbar': '4rem',
             },
             // make the sidebar width a constant
             width: {
-                'sidebar-lg':  '16rem',
-                'sidebar-2xl': '18rem',
-                'content-lg':  '54rem',
-                'content-xl':  '56rem', // only slightly larger because the toc appears
-                'content-2xl': '66rem',
+                'sidebar-lg':  '14rem',
+                'sidebar-2xl': '16rem',
+                'content-lg':  '48rem',
+                'content-xl':  '50rem', // only slightly larger because the toc appears
+                'content-2xl': '58rem',
             },
             // fix some border UI bugs on Safari
             borderColor: {
@@ -40,18 +50,27 @@ module.exports = {
             screens: {
                 // Add print as a screen size despite it already exists ath the TailwindCSS library
                 // because the order does not get respected when using this variant.
-                'print': {'raw': 'print'},
+                'print': { 'raw': 'print' },
             },
         },
     },
     plugins: [
         require('flowbite/plugin'),
-        require('@tailwindcss/typography'),
+        require('@tailwindcss/typography')({
+            target: 'legacy', // disable the not-prose functionality
+        }),
+        require('./lib/components/plugin'),
+        require('./lib/typography/plugin'),
         backdropBlur,
         rtl,
     ],
 };
 
+function fontVariant(factor) {
+    return [`${factor}rem`, `${1.5 * factor}rem`];
+}
+
+// adds css query, that checks, if the browser supports backdrop blur
 function backdropBlur({ addVariant }) {
     addVariant(
         'supports-backdrop-blur',
@@ -59,6 +78,7 @@ function backdropBlur({ addVariant }) {
     );
 }
 
+// adds a rtl variant
 function rtl({ addVariant, e }) {
     addVariant(
         'rtl',

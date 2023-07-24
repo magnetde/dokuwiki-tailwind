@@ -1,21 +1,21 @@
 @layer components {
 	.box-b {
-		@apply border-gray-200 dark:border-gray-600;
+		@apply border-gray-200 dark:border-gray-700/90;
 	}
 
-	.box-hf-bg {
-		@apply bg-gray-50 dark:bg-gray-700;
+	.box-bg {
+		@apply bg-white dark:bg-gray-800;
 	}
 
 	.box-hf {
-		@apply box-b box-hf-bg;
+		@apply box-b box-bg;
 	}
 
 	.box-header {
-		@apply box-hf w-full p-4 border rounded-t-lg block;
+		@apply box-hf w-full p-3 border rounded-t-lg block;
 	}
 
 	.box-footer {
-		@apply box-hf w-full p-4 border rounded-b-lg block;
+		@apply box-hf w-full p-3 border rounded-b-lg block;
 	}
 }

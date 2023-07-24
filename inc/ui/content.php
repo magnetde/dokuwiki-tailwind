@@ -24,7 +24,7 @@
 			?>
 
 			<!--- Buttons --->
-			<div class="flex items-center justify-end space-x-2">
+			<div class="flex items-center justify-end space-x-1.5">
 				<?php
 				$index = 0;
 				$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
@@ -53,8 +53,9 @@
 
 		<!--- Content --->
 		<article id="dw-content" class="<?php echo clsx(
-			"dokuwiki mt-16 print:mt-6",
+			'dokuwiki dokuwiki-main',
 			_tpl_page_classes(),
+			'mt-16 print:mt-6',
 		) ?>">
 
 			<?php echo $content ?>
@@ -63,10 +64,10 @@
 	</div>
 
 	<!--- Footer --->
-	<footer class="mt-10 text-sm">
+	<footer class="mt-10">
 		<hr class="h-px my-6 border-0 bg-gray-200 dark:bg-gray-700">
 
-		<div class="px-4 my-6 text-center text-secondary">
+		<div class="px-4 my-6 text-center text-secondary text-xs">
 			<span class="block"><?php tpl_pageinfo() ?></span>
 			<span class="block mt-7"><?php tpl_license('0') ?></span>
 		</div>

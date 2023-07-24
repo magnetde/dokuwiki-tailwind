@@ -1,4 +1,4 @@
-.dokuwiki .editBox {
+.dokuwiki-main .editBox {
 	@apply
 		w-full mt-10;
 	;
@@ -8,14 +8,14 @@
 	}
 
 	.tool__bar {
-		@apply flex flex-nowrap items-center space-x-2;
+		@apply flex flex-nowrap items-center space-x-1.5;
 
 		button {
-			@apply p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-600;
+			@apply p-[0.1875rem] rounded hover:bg-gray-50 dark:hover:bg-gray-600;
 		}
 
 		img {
-			@apply my-0 w-6 h-6 fill-gray-400 dark:fill-gray-500;
+			@apply my-0 w-5 h-5;
 		}
 	}
 
@@ -39,7 +39,8 @@
 	.doku_form {
 		textarea.edit {
 			@apply
-				box-b block w-full p-4 font-mono text-sm border-x border-y-0 focus:ring-0
+				box-b block w-full p-4 font-mono leading-[150%] text-[0.875rem] lg:text-[0.8125rem] 2xl:text-[0.75rem]
+				border-x border-y-0 focus:ring-0
 				text-gray-800 bg-white dark:text-gray-100 dark:bg-gray-800 dark:placeholder-gray-400
 			;
 		}
@@ -47,12 +48,12 @@
 		.editBar {
 			@apply grid;
 
-			img {
-				@apply my-0;
-			}
-
 			#size__ctl {
 				@apply box-footer order-1 flex flex-nowrap items-center justify-end space-x-2;
+
+				img {
+					@apply cursor-pointer opacity-100 dark:opacity-50;
+				}
 			}
 
 			.editButtons {
@@ -114,11 +115,11 @@
 	.license {
 		@apply
 			p-4 mt-12 mb-2 text-sm text-center rounded-lg
-			text-primary-800 bg-primary-50 dark:bg-gray-800 dark:text-primary-400
+			text-primary-700 bg-primary-50 dark:text-primary-400 dark:bg-primary-950
 		;
 
 		a {
-			@apply inline-block text-inherit underline;
+			@apply p-0 inline-block text-inherit underline bg-none;
 		}
 	}
 }
@@ -155,7 +156,7 @@
 	.type_d, .type_f, .type_u {
 		@apply
 			py-1.5 pl-10 pr-4 bg-no-repeat bg-[0.75rem_0.6rem] bg-[length:1.25rem]
-			hover:box-hf-bg text-gray-700 dark:text-gray-200
+			text-hover
 		;
 
 		&:not(:last-child) {

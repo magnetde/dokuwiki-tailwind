@@ -1,17 +1,14 @@
 .index__tree {
-	@apply
-		box-b mt-8 px-4 py-2 w-full border rounded-lg min-h-[25vh] max-h-[50vh]
-		overflow-x-hidden overflow-y-auto
-	;
+	@apply mt-8 w-full min-h-[25vh];
 
 	a {
 		@apply
-			text-secondary font-medium no-underline
+			text-gray-500 dark:text-gray-400 font-medium no-underline
 			hover:text-gray-700 hover:dark:text-gray-300
 		;
 
 		&.wikilink1 {
-			@apply !text-secondary font-inherit;
+			@apply font-inherit;
 		}
 	}
 
@@ -24,14 +21,14 @@
 	}
 
 	li {
-		@apply list-none pl-0;
+		@apply list-none pl-0 py-0.5;
 	}
 
 	div.li a {
 		@apply relative;
 
 		&:before {
-			@apply absolute w-4 h-4 top-[0.075rem] -left-5;
+			@apply absolute w-4 h-4 top-0 -left-5;
 		}
 	}
 

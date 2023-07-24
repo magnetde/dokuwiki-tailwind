@@ -41,7 +41,7 @@ function _tpl_trim_is_empty($str) {
 }
 
 /**
- * If the current page is an admin page or a plugin page,
+ * If the current page either shows text, is an admin page or a plugin page,
  * this function returns a list of classes (as a single string),
  * that exactly describes the current page.
  */
@@ -59,6 +59,8 @@ function _tpl_page_classes() {
 			$class .= ' dw-page-' . $page;
 	} elseif(_tpl_has_prefix($ACT, 'plugin_'))
 		$class .= 'dw-action-plugin ' . _tpl_remove_prefix($ACT, 'plugin_');
+	else
+		$class .= 'dw-action-' . $ACT;
 
 	return $class;
 }
@@ -106,14 +108,13 @@ function _tpl_searchform() {
 	$html = new simple_html_dom;
 	$html->load($content, true, false);
 
-	// Return original content if Simple HTML DOM fail
-	if(!$html) {
-		return $content;
-	}
-
 	// Remove the button and turn it into an icon
 	foreach($html->find('button') as $elm)
 		$elm->outertext = _tpl_search_input();
+
+	// Disable autocomplete on the search input
+	foreach($html->find('input[type="text"]') as $elm)
+		$elm->autocomplete = 'off';
 
 	$content = $html->save();
 	$html->clear();
@@ -128,7 +129,7 @@ function _tpl_searchform() {
 function _tpl_search_input() {
     ob_start(); ?>
 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-	<svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+	<svg class="w-5 h-5 text-gray-400 dark:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd">
 	</path></svg>
 </div>
@@ -230,9 +231,12 @@ function _tpl_sidebar() {
  * Rather create the breadcrumb list without "tpl_breadcrumbs" / "tpl_youarehere" and modifying the DOM.
  */
 function _tpl_breadcrumbs($youarehere = false) {
-	$sep = '<svg aria-hidden="true" class="inline w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-		.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
-		.'</path></svg>';
+	if($youarehere)
+		$sep = '<svg aria-hidden="true" class="inline w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
+			.'<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd">'
+			.'</path></svg>';
+	else
+		$sep = '<span class="mx-0.5">・</span>';
 
 	// Capture the output
 	ob_start();
@@ -258,9 +262,9 @@ function _tpl_breadcrumbs($youarehere = false) {
 	$elm->remove();
 
 	// Remove first separator
-	$sep = $html->find('.bcsep', 0);
-	if($sep)
-		$sep->remove();
+	$first_sep = $html->find('.bcsep', 0);
+	if($first_sep)
+		$first_sep->remove();
 
 	$body = '';
 	if(!$youarehere) {
@@ -326,7 +330,7 @@ function _tpl_mediaTree() {
 	tpl_mediaTree();
 	$content = ob_get_clean();
 
-	// TODO: this can be done just by string replacement
+	// TODO: this can be done just with string replacement
 
 	$html = new simple_html_dom;
 	$html->load($content, true, false);

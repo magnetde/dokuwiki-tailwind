@@ -1,0 +1,145 @@
+.changes.doku_form {
+	@apply mt-6;
+
+	ul {
+		@apply mt-6 ml-2 relative border-l border-gray-200 dark:border-gray-700;
+	}
+
+	// Checkbox
+	div.li input {
+		@apply input-checkbox absolute mt-[1.1rem] w-4 h-4 -left-2 rounded-full cursor-pointer disabled:cursor-not-allowed;
+	}
+
+	// Revision info
+	.revision-info {
+		@apply ml-5 md:ml-7 py-3.5 flex items-center justify-between;
+
+		.rev-description {
+			@apply mr-4 overflow-auto;
+		}
+
+		// Revision header
+		.summary {
+			@apply flex text-sm;
+
+			.sum {
+				@apply text-primary font-medium truncate;
+
+				// Minor edits
+				&:where(.minor *) {
+					@apply text-secondary;
+				}
+
+				// Empty summary
+				&.empty {
+					@apply text-secondary italic;
+				}
+			}
+
+			a.sum {
+				@apply hover:underline;
+			}
+
+			.sizechange {
+				@apply
+					text-xs font-medium ml-2 px-2 py-0.5 rounded-full ring-1 ring-inset
+
+					// neutral, default
+					text-gray-600 bg-gray-50 ring-gray-500/10
+					dark:text-gray-500 dark:bg-gray-800 dark:ring-gray-400/20
+				;
+
+
+				// bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10
+
+				&.positive {
+					@apply
+						text-green-700 bg-green-50 ring-green-600/20
+						dark:text-green-400 dark:bg-green-500/10 dark:ring-green-500/20
+					;
+				}
+
+				&.negative {
+					@apply
+						text-red-700 bg-red-50 ring-red-600/20
+						dark:text-red-400 dark:bg-red-500/10 dark:ring-red-500/20
+					;
+				}
+			}
+		}
+
+		// Date and user info
+		.subtitle {
+			@apply
+				flex flex-nowrap max-w-full mt-1
+				text-xs font-normal
+				text-gray-400 dark:text-gray-500
+			;
+
+			.subtitle-name {
+				@apply text-secondary font-medium truncate;
+			}
+
+			// add space between the elements
+			.date:not(:first-child), .user {
+				@apply ml-1 whitespace-nowrap;
+			}
+		}
+
+		.revision-buttons {
+			@apply inline-flex space-x-1;
+
+			// Diff link button and revision preview button
+			a {
+				@apply btn-icon;
+
+				// Set the button icons via CSS
+				&:after {
+					@apply content-[''] w-4 h-4 bg-contain bg-no-repeat;
+				}
+
+				&.diff_link:after {
+					@apply
+						bg-[url('/lib/tpl/tailwind/icon.php?icon=diff&color=gray-900')]
+						dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=diff&color=white')]
+					;
+				}
+
+				&.revisions_link:after {
+					@apply
+						bg-[url('/lib/tpl/tailwind/icon.php?icon=revisions&color=gray-900')]
+						dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=revisions&color=white')]
+					;
+				}
+			}
+		}
+	}
+
+	button[name="do[diff]"] {
+		@apply mt-6;
+
+		&:not([disabled]) {
+			@apply btn-primary;
+		}
+
+		&[disabled] {
+			@apply btn-primary-disabled;
+		}
+	}
+
+	// Only on recent page
+	label.quickselect {
+		span {
+			@apply input-label block ml-1 mb-2;
+		}
+
+		select.quickselect {
+			@apply input-select block;
+		}
+	}
+}
+
+// minor fix
+.dw-action-recent p a {
+	@apply link-primary;
+}

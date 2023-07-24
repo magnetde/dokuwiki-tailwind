@@ -30,33 +30,11 @@
 	@apply box-hf w-full h-4 block border-x;
 }
 
-.diff-header {
-	@apply mt-6 border-t rounded-t-xl ;
-}
-
-.diff-footer {
-	@apply border-b rounded-b-xl ;
-}
-
 table.diff {
-	@apply w-full overflow-x-auto;
-
-	tr:first-child td, th {
-		@apply box-hf border-b;
-
-		&:first-child {
-			@apply border-l;
-		}
-		&:last-child {
-			@apply border-r;
-		}
-	}
-
-	tr:last-child {
-		th, td {
-			@apply box-b border-b;
-		}
-	}
+	@apply
+		mt-6 w-full overflow-x-auto
+		box-b rounded-lg border border-spacing-0 border-separate
+	;
 
 	th {
 		@apply text-secondary p-4 w-1/2 text-sm font-medium bg-white dark:bg-gray-800;
@@ -64,10 +42,14 @@ table.diff {
 		.sum {
 			@apply text-primary;
 		}
+
+		.wikilink1 {
+			@apply link-primary;
+		}
 	}
 
 	.diffnav {
-		@apply text-center pb-4;
+		@apply text-center pt-4 pb-1;
 
 		a {
 			@apply btn-icon align-middle inline-flex;
@@ -128,19 +110,17 @@ table.diff {
 
 	// Default formatting of table cells
 	td:not(.diffnav) {
-		@apply px-1 py-0.5 font-mono align-middle text-sm;
+		@apply px-1 py-0.5 font-mono text-xs align-middle;
 
 		&.empty {
 			@apply bg-gray-100 dark:bg-gray-800;
 		}
 
 		// Borders
-		&:first-child, &.diff-lineheader, &.empty {
-			@apply box-b border-l;
-		}
-
-		&:last-child {
-			@apply box-b border-r;
+		&:not(:first-child) {
+			&.diff-lineheader, &.empty {
+				@apply box-b border-l;
+			}
 		}
 
 		&.diff-blockheader {
@@ -176,6 +156,28 @@ table.diff {
 
 			.diff-mark {
 				@apply bg-red-200 dark:bg-red-800;
+			}
+		}
+	}
+
+	tr {
+		&:first-child > * {
+			&:first-child {
+				@apply rounded-tl-lg;
+			}
+
+			&:last-child {
+				@apply rounded-tr-lg;
+			}
+		}
+
+		&:last-child > * {
+			&:first-child {
+				@apply rounded-bl-lg;
+			}
+
+			&:last-child {
+				@apply rounded-br-lg;
 			}
 		}
 	}

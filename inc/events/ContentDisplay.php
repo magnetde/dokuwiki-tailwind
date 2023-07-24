@@ -5,7 +5,7 @@ use simple_html_dom\simple_html_dom;
 /**
  * Event handler that modifies the content.
  */
-class TPLContentDisplay extends EventHandler {
+class ContentDisplay extends EventHandler {
 
 	protected function event() {
 		return 'TPL_CONTENT_DISPLAY';
@@ -81,7 +81,10 @@ class TPLContentDisplay extends EventHandler {
 				$elm->addClass('section-header');
 
 				if($header != 'h5')  // no anchor for h5
-					$elm->innertext .= ' <a class="anchor" href="#' . $elm->id . '">#</a>';
+					$elm->innertext = '<span>'
+						. $elm->innertext
+						. ' <a class="anchor" href="#' . $elm->id . '">#</a>'
+						. '</span>';
 			}
 		}
 	}
@@ -118,11 +121,11 @@ class TPLContentDisplay extends EventHandler {
 			$href = $elm->href;
 			$title = $elm->title;
 
-			$id = bin2hex($path);
+			$id = 'dl-' . bin2hex($path);
 
-			$elm->outertext = '<span class="font-semibold truncate text-gray-700 dark:text-gray-300">' . $path . '</span>'
-				.'<a href="' . $href . '" class="btn-icon" data-tooltip-target="' . $id . '" data-tooltip-placement="bottom">'
-				.'<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">'
+			$elm->outertext = '<span>' . $path . '</span>'
+				.'<a href="' . $href . '" data-tooltip-target="' . $id . '" data-tooltip-placement="bottom">'
+				.'<svg class="w-4 h-4" stroke="currentColor" fill="none" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">'
 				.'<path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />'
 				.'</svg>'
 				.'</a>'
@@ -157,7 +160,6 @@ class TPLContentDisplay extends EventHandler {
 	 */
 	private function modifyDiff($html) {
 		$div = $html->find('div.table', 0);
-		$div->addClass('not-prose');
 		$div->removeClass('table'); // remove the table class because it intefers with the tailwind class "table"
 
 		$diff = $html->find('table.diff', 0);
@@ -166,10 +168,6 @@ class TPLContentDisplay extends EventHandler {
 			$this->modifyDiffSideBySide($diff);
 		else
 			$this->modifyDiffInline($diff);
-
-		$diff->innertext = '<div class="diff-header"></div>'
-			.$diff->save()
-			.'<div class="diff-footer"></div>';
 	}
 
 	/**
@@ -371,16 +369,12 @@ class TPLContentDisplay extends EventHandler {
 	}
 
 	/**
-	 * modifies the media manager page by adding the "not-prose" class to the file list
-	 * and by changing the file list icons.
+	 * modifies the media manager page by changing the file list icons.
 	 */
 	private function modifyMediaManager($html) {
 		$mngr = $html->find('#mediamanager__page', 0);
 		if(!$mngr)
 			return;
-
-		foreach(array('filelist', 'file') as $panel_class)
-			$mngr->find('.panel.' . $panel_class, 0)->addClass('not-prose');
 
 		foreach($mngr->find('img') as $img) {
 			if($img->src == '/lib/images/plus.gif')
@@ -400,6 +394,9 @@ class TPLContentDisplay extends EventHandler {
 			return;
 
 		foreach($mngr->find('.extensionList li') as $elm) {
+			if($elm->hasClass('notfound'))
+				continue;
+
 			$id = $elm->id;
 
 			// determine and cache the button bar and add an ID
@@ -414,9 +411,7 @@ class TPLContentDisplay extends EventHandler {
 				$actions_html = $actions->save();
 
 				$dropdown_btn = '<button id="' . $id . '-dropdown-button" data-dropdown-toggle="' . $id . '-dropdown" type="button">'
-				.'<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">'
-				.'<path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />'
-				.'</svg>'
+				.'<span class="icon"></span>'
 				.'</button>';
 
 				$btn_html .= $dropdown_btn . $actions_html;

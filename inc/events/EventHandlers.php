@@ -6,11 +6,9 @@ $event_dir = __DIR__;
 
 // Super classes
 require "$event_dir/EventHandler.php";
-require "$event_dir/RevisionRecentOutput.php";
 
 // Event handlers
-require "$event_dir/FormRevisionsOutput.php";
-require "$event_dir/FormRecentOutput.php";
+require "$event_dir/RevisionsRecentsOutput.php";
 require "$event_dir/HTMLSecEditButton.php";
 require "$event_dir/ContentDisplay.php";
 
@@ -21,10 +19,9 @@ class EventHandlers {
 
 	public function __construct() {
 		$events = [
-			new FormRevisionsOutput,
-			new FormRecentOutput,
+			new RevisionsRecentsOutput,
 			new HTMLSecEditButton,
-			new TPLContentDisplay, // modify main content
+			new ContentDisplay, // modify main content
 		];
 
 		foreach($events as $event)

@@ -11,7 +11,7 @@ abstract class EventHandler {
 	function __construct() {}
 
 	/**
-	 * Returns the event name, like defined in https://www.dokuwiki.org/devel:events_list
+	 * Returns the event name or a list of event names, like defined in https://www.dokuwiki.org/devel:events_list
 	 */
 	abstract protected function event();
 
@@ -31,6 +31,11 @@ abstract class EventHandler {
 	public function register() {
 		global $EVENT_HANDLER;
 
-		$EVENT_HANDLER->register_hook($this->event(), $this->advise(), $this, 'handle');
+		$events = $this->event();
+		if(!is_array($events))
+			$events = array($events);
+
+		foreach($events as $event)
+			$EVENT_HANDLER->register_hook($event, $this->advise(), $this, 'handle');
 	}
 }
