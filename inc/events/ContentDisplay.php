@@ -52,9 +52,6 @@ class ContentDisplay extends EventHandler {
 		case 'draft':
 			$this->modifyDiff($html);
 			break;
-		case 'search':
-			$this->modifySearch($html);
-			break;
 		case 'media':
 			$this->modifyMediaManager($html);
 			break;
@@ -253,119 +250,6 @@ class ContentDisplay extends EventHandler {
 			$elm->find('.diff-deletedline', 0)->outertext = '';
 			$elm->find('.diff-addedline', 0)->outertext = '';
 		}
-	}
-
-	/**
-	 * Modifies the search page by adding a tab bar and moving the results into tabbed containers.
-	 */
-	private function modifySearch($html) {
-		$form = $html->find('.search-form', 0);
-		if(!$form) // check, if the current content shows search results
-			return;
-
-		// determine the number of elements per tab and the tab contents
-		list($results1, $count1, $results2, $count2) = $this->getSearchTabs($html);
-
-		$show_tab1 = $count1 > 0 || $count2 == 0;
-		$tabnav = '<div class="search-box">';
-
-		// create the tab header
-		$tabnav .= '<div class="search-header">'
-			.'<button type="button" role="tab" id="tab-quickhits" class="search-tab'
-			.($show_tab1 ? ' active' : '') . '">'
-			.tpl_getLang('search_title')
-			.'<span class="count">' . $count1 . '</span>'
-			.'</button>'
-			.'<button type="button" role="tab" id="tab-fulltext" class="search-tab'
-			.(!$show_tab1 ? ' active' : '') . '">'
-			.tpl_getLang('search_content')
-			.'<span class="count">' . $count2 . '</span>'
-			.'</button>'
-			.'</div>';
-
-		// add the tab content
-		$tabnav .= $results1;
-		$tabnav .= $results2;
-		$tabnav .= '</div>';
-
-		// Set the html element
-		$form->outertext .= $tabnav;
-	}
-
-	/**
-	 * Determines the content and the number of results for both tabs.
-	 */
-	private function getSearchTabs($html) {
-		// determine element and count of tab 1
-		list($elm1, $count1) = $this->getResultsElement($html,
-			'search_quickresult', 'tab-content-quickhits', '.search_quickhits li');
-
-		// determine element and count of tab 2
-		list($elm2, $count2) = $this->getResultsElement($html,
-			'search_fulltextresult', 'tab-content-fulltext', '.search_results .search_fullpage_result');
-
-		// add the active class of the active tab
-		$show_tab1 = $count1 > 0 || $count2 == 0;
-		$results1 = $this->resultSetActive($elm1, true, $show_tab1);
-		$results2 = $this->resultSetActive($elm2, false, !$show_tab1);
-
-		return array($results1, $count1, $results2, $count2);
-	}
-
-	/**
-	 * Determines the element, that shows the results by adding an id, by removing the header
-	 * and by determining the number of search results.
-	 */
-	private function getResultsElement($html, $class, $id, $resultSelector) {
-		$elm = $html->find('.'.$class, 0);
-		if(!$elm)
-			return array(null, 0);
-
-		$elm->setAttribute('id', $id);
-		$elm->find('h2', 0)->outertext = '';
-
-		$count = count($elm->find($resultSelector));
-
-		return array($elm, $count);
-	}
-
-	/**
-	 * Adds the active class of the result element, if the $active parameter is true.
-	 * If the element $elm is not null, the active class is added to the element if needed,
-	 * the html string is determined and the html text of the element is set to the empty string.
-	 * If the element is null, an empty result page is returned.
-	 */
-	private function resultSetActive($elm, $quickhit, $active) {
-		if($elm) {
-			if($active)
-				$elm->addClass('active');
-
-			$results = $elm->save();
-			$elm->outertext = '';
-		} else
-			$results = $this->resultsEmpty($quickhit, $active);
-
-		return $results;
-	}
-
-	/**
-	 * Creates a empty result tab.
-	 */
-	private function resultsEmpty($quickhit, $active) {
-		global $lang;
-
-		if($quickhit) {
-			$id = 'tab-content-quickhits';
-			$class = 'search_quickresult';
-		} else {
-			$id = 'tab-content-fulltext';
-			$class = 'search_fulltextresult';
-		}
-
-		return '<div id="' . $id . '" class="' . $class
-			.($active ? ' active' : '') . '">'
-			.'<div class="nothing-found">' . $lang['nothingfound']  . '</div>'
-			.'</div>';
 	}
 
 	/**
