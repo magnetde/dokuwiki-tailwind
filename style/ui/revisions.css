@@ -119,11 +119,11 @@
 		@apply mt-6;
 
 		&:not([disabled]) {
-			@apply btn-primary;
+			@apply btn-secondary;
 		}
 
 		&[disabled] {
-			@apply btn-primary-disabled;
+			@apply btn-secondary-disabled;
 		}
 	}
 
@@ -136,6 +136,18 @@
 		select.quickselect {
 			@apply input-select block;
 		}
+	}
+}
+
+.pagenav {
+	@apply mt-8 text-center space-x-3;
+
+	.pagenav-prev, .pagenav-next {
+		@apply inline;
+	}
+
+	button {
+		@apply btn-secondary;
 	}
 }
 
