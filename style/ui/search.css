@@ -115,7 +115,7 @@ form.doku_form.search-results-form {
 			@apply text-sm font-normal leading-relaxed text-gray-600 dark:text-gray-400;
 
 			.search_hit {
-				@apply px-0.5 py-0.5 rounded font-medium text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
+				@apply px-0.5 py-0.5 rounded font-normal text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
 			}
 		}
 	}
