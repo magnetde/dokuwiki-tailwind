@@ -77,46 +77,52 @@ form.doku_form.search-results-form {
 	}
 }
 
-.search_quickresult {
-	ul {
-		@apply prose-ul;
+.dw-action-search {
+	.search_quickresult {
+		ul {
+			@apply prose-ul;
 
-		a {
-			@apply text-base;
-		}
-	}
-}
-
-.search_fulltextresult {
-	.search_results {
-		@apply space-y-6;
-	}
-
-	.search_fullpage_result {
-		dt { // result header
 			a {
-				@apply text-primary text-base font-medium;
+				@apply text-base;
+			}
+		}
+	}
 
-				&.wikilink1 {
-					@apply link-primary;
+	.search_fulltextresult {
+		.search_results {
+			@apply space-y-6;
+		}
+
+		.search_fullpage_result {
+			dt { // result header
+				a {
+					@apply text-primary text-base font-medium;
+
+					&.wikilink1 {
+						@apply link-primary;
+					}
+
+					&:not(.wikilink1) { // namespace
+						@apply text-secondary no-underline hover:underline;
+					}
 				}
+			}
 
-				&:not(.wikilink1) { // namespace
-					@apply text-secondary no-underline hover:underline;
+			dd.meta { // page info
+				@apply text-sm font-normal mb-1.5 text-gray-400 dark:text-gray-500;
+			}
+
+			dd.snippet { // content
+				@apply text-sm font-normal leading-relaxed text-gray-600 dark:text-gray-400;
+
+				.search_hit {
+					@apply px-0.5 py-0.5 rounded font-normal text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
 				}
 			}
 		}
+	}
 
-		dd.meta { // page info
-			@apply text-sm font-normal mb-1.5 text-gray-400 dark:text-gray-500;
-		}
-
-		dd.snippet { // content
-			@apply text-sm font-normal leading-relaxed text-gray-600 dark:text-gray-400;
-
-			.search_hit {
-				@apply px-0.5 py-0.5 rounded font-normal text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
-			}
-		}
+	.nothing {
+		@apply mt-6 font-semibold text-secondary;
 	}
 }
