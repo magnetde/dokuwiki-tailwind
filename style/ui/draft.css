@@ -9,6 +9,18 @@
 	button {
 		@apply mt-10;
 
+		// Conflict page
+
+		&[name="do[cancel]"] {
+			@apply btn-secondary order-1 mr-2;
+		}
+
+		&[name="do[save]"] {
+			@apply btn-primary order-2;
+		}
+
+		// Draft page
+
 		&[name="do[draftdel]"] {
 			@apply btn-secondary order-2 mr-2;
 		}

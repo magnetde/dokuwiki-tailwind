@@ -34,7 +34,7 @@
 
 		a {
 			@apply
-				text-secondary text-base font-medium no-underline
+				text-secondary text-sm font-medium no-underline
 				hover:text-gray-700 hover:dark:text-gray-300
 			;
 		}

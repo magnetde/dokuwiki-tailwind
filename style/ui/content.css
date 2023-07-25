@@ -53,12 +53,16 @@
 	}
 }
 
-.dokuwiki-main {
+.dokuwiki-main.dw-action-show {
 	@apply prose-headings:scroll-mt-20;
 
 	a.fn_top {
 		@apply scroll-mt-20;
 	}
+}
+
+.dw-action-preview .preview {
+	@apply mt-12;
 }
 
 .dokuwiki-main:not(.dw-action-show) {
