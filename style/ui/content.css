@@ -65,16 +65,19 @@
 	@apply mt-12;
 }
 
+// Base styles for all pages except for the 'SHOW' page and the preview content.
 .dokuwiki-main:not(.dw-action-show) {
-	h1 {
+	h1:not(:where(.dw-action-preview .preview *)) {
 		@apply prose-h1;
 	}
-	h2 {
+	h2:not(:where(.dw-action-preview .preview *)) {
 		@apply prose-h2;
 	}
 
 	> p, div.level1 > p {
-		@apply prose-text;
+		&:not(:where(.dw-action-preview .preview *)) {
+			@apply prose-text;
+		}
 	}
 }
 
