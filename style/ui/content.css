@@ -43,10 +43,10 @@
 		@apply inline m-0 h-[revert-layer];
 	}
 	.mediaright {
-		@apply float-right;
+		@apply float-right ml-4;
 	}
 	.medialeft {
-		@apply float-left;
+		@apply float-left mr-4;
 	}
 	.mediacenter {
 		@apply block mx-auto;

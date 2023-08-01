@@ -3,7 +3,7 @@
 	// Apply several adjustments for the sidebar
 	@apply
 		prose-sm
-		prose-p:text-secondary prose-p:my-2
+		prose-p:text-secondary prose-p:mt-3 prose-p:mb-1.5
 		prose-strong:text-secondary
 		prose-em:text-secondary
 	;

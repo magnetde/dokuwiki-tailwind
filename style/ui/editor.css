@@ -150,7 +150,7 @@
 
 // Main content of the link picker
 #link__wiz_result {
-	@apply p-0 mt-4 w-[32rem] max-h-64 overflow-auto border-t border-gray-100 dark:border-gray-600;
+	@apply p-0 mt-4 w-[32rem] max-h-64 overflow-auto text-secondary border-t border-gray-100 dark:border-gray-600;
 
 	// files and directories
 	.type_d, .type_f, .type_u {
@@ -165,7 +165,7 @@
 	}
 
 	.wikilink1 {
-		@apply font-normal text-inherit;
+		@apply font-normal text-primary;
 	}
 
 	// folders
