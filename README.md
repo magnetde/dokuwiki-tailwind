@@ -3,6 +3,10 @@
 "Tailwind" is a modern, minimal template for DokuWiki, created with TailwindCSS and Flowbite.
 This template supports Light and Dark mode and is also responsive.
 
+![screenshot](./screenshots/screenshot-content.png)
+
+(See the "screenshots" folder for more screenshots.)
+
 Currently, only the languages "en" and "de" are supported.
 The tested version is "2023-04-04" ("Jack Jackrum").
 
@@ -12,7 +16,7 @@ The following plugins are supported:
   * [diagrams](https://www.dokuwiki.org/plugin%3Adiagrams)
   * [imagebox](https://www.dokuwiki.org/plugin%3Aimagebox)
 
-I am open to merge requests for desired changes or for the support of additional plugins.
+I am open to merge requests for changes like for the support of additional plugins.
 
 ## Installation
 
