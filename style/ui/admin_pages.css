@@ -16,7 +16,7 @@
 	form tr.default td.value select,
 	form td.default.value select,
 	form td.default .input select {
-		@apply !bg-primary-50 dark:!bg-primary-950 !border-gray-300 dark:!border-gray-600;
+		@apply !bg-primary-50 dark:!bg-primary-950 !border-gray-300 dark:!border-gray-600 !text-gray-900 dark:!text-white;
 	}
 
 	tr.default td.value input[type="checkbox"]:checked,
@@ -90,7 +90,8 @@
 			}
 
 			table {
-				@apply !table my-0 table-fixed w-full max-w-full;
+			display: table !important;
+			@apply my-0 table-fixed w-full max-w-full;
 			}
 
 			// add a table footer
@@ -124,11 +125,11 @@
 			@apply !w-[40%];
 
 			.input, .selectiondefault {
-				@apply !bg-transparent max-w-full;
+				@apply !bg-transparent max-w-full !text-gray-900 dark:!text-white;
 			}
 
 			input:not([type="checkbox"]), textarea, select {
-				@apply !bg-transparent;
+				@apply !bg-transparent !text-gray-900 dark:!text-white;
 			}
 
 			input[type="checkbox"] {

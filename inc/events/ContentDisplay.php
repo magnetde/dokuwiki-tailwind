@@ -99,11 +99,25 @@ class ContentDisplay extends EventHandler {
 				$header = $html->find($secion_class, 0);
 
 				if($header) {
-					// add the section edit button to the header
-					$header->innertext .= $elm->outertext;
+					// Do not move the edit button if it's inside a tabbox, 
+					// because the tabbox plugin hides the headers and we want the button to remain visible.
+					$isTabbox = false;
+					$parent = $header->parent();
+					while($parent) {
+						if(strpos($parent->class, 'plugin_tabbox') !== false || strpos($parent->class, 'tabboxtab') !== false) {
+							$isTabbox = true;
+							break;
+						}
+						$parent = $parent->parent();
+					}
 
-					// Remove the old edit button
-					$elm->outertext = '';
+					if(!$isTabbox) {
+						// add the section edit button to the header
+						$header->innertext .= $elm->outertext;
+
+						// Remove the old edit button
+						$elm->outertext = '';
+					}
 				}
 			}
 		}

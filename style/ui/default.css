@@ -2,6 +2,7 @@
 .dw-action-admin,
 .dw-action-plugin,
 .dw-action-show,
+.dw-action-preview .preview,
 .ui-dialog-content {
 	.leftalign {
 		@apply text-left;
@@ -98,15 +99,7 @@
 		}
 	}
 
-	thead {
-		@apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
 
-		input {
-			&[type="text"], &[type="password"], &[type="email"], &[type="url"] {
-				@apply bg-white dark:bg-gray-800;
-			}
-		}
-	}
 
 	// yeah this exists
 	tbody + tbody tr:first-child {
@@ -129,7 +122,7 @@
 			@apply m-0 p-0;
 
 			a {
-				@apply tab-inactive no-underline;
+				@apply tab-inactive !no-underline;
 			}
 
 			// cannot use '&.active a' because this leads to a tailwind css compiler error
@@ -166,6 +159,16 @@
 
 		&:first-child {
 			@apply mt-0;
+		}
+	}
+	
+	thead {
+		@apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+
+		input {
+			&[type="text"], &[type="password"], &[type="email"], &[type="url"] {
+				@apply bg-white dark:bg-gray-800;
+			}
 		}
 	}
 }

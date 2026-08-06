@@ -19,4 +19,8 @@
 form.btn_incledit {
 	/* @apply btn-secondary; */
 	margin-left: auto;
+
+	button[type="submit"] {
+		@apply btn-secondary !bg-white !text-gray-900 dark:!text-white dark:!bg-gray-800 !ring-1 !ring-gray-300;
+	}
 }

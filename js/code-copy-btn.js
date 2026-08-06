@@ -14,6 +14,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('button.code-copy-btn:not(.is-observed)').forEach(btn => {
                     btn.classList.add('is-observed');
 
+                    // Check if parent is a pre block
+                    const parent = btn.parentElement;
+                    if (parent && parent.tagName === 'PRE') {
+                        // Create wrapper so the button stays fixed on screen while pre scrolls horizontally
+                        if (!parent.parentElement.classList.contains('code-wrapper')) {
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'code-wrapper relative group';
+                            parent.parentNode.insertBefore(wrapper, parent);
+                            wrapper.appendChild(parent);
+                            wrapper.appendChild(btn); // Move button outside pre
+                        } else {
+                            parent.parentElement.appendChild(btn);
+                        }
+                    }
+
+                    // DokuWiki's core copy JS breaks because the button is no longer inside the <pre>.
+                    // We must handle the copy manually and stop the event from reaching DokuWiki's document listener.
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        
+                        const pre = btn.parentElement.querySelector('pre');
+                        if (!pre) return;
+                        
+                        const textToCopy = pre.innerText;
+                        const originalText = btn.textContent;
+                        
+                        navigator.clipboard.writeText(textToCopy).then(() => {
+                            btn.textContent = (typeof LANG !== 'undefined' && LANG["clipboard_success"]) ? LANG["clipboard_success"] : "Copied!";
+                        }).catch(() => {
+                            btn.textContent = (typeof LANG !== 'undefined' && LANG["clipboard_error"]) ? LANG["clipboard_error"] : "Error";
+                        }).finally(() => {
+                            setTimeout(() => {
+                                btn.textContent = originalText;
+                            }, 2000);
+                        });
+                    });
+
                     tooltipIdCounter++;
                     const tooltipId = 'tooltip-code-copy-' + tooltipIdCounter;
                     btn.setAttribute('data-tooltip-target', tooltipId);
