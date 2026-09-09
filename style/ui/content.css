@@ -205,7 +205,7 @@ footer .license a {
 }
 
 // Success / error box at the top of the page
-.notify, .success, .error {
+.notify, .info, .success, .error {
 	@apply !bg-none !border-0 !mx-4 md:!mx-6 lg:!mx-8 !mt-6 !mb-8 !p-4 !text-sm !rounded-lg;
 
 	&.msg {
@@ -217,8 +217,8 @@ footer .license a {
 	}
 }
 
-.notify {
-	@apply text-sky-800 !bg-sky-50 dark:text-sky-400 dark:!bg-sky-800;
+.notify, .info {
+	@apply text-sky-800 !bg-sky-50 dark:text-sky-400 dark:!bg-gray-800;
 }
 
 .success {
