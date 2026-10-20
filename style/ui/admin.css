@@ -16,5 +16,5 @@
 }
 
 #admin__version {
-	@apply text-secondary mt-6 text-xs font-medium;
+	@apply text-secondary mt-6 text-xs font-medium float-right;
 }

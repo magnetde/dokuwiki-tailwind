@@ -3,7 +3,7 @@ form.search {
 	@apply relative w-full lg:w-[32rem];
 
 	div.no {
-		@apply relative;
+		@apply relative !block;
 	}
 
 	// Hide the button (usually gets removed by the backend)

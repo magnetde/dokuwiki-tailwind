@@ -1,5 +1,35 @@
 // Specific styles
 .dw-action-admin {
+	// Highlight inputs in default value rows
+	form tr.default td.value input,
+	form tr.default td.value input:checked,
+	form tr.default td.value input[type="checkbox"]:checked,
+	form td.default.value input,
+	form td.default.value input:checked,
+	form td.default.value input[type="checkbox"]:checked,
+	form td.default .input input,
+	form td.default .input input:checked,
+	form td.default .input input[type="checkbox"]:checked,
+	form tr.default td.value textarea,
+	form td.default.value textarea,
+	form td.default .input textarea,
+	form tr.default td.value select,
+	form td.default.value select,
+	form td.default .input select {
+		@apply !bg-primary-50 dark:!bg-primary-950 !border-gray-300 dark:!border-gray-600 !text-gray-900 dark:!text-white;
+	}
+
+	tr.default td.value input[type="checkbox"]:checked,
+	td.default.value input[type="checkbox"]:checked,
+	td.default .input input[type="checkbox"]:checked {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231d4ed8' viewBox='0 0 16 16'%3E%3Cpath d='M12.207 4.793a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L6.5 9.086l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E") !important;
+	}
+
+	.dark tr.default td.value input[type="checkbox"]:checked,
+	.dark td.default.value input[type="checkbox"]:checked,
+	.dark td.default .input input[type="checkbox"]:checked {
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2360a5fa' viewBox='0 0 16 16'%3E%3Cpath d='M12.207 4.793a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L6.5 9.086l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E") !important;
+	}
 
 	// User manager
 	&.dw-page-usermanager {
@@ -48,7 +78,7 @@
 
 		// tables
 		fieldset {
-			@apply mb-6 scroll-mt-20;
+			@apply !bg-transparent mb-6 scroll-mt-20;
 
 			// table header
 			legend {
@@ -56,11 +86,12 @@
 			}
 
 			div.table {
-				@apply w-full border-x box-b mb-0;
+				@apply w-full border-x box-b mb-0 !overflow-hidden;
 			}
 
 			table {
-				@apply !table my-0 table-fixed w-full max-w-full;
+			display: table !important;
+			@apply my-0 table-fixed w-full max-w-full;
 			}
 
 			// add a table footer
@@ -91,9 +122,23 @@
 
 		// setting value
 		td.value {
-			@apply w-[40%];
+			@apply !w-[40%];
+
+			.input, .selectiondefault {
+				@apply !bg-transparent max-w-full !text-gray-900 dark:!text-white;
+			}
+
+			input:not([type="checkbox"]), textarea, select {
+				@apply !bg-transparent !text-gray-900 dark:!text-white;
+			}
+
+			input[type="checkbox"] {
+				@apply input-checkbox !border-gray-300 dark:!border-gray-600;
+			}
 		}
 
+
+		
 		button[type="submit"] {
 			@apply mr-2;
 		}
@@ -181,7 +226,7 @@
 
 		// Search
 		#plugin__logviewer > label {
-			@apply flex items-center box-header mt-4;
+			@apply flex items-center box-header mt-4 mb-0;
 
 			input {
 				@apply ml-2 flex-grow input-text bg-white dark:bg-gray-800;
@@ -355,7 +400,7 @@
 	// acl manager
 	&.dw-page-acl {
 		#acl__tree {
-			@apply w-1/4 h-80 pr-4 mr-4 text-sm float-left overflow-auto border-r box-b;
+			@apply w-1/4 h-80 pr-4 mr-3 text-sm float-left overflow-auto border-0 !border-r box-b;
 
 			ul ul {
 				@apply pl-4;
@@ -399,8 +444,22 @@
 			}
 		}
 
-		table .action {
-			@apply text-right;
+		table {
+			tr:hover {
+				@apply !bg-transparent;
+			}
+
+			.aclns, .aclgroup, .acluser {
+				@apply !bg-none !p-0;
+			}
+
+			.check {
+				@apply !text-start;
+			}
+
+			.action {
+				@apply text-right;
+			}
 		}
 	}
 }

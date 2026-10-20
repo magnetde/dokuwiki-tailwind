@@ -33,9 +33,105 @@
 .dw-action-show, .dw-action-preview .preview, .dokuwiki-sidebar {
 	@apply prose dark:prose-invert print:prose-print;
 
-	// current link
+	// Link
+	a {
+		@apply no-underline;
+
+		&:hover {
+			@apply underline;
+		}
+	}
+
+	// Current Link
 	.curid, .curid a {
 		@apply font-semibold;
+	}
+
+	// Edit Button
+	button[data-tooltip-target^="edit-button"] {
+		@apply !bg-transparent ring-transparent;
+	}
+
+	// Code
+	.code .ln-xtra {
+		@apply bg-yellow-900;
+	}
+
+	pre {
+		@apply relative;
+
+		&:hover button.code-copy-btn {
+			@apply opacity-100;
+		}
+	}
+
+	.code-wrapper {
+		margin-top: 1.7142857em;
+		margin-bottom: 1.7142857em;
+
+		pre {
+			@apply !mt-0 !mb-0;
+		}
+	}
+
+	.code-wrapper:hover button.code-copy-btn {
+		@apply opacity-100;
+	}
+
+	button.code-copy-btn {
+		@apply absolute opacity-0 transition-opacity duration-200;
+		@apply w-8 h-8 p-0 m-0 rounded cursor-pointer overflow-hidden;
+		top: 0.5rem !important;
+		right: 0.5rem !important;
+		appearance: none;
+		-webkit-appearance: none;
+		border: none !important;
+		box-shadow: none !important;
+		outline: none !important;
+		background-color: transparent !important;
+		color: transparent !important;
+		text-indent: -9999px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 16px;
+		/* Default copy icon (White) */
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='13' height='13' rx='2' ry='2'%3E%3C/rect%3E%3Cpath d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'%3E%3C/path%3E%3C/svg%3E");
+
+		&.is-success {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+		}
+
+		&.is-error {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+		}
+		
+		&:focus {
+			@apply ring-0 outline-none;
+		}
+		
+		&:hover {
+			background-color: rgba(128, 128, 128, 0.1) !important;
+		}
+	}
+
+	/* Download snippet link */
+	dl.file dt {
+		@apply relative;
+	}
+
+	dl.file dt a[href*="export_code"] {
+		@apply inline-flex items-center justify-center;
+		@apply w-8 h-8 rounded transition-colors duration-200;
+		position: absolute !important;
+		right: 0.5rem !important;
+
+		&:hover {
+			background-color: rgba(128, 128, 128, 0.1) !important;
+		}
+
+		svg {
+			@apply w-4 h-4;
+		}
 	}
 
 	// Images
@@ -81,14 +177,36 @@
 	}
 }
 
+// Global Plugins Buttons and Form Elements Fallback
+button:not([data-tooltip-target^="edit-button"]):not(.btn-link):not(#user-menu-button):not([data-dropdown-toggle]):not([data-modal-target]):not([type="submit"]):not(.toolbutton):not(.pickerbutton):not(.ui-button):not(.button),
+input[type="button"],
+input[type="reset"] {
+	@apply btn-secondary;
+}
+
+input[type="submit"],
+button[type="submit"]:not([name="do[preview]"]):not([name="do[cancel]"]) {
+	@apply btn-primary;
+}
+
+// Fix Checkboxes and Radios (Tailwind preflight removes their borders)
+input[type="checkbox"],
+input[type="radio"] {
+	@apply w-4 h-4 border border-gray-300 bg-gray-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600;
+	@apply checked:bg-primary-600 checked:border-primary-600 dark:checked:bg-primary-600 dark:checked:border-primary-600;
+}
+input[type="checkbox"] {
+	@apply rounded;
+}
+
 // Footer
 footer .license a {
 	@apply inline-block underline;
 }
 
 // Success / error box at the top of the page
-.notify, .success, .error {
-	@apply mx-4 md:mx-6 lg:mx-8 mt-6 mb-8 p-4 text-sm rounded-lg;
+.notify, .info, .success, .error {
+	@apply !bg-none !border-0 !mx-4 md:!mx-6 lg:!mx-8 !mt-6 !mb-8 !p-4 !text-sm !rounded-lg;
 
 	&.msg {
 		@apply mx-0 mt-4 mb-0;
@@ -99,14 +217,14 @@ footer .license a {
 	}
 }
 
-.notify {
-	@apply text-sky-800 bg-sky-50 dark:text-sky-400 dark:bg-sky-800;
+.notify, .info {
+	@apply text-sky-800 !bg-sky-50 dark:text-sky-400 dark:!bg-gray-800;
 }
 
 .success {
-	@apply text-green-800 bg-green-50 dark:text-green-400 dark:bg-gray-800;
+	@apply text-green-800 !bg-green-50 dark:text-green-400 dark:!bg-gray-800;
 }
 
 .error {
-	@apply text-red-800 bg-red-50 dark:text-red-400 dark:bg-gray-800;
+	@apply text-red-800 !bg-red-50 dark:text-red-400 dark:!bg-gray-800;
 }

@@ -1,6 +1,7 @@
 #dw__login,
 #dw__register,
 #dw__resendpwd,
+#dw__profiletoken,
 #dw__profiledelete {
 	@apply
 		w-full md:w-1/2 mt-8 mx-auto p-6 text-start rounded-lg shadow dark:border
@@ -40,6 +41,7 @@
 		}
 
 		// Submit button
+		button[name="regen"],
 		button[type="submit"] {
 			@apply btn-primary block w-full my-6;
 		}

@@ -1,0 +1,36 @@
+/* Tabbox plugin styles */
+.dokuwiki .plugin_tabbox.js {
+	@apply relative;
+
+	div.secedit {
+		@apply absolute top-1 right-0 h-11 flex items-center mt-0 p-0 opacity-0 transition-opacity duration-200 z-10;
+
+		button {
+			background-image: url("/lib/tpl/tailwind/icon.php?icon=edit&color=gray-300") !important;
+			@apply w-5 h-5 bg-no-repeat bg-center bg-contain transition-opacity;
+		}
+
+		.dark & button {
+			background-image: url("/lib/tpl/tailwind/icon.php?icon=edit&color=gray-400") !important;
+		}
+	}
+	
+	&:hover div.secedit {
+		@apply opacity-100;
+	}
+}
+
+.dokuwiki .plugin_tabbox.js {
+
+	div.tabboxtab {
+		@apply !border-gray-200 dark:!border-[#374151e6];
+	}
+
+	ul.tabs {
+		li[class~="active"] {
+			a, strong {
+				@apply dark:!text-gray-100;
+			}
+		}
+	}
+}

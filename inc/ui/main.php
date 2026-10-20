@@ -4,6 +4,7 @@ if(!defined('DOKU_INC'))
 
 // Show sidebar at pages (if exists) or if the media manager is opened.
 $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT == 'media');
+$toc = _tpl_getTOC();
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +65,7 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 					// a margin is added at the left, that matches the width of the ToC to center the main content.
 					$showSidebar ?
 					'mr-0 lg:mr-[theme(width.sidebar-lg)] xl:mr-0' :
-					'ml-0 xl:ml-[theme(width.sidebar-lg)] 2xl:ml-[theme(width.sidebar-2xl)]',
+					($toc ? 'ml-0 xl:ml-[theme(width.sidebar-lg)] 2xl:ml-[theme(width.sidebar-2xl)]' : ''),
 
 					// print styles
 					'print:w-full print:mx-0',
@@ -78,7 +79,6 @@ $showSidebar = (page_findnearest($conf['sidebar']) && $ACT == 'show') || ($ACT =
 				<div class="flex-none align-top hidden pl-8 text-sm xl:block xl:w-sidebar-lg 2xl:w-sidebar-2xl print:hidden">
 					<div class="flex overflow-y-auto sticky top-[theme(height.navbar)] h-[calc(100vh-theme(height.navbar)-1px)] flex-col pt-10 pb-6">
 						<?php
-						$toc = _tpl_getTOC();
 						if($toc) {
 							echo '<h4 class="text-primary mb-4 pl-4 font-semibold">'
 								.$lang['toc']

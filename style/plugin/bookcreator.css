@@ -1,0 +1,62 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:bookcreator
+ */
+
+ /* Add to book section */
+.bookcreator__bookbar {
+	@apply relative;
+
+	.bookcreator__panel {
+		@apply float-none;
+
+		b {
+			@apply block;
+		}
+
+		br {
+			@apply hidden;
+		}
+
+		&:last-child {
+			@apply absolute top-0 right-0;
+		}
+	}
+}
+
+/* Create a book page */
+.bookcreator__pagelist ul li {
+	@apply !bg-transparent;
+
+	a.action {
+		@apply !inline;
+	}
+}
+ 
+.bookcreator__actions select {
+	background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+	background-position:right .5rem center;
+	background-repeat:no-repeat;
+	background-size:1.5em 1.5em;
+}
+
+// Add a Namespace
+#bc__nspicker_result {
+	// files and directories
+	.type_d, .type_f, .type_u {
+		@apply py-2.5;
+	}
+	
+	div {
+		a {
+			@apply !bg-none !px-0 !inline;
+		}
+
+		span {
+			@apply !inline;
+		}
+	}
+
+	div.even {
+		@apply bg-transparent;
+	}
+}

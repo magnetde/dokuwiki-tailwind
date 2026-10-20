@@ -1,0 +1,31 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:copy2clipboard
+ */
+
+#dw-content {
+	.cp2clipcont {
+		position: relative;
+
+		button {
+			@apply ring-transparent;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: transparent url("data:image/svg+xml,%3Csvg class='w-5 h-5' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='#e5e7eb' stroke-linejoin='round' stroke-width='1' d='M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z'/%3E%3C/svg%3E%0A") no-repeat;
+			padding: .625rem .75rem .625rem 1rem;
+			margin-top: .625rem;
+		}
+
+		&.desktop button {
+			visibility: hidden;
+		}
+		
+		&.desktop:hover button {
+			visibility: visible;
+		}
+	}
+}
+
+#cp2clipok {
+	display: none;
+}

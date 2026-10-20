@@ -82,7 +82,7 @@ function _tpl_metaheaders() {
 		// Remove the button and turn it into an icon
 		foreach($html->find('link[rel="stylesheet"]') as $elm)
 			if(_tpl_has_prefix($elm->href, '/lib/exe/css.php'))
-				$elm->outertext = ''; // remove css.php stylesheet
+				// $elm->outertext = ''; // remove css.php stylesheet
 
 		$content = $html->save();
 		$html->clear();
@@ -115,6 +115,8 @@ function _tpl_searchform() {
 	// Disable autocomplete on the search input
 	foreach($html->find('input[type="text"]') as $elm)
 		$elm->autocomplete = 'off';
+		$elm->title = '[K]';
+		$elm->accesskey = 'k';
 
 	$content = $html->save();
 	$html->clear();
@@ -132,6 +134,10 @@ function _tpl_search_input() {
 	<svg class="w-5 h-5 text-gray-400 dark:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd">
 	</path></svg>
+</div>
+<div class="absolute inset-y-0 right-0 mr-3 flex items-center pointer-events-none">
+    <kbd class="hidden font-sans text-xs/4 text-gray-500 dark:text-gray-400 [.os-macos_&amp;]:block">⌘K</kbd>
+    <kbd class="hidden font-sans text-xs/4 text-gray-500 not-[.os-macos_&amp;]:block dark:text-gray-400">Ctrl&nbsp;K</kbd>
 </div>
 	<?php return ob_get_clean();
 }

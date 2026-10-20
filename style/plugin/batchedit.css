@@ -1,0 +1,15 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:batchedit
+ */
+
+#batchedit .be-actions {
+	@apply flex;
+}
+
+#batchedit #be-mainform .be-submit {
+	@apply btn-secondary;
+}
+
+#batchedit #be-mainform #be-progress {
+	@apply !bg-gray-100 dark:!bg-gray-700;
+}

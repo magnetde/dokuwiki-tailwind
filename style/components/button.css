@@ -58,7 +58,7 @@
 	}
 
 	.toggle-button-inactive {
-		@apply cursor-pointer;
+		@apply !bg-transparent cursor-pointer;
 
 		&:hover {
 			@apply text-gray-600 dark:text-gray-300
@@ -66,6 +66,6 @@
 	}
 
 	.toggle-button-active {
-		@apply text-primary shadow bg-white dark:bg-gray-800;
+		@apply text-primary shadow !bg-white dark:!bg-gray-800;
 	}
 }

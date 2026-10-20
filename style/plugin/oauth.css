@@ -1,0 +1,15 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:oauth
+ */
+
+.plugin_oauth {
+    @apply mt-8;
+
+    > div > a {
+        @apply btn-primary block w-full justify-center !border-none;
+    }
+}
+
+.plugin-oauth-emailrestriction {
+    @apply text-gray-900 dark:text-gray-100;
+}

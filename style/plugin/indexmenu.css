@@ -1,0 +1,76 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:acmenu
+ */
+
+/* IndexMenu Editor Dialog */
+#indexmenu__wiz {
+	.ui-dialog-content {
+		@apply p-1;
+
+		>fieldset {
+			display: table;
+			border-spacing: 5px;
+
+			>div {
+				display: table-row;
+
+				>label,
+				>strong {
+					display: table-cell !important;
+					text-align: start;
+				}
+			}
+
+			&.indexmenu_index >div {
+				>label,
+				>strong {
+					text-align: end;
+				}
+			}
+		}
+
+		input[type=submit] {
+			@apply btn-primary;
+			width: fit-content;
+		}
+
+		fieldset {
+			@apply border border-gray-200 dark:border-gray-700 rounded-lg;
+			padding: 10px;
+
+			legend {
+				margin-bottom: 0;
+			}
+
+			label {
+				margin: 0 .6em;
+
+				input {
+					margin: inherit;
+
+					&#jstoggle {
+						margin-inline-start: 0;
+					}
+				}
+			}
+
+			&.indexmenu_options div:first-child label {
+				>label {
+					/* text-align: start; */
+
+					>input {
+						margin-inline-start: 0;
+					}
+				}
+			}
+
+			#indexmenu__insertmetanum {
+				display: block;
+			}
+		}
+
+		#indexmenu__insert {
+			margin: .5em 3px 1em 3px;
+		}
+	}
+}

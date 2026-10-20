@@ -15,6 +15,15 @@ The following plugins are supported:
   * [move](https://www.dokuwiki.org/plugin%3Amove)
   * [diagrams](https://www.dokuwiki.org/plugin%3Adiagrams)
   * [imagebox](https://www.dokuwiki.org/plugin%3Aimagebox)
+  * [acmenu](https://www.dokuwiki.org/plugin%3Aacmenu)
+  * [include](https://www.dokuwiki.org/plugin%3Ainclude)
+  * [copy2clipboard](https://www.dokuwiki.org/plugin%3Acopy2clipboard)
+  * [aichat](https://www.dokuwiki.org/plugin%3Aaichat)
+  * [caption](https://www.dokuwiki.org/plugin%3Acaption)
+  * [oauth](https://www.dokuwiki.org/plugin%3Aoauth)
+  * [batchedit](https://www.dokuwiki.org/plugin%3Abatchedit)
+  * [bookcreator](https://www.dokuwiki.org/plugin%3Abookcreator)
+  * [tabbox](https://www.dokuwiki.org/plugin%3Atabbox)
 
 I am open to merge requests for changes like for the support of additional plugins.
 

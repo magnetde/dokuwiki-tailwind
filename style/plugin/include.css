@@ -1,0 +1,26 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:include
+ */
+
+#dw-content div.plugin_include_content {
+	margin-bottom: .25rem;
+}
+
+#dw-content div.plugin_include_content.section_highlight {
+	@apply hover:bg-gray-50 dark:hover:bg-gray-800;
+	border-radius: .375rem;
+}
+
+#dw-content div.plugin_include_content div.secedit {
+	display: flex;
+	margin-top: .25rem;
+}
+
+form.btn_incledit {
+	/* @apply btn-secondary; */
+	margin-left: auto;
+
+	button[type="submit"] {
+		@apply btn-secondary !bg-white !text-gray-900 dark:!text-white dark:!bg-gray-800 !ring-1 !ring-gray-300;
+	}
+}

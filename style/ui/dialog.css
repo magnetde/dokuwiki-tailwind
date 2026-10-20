@@ -1,8 +1,8 @@
 .ui-dialog {
-	@apply dropdown-container absolute top-0 left-0;
+	@apply text-base dropdown-container absolute top-0 left-0 p-0 !border-0;
 
 	.ui-dialog-titlebar {
-		@apply flex items-center px-4 py-3;
+		@apply flex items-center px-4 py-3 border-0 bg-none bg-transparent;
 
 		.ui-dialog-title {
 			@apply text-primary flex-grow font-semibold;
@@ -11,22 +11,25 @@
 		// close button
 		.ui-dialog-titlebar-close {
 			@apply
-				block relative w-7 h-7 rounded-lg indent-[-9999px] bg-transparent
-				hover:bg-gray-50 dark:hover:bg-gray-800
+				block relative w-7 h-7 left-1.5 rounded-lg indent-[-9999px] !bg-none !bg-transparent
+				hover:!bg-gray-50 dark:hover:!bg-gray-800 border-0 m-0 ring-transparent shadow-none
 			;
 
 			.ui-button-icon {
 				@apply
-					w-4 h-4 absolute left-1.5 top-1.5 bg-contain
+					w-4 h-4 absolute bg-contain
 					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=gray-400')]
 				;
+				background-position: 0;
 			}
 
-			&:hover .ui-button-icon {
-				@apply
-					bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=gray-900')]
-					dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=white')]
-				;
+			&:hover {
+				.ui-button-icon {
+					@apply
+						bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=gray-900')]
+						dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=close&color=white')]
+					;
+				}
 			}
 		}
 	}
@@ -37,6 +40,7 @@
 
 	.ui-dialog-content {
 		@apply w-full flex flex-col items-stretch py-4;
+		border: inherit;
 
 		// necessary so the media dialog AND the move dialog looks good
 		> * {

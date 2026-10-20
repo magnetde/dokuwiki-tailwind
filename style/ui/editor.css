@@ -15,7 +15,7 @@
 		}
 
 		img {
-			@apply my-0 w-5 h-5;
+			@apply my-0;
 		}
 	}
 
@@ -47,14 +47,6 @@
 
 		.editBar {
 			@apply grid;
-
-			#size__ctl {
-				@apply box-footer order-1 flex flex-nowrap items-center justify-end space-x-2;
-
-				img {
-					@apply cursor-pointer opacity-100 dark:opacity-50;
-				}
-			}
 
 			.editButtons {
 				@apply order-3;
@@ -112,6 +104,18 @@
 		}
 	}
 
+	#size__ctl {
+		@apply box-footer flex flex-nowrap items-center justify-end space-x-2 mt-2;
+
+		button {
+			@apply !p-0 !border-0 !bg-transparent !min-w-0 !min-h-0 !shadow-none !outline-none !ring-0 hover:!bg-transparent focus:!ring-0;
+		}
+
+		img {
+			@apply cursor-pointer opacity-100 dark:opacity-50;
+		}
+	}
+
 	.license {
 		@apply
 			p-4 mt-12 mb-2 text-sm text-center rounded-lg
@@ -149,7 +153,8 @@
 }
 
 // Main content of the link picker
-#link__wiz_result {
+#link__wiz_result,
+#bc__nspicker_result {
 	@apply p-0 mt-4 w-[32rem] max-h-64 overflow-auto text-secondary border-t border-gray-100 dark:border-gray-600;
 
 	// files and directories
@@ -210,10 +215,10 @@ div.picker {
 	}
 
 	&:not(.pk_hl) {
-		@apply grid grid-cols-[repeat(16,minmax(0,1fr))];
+		@apply flex flex-wrap w-max;
 
 		button[title="FIXME"], button[title="DELETEME"] {
-			@apply col-span-3;
+			@apply w-[18.75%];
 		}
 	}
 

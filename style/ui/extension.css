@@ -1,0 +1,201 @@
+#extension__list section.extension {
+    display: grid;
+    grid-template-columns: 125px auto 22%;
+    grid-template-rows: repeat(4, auto);
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    word-break: break-word;
+
+	> .screenshot {
+		grid-column: 1;
+		grid-row: 1;
+		padding-top: .5em;
+		padding-right: .5em;
+		margin-bottom: 1.5em;
+		position: relative;
+
+		img.shot {
+			@apply border-gray-900/10 dark:border-gray-50/[0.06];
+			border-width: 1px;
+			border-style: solid;
+			border-radius: 2px;
+			width: 100%;
+			height: auto;
+		}
+
+		.id {
+			@apply input-checkbox text-gray-700 dark:text-gray-200;
+			font-size: 65%;
+			padding: .1em .25em;
+			position: absolute;
+			top: .5em;
+			left: 0;
+			border-bottom-left-radius: 2px;
+			white-space: nowrap;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			cursor: default;
+			width: auto;
+			height: auto;
+		}
+
+		.popularity img {
+			vertical-align: middle;
+			height: 1.2rem;
+			width: auto;
+			float: inline-start;
+		}
+	}
+
+	.main {
+		grid-column: 2;
+		grid-row: 1;
+		padding: .5em;
+		min-height: 7em;
+
+		h2 {
+			display: flex;
+			gap: 1em;
+			justify-content: space-between;
+			margin-block-start: 0;
+
+			.version {
+				@apply text-base;
+				padding-top: .25em;
+				white-space: nowrap;
+			}
+		}
+
+		.linkbar a {
+			background-size: 1.2em;
+			background-repeat: no-repeat;
+			background-position: 0 center;
+			padding: 0 0 0 1.4em;
+
+			&.iw_doku {
+				background-image: url('/lib/images/interwiki/doku.svg');
+			}
+
+			&.bugs {
+				background-image: url('/lib/plugins/extension/images/bug.svg');
+			}
+
+			&.donate {
+				background-image: url('/lib/plugins/extension/images/coffee.svg');
+			}
+		}
+	}
+
+	> .notices {
+		grid-column: 2 / span 2;
+		grid-row: 2;
+		padding: 0 .5em;
+
+		ul, li {
+			list-style: none;
+			margin: .5em 0 0 0;
+			padding: 0;
+
+			div.li {
+			    display: flex;
+				line-height: 1.2em;
+				gap: .25em;
+				align-items: center;
+
+				.icon {
+					min-width: 1.5rem;
+				}
+			}
+
+			&.info {
+				@apply text-sky-800 bg-sky-50 dark:text-sky-400 dark:bg-sky-800;
+				@apply p-4 text-sm rounded-lg;
+				margin-bottom: .5em;
+
+				.icon svg {
+					@apply fill-blue-600 dark:fill-gray-300;
+				}
+			}
+
+			&.warning {
+				@apply text-yellow-800 bg-yellow-100 dark:text-yellow-300 dark:bg-yellow-900;
+				@apply p-4 text-sm rounded-lg;
+				margin-bottom: .5em;
+
+				.icon svg {
+					@apply fill-yellow-400;
+				}
+			}
+
+			&.error {
+				@apply p-4;
+				margin-bottom: .5em;
+
+				.icon svg {
+					@apply fill-red-600;
+				}
+			}
+		}
+	}
+
+	> .details {
+		@apply text-primary;
+		grid-column: 1 / span 3;
+		grid-row: 3;
+
+		details {
+			summary {
+				cursor: pointer;
+				float: left;
+				margin-top: -1.5em;
+			}
+			dl {
+				margin: 0;
+				display: grid;
+				grid-template-columns: 125px auto;
+			}
+			dt {
+				font-weight: bold;
+			}
+		}
+	}
+
+	> .actions {
+		grid-column: 3;
+		grid-row: 1;
+		padding: .5em 0 .5em .5em;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		gap: .5em;
+
+		.available {
+			@apply font-medium text-sm text-right;
+		}
+	}
+}
+
+#extension__list section.extension.installed.disabled .screenshot img,
+#extension__list section.extension.installed.disabled .main, 
+#extension__list section.extension.installed.disabled .details {
+	opacity: 0.5;
+}
+
+#extension__list.filter section.extension {
+	display: none;
+
+	&.update {
+		display: grid;
+	}
+}
+
+#extension__manager {
+	.panelHeader {
+		@apply bg-transparent mb-6;
+	}
+
+	form.install input[name=overwrite] {
+		display: inline-block;
+	}
+}

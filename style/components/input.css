@@ -11,6 +11,7 @@
 			placeholder-gray-400 focus:ring-primary-600
 			dark:text-white dark:bg-gray-800 dark:ring-0
 			dark:placeholder-gray-500 dark:focus:ring-1 dark:focus:ring-gray-500
+			dark:border dark:border-gray-700
 		;
 	}
 
@@ -31,7 +32,7 @@
 			dark:border-gray-700 dark:bg-gray-800 dark:ring-offset-gray-800 dark:focus:ring-primary-600
 
 			// checked
-			checked:bg-current checked:border-transparent
+			checked:!bg-primary-600 dark:checked:!bg-primary-600 checked:!border-transparent
 
 			// disabled
 			disabled:cursor-default

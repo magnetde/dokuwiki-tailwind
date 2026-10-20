@@ -1,6 +1,8 @@
 // Default styles applied for some elements
 .dw-action-admin,
 .dw-action-plugin,
+.dw-action-show,
+.dw-action-preview .preview,
 .ui-dialog-content {
 	.leftalign {
 		@apply text-left;
@@ -45,14 +47,6 @@
 	}
 	h5 {
 		@apply prose-h5;
-	}
-
-	p {
-		@apply prose-text;
-
-		&:first-child {
-			@apply mt-0;
-		}
 	}
 
 	a {
@@ -101,19 +95,11 @@
 		@apply prose-table;
 
 		input[type="text"], input[type="password"], input[type="email"], select, textarea {
-			@apply w-full text-sm;
+			@apply !w-full text-sm;
 		}
 	}
 
-	thead {
-		@apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
 
-		input {
-			&[type="text"], &[type="password"], &[type="email"], &[type="url"] {
-				@apply bg-white dark:bg-gray-800;
-			}
-		}
-	}
 
 	// yeah this exists
 	tbody + tbody tr:first-child {
@@ -136,7 +122,7 @@
 			@apply m-0 p-0;
 
 			a {
-				@apply tab-inactive no-underline;
+				@apply tab-inactive !no-underline;
 			}
 
 			// cannot use '&.active a' because this leads to a tailwind css compiler error
@@ -161,6 +147,28 @@
 
 		.content {
 			@apply inline;
+		}
+	}
+}
+
+.dw-action-admin,
+.dw-action-plugin,
+.ui-dialog-content {
+	p {
+		@apply prose-text;
+
+		&:first-child {
+			@apply mt-0;
+		}
+	}
+	
+	thead {
+		@apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+
+		input {
+			&[type="text"], &[type="password"], &[type="email"], &[type="url"] {
+				@apply bg-white dark:bg-gray-800;
+			}
 		}
 	}
 }

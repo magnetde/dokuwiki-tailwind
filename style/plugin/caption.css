@@ -1,0 +1,7 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:caption
+ */
+
+.plugin_caption_caption.mediaright {
+	clear: both;
+}

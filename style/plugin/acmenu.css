@@ -1,0 +1,85 @@
+/*
+ * Styles for https://www.dokuwiki.org/plugin:acmenu
+ */
+
+body > div.w-full.lg\:flex > aside > div > div > div:nth-child(4) {
+	display: block;
+}
+
+div.acmenu {
+	span.ns_nolink {
+		@apply text-gray-800 dark:text-gray-100;
+	}
+
+	a:hover,
+	span.ns_nolink:hover {
+		text-decoration: none;
+	}
+}
+
+.dokuwiki-sidebar > div.acmenu {
+	> ul.sidebar-nav-list > li.open {
+		padding: 0 !important;
+		
+		> div.sidebar-nav-item {
+			display: none;
+		}
+	}
+
+	> ul.sidebar-nav-list > li > ul.sidebar-nav-list > li ul.sidebar-nav-list {
+		padding-inline-start: 17.5px !important;
+	}
+
+	li.open div.li,
+	li.closed div.li {
+		/* width: 100%; */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: 0.2s all ease-in-out;
+	}
+
+	li.open:has(.sidebar-nav-list) > div.li::after,
+	li.closed:has(.sidebar-nav-list) > div.li::after {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		content: "";
+		height: 28px;
+		width: 28px;
+		@apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-900 dark:text-white;
+		@apply bg-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=gray-900')] dark:bg-[url('/lib/tpl/tailwind/icon.php?icon=chevron-up&color=gray-100')];
+		background-size: 18px;
+		background-position: center;
+		border-radius: 6px;
+		background-repeat: no-repeat;
+		transform: rotateZ(180deg);
+		transition: 0.2s all ease-in-out;
+		cursor: pointer;
+	}
+
+	li.closed:has(.sidebar-nav-list) > div.li::after {
+		transform: rotateZ(90deg);
+	}
+
+	.sidebar-nav-list a.sidebar-nav-item {
+		flex-grow: 1;
+		width: 100%;
+	}
+
+	li.open:has(.sidebar-nav-list) > div.li > a,
+	li.closed:has(.sidebar-nav-list) > div.li > a {
+		flex-grow: 0;
+		width: 90%;
+	}
+
+	.curid {
+		flex-grow: 1;
+		
+		a.sidebar-nav-item {
+			margin: 0;
+			margin-inline-start: -.75rem;
+			width: auto;
+		}
+	}
+}

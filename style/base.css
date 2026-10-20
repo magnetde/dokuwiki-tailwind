@@ -10,4 +10,16 @@
 	@page {
 		size: A4;
 	}
+
+	svg {
+		display: inline;
+	}
+}
+
+.os-macos .\[\.os-macos_\&\]\:block {
+	display: block;
+}
+
+.not-\[\.os-macos_\&\]\:block:not(.os-macos *){
+	display: block;
 }
